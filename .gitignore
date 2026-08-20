@@ -10,3 +10,12 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+### Tài liệu tham chiếu của môn học
+# File mẫu do giảng viên/nhóm khác cung cấp — chỉ dùng để tham khảo format,
+# không phải sản phẩm của nhóm nên không đưa vào lịch sử repo.
+*.docx
+*.doc
+*.xlsx
+*.pptx
+~$*

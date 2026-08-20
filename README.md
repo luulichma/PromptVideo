@@ -108,6 +108,21 @@ The project is early and the structure still changes often. Open an issue before
 
 ---
 
+## Branches and coursework context
+
+The project runs on two branches with different aims:
+
+| Branch | Direction |
+| ------ | --------- |
+| `main` | Pure open source. No business framing, no project management documents. |
+| `for-subjects-at-uni` | Coursework for Software Project Management. The project is placed in a **hypothetical business context** (Enticy Studios as the sponsoring organisation) so there is enough material for a business case, financial analysis, and benefit management. |
+
+All project management documents live in [docs/](./docs/), organised by PMBOK process group. They are written in Vietnamese with English section headings, following the template the course provides. The Initiating set covers Business Case, Benefit Management Plan, Project Charter, and Assumption Log.
+
+**Note:** every financial figure, user projection, and unit rate in those documents is a **coursework assumption**, registered and tracked in the Assumption Log. The technical figures (browser support, memory limits) are real.
+
+---
+
 ## Background
 
 Started as a coursework project for Software Project Management at the Posts and Telecommunications Institute of Technology.

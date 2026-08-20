@@ -108,6 +108,21 @@ Dự án đang ở giai đoạn đầu, cấu trúc còn thay đổi nhiều. N�
 
 ---
 
+## Nhánh và bối cảnh môn học
+
+Dự án có hai nhánh đi theo hai hướng khác nhau:
+
+| Nhánh | Hướng phát triển |
+| ----- | ---------------- |
+| `main` | Mã nguồn mở thuần tuý. Không mang bối cảnh doanh nghiệp, không có tài liệu quản lý dự án. |
+| `for-subjects-at-uni` | Bài tập môn Quản lý dự án phần mềm. Dự án được đặt trong một **bối cảnh doanh nghiệp giả định** (Enticy Studios là tổ chức chủ quản) để có đủ dữ kiện lập Business Case, phân tích tài chính và quản lý lợi ích. |
+
+Toàn bộ tài liệu quản lý dự án nằm trong [docs/](./docs/), tổ chức theo nhóm tiến trình PMBOK. Bộ tài liệu nhóm Initiating gồm [Business Case](./docs/01_Initiating/01_Business_Case.md), [Benefit Management Plan](./docs/01_Initiating/02_Benefit_Management_Plan.md), [Project Charter](./docs/01_Initiating/03_Project_Charter.md) và [Assumption Log](./docs/01_Initiating/04_Assumption_Log.md).
+
+**Lưu ý:** mọi số liệu tài chính, quy mô người dùng và đơn giá trong các tài liệu đó là **giả định phục vụ học tập**, được đăng ký và theo dõi tại Assumption Log. Các thông số kỹ thuật (hỗ trợ trình duyệt, giới hạn bộ nhớ) là số liệu thật.
+
+---
+
 ## Bối cảnh
 
 Dự án khởi nguồn từ bài tập môn Quản lý dự án phần mềm tại Học viện Công nghệ Bưu chính Viễn thông.
