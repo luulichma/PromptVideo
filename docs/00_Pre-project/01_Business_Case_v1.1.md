@@ -4,7 +4,7 @@
 
 |                     |                                |
 | ------------------- | ------------------------------ |
-| **Nhóm tiến trình** | Initiating                     |
+| **Nhóm tiến trình** | Pre-project                     |
 | **Tên tài liệu**    | Business Case                  |
 | **Phiên bản**       | Ver. 1.1                       |
 | **Nhóm thực hiện**  | `<<Tên nhóm>>`                 |
@@ -49,7 +49,7 @@
 
 <!-- ============================== NỘI DUNG ============================== -->
 
-> **Lưu ý về bối cảnh.** Tài liệu này được lập trên một **bối cảnh doanh nghiệp giả định** (Enticy Studios là tổ chức chủ quản) phục vụ môn Quản lý dự án phần mềm. Toàn bộ số liệu tài chính, quy mô người dùng và đơn giá là **giả định có ghi chú**, được liệt kê tại [Phụ lục A](#9-phụ-lục-a--nguồn-và-giả-định-số-liệu) và đăng ký trong [Assumption Log](./04_Assumption_Log.md). Các thông số kỹ thuật (hỗ trợ trình duyệt, đặc tính API) là số liệu thật.
+> **Lưu ý về bối cảnh.** Tài liệu này được lập trên một **bối cảnh doanh nghiệp giả định** (Enticy Studios là tổ chức chủ quản) phục vụ môn Quản lý dự án phần mềm. Toàn bộ số liệu tài chính, quy mô người dùng và đơn giá là **giả định có ghi chú**, được liệt kê tại [Phụ lục A](#9-phụ-lục-a--nguồn-và-giả-định-số-liệu) và đăng ký trong [Assumption Log](../01_Initiating/02_Assumption_Log_v1.1.md). Các thông số kỹ thuật (hỗ trợ trình duyệt, đặc tính API) là số liệu thật.
 
 ---
 
@@ -175,7 +175,7 @@ Ba dòng doanh thu của M2 đều không thể bị vô hiệu hoá bằng các
 
 **Luận điểm nền tảng:** người sẵn sàng bẻ khoá thì dù có cổng khoá cũng không trả tiền. Phân khúc trả tiền là doanh nghiệp — họ trả vì hoá đơn, vì rủi ro pháp lý, vì có người hỗ trợ, không phải vì bị chặn tính năng. Mã nguồn mở còn **làm tăng** giá trị của dòng doanh thu này: doanh nghiệp yên tâm hơn khi biết mình không bị khoá vào một nhà cung cấp có thể biến mất.
 
-**Điều kiện để M2 hoạt động:** sản phẩm phải hỗ trợ **định dạng gói template cài thêm được**. Đây là yêu cầu bắt buộc của v1.0 (RQ-11 trong [Project Charter](./03_Project_Charter.md#41-yêu-cầu-chức-năng)) — không có nó thì toàn bộ mô hình doanh thu không triển khai được.
+**Điều kiện để M2 hoạt động:** sản phẩm phải hỗ trợ **định dạng gói template cài thêm được**. Đây là yêu cầu bắt buộc của v1.0 (RQ-11 trong [Project Charter](../01_Initiating/01_Project_Charter_v1.1.md#41-yêu-cầu-chức-năng)) — không có nó thì toàn bộ mô hình doanh thu không triển khai được.
 
 ---
 
@@ -240,7 +240,7 @@ Dự án có đặc điểm khác thường: **vốn tiền mặt gần bằng k
 
 Năm 1 không có doanh thu hỗ trợ SLA vì sản phẩm chưa đủ thời gian vận hành để doanh nghiệp cam kết hợp đồng dài hạn.
 
-**Lợi ích phi tài chính** — chi tiết cách đo tại [Benefit Management Plan](./02_Benefit_Management_Plan.md).
+**Lợi ích phi tài chính** — chi tiết cách đo tại [Benefit Management Plan](./02_Benefit_Management_Plan_v1.1.md).
 
 | Lợi ích                                  | Hiện trạng          | Mục tiêu                | Người hưởng lợi |
 | ---------------------------------------- | ------------------- | ----------------------- | --------------- |
@@ -308,7 +308,7 @@ Biến số rủi ro nhất là **khối lượng bán được** (số gói tem
 
 *Cách tính: giá trị hiện tại của dòng doanh thu kịch bản cơ sở là 317.273.733 VND; tổng giá trị hiện tại của chi phí (tiền mặt 35.024.144 + công sức 79.655.612 + vốn ban đầu 37.500.000) là 152.179.756 VND. NPV = k × 317.273.733 − 152.179.756.*
 
-**Điểm hoà vốn:** NPV = 0 khi k = 152.179.756 / 317.273.733 ≈ **48% kịch bản cơ sở** — tương đương khoảng **38 / 125 / 240 gói template** và **1 / 2 / 4 hợp đồng dịch vụ** trong ba năm. Đây là ngưỡng cần theo dõi trong [Benefit Management Plan](./02_Benefit_Management_Plan.md).
+**Điểm hoà vốn:** NPV = 0 khi k = 152.179.756 / 317.273.733 ≈ **48% kịch bản cơ sở** — tương đương khoảng **38 / 125 / 240 gói template** và **1 / 2 / 4 hợp đồng dịch vụ** trong ba năm. Đây là ngưỡng cần theo dõi trong [Benefit Management Plan](./02_Benefit_Management_Plan_v1.1.md).
 
 Biên an toàn 52% rộng hơn đáng kể so với mô hình thuê bao ở phiên bản trước, vì **cấu trúc chi phí gần như toàn bộ là biến phí**: không bán được gói template thì cũng không phải mua tài sản đồ hoạ cho gói đó.
 
@@ -343,7 +343,9 @@ Bộ nhớ đỉnh khi đó phụ thuộc vào độ phân giải, **không ph�
 
 | Ràng buộc kỹ thuật                                     | Ảnh hưởng                                     | Phương án giảm thiểu |
 | ------------------------------------------------------ | --------------------------------------------- | -------------------- |
-| File System Access API chỉ có trên Chromium            | Firefox và Safari không ghi trực tiếp ra đĩa được | Phương án dự phòng: ghi vào OPFS (Origin Private File System) rồi tải xuống một lần khi xong; nếu cũng không có, cảnh báo giới hạn độ dài theo bộ nhớ khả dụng |
+| Kiến trúc theo luồng phải giữ bộ nhớ không tăng theo độ dài ([AS-16](../01_Initiating/02_Assumption_Log_v1.1.md)) | Không đạt thì phải quay lại giới hạn độ dài cứng | Chứng minh bằng nguyên mẫu tại M2, đo bằng tỷ lệ bộ nhớ 10 phút ÷ 1 phút ≤ 1,15 |
+| File System Access API chỉ có trên Chromium ([AS-32](../01_Initiating/02_Assumption_Log_v1.1.md)) | Firefox và Safari không ghi trực tiếp ra đĩa được | Phương án dự phòng: ghi vào OPFS (Origin Private File System) rồi tải xuống một lần khi xong; nếu cũng không có, cảnh báo giới hạn độ dài theo bộ nhớ khả dụng |
+| WebCodecs phải mã hoá được H.264 ở 1920×1080/30fps ([AS-14](../01_Initiating/02_Assumption_Log_v1.1.md)) | Không đạt thì toàn bộ sản phẩm phải đổi hướng | Nguyên mẫu tuần 2; dự phòng VP9/WebM |
 | Video rất dài làm thời gian xuất kéo dài               | Người dùng có thể tưởng ứng dụng bị treo       | Thanh tiến trình theo khung hình, ước lượng thời gian còn lại, cho phép tạm dừng và huỷ |
 | Tốc độ xuất phụ thuộc phần cứng người dùng             | Trải nghiệm không đồng đều                     | Công bố cấu hình tham chiếu; đo và hiển thị tốc độ thực tế |
 | Không dùng được CSS animation (trôi khung hình)        | Phải tự viết bộ dựng, không tái sử dụng thư viện sẵn có | Chấp nhận — đây là quyết định kiến trúc cốt lõi, đã tính vào ước lượng công sức |
@@ -357,13 +359,13 @@ Bộ nhớ đỉnh khi đó phụ thuộc vào độ phân giải, **không ph�
 
 | Vấn đề pháp lý                    | Đánh giá | Căn cứ và biện pháp |
 | --------------------------------- | -------- | ------------------- |
-| **Quyền phân phối lại tài sản trong gói template bán ra** | ⚠️ **Quan trọng nhất** | Gói template là sản phẩm thương mại. Ảnh, biểu tượng và font trong đó phải có giấy phép cho phép **phân phối lại trong sản phẩm phái sinh** — giấy phép "dùng thương mại" thông thường **không đủ**, cần loại *extended / multi-seat / redistribution*. Font SIL OFL cho phép đóng gói và bán kèm như một phần của sản phẩm lớn hơn, nhưng cấm bán riêng font. Cần lập danh mục giấy phép cho từng tài sản. Đăng ký ở [AS-11](./04_Assumption_Log.md). |
+| **Quyền phân phối lại tài sản trong gói template bán ra** | ⚠️ **Quan trọng nhất** | Gói template là sản phẩm thương mại. Ảnh, biểu tượng và font trong đó phải có giấy phép cho phép **phân phối lại trong sản phẩm phái sinh** — giấy phép "dùng thương mại" thông thường **không đủ**, cần loại *extended / multi-seat / redistribution*. Font SIL OFL cho phép đóng gói và bán kèm như một phần của sản phẩm lớn hơn, nhưng cấm bán riêng font. Cần lập danh mục giấy phép cho từng tài sản. Đăng ký ở [AS-11](../01_Initiating/02_Assumption_Log_v1.1.md). |
 | **Bảo vệ dữ liệu cá nhân** (Nghị định 13/2023/NĐ-CP) | ✅ Rủi ro thấp | Kiến trúc client-side: ảnh và nội dung không truyền lên máy chủ, không lưu trữ. Sản phẩm gần như không thực hiện hành vi "xử lý dữ liệu cá nhân" của người dùng cuối. Cần công bố Chính sách quyền riêng tư và không cài công cụ phân tích thu thập nội dung. |
 | **Bản quyền nội dung do người dùng đưa vào** | ⚠️ Chuyển giao trách nhiệm | Người dùng tự chịu trách nhiệm. Do không lưu trữ hay phân phối nội dung, sản phẩm không đóng vai trò trung gian lưu trữ. Cần Điều khoản sử dụng nêu rõ. |
-| **Bằng sáng chế H.264/AVC**       | ⚠️ Cần xác minh | Việc mã hoá do trình duyệt/hệ điều hành của người dùng thực hiện qua API sẵn có, không phải do sản phẩm phân phối bộ mã hoá. Đánh giá sơ bộ: không phát sinh nghĩa vụ với MPEG LA. **Cần xác minh trước M4** — nếu rủi ro, chuyển sang VP9/AV1 trong WebM. Đăng ký ở [AS-12](./04_Assumption_Log.md). |
+| **Bằng sáng chế H.264/AVC**       | ⚠️ Cần xác minh | Việc mã hoá do trình duyệt/hệ điều hành của người dùng thực hiện qua API sẵn có, không phải do sản phẩm phân phối bộ mã hoá. Đánh giá sơ bộ: không phát sinh nghĩa vụ với MPEG LA. **Cần xác minh trước M4** — nếu rủi ro, chuyển sang VP9/AV1 trong WebM. Đăng ký ở [AS-12](../01_Initiating/02_Assumption_Log_v1.1.md). |
 | **Giấy phép mã nguồn**            | ✅ Đã rõ | Apache License 2.0 — cho phép sử dụng thương mại, có điều khoản cấp phép sáng chế. **Toàn bộ phần mềm mở, không có phiên bản đóng.** |
 | **Thư viện bên thứ ba**           | ✅ Kiểm soát được | Chỉ dùng thư viện MIT/Apache-2.0/BSD. Cấm GPL/AGPL. Rà soát trước mỗi mốc bàn giao. |
-| **Fork thương mại hợp pháp**      | ⚠️ Chấp nhận | Apache 2.0 cho phép người khác fork và bán dịch vụ cạnh tranh. Không có biện pháp pháp lý nào ngăn được, và cũng không nên tìm cách ngăn. Biện pháp thực tế: giữ vị thế upstream, chất lượng template, và quan hệ khách hàng. Đăng ký ở [AS-26](./04_Assumption_Log.md). |
+| **Fork thương mại hợp pháp**      | ⚠️ Chấp nhận | Apache 2.0 cho phép người khác fork và bán dịch vụ cạnh tranh. Không có biện pháp pháp lý nào ngăn được, và cũng không nên tìm cách ngăn. Biện pháp thực tế: giữ vị thế upstream, chất lượng template, và quan hệ khách hàng. Đăng ký ở [AS-26](../01_Initiating/02_Assumption_Log_v1.1.md). |
 | **Hoá đơn, thuế khi bán gói template và dịch vụ** | ⚠️ Ngoài phạm vi dự án | Cần pháp nhân và đăng ký kinh doanh. Thuộc trách nhiệm nhà tài trợ, không nằm trong 15 tuần của dự án. |
 
 ### 6.3. Khả thi về vận hành
@@ -378,8 +380,8 @@ Bộ nhớ đỉnh khi đó phụ thuộc vào độ phân giải, **không ph�
 
 Các biện pháp đã áp dụng để giữ khả thi:
 
-- Cắt toàn bộ hạng mục ngoài lõi khỏi v1.0 (xem [Charter §5.2](./03_Project_Charter.md#52-ranh-giới-phạm-vi))
-- Dùng thư viện muxer có sẵn thay vì tự viết ([AS-15](./04_Assumption_Log.md))
+- Cắt toàn bộ hạng mục ngoài lõi khỏi v1.0 (xem [Charter §5.2](../01_Initiating/01_Project_Charter_v1.1.md#52-ranh-giới-phạm-vi))
+- Dùng thư viện muxer có sẵn thay vì tự viết ([AS-15](../01_Initiating/02_Assumption_Log_v1.1.md))
 - Dựng nguyên mẫu kỹ thuật ngay ở M2, để nếu phải đổi hướng thì còn 10 tuần
 - Đường găng M2 → M3 → M4 được bảo vệ: không xếp việc khác chồng lên
 
@@ -453,7 +455,7 @@ Căn cứ:
 - Lập danh mục giấy phép cho từng tài sản đồ hoạ trước khi bán gói template đầu tiên.
 - Xác nhận cam kết thời gian của cả 3 thành viên bằng văn bản tại M0.
 
-**Bước tiếp theo:** phê duyệt [Project Charter](./03_Project_Charter.md) và bổ nhiệm Giám đốc dự án.
+**Bước tiếp theo:** phê duyệt [Project Charter](../01_Initiating/01_Project_Charter_v1.1.md) và bổ nhiệm Giám đốc dự án.
 
 ---
 
@@ -477,8 +479,8 @@ Căn cứ:
 | Đơn giá và số khách hàng hỗ trợ SLA    | 12 triệu/năm; 0 / 2 / 5 | Giả định                                       | AS-29 |
 | Công sức bảo trì hàng năm              | 200 / 400 / 700 giờ  | Giả định — ước lượng theo quy mô người dùng        | AS-30 |
 
-Toàn bộ giả định trên được theo dõi và cập nhật trạng thái tại [04_Assumption_Log.md](./04_Assumption_Log.md).
+Toàn bộ giả định trên được theo dõi và cập nhật trạng thái tại [Assumption Log](../01_Initiating/02_Assumption_Log_v1.1.md).
 
 ---
 
-*Tài liệu liên quan: [Benefit Management Plan](./02_Benefit_Management_Plan.md) · [Project Charter](./03_Project_Charter.md) · [Assumption Log](./04_Assumption_Log.md)*
+*Tài liệu liên quan: [Benefit Management Plan](./02_Benefit_Management_Plan_v1.1.md) · [Project Charter](../01_Initiating/01_Project_Charter_v1.1.md) · [Assumption Log](../01_Initiating/02_Assumption_Log_v1.1.md)*

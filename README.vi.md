@@ -88,7 +88,7 @@ JSON mô tả cảnh  →  Bộ dựng theo từng khung hình  →  WebCodecs  
 - Cần trình duyệt hỗ trợ WebCodecs: Chrome 94+, Firefox 130+ trên máy tính, Safari 26+
 - Firefox trên Android chưa hỗ trợ
 - Safari 16.4 đến 18.7 chỉ mã hoá được phần hình, không có phần âm thanh
-- Video càng dài càng tốn bộ nhớ — hiện chưa tối ưu cho video trên 2 phút
+- Ghi file trực tiếp ra đĩa cần File System Access API — hiện chỉ có trên trình duyệt nhân Chromium; các trình duyệt khác dùng phương án dự phòng qua OPFS
 - Tốc độ xuất phụ thuộc phần cứng máy người dùng
 
 ---
@@ -115,9 +115,9 @@ Dự án có hai nhánh đi theo hai hướng khác nhau:
 | Nhánh | Hướng phát triển |
 | ----- | ---------------- |
 | `main` | Mã nguồn mở thuần tuý. Không mang bối cảnh doanh nghiệp, không có tài liệu quản lý dự án. |
-| `for-subjects-at-uni` | Bài tập môn Quản lý dự án phần mềm. Dự án được đặt trong một **bối cảnh doanh nghiệp giả định** (Enticy Studios là tổ chức chủ quản) để có đủ dữ kiện lập Business Case, phân tích tài chính và quản lý lợi ích. |
+| `for-subjects-at-uni` | Bài tập môn Quản lý dự án phần mềm. Dự án được đặt trong một **bối cảnh doanh nghiệp giả định** (Enticy Studios là tổ chức chủ quản) để có đủ dữ kiện lập Business Case, phân tích tài chính và quản lý lợi ích. Phần mềm vẫn là mã nguồn mở Apache 2.0 trong cả hai nhánh — doanh thu trong bối cảnh giả định đến từ gói template có bản quyền và dịch vụ, không từ việc khoá tính năng. |
 
-Toàn bộ tài liệu quản lý dự án nằm trong [docs/](./docs/), tổ chức theo nhóm tiến trình PMBOK. Bộ tài liệu nhóm Initiating gồm [Business Case](./docs/01_Initiating/01_Business_Case.md), [Benefit Management Plan](./docs/01_Initiating/02_Benefit_Management_Plan.md), [Project Charter](./docs/01_Initiating/03_Project_Charter.md) và [Assumption Log](./docs/01_Initiating/04_Assumption_Log.md).
+Toàn bộ tài liệu quản lý dự án nằm trong [docs/](./docs/), tổ chức thành sáu thư mục — Pre-project và năm nhóm tiến trình PMBOK. Pre-project gồm [Business Case](./docs/00_Pre-project/01_Business_Case_v1.1.md) và [Benefit Management Plan](./docs/00_Pre-project/02_Benefit_Management_Plan_v1.1.md); Initiating gồm [Project Charter](./docs/01_Initiating/01_Project_Charter_v1.1.md) và [Assumption Log](./docs/01_Initiating/02_Assumption_Log_v1.1.md).
 
 **Lưu ý:** mọi số liệu tài chính, quy mô người dùng và đơn giá trong các tài liệu đó là **giả định phục vụ học tập**, được đăng ký và theo dõi tại Assumption Log. Các thông số kỹ thuật (hỗ trợ trình duyệt, giới hạn bộ nhớ) là số liệu thật.
 

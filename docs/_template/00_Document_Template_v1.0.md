@@ -4,7 +4,7 @@
 
 |                      |                                    |
 | -------------------- | ---------------------------------- |
-| **Nhóm tiến trình**  | `<<Initiating / Planning / ...>>`  |
+| **Nhóm tiến trình**  | `<<Pre-project / Initiating / Planning / Executing / Monitoring and Controlling / Closing>>`  |
 | **Tên tài liệu**     | `<<Tên tài liệu>>`                 |
 | **Phiên bản**        | Ver. 1.0                           |
 | **Nhóm thực hiện**   | `<<Tên nhóm>>`                     |
