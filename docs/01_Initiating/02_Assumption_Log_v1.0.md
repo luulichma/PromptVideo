@@ -6,7 +6,7 @@
 | ------------------- | ------------------------------ |
 | **Nhóm tiến trình** | Initiating                     |
 | **Tên tài liệu**    | Assumption Log                 |
-| **Phiên bản**       | Ver. 1.1                       |
+| **Phiên bản**       | Ver. 1.0                       |
 | **Nhóm thực hiện**  | `<<Tên nhóm>>`                 |
 | **Ngày phát hành**  | 2026-08-20                     |
 | **Trạng thái**      | Tài liệu sống — cập nhật liên tục |
@@ -19,15 +19,14 @@
 
 | Người tạo       | Người kiểm tra  | Người xác nhận  |
 | --------------- | --------------- | --------------- |
-| `<<Họ và tên>>` | `<<Họ và tên>>` | `<<Họ và tên>>` |
-|                 | `<<Họ và tên>>` | `<<Họ và tên>>` |
+| Nguyễn Việt Quang | Nguyễn Thế Chiến | Phạm Quang Anh |
+|                 | Phạm Quang Anh | Thầy Nguyễn Đình Quảng |
 
 ## Lịch sử cập nhật
 
 | No | Phiên bản | Ngày thay đổi | Lý do thay đổi | Nội dung thay đổi | Người thực hiện | Người phê duyệt |
 | -- | --------- | ------------- | -------------- | ----------------- | --------------- | --------------- |
-| 1  | Ver 1.0   | 2026-08-20    | Tạo mới        | Khởi tạo sổ giả định: 25 giả định (AS-01 → AS-25) và 6 ràng buộc (CT-01 → CT-06) từ giai đoạn Initiating | `<<Họ và tên>>` | `<<Họ và tên>>` |
-| 2  | Ver 1.1   | 2026-08-20    | Chỉnh sửa      | Cập nhật theo mô hình doanh thu M2, đội 3 người và yêu cầu không giới hạn độ dài video. Sửa AS-02, AS-03, AS-04, AS-05, AS-07, AS-11, AS-16. Thêm AS-26 → AS-32 và CT-07. Sửa CT-02, CT-04. Cập nhật danh sách giả định cần xác minh gấp | `<<Họ và tên>>` | `<<Họ và tên>>` |
+| 1  | Ver 1.0   | 2026-08-20    | Tạo mới        | Khởi tạo sổ giả định: 32 giả định (AS-01 → AS-32) và 7 ràng buộc (CT-01 → CT-07) từ giai đoạn Initiating | Nguyễn Việt Quang | Phạm Quang Anh |
 
 <div style="page-break-after: always"></div>
 
@@ -48,7 +47,7 @@
 
 ## 1. Purpose
 
-Sổ này ghi lại **mọi điều được coi là đúng mà chưa được chứng minh** (giả định) và **mọi giới hạn mà dự án phải chấp nhận** (ràng buộc). Lý do tồn tại rất cụ thể: các con số trong [Business Case](../00_Pre-project/01_Business_Case_v1.1.md) và các cam kết trong [Project Charter](./01_Project_Charter_v1.1.md) đều đứng trên những giả định này. Nếu một giả định sai mà không ai phát hiện, cả chuỗi kết luận phía sau sai theo — nhưng không ai truy được về gốc.
+Sổ này ghi lại **mọi điều được coi là đúng mà chưa được chứng minh** (giả định) và **mọi giới hạn mà dự án phải chấp nhận** (ràng buộc). Lý do tồn tại rất cụ thể: các con số trong [Business Case](../00_Pre-project/01_Business_Case_v1.1.md) và các cam kết trong [Project Charter](./01_Project_Charter_v1.0.md) đều đứng trên những giả định này. Nếu một giả định sai mà không ai phát hiện, cả chuỗi kết luận phía sau sai theo — nhưng không ai truy được về gốc.
 
 Phiên bản 1.1 của sổ này là một ví dụ thực tế của việc đó. Phiên bản 1.0 chứa một giả định ngầm chưa bao giờ được viết ra: *"có thể thu tiền bằng cách khoá tính năng trong ứng dụng"*. Giả định đó sai — với sản phẩm mã nguồn mở chạy hoàn toàn trên máy người dùng, cổng khoá không thực thi được. Vì nó không nằm trong sổ, không ai kiểm tra nó, và toàn bộ phần doanh thu của Business Case đã phải làm lại. Bài học: **giả định không được viết ra là giả định nguy hiểm nhất.**
 
@@ -143,13 +142,13 @@ Sổ được lập ở nhóm tiến trình Initiating và **cập nhật liên 
 
 | ID    | Ràng buộc | Loại      | Nguồn | Tác động lên dự án | Cách xử lý |
 | ----- | --------- | --------- | ----- | ------------------ | ---------- |
-| CT-01 | Dự án phải kết thúc trước 2026-12-06 (15 tuần) | Tiến độ | Lịch học kỳ | Biên an toàn bằng không; đường găng M2→M3→M4 rất căng | Cắt phạm vi ngay từ đầu ([Charter §5.2](./01_Project_Charter_v1.1.md#52-ranh-giới-phạm-vi)); dời ngày bàn giao cần phê duyệt Nhà tài trợ |
+| CT-01 | Dự án phải kết thúc trước 2026-12-06 (15 tuần) | Tiến độ | Lịch học kỳ | Biên an toàn bằng không; đường găng M2→M3→M4 rất căng | Cắt phạm vi ngay từ đầu ([Charter §5.2](./01_Project_Charter_v1.0.md#52-ranh-giới-phạm-vi)); dời ngày bàn giao cần phê duyệt Nhà tài trợ |
 | CT-02 | Vốn tiền mặt 1.500.000 VND — không huy động thêm | Chi phí | Nhà tài trợ | Loại bỏ mọi phương án cần đầu tư hạ tầng hoặc mua tài sản đắt tiền | Kiến trúc client-side; ưu tiên tài sản đồ hoạ CC0 và font SIL OFL |
 | CT-03 | Không có ngân sách cho hạ tầng máy chủ | Chi phí | Nhà tài trợ | Loại bỏ hoàn toàn phương án render phía máy chủ (P2) và tier đám mây (M3) | Đây là một trong những lý do chính chọn kiến trúc client-side |
 | CT-04 | **Đội 3 thành viên bán thời gian, không tuyển thêm — tổng 450 giờ** | Nguồn lực | Bối cảnh môn học | Tổng công sức cố định và rất eo hẹp; rủi ro tập trung cao | Ưu tiên hoá phạm vi nghiêm ngặt; không nhận thêm yêu cầu ngoài phạm vi; có phương án giảm phạm vi định sẵn |
 | CT-05 | Chỉ dùng thư viện và tài sản có giấy phép cho phép thương mại hoá **và phân phối lại** | Pháp lý | Nhà tài trợ | Loại bỏ thư viện GPL và tài sản chỉ có giấy phép dùng thương mại thông thường | Rà soát giấy phép tại mỗi mốc (AS-21, AS-11) |
 | CT-06 | Sản phẩm phải chạy được mà không cần cài đặt gì ngoài trình duyệt | Kỹ thuật | Định vị sản phẩm | Không dùng được thành phần gốc, không dùng WebAssembly nặng | Toàn bộ chức năng dựa trên API tiêu chuẩn của trình duyệt |
-| CT-07 | **Toàn bộ mã nguồn phát hành theo Apache 2.0 — không có phiên bản đóng, không có cổng khoá tính năng** | Pháp lý / Sản phẩm | Nhà tài trợ | Loại bỏ mọi mô hình doanh thu dựa trên chặn truy cập; buộc doanh thu phải đến từ nội dung và dịch vụ | Mô hình M2 trong [Business Case §3.4](../00_Pre-project/01_Business_Case_v1.1.md#34-các-phương-án-mô-hình-doanh-thu); RQ-11 là điều kiện kỹ thuật để mô hình này chạy được |
+| CT-07 | **Toàn bộ mã nguồn phát hành theo Apache 2.0 — không có phiên bản đóng, không có cổng khoá tính năng** | Pháp lý / Sản phẩm | Nhà tài trợ | Loại bỏ mọi mô hình doanh thu dựa trên chặn truy cập; buộc doanh thu phải đến từ nội dung và dịch vụ | Mô hình M2 trong [Business Case §4.2](../00_Pre-project/01_Business_Case_v1.1.md#42-phương-án-mô-hình-doanh-thu); RQ-11 là điều kiện kỹ thuật để mô hình này chạy được |
 
 ---
 
@@ -183,4 +182,4 @@ Mỗi lần một giả định đổi trạng thái, ghi một dòng vào bản
 
 ---
 
-*Tài liệu liên quan: [Business Case](../00_Pre-project/01_Business_Case_v1.1.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v1.1.md) · [Project Charter](./01_Project_Charter_v1.1.md)*
+*Tài liệu liên quan: [Business Case](../00_Pre-project/01_Business_Case_v1.1.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v1.1.md) · [Project Charter](./01_Project_Charter_v1.0.md)*

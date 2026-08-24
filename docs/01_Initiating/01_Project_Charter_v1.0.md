@@ -6,7 +6,7 @@
 | ------------------- | ------------------------------ |
 | **Nhóm tiến trình** | Initiating                     |
 | **Tên tài liệu**    | Project Charter                |
-| **Phiên bản**       | Ver. 1.1                       |
+| **Phiên bản**       | Ver. 1.0                       |
 | **Nhóm thực hiện**  | `<<Tên nhóm>>`                 |
 | **Ngày phát hành**  | 2026-08-20                     |
 | **Trạng thái**      | Draft — chờ phê duyệt          |
@@ -19,15 +19,14 @@
 
 | Người tạo       | Người kiểm tra  | Người xác nhận  |
 | --------------- | --------------- | --------------- |
-| `<<Họ và tên>>` | `<<Họ và tên>>` | `<<Họ và tên>>` |
-|                 | `<<Họ và tên>>` | `<<Họ và tên>>` |
+| Phạm Quang Anh | Nguyễn Thế Chiến | Phạm Quang Anh |
+|                 | Nguyễn Việt Quang | Thầy Nguyễn Đình Quảng |
 
 ## Lịch sử cập nhật
 
 | No | Phiên bản | Ngày thay đổi | Lý do thay đổi | Nội dung thay đổi | Người thực hiện | Người phê duyệt |
 | -- | --------- | ------------- | -------------- | ----------------- | --------------- | --------------- |
-| 1  | Ver 1.0   | 2026-08-20    | Tạo mới        | Khởi tạo Project Charter theo 12 mục chuẩn: mục tiêu, phạm vi, mốc tiến độ, ngân sách, bên liên quan, thẩm quyền | `<<Họ và tên>>` | `<<Họ và tên>>` |
-| 2  | Ver 1.1   | 2026-08-20    | Chỉnh sửa      | Quy mô đội 5 → 3 người (450 giờ). Ngân sách chuyển sang cơ sở vốn tiền mặt 1.500.000 VND + công sức quy đổi. Bỏ giới hạn 2 phút, thêm yêu cầu mã hoá theo luồng và định dạng gói template cài thêm. Cập nhật mục tiêu, phạm vi, rủi ro và thẩm quyền theo mô hình doanh thu M2 | `<<Họ và tên>>` | `<<Họ và tên>>` |
+| 1  | Ver 1.0   | 2026-08-20    | Tạo mới        | Khởi tạo Project Charter theo 12 mục chuẩn: mục tiêu, phạm vi, mốc tiến độ, ngân sách, bên liên quan, thẩm quyền | Phạm Quang Anh | Phạm Quang Anh |
 
 <div style="page-break-after: always"></div>
 
@@ -233,7 +232,7 @@ Vòng lặp giải phóng bộ nhớ sau mỗi khung là điểm khác biệt so
 
 ### 5.4. Giả định và ràng buộc
 
-Giả định và ràng buộc chi phối phạm vi được ghi đầy đủ tại [Assumption Log](./02_Assumption_Log_v1.1.md). Những điều quan trọng nhất: không có ngân sách hạ tầng máy chủ (CT-03), đội 3 người bán thời gian với tổng 450 giờ (CT-04), toàn bộ mã nguồn phát hành theo Apache 2.0 không có cổng khoá tính năng (CT-07), và người dùng phải có trình duyệt hỗ trợ WebCodecs (AS-10).
+Giả định và ràng buộc chi phối phạm vi được ghi đầy đủ tại [Assumption Log](./02_Assumption_Log_v1.0.md). Những điều quan trọng nhất: không có ngân sách hạ tầng máy chủ (CT-03), đội 3 người bán thời gian với tổng 450 giờ (CT-04), toàn bộ mã nguồn phát hành theo Apache 2.0 không có cổng khoá tính năng (CT-07), và người dùng phải có trình duyệt hỗ trợ WebCodecs (AS-10).
 
 ---
 
@@ -296,7 +295,7 @@ Dự án có vốn tiền mặt gần bằng không; chi phí chủ yếu là c�
 | ------------------- | -------------------------------------------- | -----: | ------------: |
 | Công sức phát triển | 3 người × 15 tuần × 10 giờ/tuần              | **450** |    36.000.000 |
 
-Con số này khớp với [Business Case §4.2](../00_Pre-project/01_Business_Case_v1.1.md#42-chi-phí-đầu-tư-ban-đầu-năm-0--giai-đoạn-dự-án-15-tuần). Đơn giá quy đổi 80.000 VND/giờ là **chi phí cơ hội, không phải tiền chi ra**.
+Con số này khớp với [Benefit Management Plan §4.1](../00_Pre-project/02_Benefit_Management_Plan_v1.1.md#41-dữ-liệu-đầu-vào--chi-phí). Đơn giá quy đổi 80.000 VND/giờ là **chi phí cơ hội, không phải tiền chi ra**.
 
 ### 8.4. Phân bổ công sức theo mốc
 
@@ -329,10 +328,10 @@ Con số này khớp với [Business Case §4.2](../00_Pre-project/01_Business_C
 
 | ID    | Bên liên quan            | Vai trò                       | Quan tâm chính                          | Ảnh hưởng | Cách tham gia |
 | ----- | ------------------------ | ----------------------------- | --------------------------------------- | --------- | ------------- |
-| SH-01 | `<<Họ và tên>>`          | Nhà tài trợ — Enticy Studios  | Giá trị thu về so với công sức bỏ ra     | Cao       | Phê duyệt Charter, rà soát tại mốc, quyết định thay đổi lớn |
-| SH-02 | `<<Họ và tên>>`          | Giám đốc dự án                | Bàn giao đúng phạm vi, tiến độ, công sức | Cao       | Điều hành hàng ngày, báo cáo tuần |
-| SH-03 | `<<Họ và tên>>`          | Trưởng nhóm kỹ thuật          | Tính khả thi kỹ thuật, chất lượng mã     | Cao       | Quyết định kiến trúc, dựng nguyên mẫu |
-| SH-04 | `<<Họ và tên>>`          | Trưởng nhóm sản phẩm          | Trải nghiệm người dùng, chất lượng mẫu   | Cao       | Thu thập yêu cầu, thiết kế mẫu, kiểm thử người dùng |
+| SH-01 | Phạm Quang Anh          | Nhà tài trợ — Enticy Studios  | Giá trị thu về so với công sức bỏ ra     | Cao       | Phê duyệt Charter, rà soát tại mốc, quyết định thay đổi lớn |
+| SH-02 | Nguyễn Thế Chiến          | Giám đốc dự án                | Bàn giao đúng phạm vi, tiến độ, công sức | Cao       | Điều hành hàng ngày, báo cáo tuần |
+| SH-03 | Nguyễn Việt Quang          | Trưởng nhóm kỹ thuật          | Tính khả thi kỹ thuật, chất lượng mã     | Cao       | Quyết định kiến trúc, dựng nguyên mẫu |
+| SH-04 | Phạm Quang Anh          | Trưởng nhóm sản phẩm          | Trải nghiệm người dùng, chất lượng mẫu   | Cao       | Thu thập yêu cầu, thiết kế mẫu, kiểm thử người dùng |
 | SH-05 | Thầy Nguyễn Đình Quảng   | Giảng viên hướng dẫn          | Chất lượng và tính đầy đủ của tài liệu quản lý dự án | Cao | Đánh giá tài liệu theo từng nhóm tiến trình |
 | SH-06 | Doanh nghiệp vừa và nhỏ  | Người dùng cuối / khách hàng tiềm năng của gói template và dịch vụ | Chi phí thấp, dễ dùng, nhanh | Cao | Phỏng vấn yêu cầu, kiểm thử chấp nhận |
 | SH-07 | Giáo viên, giảng viên    | Người dùng cuối               | Hỗ trợ tiếng Việt, dùng được trên máy trường, không giới hạn độ dài bài giảng | Trung bình | Phỏng vấn yêu cầu, kiểm thử chấp nhận |
@@ -384,7 +383,7 @@ Mọi yêu cầu thay đổi phải lập thành văn bản và ghi vào Change 
 
 | Thuộc tính        | Nội dung           |
 | ----------------- | ------------------ |
-| Họ và tên         | `<<Họ và tên>>`    |
+| Họ và tên         | Nguyễn Thế Chiến    |
 | Chức danh         | Giám đốc dự án (Project Manager) |
 | Ngày bổ nhiệm     | 2026-08-24         |
 | Người bổ nhiệm    | Nhà tài trợ (SH-01) |
@@ -422,8 +421,8 @@ Mọi yêu cầu thay đổi phải lập thành văn bản và ghi vào Change 
 
 | Thuộc tính     | Nội dung                       |
 | -------------- | ------------------------------ |
-| Họ và tên      | `<<Họ và tên>>`                |
-| Chức danh      | `<<Chức danh>>` — Enticy Studios |
+| Họ và tên      | Phạm Quang Anh                |
+| Chức danh      | Nhà sáng lập kiêm Giám đốc điều hành — Enticy Studios |
 | Đơn vị         | Enticy Studios (bối cảnh giả định) |
 | Liên hệ        | `<<Email / điện thoại>>`       |
 
@@ -439,7 +438,7 @@ Nhà tài trợ là người có thẩm quyền cao nhất của dự án và gi
 6. **Giải quyết vấn đề vượt cấp** mà Giám đốc dự án không xử lý được.
 7. **Ký nghiệm thu sản phẩm cuối cùng** theo mục 10.2.
 8. **Quyết định dừng dự án** bất kỳ lúc nào nếu căn cứ kinh doanh không còn đứng vững.
-9. **Chịu trách nhiệm theo dõi lợi ích sau khi dự án đóng**, theo [Benefit Management Plan §5.2](../00_Pre-project/02_Benefit_Management_Plan_v1.1.md#52-chuyển-giao-trách-nhiệm), và **chịu trách nhiệm sản xuất, định giá, bán các gói template thương mại** — hoạt động nằm ngoài phạm vi dự án.
+9. **Chịu trách nhiệm theo dõi lợi ích sau khi dự án đóng**, theo [Benefit Management Plan §6.2](../00_Pre-project/02_Benefit_Management_Plan_v1.1.md#62-chuyển-giao-trách-nhiệm), và **chịu trách nhiệm sản xuất, định giá, bán các gói template thương mại** — hoạt động nằm ngoài phạm vi dự án.
 
 ### 12.3. Chữ ký phê duyệt
 
@@ -447,10 +446,10 @@ Bằng việc ký dưới đây, Nhà tài trợ chính thức uỷ quyền kh�
 
 | Vai trò            | Họ và tên       | Chữ ký | Ngày |
 | ------------------ | --------------- | ------ | ---- |
-| Nhà tài trợ        | `<<Họ và tên>>` |        |      |
-| Giám đốc dự án     | `<<Họ và tên>>` |        |      |
+| Nhà tài trợ        | Phạm Quang Anh |        |      |
+| Giám đốc dự án     | Nguyễn Thế Chiến |        |      |
 | Giảng viên hướng dẫn (xác nhận học thuật) | Thầy Nguyễn Đình Quảng |  |  |
 
 ---
 
-*Tài liệu liên quan: [Business Case](../00_Pre-project/01_Business_Case_v1.1.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v1.1.md) · [Assumption Log](./02_Assumption_Log_v1.1.md)*
+*Tài liệu liên quan: [Business Case](../00_Pre-project/01_Business_Case_v1.1.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v1.1.md) · [Assumption Log](./02_Assumption_Log_v1.0.md)*

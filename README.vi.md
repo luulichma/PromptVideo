@@ -117,7 +117,7 @@ Dự án có hai nhánh đi theo hai hướng khác nhau:
 | `main` | Mã nguồn mở thuần tuý. Không mang bối cảnh doanh nghiệp, không có tài liệu quản lý dự án. |
 | `for-subjects-at-uni` | Bài tập môn Quản lý dự án phần mềm. Dự án được đặt trong một **bối cảnh doanh nghiệp giả định** (Enticy Studios là tổ chức chủ quản) để có đủ dữ kiện lập Business Case, phân tích tài chính và quản lý lợi ích. Phần mềm vẫn là mã nguồn mở Apache 2.0 trong cả hai nhánh — doanh thu trong bối cảnh giả định đến từ gói template có bản quyền và dịch vụ, không từ việc khoá tính năng. |
 
-Toàn bộ tài liệu quản lý dự án nằm trong [docs/](./docs/), tổ chức thành sáu thư mục — Pre-project và năm nhóm tiến trình PMBOK. Pre-project gồm [Business Case](./docs/00_Pre-project/01_Business_Case_v1.1.md) và [Benefit Management Plan](./docs/00_Pre-project/02_Benefit_Management_Plan_v1.1.md); Initiating gồm [Project Charter](./docs/01_Initiating/01_Project_Charter_v1.1.md) và [Assumption Log](./docs/01_Initiating/02_Assumption_Log_v1.1.md).
+Toàn bộ tài liệu quản lý dự án nằm trong [docs/](./docs/), tổ chức thành sáu thư mục — Pre-project và năm nhóm tiến trình PMBOK. Pre-project gồm [Business Case](./docs/00_Pre-project/01_Business_Case_v1.1.md) và [Benefit Management Plan](./docs/00_Pre-project/02_Benefit_Management_Plan_v1.1.md); Initiating gồm [Project Charter](./docs/01_Initiating/01_Project_Charter_v1.0.md) và [Assumption Log](./docs/01_Initiating/02_Assumption_Log_v1.0.md).
 
 **Lưu ý:** mọi số liệu tài chính, quy mô người dùng và đơn giá trong các tài liệu đó là **giả định phục vụ học tập**, được đăng ký và theo dõi tại Assumption Log. Các thông số kỹ thuật (hỗ trợ trình duyệt, giới hạn bộ nhớ) là số liệu thật.
 
