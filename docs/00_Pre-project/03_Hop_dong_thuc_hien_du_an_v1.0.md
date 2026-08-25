@@ -7,7 +7,7 @@
 | **Nhóm tiến trình** | Pre-project                     |
 | **Tên tài liệu**    | Hợp đồng thực hiện dự án       |
 | **Phiên bản**       | Ver. 1.0                       |
-| **Nhóm thực hiện**  | `<<Tên nhóm>>`                 |
+| **Nhóm thực hiện**  | Nhóm 02                 |
 | **Ngày phát hành**  | 2026-08-24                     |
 | **Trạng thái**      | Draft — chờ ký                 |
 
@@ -77,7 +77,7 @@
 
 | Thuộc tính     | Nội dung                       |
 | -------------- | ------------------------------ |
-| Tên nhóm       | `<<Tên nhóm>>`                 |
+| Tên nhóm       | Nhóm 02                 |
 | Đại diện       | Nguyễn Thế Chiến               |
 | Chức danh      | Giám đốc dự án (Project Manager) — SH-02 |
 | Thành viên     | Nguyễn Thế Chiến · Nguyễn Việt Quang · Phạm Quang Anh |
@@ -272,7 +272,7 @@ Quy trình chi tiết tại [Project Charter §10.3](../01_Initiating/01_Project
 1. **Mã nguồn** do Bên B tạo ra được phát hành theo giấy phép **Apache License 2.0**, công khai trên kho mã của dự án. Không có phiên bản đóng, không có cổng khoá tính năng (ràng buộc CT-07).
 2. **Bên A sở hữu** sản phẩm bàn giao, tài sản đồ hoạ đã mua bằng ngân sách dự án, và toàn bộ bộ tài liệu quản lý dự án.
 3. **Bên B giữ quyền tác giả** đối với phần đóng góp của mình và được ghi nhận trong mã nguồn, tài liệu và hồ sơ năng lực cá nhân.
-4. Cả hai bên hiểu và chấp nhận rằng Apache 2.0 cho phép **bất kỳ bên thứ ba nào fork mã nguồn và cạnh tranh hợp pháp**. Đây là quyết định có chủ đích, không phải sơ suất — xem [Business Case §4.2](./01_Business_Case_v1.1.md#42-phương-án-mô-hình-doanh-thu).
+4. Cả hai bên hiểu và chấp nhận rằng Apache 2.0 cho phép **bất kỳ bên thứ ba nào fork mã nguồn và cạnh tranh hợp pháp**. Đây là quyết định có chủ đích, không phải sơ suất — xem [Business Case §3.2](./01_Business_Case_v1.1.md#32-phương-án-mô-hình-doanh-thu).
 5. Tài sản đồ hoạ đưa vào các gói template phải có giấy phép cho phép **phân phối lại trong sản phẩm phái sinh**. Bên B chịu trách nhiệm lập danh mục giấy phép cho từng tài sản trước mốc M6.
 
 ---

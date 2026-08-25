@@ -29,7 +29,9 @@ Thứ tự đọc: **Business Case → Benefit Management Plan → Hợp đồng
 
 **Nội dung baseline (áp dụng cho cả bộ tài liệu):** mô hình doanh thu là **gói template có bản quyền + dịch vụ B2B** — không dùng thuê bao khoá tính năng, vì mô hình đó không thực thi được với sản phẩm mã nguồn mở chạy client-side. Quy mô đội 3 người (450 giờ), vốn tiền mặt 1.500.000 VND, không giới hạn độ dài video. Thẩm định tài chính: **NPV +165,1 triệu VND, BCR 2,08, hoà vốn ở 48% kịch bản cơ sở**.
 
-**Thay đổi ở Ver 1.1 (Business Case và Benefit Management Plan):** hai tài liệu được tách lại theo đúng chuyên môn. Business Case bổ sung mục *Project Objectives* và giữ trọng tâm ở nhu cầu — mục tiêu — khả thi; toàn bộ phần tính toán tài chính chuyển sang Benefit Management Plan §4, nơi bốn công cụ NPV, BCR, Payback và ROI được trình bày kèm công thức và cách áp dụng.
+**Thay đổi ở Ver 1.1 (Business Case và Benefit Management Plan):** hai tài liệu được tách lại theo đúng chuyên môn và rút gọn về đúng vai trò. Business Case giữ mạch nhu cầu — mục tiêu — phương án — khả thi — khuyến nghị, với mục tiêu nghiệp vụ BO-01 → BO-06 đặt tại §1.1; toàn bộ phần tính toán tài chính chuyển sang Benefit Management Plan §4, nơi bốn công cụ NPV, BCR, Payback và ROI được trình bày kèm công thức và cách áp dụng.
+
+**Về liên kết chéo.** Hai tài liệu Ver 1.1 **không dùng liên kết inline sang tài liệu khác**, vì bản `.docx` được xuất riêng từng file nên mọi liên kết như vậy đều thành liên kết chết. Thay vào đó chúng nhắc tên tài liệu và số mục dưới dạng chữ (`Benefit Management Plan §4`), và tra nguồn số liệu theo mã `AS-xx` tại Assumption Log. Khi sửa số mục ở một tài liệu, phải soát lại các tài liệu còn lại: `grep -rn "Business Case §\|Benefit Management Plan §" docs/`
 
 Mẫu tài liệu trống: [`_template/00_Document_Template_v1.0.md`](./_template/00_Document_Template_v1.0.md)
 
@@ -123,7 +125,7 @@ Theo mẫu giảng viên cung cấp, thứ tự cố định:
 1. **Điền hết placeholder.** Soát bằng: `grep -rn '<<' docs/`
 2. **Kiểm tra nhất quán chéo:**
    - Summary Budget trong Project Charter, Điều 4 Hợp đồng và bảng chi phí tại Benefit Management Plan §4.1 khớp nhau: **1.500.000 VND tiền mặt + 450 giờ công**
-   - Chuỗi truy vết đầy đủ: `BO-xx` (Business Case §3) → `OB-xx` (Charter §3.1) → `BN-xx` (BMP §2) → `MT-xx` (BMP §7)
+   - Chuỗi truy vết đầy đủ: `BO-xx` (Business Case §1.1) → `OB-xx` (Charter §3.1) → `BN-xx` (BMP §2) → `MT-xx` (BMP §7)
    - NPV +165,1 triệu · BCR 2,08 · ngưỡng hoà vốn 48% xuất hiện thống nhất ở Business Case, BMP và Hợp đồng
    - Mọi giả định nêu trong các tài liệu đều có ID `AS-xx` trong Assumption Log
 3. **Kiểm tra ràng buộc đề bài:** kinh phí < 1.000.000.000 VND, thời gian ≤ 6 tháng, ít nhất 3 deliverable nghiệp vụ chính.

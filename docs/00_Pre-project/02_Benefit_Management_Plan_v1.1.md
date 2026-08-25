@@ -7,7 +7,7 @@
 | **Nhóm tiến trình** | Pre-project                     |
 | **Tên tài liệu**    | Benefit Management Plan        |
 | **Phiên bản**       | Ver. 1.1                       |
-| **Nhóm thực hiện**  | `<<Tên nhóm>>`                 |
+| **Nhóm thực hiện**  | Nhóm 02                 |
 | **Ngày phát hành**  | 2026-08-24                     |
 | **Trạng thái**      | Draft — chờ phê duyệt          |
 
@@ -26,8 +26,8 @@
 
 | No | Phiên bản | Ngày thay đổi | Lý do thay đổi | Nội dung thay đổi | Người thực hiện | Người phê duyệt |
 | -- | --------- | ------------- | -------------- | ----------------- | --------------- | --------------- |
-| 1  | Ver 1.0   | 2026-08-20    | Tạo mới        | Khởi tạo Benefit Management Plan: danh mục lợi ích, chỉ số đo, mốc hiện thực hoá, cơ chế theo dõi | Nguyễn Thế Chiến | Phạm Quang Anh |
-| 2  | Ver 1.1   | 2026-08-24    | Chỉnh sửa      | Bổ sung mục **§4 Financial Appraisal** — tiếp nhận toàn bộ phần thẩm định tài chính chuyển sang từ Business Case, trình bày công thức và cách áp dụng bốn công cụ **NPV, BCR, Payback, ROI**, kèm bảng dòng tiền chiết khấu, phân tích độ nhạy và điểm hoà vốn. Bổ sung cột truy vết BO-xx vào danh mục lợi ích và cột lợi ích vào bảng chỉ số | Nguyễn Thế Chiến | Phạm Quang Anh |
+| 1  | Ver 1.0   | 2026-08-20    | Tạo mới        | Khởi tạo Benefit Management Plan: danh mục lợi ích, chỉ số đo, chủ sở hữu, lộ trình và cơ chế theo dõi | Nguyễn Thế Chiến | Phạm Quang Anh |
+| 2  | Ver 1.1   | 2026-08-24    | Chỉnh sửa      | Tiếp nhận toàn bộ phần thẩm định tài chính từ Business Case: bổ sung **§4** với bốn công cụ NPV, BCR, Payback, ROI kèm công thức, bảng dòng tiền chiết khấu, tính BCR và phân tích độ nhạy. Rút gọn văn xuôi về đúng vai trò tài liệu theo dõi lợi ích | Nguyễn Thế Chiến | Phạm Quang Anh |
 
 <div style="page-break-after: always"></div>
 
@@ -38,7 +38,7 @@
 1. [Purpose and Scope](#1-purpose-and-scope)
 2. [Target Benefits](#2-target-benefits)
 3. [Strategic Alignment](#3-strategic-alignment)
-4. [Financial Appraisal — công cụ NPV và BCR](#4-financial-appraisal--công-cụ-npv-và-bcr)
+4. [Financial Appraisal — NPV, BCR, Payback, ROI](#4-financial-appraisal--npv-bcr-payback-roi)
 5. [Timeframe for Realizing Benefits](#5-timeframe-for-realizing-benefits)
 6. [Benefits Owner](#6-benefits-owner)
 7. [Metrics](#7-metrics)
@@ -49,40 +49,28 @@
 
 <!-- ============================== NỘI DUNG ============================== -->
 
-> **Lưu ý về bối cảnh.** Tài liệu lập trên bối cảnh doanh nghiệp giả định (Enticy Studios) phục vụ môn Quản lý dự án phần mềm. Số liệu tài chính và khối lượng bán là giả định, xem [Business Case §9](./01_Business_Case_v1.1.md#9-phụ-lục-a--nguồn-và-giả-định-số-liệu).
-
-> **Phân vai tài liệu.** [Business Case](./01_Business_Case_v1.1.md) trả lời *có nên làm dự án này không*. Tài liệu này trả lời *dự án tạo ra lợi ích gì, đáng bao nhiêu tiền, đo bằng cách nào và ai chịu trách nhiệm*. Vì vậy toàn bộ phần **định lượng tài chính** — NPV, BCR, hoàn vốn, độ nhạy — nằm ở đây (§4), còn Business Case chỉ trích kết quả.
+> **Ghi chú.** Tài liệu lập trên bối cảnh doanh nghiệp giả định (Enticy Studios), phục vụ môn Quản lý dự án phần mềm. Số liệu tài chính và khối lượng bán là giả định, đăng ký kèm nguồn tại **Assumption Log** (`01_Initiating/02_Assumption_Log_v1.0.md`) theo mã `AS-xx`.
 
 ---
 
 ## 1. Purpose and Scope
 
-### 1.1. Mục đích
+**Business Case** trả lời *có nên làm dự án này không*. Tài liệu này trả lời câu tiếp theo: **dự án tạo ra lợi ích gì, đáng bao nhiêu tiền, đo bằng cách nào, ai chịu trách nhiệm, và khi nào lợi ích được coi là đã hiện thực hoá.**
 
-Tài liệu này xác định **những lợi ích mà dự án PromptVideo phải tạo ra, giá trị quy đổi của chúng, cách đo, ai chịu trách nhiệm, và khi nào chúng được coi là đã hiện thực hoá**. Nó tồn tại vì một lý do cụ thể: dự án kết thúc ở tuần 15 khi phần mềm được bàn giao, nhưng **phần lớn lợi ích chỉ xuất hiện sau đó**.
-
-Với dự án này, việc theo dõi lợi ích còn quan trọng hơn bình thường. Vốn tiền mặt chỉ 1.500.000 VND, nên **rủi ro thật không phải là mất tiền mà là lãng phí 450 giờ công sức**. Chỉ có việc đo lợi ích mới cho biết số giờ đó có đáng bỏ ra hay không — và đó chính là câu hỏi mà công cụ NPV và BCR ở §4 được dùng để trả lời.
-
-### 1.2. Phạm vi
+Nó tồn tại vì dự án kết thúc ở tuần 15 khi phần mềm được bàn giao, nhưng **phần lớn lợi ích chỉ xuất hiện sau đó**. Với dự án này việc theo dõi lợi ích còn quan trọng hơn bình thường: vốn tiền mặt chỉ 1.500.000 VND, nên **rủi ro thật không phải mất tiền mà là lãng phí 450 giờ công sức** — chỉ có đo lợi ích mới cho biết số giờ đó có đáng bỏ ra hay không.
 
 | Trong phạm vi | Ngoài phạm vi |
 | ------------- | ------------- |
-| Lợi ích phát sinh từ sản phẩm PromptVideo và các gói template đi kèm | Lợi ích của các sản phẩm khác trong danh mục Enticy Studios |
+| Lợi ích từ sản phẩm PromptVideo và các gói template đi kèm | Lợi ích của sản phẩm khác trong danh mục Enticy Studios |
 | Chu kỳ theo dõi 3 năm kể từ khi bàn giao | Lợi ích sau năm thứ 3 |
-| Lợi ích cho người dùng cuối, cho tổ chức chủ quản, và cho đội dự án | Lợi ích gián tiếp không đo được (ví dụ "uy tín thương hiệu" chung chung) |
-| Thẩm định tài chính của toàn bộ vòng đời 3 năm | Định giá tài sản vô hình, định giá doanh nghiệp |
+| Lợi ích cho người dùng cuối, tổ chức chủ quản và đội dự án | Lợi ích gián tiếp không đo được (ví dụ "uy tín thương hiệu") |
+| Thẩm định tài chính toàn bộ vòng đời 3 năm | Định giá tài sản vô hình, định giá doanh nghiệp |
 
-### 1.3. Tài liệu liên quan
-
-[Business Case](./01_Business_Case_v1.1.md) là nguồn gốc của nhu cầu và mục tiêu nghiệp vụ BO-xx. [Project Charter](../01_Initiating/01_Project_Charter_v1.0.md) chứa các mục tiêu kỹ thuật đo được OB-xx mà dự án phải đạt để lợi ích có cơ hội xảy ra. Mọi giả định nêu ở đây đều có ID tương ứng trong [Assumption Log](../01_Initiating/02_Assumption_Log_v1.0.md).
-
-**Chuỗi truy vết:** `BO-xx` (mục tiêu nghiệp vụ, Business Case §3) → `OB-xx` (mục tiêu kỹ thuật đo được, Charter §3.1) → `BN-xx` (lợi ích, §2 tài liệu này) → `MT-xx` (chỉ số đo, §7 tài liệu này).
+**Chuỗi truy vết:** `BO-xx` (mục tiêu nghiệp vụ — Business Case §1.1) → `OB-xx` (mục tiêu kỹ thuật đo được — Project Charter §3.1) → `BN-xx` (lợi ích — §2 tài liệu này) → `MT-xx` (chỉ số đo — §7 tài liệu này).
 
 ---
 
 ## 2. Target Benefits
-
-### 2.1. Danh mục lợi ích (Benefits Register)
 
 **Nhóm lợi ích tài chính — theo mô hình doanh thu M2:**
 
@@ -106,18 +94,9 @@ Với dự án này, việc theo dõi lợi ích còn quan trọng hơn bình th
 | BN-11 | Nâng cao năng lực đội ngũ              | — | MT-12 | 0/3 | ≥ 2/3          | Khi kết thúc dự án      | Giám đốc dự án |
 | BN-12 | Tài sản mã nguồn mở tái sử dụng        | — | — | 0 | ≥ 2 (bộ dựng khung hình, pipeline mã hoá theo luồng) | Khi kết thúc dự án | Nhà tài trợ |
 
-### 2.2. Phân loại theo thời điểm xuất hiện
+**Hai nhóm theo thời điểm.** BN-07 → BN-12 hiện thực hoá **trong dự án** (nghiệm thu ngay tại các mốc, đội dự án chịu trách nhiệm trực tiếp). BN-01 → BN-06 hiện thực hoá **sau bàn giao**, được chuyển giao cho nhà tài trợ tại buổi đóng dự án.
 
-| Nhóm                                          | Lợi ích                                     | Ghi chú |
-| --------------------------------------------- | ------------------------------------------- | ------- |
-| **Hiện thực hoá trong dự án** (trước tuần 15) | BN-07, BN-08, BN-09, BN-10, BN-11, BN-12    | Nghiệm thu được ngay tại các mốc |
-| **Hiện thực hoá sau bàn giao** (Năm 1–3)      | BN-01, BN-02, BN-03, BN-04, BN-05, BN-06    | Cần theo dõi liên tục sau khi dự án đóng |
-
-Phân biệt này quan trọng: đội dự án chỉ chịu trách nhiệm trực tiếp với nhóm thứ nhất. Nhóm thứ hai được bàn giao cho nhà tài trợ tại buổi đóng dự án.
-
-### 2.3. Lưu ý về lợi ích BN-05
-
-BN-05 là lợi ích **cho người dùng**, không phải doanh thu cho tổ chức. Nó được đưa vào danh mục vì đây chính là cơ chế tạo ra BN-01 → BN-03: phần mềm miễn phí thu hút người dùng, một phần trong số đó mua gói template hoặc trở thành khách hàng dịch vụ. Nếu BN-05 không đạt (ví dụ vì sản phẩm khó dùng nên không ai chuyển sang), thì cả ba dòng doanh thu đều không có nền để đứng — xem rủi ro BR-04.
+**Lưu ý về BN-05.** Đây là lợi ích *cho người dùng*, không phải doanh thu, nhưng nó chính là cơ chế tạo ra BN-01 → BN-03: phần mềm miễn phí thu hút người dùng, một phần trong số đó mua gói template hoặc trở thành khách hàng dịch vụ. Nếu BN-05 không đạt thì cả ba dòng doanh thu không có nền để đứng — xem rủi ro BR-04.
 
 ---
 
@@ -127,25 +106,20 @@ BN-05 là lợi ích **cho người dùng**, không phải doanh thu cho tổ ch
 | -------------------------------------------- | ----------------------- | ------------- |
 | Xây dựng dòng doanh thu không cần vốn lớn     | BN-01, BN-02, BN-03     | Bán nội dung và dịch vụ, không cần đầu tư hạ tầng |
 | Giữ chi phí vận hành ở mức tối thiểu          | BN-04                   | Kiến trúc client-side, không có máy chủ render |
-| Tạo khác biệt trên thị trường công cụ nội địa | BN-05, BN-06, BN-07, BN-10 | Miễn phí, nhanh hơn, không giới hạn độ dài, xử lý tiếng Việt tốt hơn |
+| Tạo khác biệt trên thị trường công cụ nội địa | BN-05, BN-06, BN-07, BN-10 | Miễn phí, nhanh hơn, không giới hạn độ dài, tiếng Việt tốt hơn |
 | Giảm rủi ro pháp lý về dữ liệu cá nhân        | BN-09                   | Không thu thập, không lưu trữ nội dung người dùng |
 | Xây dựng uy tín kỹ thuật qua mã nguồn mở      | BN-12                   | Kho mã công khai Apache 2.0, là nền cho dòng doanh thu dịch vụ |
 | Tích luỹ năng lực và tài sản kỹ thuật         | BN-11, BN-12            | Làm chủ WebCodecs, tách mô-đun dùng lại |
 
 ---
 
-## 4. Financial Appraisal — công cụ NPV và BCR
+## 4. Financial Appraisal — NPV, BCR, Payback, ROI
 
-Mục này quy đổi danh mục lợi ích ở §2 thành tiền và đối chiếu với chi phí, để trả lời câu hỏi: **dự án có tạo ra giá trị không, và tạo ra bao nhiêu?**
+Mục này quy đổi danh mục lợi ích ở §2 thành tiền và đối chiếu với chi phí, để trả lời: **dự án có tạo ra giá trị không, và bao nhiêu?**
 
 ### 4.1. Dữ liệu đầu vào — chi phí
 
-Chi phí được tách thành hai loại và **không bao giờ cộng gộp thành một con số duy nhất**, vì chúng trả lời hai câu hỏi khác nhau:
-
-| Loại chi phí                    | Ý nghĩa | Dùng để trả lời |
-| ------------------------------- | ------- | --------------- |
-| **Chi phí tiền mặt**            | Tiền thật phải chi ra | *Có cần huy động vốn không? Có rủi ro mất tiền không?* |
-| **Chi phí cơ hội của công sức** | Giá trị 450 giờ đội bỏ ra, quy đổi 80.000 VND/giờ ([AS-02](../01_Initiating/02_Assumption_Log_v1.0.md)); **không phải tiền chi ra** | *Đội có nên dùng số giờ đó vào việc này thay vì việc khác?* |
+Chi phí tách thành hai loại và **không bao giờ cộng gộp**, vì trả lời hai câu hỏi khác nhau: **chi phí tiền mặt** (tiền thật phải chi) trả lời *có cần huy động vốn không*; **chi phí cơ hội của công sức** (450 giờ quy đổi 80.000 VND/giờ — AS-02, không phải tiền chi ra) trả lời *đội có nên dùng số giờ đó vào việc này thay vì việc khác*.
 
 **Năm 0 — giai đoạn dự án (15 tuần):**
 
@@ -166,8 +140,8 @@ Chi phí được tách thành hai loại và **không bao giờ cộng gộp th
 | Hạ tầng, tên miền, chứng chỉ                    | 1.500.000 |  3.000.000 |  6.000.000 |
 | Bản quyền tài sản đồ hoạ cho gói template mới   | 3.000.000 |  6.000.000 | 10.000.000 |
 | Phí cổng thanh toán và kênh bán (~5% doanh thu) | 1.500.000 |  5.000.000 | 10.000.000 |
-| **Cộng tiền mặt** ([AS-07](../01_Initiating/02_Assumption_Log_v1.0.md)) | **6.000.000** | **14.000.000** | **26.000.000** |
-| Bảo trì, làm gói template mới, thực hiện dịch vụ ([AS-30](../01_Initiating/02_Assumption_Log_v1.0.md)) | 200 giờ | 400 giờ | 700 giờ |
+| **Cộng tiền mặt** (AS-07)                       | **6.000.000** | **14.000.000** | **26.000.000** |
+| Bảo trì, làm gói template mới, thực hiện dịch vụ (AS-30) | 200 giờ | 400 giờ | 700 giờ |
 | **Quy đổi công sức**                            | **16.000.000** | **32.000.000** | **56.000.000** |
 
 ### 4.2. Dữ liệu đầu vào — lợi ích tài chính
@@ -181,27 +155,21 @@ Ba dòng doanh thu của mô hình M2, tương ứng BN-01 → BN-03:
 | Hỗ trợ có SLA                 | 12.000.000 VND/năm/khách hàng | 0 | 2 khách hàng<br>24.000.000 | 5 khách hàng<br>60.000.000 |
 | **TỔNG DOANH THU**            |                             | **35.920.000** | **128.740.000** | **256.500.000** |
 
-Năm 1 không có doanh thu hỗ trợ SLA vì sản phẩm chưa đủ thời gian vận hành để doanh nghiệp cam kết hợp đồng dài hạn ([AS-29](../01_Initiating/02_Assumption_Log_v1.0.md)).
+Năm 1 không có doanh thu SLA vì sản phẩm chưa đủ thời gian vận hành để doanh nghiệp cam kết hợp đồng dài hạn (AS-29).
 
-**Lợi ích phi tài chính không được quy đổi thành tiền.** BN-05 đến BN-12 có giá trị thật nhưng việc gán một con số VND cho "nội dung không rời khỏi tổ chức" hay "năng lực đội ngũ" sẽ là con số bịa. Chúng được theo dõi bằng chỉ số riêng ở §7, không đưa vào tử số của NPV và BCR. Hệ quả: **các chỉ tiêu tài chính dưới đây là ước lượng thận trọng** — giá trị thật của dự án cao hơn con số tính ra.
+**Lợi ích phi tài chính không được quy đổi thành tiền.** BN-05 → BN-12 có giá trị thật nhưng gán một con số VND cho "nội dung không rời khỏi tổ chức" sẽ là con số bịa. Chúng được theo dõi bằng chỉ số riêng ở §7, không đưa vào tử số của NPV và BCR. Hệ quả: **các chỉ tiêu dưới đây là ước lượng thận trọng** — giá trị thật của dự án cao hơn con số tính ra.
 
 ### 4.3. Bốn công cụ thẩm định và công thức
 
 | Công cụ | Công thức | Ý nghĩa | Ngưỡng chấp nhận |
 | ------- | --------- | ------- | ---------------- |
-| **Hệ số chiết khấu** (DF) | `DF(t) = 1 / (1 + r)^t` | Quy giá trị của tiền ở năm `t` về thời điểm hiện tại. Với `r = 12%` ([AS-06](../01_Initiating/02_Assumption_Log_v1.0.md)) | — |
-| **NPV** — Giá trị hiện tại ròng | `NPV = Σ (Bₜ − Cₜ) / (1 + r)^t` | Tổng giá trị **tuyệt đối** mà dự án tạo ra sau khi trừ chi phí, tính theo tiền hôm nay | **NPV > 0** |
+| **Hệ số chiết khấu** (DF) | `DF(t) = 1 / (1 + r)^t` | Quy giá trị của tiền ở năm `t` về hiện tại, với `r = 12%` (AS-06) | — |
+| **NPV** — Giá trị hiện tại ròng | `NPV = Σ (Bₜ − Cₜ) / (1 + r)^t` | Giá trị **tuyệt đối** dự án tạo ra sau khi trừ chi phí, tính theo tiền hôm nay | **NPV > 0** |
 | **BCR** — Tỷ số lợi ích / chi phí | `BCR = PV(lợi ích) / PV(chi phí)` | **Hiệu suất** của đồng vốn: một đồng chi phí đổi lấy bao nhiêu đồng lợi ích | **BCR > 1** |
-| **Payback** — Thời gian hoàn vốn | Thời điểm luỹ kế dòng ròng đổi dấu từ âm sang dương | Bao lâu thì thu hồi được vốn bỏ ra | < 3 năm |
+| **Payback** — Thời gian hoàn vốn | Thời điểm luỹ kế dòng ròng đổi dấu từ âm sang dương | Bao lâu thu hồi được vốn bỏ ra | < 3 năm |
 | **ROI** — Tỷ suất hoàn vốn | `ROI = (Tổng lợi ích ròng chưa chiết khấu) / (Vốn đầu tư ban đầu)` | Mức sinh lời so với vốn ban đầu, **không xét giá trị thời gian của tiền** | > 0% |
 
-**Quan hệ giữa NPV và BCR — hai mặt của cùng một phép tính.** NPV là hiệu (`PV lợi ích − PV chi phí`), BCR là thương (`PV lợi ích ÷ PV chi phí`). Vì vậy chúng luôn cùng dấu kết luận:
-
-```
-NPV > 0  ⟺  BCR > 1        NPV = 0  ⟺  BCR = 1        NPV < 0  ⟺  BCR < 1
-```
-
-Dùng cả hai vì mỗi cái trả lời một câu hỏi khác nhau. NPV nói **quy mô giá trị** — một dự án NPV 165 triệu đáng giá hơn dự án NPV 10 triệu. BCR nói **hiệu suất** — nó cho phép so sánh hai dự án có quy mô vốn chênh lệch, điều mà NPV không làm được. Với PromptVideo, BCR còn có một công dụng riêng: **nghịch đảo của BCR chính là điểm hoà vốn**, xem §4.7.
+**NPV và BCR là hai mặt của cùng một phép tính** — NPV là hiệu `PV(lợi ích) − PV(chi phí)`, BCR là thương `PV(lợi ích) ÷ PV(chi phí)`, nên `NPV > 0 ⟺ BCR > 1`. Dùng cả hai vì NPV nói **quy mô giá trị** còn BCR nói **hiệu suất** — BCR cho phép so sánh hai dự án chênh lệch quy mô vốn, điều NPV không làm được. Riêng với dự án này, **nghịch đảo của BCR chính là điểm hoà vốn** (§4.7).
 
 ### 4.4. Áp dụng — bảng dòng tiền chiết khấu
 
@@ -231,18 +199,14 @@ Hệ số chiết khấu với `r = 12%`: `DF(0) = 1,0000` · `DF(1) = 0,8929` �
 
 ### 4.5. Áp dụng — tính BCR
 
-BCR cần tách riêng **giá trị hiện tại của lợi ích** và **giá trị hiện tại của chi phí**, thay vì gộp thành dòng ròng như bảng trên.
+BCR cần tách riêng **PV của lợi ích** và **PV của chi phí**, thay vì gộp thành dòng ròng như bảng trên.
 
-**Giá trị hiện tại của lợi ích** (doanh thu ba năm):
-
-| Năm | Doanh thu   |     DF | Giá trị hiện tại |
+| Năm | Doanh thu   |     DF | PV(lợi ích)      |
 | --- | ----------: | -----: | ---------------: |
 | 1   |  35.920.000 | 0,8929 |      32.071.429  |
 | 2   | 128.740.000 | 0,7972 |     102.630.740  |
 | 3   | 256.500.000 | 0,7118 |     182.571.634  |
-| **PV(lợi ích)** | | | **317.273.803** |
-
-**Giá trị hiện tại của chi phí:**
+| **Cộng** | | | **317.273.803** |
 
 | Thành phần chi phí          | Năm 0      | Năm 1      | Năm 2      | Năm 3      | PV cộng dồn |
 | --------------------------- | ---------: | ---------: | ---------: | ---------: | ----------: |
@@ -252,14 +216,12 @@ BCR cần tách riêng **giá trị hiện tại của lợi ích** và **giá t
 | Công sức (đã chiết khấu)    | 36.000.000 | 14.285.714 | 25.510.204 | 39.859.713 | 115.655.631 |
 | **PV(chi phí) — kinh tế đầy đủ** | | | | | **152.179.783** |
 
-**Kết quả:**
-
 | Cơ sở tính | PV(lợi ích) | PV(chi phí) | BCR | Diễn giải |
 | ---------- | ----------: | ----------: | --: | --------- |
 | Tiền mặt   | 317.273.803 |  36.524.152 | **8,69** | Mỗi 1 đồng **tiền mặt** chi ra đổi lấy 8,69 đồng lợi ích |
 | **Kinh tế đầy đủ** | 317.273.803 | 152.179.783 | **2,08** | Mỗi 1 đồng chi phí (gồm cả công sức quy đổi) đổi lấy 2,08 đồng lợi ích |
 
-*Kiểm chứng tính nhất quán: NPV kinh tế = 317.273.803 − 152.179.783 = 165.094.020 VND — khớp với Bảng B ở §4.4. Và BCR = 2,08 > 1 tương ứng NPV > 0, đúng như quan hệ nêu ở §4.3.*
+*Kiểm chứng nhất quán: 317.273.803 − 152.179.783 = 165.094.020 VND — khớp Bảng B ở §4.4; và BCR 2,08 > 1 tương ứng NPV > 0, đúng quan hệ nêu ở §4.3.*
 
 ### 4.6. Đọc kết quả — chỉ tiêu nào đáng tin
 
@@ -272,15 +234,14 @@ BCR cần tách riêng **giá trị hiện tại của lợi ích** và **giá t
 | **ROI** (chưa chiết khấu)           | ~24.900% — *không có ý nghĩa* | **623,1%** | > 0% | ✅ |
 | **IRR** (xấp xỉ)                    | *không hội tụ có ý nghĩa* | **~126%** | > r = 12% | ✅ |
 
-> **Ghi chú phương pháp — quan trọng khi đọc bảng trên.** Khi vốn tiền mặt bỏ ra tiến gần về 0, **ROI, BCR và thời gian hoàn vốn trên cơ sở tiền mặt đều mất ý nghĩa** vì mẫu số quá nhỏ: chia bất cứ khoản lãi nào cho 1.500.000 cũng ra một tỷ lệ khổng lồ. Chỉ tiêu đáng dùng để ra quyết định ở dự án này là **cột cơ sở kinh tế đầy đủ** — cột đã trừ cả chi phí cơ hội của 450 giờ. Cột cơ sở tiền mặt được trình bày ở đây chỉ để chỉ ra rằng con số đó không nên được dùng.
+> **Ghi chú phương pháp.** Khi vốn tiền mặt tiến gần về 0, **ROI, BCR và payback trên cơ sở tiền mặt đều mất ý nghĩa** vì mẫu số quá nhỏ: chia bất cứ khoản lãi nào cho 1.500.000 cũng ra một tỷ lệ khổng lồ. Chỉ tiêu dùng để ra quyết định là **cột cơ sở kinh tế đầy đủ** — đã trừ cả chi phí cơ hội của 450 giờ. Cột cơ sở tiền mặt trình bày ở đây chỉ để chỉ ra rằng con số đó không nên được dùng.
 
-*Cách tính payback danh nghĩa (cơ sở kinh tế): vốn ban đầu 37.500.000; hết Năm 1 luỹ kế đạt 13.920.000, còn thiếu 23.580.000; dòng ròng Năm 2 là 82.740.000 → 23.580.000 / 82.740.000 = 0,29 năm. Tổng: 1 + 0,29 = **1,29 năm**.*
-
-*Cách tính ROI (cơ sở kinh tế): tổng doanh thu 3 năm 421.160.000 − tổng chi phí vận hành 150.000.000 − vốn ban đầu 37.500.000 = 233.660.000. ROI = 233.660.000 / 37.500.000 = **623,1%**.*
+*Payback danh nghĩa (cơ sở kinh tế): vốn ban đầu 37.500.000; hết Năm 1 luỹ kế 13.920.000, còn thiếu 23.580.000; dòng ròng Năm 2 là 82.740.000 → 23.580.000 / 82.740.000 = 0,29. Tổng 1 + 0,29 = **1,29 năm**.*
+*ROI (cơ sở kinh tế): 421.160.000 − 150.000.000 − 37.500.000 = 233.660.000 → 233.660.000 / 37.500.000 = **623,1%**.*
 
 ### 4.7. Phân tích độ nhạy và điểm hoà vốn
 
-Biến số rủi ro nhất là **khối lượng bán được** — số gói template ([AS-05](../01_Initiating/02_Assumption_Log_v1.0.md)) và số hợp đồng dịch vụ ([AS-28](../01_Initiating/02_Assumption_Log_v1.0.md)). Bảng dưới nhân doanh thu cả ba năm với hệ số `k`, giữ nguyên chi phí, tính trên cơ sở kinh tế đầy đủ:
+Biến số rủi ro nhất là **khối lượng bán được** — số gói template (AS-05) và số hợp đồng dịch vụ (AS-28). Bảng dưới nhân doanh thu cả ba năm với hệ số `k`, giữ nguyên chi phí, tính trên cơ sở kinh tế đầy đủ:
 
 | Kịch bản  | Hệ số `k` | PV(lợi ích)  | NPV (VND)        |  BCR | Kết luận |
 | --------- | --------- | -----------: | ---------------: | ---: | -------- |
@@ -288,23 +249,19 @@ Biến số rủi ro nhất là **khối lượng bán được** — số gói 
 | **Cơ sở** | 100%      | 317.273.803  | **+165.094.020** | **2,08** | Khả thi |
 | Lạc quan  | 150%      | 475.910.705  |   +323.730.922   | 3,13 | Rất hiệu quả |
 
-**Điểm hoà vốn.** Dự án hoà vốn khi `NPV = 0`, tức khi `BCR = 1`, tức khi `PV(lợi ích) = PV(chi phí)`:
+**Điểm hoà vốn.** Dự án hoà vốn khi `NPV = 0`, tức `BCR = 1`, tức `PV(lợi ích) = PV(chi phí)`:
 
 ```
 k × 317.273.803 = 152.179.783   →   k = 152.179.783 / 317.273.803 ≈ 0,48
 ```
 
-Cách khác cho cùng kết quả: `k = 1 / BCR = 1 / 2,08 ≈ 0,48`. Đây chính là công dụng thực tế của BCR — **nghịch đảo của nó là tỷ lệ doanh thu tối thiểu phải đạt**.
+Cách khác cho cùng kết quả: `k = 1 / BCR = 1 / 2,08 ≈ 0,48`. Ngưỡng **48% kịch bản cơ sở** tương đương khoảng **38 / 125 / 240 gói template** và **1 / 2 / 4 hợp đồng dịch vụ** trong ba năm — đây là ngưỡng theo dõi tại điểm kiểm tra §5.
 
-Ngưỡng **48% kịch bản cơ sở** tương đương khoảng **38 / 125 / 240 gói template** và **1 / 2 / 4 hợp đồng dịch vụ** trong ba năm. Đây là ngưỡng theo dõi tại điểm kiểm tra §5.2.
-
-**Biên an toàn 52%** rộng, vì **cấu trúc chi phí gần như toàn bộ là biến phí**: không bán được gói template thì cũng không phải mua tài sản đồ hoạ cho gói đó. Hệ quả quan trọng: kể cả ở kịch bản bi quan, dự án **không lỗ tiền mặt** — hậu quả của việc không đạt ngưỡng là công sức bỏ ra không thu lại được giá trị tương xứng, nghiêm trọng nhưng khác về bản chất so với thua lỗ tài chính.
+**Biên an toàn 52%** rộng, vì **cấu trúc chi phí gần như toàn biến phí**: không bán được gói template thì cũng không phải mua tài sản đồ hoạ cho gói đó. Hệ quả: kể cả ở kịch bản bi quan, dự án **không lỗ tiền mặt** — hậu quả của việc không đạt ngưỡng là công sức bỏ ra không thu lại được giá trị tương xứng, nghiêm trọng nhưng khác bản chất so với thua lỗ tài chính.
 
 ---
 
 ## 5. Timeframe for Realizing Benefits
-
-### 5.1. Lộ trình
 
 | Giai đoạn                    | Thời gian                   | Lợi ích bắt đầu xuất hiện | Trạng thái mong đợi |
 | ---------------------------- | --------------------------- | ------------------------- | ------------------- |
@@ -317,60 +274,49 @@ Ngưỡng **48% kịch bản cơ sở** tương đương khoảng **38 / 125 / 2
 | Năm 2                        | Tháng 13–24                 | BN-03                     | Hợp đồng hỗ trợ SLA đầu tiên |
 | Năm 1 → Năm 3                | 36 tháng                    | Toàn bộ                   | Đạt mục tiêu Năm 3 |
 
-### 5.2. Điểm kiểm tra quan trọng
-
-**Ngưỡng hoà vốn.** Theo tính toán tại [§4.7](#47-phân-tích-độ-nhạy-và-điểm-hoà-vốn), dự án hoà vốn trên cơ sở kinh tế đầy đủ khi doanh thu đạt **48% kịch bản cơ sở** — tương đương khoảng **38 / 125 / 240 gói template** và **1 / 2 / 4 hợp đồng dịch vụ** ở ba năm.
-
-Nếu đến hết **Quý 4 Năm 1** số gói template bán được dưới 38, nhà tài trợ phải xem xét lại: giá gói, chất lượng mẫu, hoặc chính giả định về nhu cầu thị trường. Đây là điểm quyết định chính thức, không phải cảnh báo mềm.
+**Điểm quyết định chính thức.** Nếu đến hết **Quý 4 Năm 1** số gói template bán được dưới **38** (ngưỡng hoà vốn 48% tính tại §4.7), nhà tài trợ phải xem xét lại giá gói, chất lượng mẫu, hoặc chính giả định về nhu cầu thị trường. Đây là điểm quyết định, không phải cảnh báo mềm.
 
 ---
 
 ## 6. Benefits Owner
 
-### 6.1. Phân công
-
-Đội chỉ có 3 thành viên nên **một người kiêm nhiều vai trò**. Bảng dưới phân theo vai trò, không phải theo người; việc ánh xạ vai trò sang người cụ thể ghi tại [Project Charter §9](../01_Initiating/01_Project_Charter_v1.0.md#9-stakeholder-list).
+Đội chỉ có 3 thành viên nên **một người kiêm nhiều vai trò**. Bảng phân theo vai trò; ánh xạ vai trò sang người cụ thể ghi tại Project Charter §9.
 
 | Vai trò                | Người đảm nhiệm  | Trách nhiệm về lợi ích |
 | ---------------------- | ---------------- | ---------------------- |
-| Nhà tài trợ (Sponsor)  | Phạm Quang Anh — Enticy Studios | Chịu trách nhiệm cuối cùng về BN-01 → BN-04 và BN-12. Ra quyết định khi lợi ích chệch mục tiêu. |
-| Giám đốc dự án (PM)    | Nguyễn Thế Chiến  | Chịu trách nhiệm BN-11 và việc bàn giao danh mục lợi ích khi đóng dự án. |
-| Trưởng nhóm kỹ thuật   | Nguyễn Việt Quang  | Chịu trách nhiệm BN-07, BN-08, BN-09, BN-10 trong thời gian dự án. |
-| Trưởng nhóm sản phẩm   | Phạm Quang Anh  | Chịu trách nhiệm BN-05, BN-06. Thu thập phản hồi người dùng. |
-| Giảng viên hướng dẫn   | Thầy Nguyễn Đình Quảng | Đánh giá về mặt học thuật; không chịu trách nhiệm về lợi ích kinh doanh. |
+| Nhà tài trợ (Sponsor)  | Phạm Quang Anh — Enticy Studios | Chịu trách nhiệm cuối cùng về BN-01 → BN-04 và BN-12. Ra quyết định khi lợi ích chệch mục tiêu |
+| Giám đốc dự án (PM)    | Nguyễn Thế Chiến  | Chịu trách nhiệm BN-11 và việc bàn giao danh mục lợi ích khi đóng dự án |
+| Trưởng nhóm kỹ thuật   | Nguyễn Việt Quang  | Chịu trách nhiệm BN-07, BN-08, BN-09, BN-10 trong thời gian dự án |
+| Trưởng nhóm sản phẩm   | Phạm Quang Anh  | Chịu trách nhiệm BN-05, BN-06. Thu thập phản hồi người dùng |
+| Giảng viên hướng dẫn   | Thầy Nguyễn Đình Quảng | Đánh giá về mặt học thuật; không chịu trách nhiệm về lợi ích kinh doanh |
 
-### 6.2. Chuyển giao trách nhiệm
-
-Tại buổi đóng dự án (tuần 15), Giám đốc dự án bàn giao chính thức cho Nhà tài trợ: bảng danh mục lợi ích với trạng thái hiện tại, số liệu baseline đã đo được, và lịch rà soát của 3 năm tiếp theo. Việc bàn giao này phải có biên bản — nếu không, các lợi ích sau bàn giao sẽ không có ai theo dõi.
+**Chuyển giao.** Tại buổi đóng dự án (tuần 15), Giám đốc dự án bàn giao cho Nhà tài trợ — **có biên bản** — bảng danh mục lợi ích kèm trạng thái, số liệu baseline đã đo, và lịch rà soát 3 năm tiếp theo. Không có biên bản thì các lợi ích sau bàn giao sẽ không có ai theo dõi.
 
 ---
 
 ## 7. Metrics
 
-### 7.1. Định nghĩa chi tiết từng chỉ số
-
 | ID    | Chỉ số                          | Đo cho lợi ích | Định nghĩa đo                                              | Nguồn dữ liệu | Tần suất | Người đo |
 | ----- | ------------------------------- | -------------- | ---------------------------------------------------------- | ------------- | -------- | -------- |
-| MT-01 | Doanh thu gói template          | BN-01 | Tổng tiền thu được từ bán gói template trong kỳ, chưa trừ phí cổng thanh toán | Báo cáo cổng thanh toán | Hàng tháng | Nhà tài trợ |
+| MT-01 | Doanh thu gói template          | BN-01 | Tổng tiền thu từ bán gói template trong kỳ, chưa trừ phí cổng thanh toán | Báo cáo cổng thanh toán | Hàng tháng | Nhà tài trợ |
 | MT-02 | Số gói template bán được        | BN-01 | Số đơn hàng hoàn tất trong kỳ, theo từng gói                | Báo cáo cổng thanh toán | Hàng tháng | Nhà tài trợ |
 | MT-03 | Doanh thu dịch vụ B2B           | BN-02 | Giá trị hợp đồng đã nghiệm thu trong kỳ                     | Hợp đồng đã ký | Hàng quý | Nhà tài trợ |
 | MT-04 | Doanh thu hỗ trợ SLA            | BN-03 | Giá trị hợp đồng hỗ trợ còn hiệu lực, phân bổ theo kỳ       | Hợp đồng đã ký | Hàng quý | Nhà tài trợ |
 | MT-05 | Chi phí hạ tầng / người dùng    | BN-04 | Tổng chi phí hạ tầng tháng ÷ số người dùng hoạt động tháng  | Hoá đơn nhà cung cấp + số liệu truy cập | Hàng tháng | Nhà tài trợ |
-| MT-06 | Thời gian tạo một video         | BN-06 | Thời gian từ lúc mở ứng dụng đến lúc file MP4 được lưu, kịch bản chuẩn: 5 cảnh, 60 giây, có ảnh | Buổi kiểm thử người dùng, ≥ 10 người | Mỗi quý | Trưởng nhóm sản phẩm |
-| MT-07 | Mức tăng bộ nhớ theo độ dài     | BN-07 | Bộ nhớ đỉnh khi xuất video 10 phút ÷ bộ nhớ đỉnh khi xuất video 1 phút, cùng độ phân giải | Công cụ đo bộ nhớ của trình duyệt | Mỗi lần phát hành | Trưởng nhóm kỹ thuật |
-| MT-08 | Tỷ lệ đầu ra giống nhau         | BN-08 | Xuất cùng một scene JSON trên 3 máy cấu hình khác nhau, so sánh checksum của luồng video | Kịch bản kiểm thử tự động | Mỗi lần phát hành | Trưởng nhóm kỹ thuật |
+| MT-06 | Thời gian tạo một video         | BN-06 | Từ lúc mở ứng dụng đến lúc file MP4 được lưu; kịch bản chuẩn 5 cảnh, 60 giây, có ảnh | Buổi kiểm thử người dùng, ≥ 10 người | Mỗi quý | Trưởng nhóm sản phẩm |
+| MT-07 | Mức tăng bộ nhớ theo độ dài     | BN-07 | Bộ nhớ đỉnh video 10 phút ÷ bộ nhớ đỉnh video 1 phút, cùng độ phân giải | Công cụ đo bộ nhớ của trình duyệt | Mỗi lần phát hành | Trưởng nhóm kỹ thuật |
+| MT-08 | Tỷ lệ đầu ra giống nhau         | BN-08 | Xuất cùng một scene JSON trên 3 máy khác cấu hình, so checksum luồng video | Kịch bản kiểm thử tự động | Mỗi lần phát hành | Trưởng nhóm kỹ thuật |
 | MT-09 | Lưu lượng nội dung gửi đi       | BN-09 | Tổng byte trong các request rời khỏi trình duyệt khi tạo và xuất video | Kiểm thử thủ công + kiểm toán | Mỗi lần phát hành | Trưởng nhóm kỹ thuật |
-| MT-10 | Độ chính xác hiển thị tiếng Việt | BN-10 | Tỷ lệ ký tự hiển thị đúng trên bộ ký tự kiểm thử (đủ 134 tổ hợp dấu, cả khung ngang và dọc) | Bộ kiểm thử hình ảnh | Mỗi lần phát hành | Trưởng nhóm kỹ thuật |
-| MT-11 | Tỷ lệ xuất video thành công     | — (OB-06) | Số lần xuất thành công ÷ tổng số lần thử, trên 100 lần thử ở các trình duyệt mục tiêu | Kịch bản kiểm thử | Mỗi lần phát hành | Trưởng nhóm kỹ thuật |
-| MT-12 | Năng lực đội                    | BN-11 | Số thành viên tự triển khai được một pipeline WebCodecs theo luồng mà không cần hỗ trợ | Đánh giá nội bộ | Khi kết thúc dự án | Giám đốc dự án |
+| MT-10 | Độ chính xác hiển thị tiếng Việt | BN-10 | Tỷ lệ ký tự đúng trên bộ kiểm thử đủ 134 tổ hợp dấu, cả khung ngang và dọc | Bộ kiểm thử hình ảnh | Mỗi lần phát hành | Trưởng nhóm kỹ thuật |
+| MT-11 | Tỷ lệ xuất video thành công     | — (OB-06) | Số lần xuất thành công ÷ tổng số lần thử, trên 100 lần ở các trình duyệt mục tiêu | Kịch bản kiểm thử | Mỗi lần phát hành | Trưởng nhóm kỹ thuật |
+| MT-12 | Năng lực đội                    | BN-11 | Số thành viên tự triển khai được pipeline WebCodecs theo luồng không cần hỗ trợ | Đánh giá nội bộ | Khi kết thúc dự án | Giám đốc dự án |
 
-### 7.2. Nguyên tắc đo
+**Nguyên tắc đo:**
 
-- **Có baseline trước khi bắt đầu.** MT-06 phải được đo trên quy trình thủ công hiện tại **trước mốc M1**, nếu không sẽ không có gì để so sánh và BN-06 trở thành lời tuyên bố không kiểm chứng được.
-- **MT-07 là cách duy nhất kiểm chứng "không giới hạn độ dài".** Không thể chứng minh bằng cách xuất một video dài rồi tuyên bố thành công — phải chứng minh bộ nhớ **không tăng theo độ dài**. Tỷ lệ ≤ 1,15 khi độ dài tăng 10 lần là bằng chứng cho thấy kiến trúc theo luồng hoạt động đúng.
-- **Cùng một kịch bản kiểm thử.** Mọi phép đo MT-06 dùng chung một kịch bản chuẩn để số liệu giữa các quý so sánh được với nhau.
-- **Không đo bằng cảm nhận.** Chỉ số nào không có nguồn dữ liệu cụ thể thì loại khỏi danh mục, không giữ lại cho đẹp báo cáo.
-- **MT-01 → MT-05 là đầu vào để tính lại NPV và BCR.** Mỗi kỳ rà soát hàng quý, số liệu thực đo thay thế số giả định trong §4, cho ra NPV và BCR cập nhật. Đây là cách phát hiện sớm việc dự án đang rời khỏi ngưỡng hoà vốn 48%.
+- **Có baseline trước khi bắt đầu.** MT-06 phải đo trên quy trình thủ công hiện tại **trước mốc M1**, nếu không BN-06 trở thành lời tuyên bố không kiểm chứng được.
+- **MT-07 là cách duy nhất kiểm chứng "không giới hạn độ dài".** Không thể chứng minh bằng cách xuất một video dài rồi tuyên bố thành công — phải chứng minh bộ nhớ **không tăng theo độ dài**.
+- **Không đo bằng cảm nhận.** Chỉ số nào không có nguồn dữ liệu cụ thể thì loại khỏi danh mục.
+- **MT-01 → MT-05 là đầu vào để tính lại NPV và BCR.** Mỗi quý, số thực đo thay số giả định trong §4, cho ra NPV và BCR cập nhật — đây là cách phát hiện sớm việc dự án đang rời khỏi ngưỡng hoà vốn 48%.
 
 ---
 
@@ -382,17 +328,15 @@ Tại buổi đóng dự án (tuần 15), Giám đốc dự án bàn giao chính
 | ----------- | --------------------------------------------------------------- | ---------------------------- |
 | AS-01       | Người dùng hiện mất ~45 phút để tạo một video 60 giây            | BN-06 — nếu baseline thật thấp hơn nhiều, mức cải thiện không đủ hấp dẫn |
 | AS-04       | Người dùng chấp nhận mức giá 249.000 VND cho một gói template    | BN-01 — trực tiếp |
-| AS-05       | Bán được 80 / 260 / 500 gói template trong ba năm                | BN-01 — trực tiếp; là biến số của phân tích độ nhạy §4.7 |
-| AS-06       | Tỷ lệ chiết khấu 12%/năm phản ánh đúng chi phí vốn               | Toàn bộ chỉ tiêu ở §4 — NPV, BCR, payback đều tính trên `r` này |
-| AS-10       | Người dùng mục tiêu dùng trình duyệt có hỗ trợ WebCodecs         | BN-05, BN-06 — người dùng không xuất được thì không có lợi ích nào |
+| AS-05       | Bán được 80 / 260 / 500 gói template trong ba năm                | BN-01 — là biến số của phân tích độ nhạy §4.7 |
+| AS-06       | Tỷ lệ chiết khấu 12%/năm phản ánh đúng chi phí vốn               | Toàn bộ §4 — NPV, BCR, payback đều tính trên `r` này |
+| AS-10       | Người dùng mục tiêu dùng trình duyệt có hỗ trợ WebCodecs         | BN-05, BN-06 — không xuất được thì không có lợi ích nào |
 | AS-11       | Mua được tài sản đồ hoạ có **quyền phân phối lại** trong ngân sách | BN-01 — không có quyền này thì không bán gói template được |
 | AS-27       | Bán được dịch vụ B2B ở mức 8.000.000 VND/hợp đồng                | BN-02 |
 | AS-29       | Doanh nghiệp chấp nhận hợp đồng hỗ trợ SLA 12.000.000 VND/năm    | BN-03 |
-| AS-30       | Công sức bảo trì 200 / 400 / 700 giờ mỗi năm                     | Mẫu số của BCR — nếu thực tế cao hơn nhiều, BCR tụt và có thể xuống dưới 1 |
-| AS-31       | Người dùng miễn phí chuyển đổi thành khách hàng trả tiền ở tỷ lệ đủ | BN-01, BN-02, BN-03 — đây là mắt xích nối BN-05 với doanh thu |
+| AS-30       | Công sức bảo trì 200 / 400 / 700 giờ mỗi năm                     | Mẫu số của BCR — nếu thực tế cao hơn nhiều, BCR có thể xuống dưới 1 |
+| AS-31       | Người dùng miễn phí chuyển đổi thành khách hàng trả tiền ở tỷ lệ đủ | BN-01, BN-02, BN-03 — mắt xích nối BN-05 với doanh thu |
 | AS-13       | Nhà tài trợ duy trì việc theo dõi lợi ích sau khi dự án đóng     | Toàn bộ nhóm lợi ích sau bàn giao |
-
-Chi tiết đầy đủ tại [Assumption Log](../01_Initiating/02_Assumption_Log_v1.0.md).
 
 ### 8.2. Rủi ro đối với việc hiện thực hoá lợi ích
 
@@ -400,28 +344,24 @@ Chi tiết đầy đủ tại [Assumption Log](../01_Initiating/02_Assumption_Lo
 | ----- | -------------------------------------------------------------- | ----------------- | ------- |
 | BR-01 | Không ai theo dõi lợi ích sau khi dự án đóng                    | Tất cả sau bàn giao | Biên bản bàn giao có chữ ký; lịch rà soát đặt sẵn trong lịch của nhà tài trợ |
 | BR-02 | Không đo baseline MT-06 trước khi phát triển                    | BN-06             | Đưa việc đo baseline thành đầu ra bắt buộc của mốc M1 |
-| BR-03 | Doanh thu dưới ngưỡng hoà vốn 48% (BCR < 1)                     | BN-01, BN-02, BN-03 | Quyết định tại điểm kiểm tra hết Quý 4 Năm 1 (§5.2) |
-| BR-04 | Phần mềm miễn phí thu hút người dùng nhưng không ai mua gói template | BN-01        | Đây là rủi ro lớn nhất của mô hình M2 — theo dõi tỷ lệ chuyển đổi từ tháng đầu; nếu thấp, chuyển trọng tâm sang dòng dịch vụ B2B |
+| BR-03 | Doanh thu dưới ngưỡng hoà vốn 48% (BCR < 1)                     | BN-01, BN-02, BN-03 | Quyết định tại điểm kiểm tra hết Quý 4 Năm 1 (§5) |
+| BR-04 | Phần mềm miễn phí thu hút người dùng nhưng không ai mua gói template | BN-01        | Rủi ro lớn nhất của mô hình M2 — theo dõi tỷ lệ chuyển đổi từ tháng đầu; nếu thấp, chuyển trọng tâm sang dịch vụ B2B |
 | BR-05 | Kiến trúc theo luồng không đạt, phải quay lại giới hạn độ dài   | BN-07             | Nguyên mẫu tại M2; nếu thất bại, công bố giới hạn rõ ràng thay vì hứa suông |
 | BR-06 | Chỉ số được báo cáo nhưng không dẫn đến hành động nào           | Tất cả            | Mỗi kỳ rà soát phải kết thúc bằng một quyết định: tiếp tục, điều chỉnh, hoặc dừng |
-| BR-07 | Công sức bảo trì thực tế vượt xa ước lượng AS-30                | Toàn bộ nhóm tài chính | Ghi nhận giờ công thực tế từ tháng đầu; tính lại BCR mỗi quý theo §7.2 |
+| BR-07 | Công sức bảo trì thực tế vượt xa ước lượng AS-30                | Toàn bộ nhóm tài chính | Ghi nhận giờ công thực tế từ tháng đầu; tính lại BCR mỗi quý |
 
 ---
 
 ## 9. Benefits Realization Tracking
 
-### 9.1. Nhịp rà soát
+| Kỳ rà soát                | Thời điểm                     | Người chủ trì   | Đầu ra |
+| ------------------------- | ----------------------------- | --------------- | ------ |
+| Rà soát tại mốc           | Tại M3, M4                    | Giám đốc dự án  | Cập nhật trạng thái BN-07 → BN-10 |
+| Rà soát đóng dự án        | Tuần 15                       | Giám đốc dự án  | Biên bản bàn giao danh mục lợi ích |
+| Rà soát hàng quý          | Cuối mỗi quý, Năm 1 → Năm 3   | Nhà tài trợ     | Báo cáo hiện thực hoá lợi ích + NPV/BCR cập nhật |
+| Rà soát điểm quyết định   | Hết Quý 4 Năm 1               | Nhà tài trợ     | Quyết định: tiếp tục / điều chỉnh giá / chuyển trọng tâm sang dịch vụ / dừng |
 
-| Kỳ rà soát                | Thời điểm                     | Người chủ trì   | Thành phần tham dự | Đầu ra |
-| ------------------------- | ----------------------------- | --------------- | ------------------ | ------ |
-| Rà soát tại mốc           | Tại M3, M4                    | Giám đốc dự án  | Đội dự án          | Cập nhật trạng thái BN-07 → BN-10 |
-| Rà soát đóng dự án        | Tuần 15                       | Giám đốc dự án  | Đội dự án + nhà tài trợ | Biên bản bàn giao danh mục lợi ích |
-| Rà soát hàng quý          | Cuối mỗi quý, Năm 1 → Năm 3   | Nhà tài trợ     | Trưởng nhóm sản phẩm | Báo cáo hiện thực hoá lợi ích + NPV/BCR cập nhật |
-| Rà soát điểm quyết định   | Hết Quý 4 Năm 1               | Nhà tài trợ     | Toàn bộ bên liên quan | Quyết định: tiếp tục / điều chỉnh giá / chuyển trọng tâm sang dịch vụ / dừng |
-
-### 9.2. Mẫu báo cáo hiện thực hoá lợi ích
-
-Mỗi kỳ rà soát điền bảng sau. Cột *Đánh giá* dùng ba mức: 🟢 Đạt · 🟡 Chệch < 20% · 🔴 Chệch ≥ 20%.
+**Mẫu báo cáo.** Mỗi kỳ rà soát điền bảng dưới; cột *Đánh giá* dùng ba mức 🟢 Đạt · 🟡 Chệch < 20% · 🔴 Chệch ≥ 20%. Kèm theo đó, mỗi kỳ hàng quý phải cập nhật **NPV và BCR tính lại trên số thực đo** (theo phương pháp §4.4 và §4.5). Nếu BCR tụt dưới 1, kích hoạt rủi ro BR-03.
 
 | ID    | Lợi ích | Mục tiêu kỳ này | Thực đạt | Chênh lệch | Đánh giá | Nguyên nhân | Hành động | Người chịu trách nhiệm | Hạn |
 | ----- | ------- | --------------- | -------- | ---------- | -------- | ----------- | --------- | ---------------------- | --- |
@@ -429,20 +369,14 @@ Mỗi kỳ rà soát điền bảng sau. Cột *Đánh giá* dùng ba mức: �
 | BN-02 |         |                 |          |            |          |             |           |                        |     |
 | ...   |         |                 |          |            |          |             |           |                        |     |
 
-Kèm theo bảng trên, mỗi kỳ rà soát hàng quý phải cập nhật hai con số: **NPV và BCR tính lại trên số liệu thực đo** (theo phương pháp §4.4 và §4.5, thay số giả định bằng số thật). Nếu BCR tụt xuống dưới 1, kích hoạt rủi ro BR-03.
-
-### 9.3. Quy tắc xử lý khi lệch mục tiêu
-
 | Mức đánh giá | Xử lý bắt buộc |
 | ------------ | -------------- |
 | 🟢 Đạt        | Ghi nhận, không cần hành động |
 | 🟡 Chệch < 20% | Ghi nguyên nhân, đề ra hành động khắc phục, theo dõi ở kỳ sau |
-| 🔴 Chệch ≥ 20% | Báo cáo nhà tài trợ trong vòng 5 ngày làm việc; xem xét lại giả định gốc trong [Assumption Log](../01_Initiating/02_Assumption_Log_v1.0.md); nếu lệch hai kỳ liên tiếp, đưa ra quyết định về số phận sản phẩm |
+| 🔴 Chệch ≥ 20% | Báo cáo nhà tài trợ trong 5 ngày làm việc; xem xét lại giả định gốc trong Assumption Log; nếu lệch hai kỳ liên tiếp, đưa ra quyết định về số phận sản phẩm |
 
-### 9.4. Đóng danh mục lợi ích
-
-Danh mục lợi ích được đóng khi: mọi lợi ích đều đạt trạng thái *Đã hiện thực hoá* hoặc *Không còn khả thi*, và nhà tài trợ ký xác nhận báo cáo tổng kết cuối Năm 3. Trước thời điểm đó, danh mục vẫn là tài liệu sống — cập nhật version theo quy ước ghi trong [docs/README.md](../README.md).
+**Đóng danh mục lợi ích** khi mọi lợi ích đạt trạng thái *Đã hiện thực hoá* hoặc *Không còn khả thi*, và nhà tài trợ ký xác nhận báo cáo tổng kết cuối Năm 3. Trước đó, danh mục vẫn là tài liệu sống.
 
 ---
 
-*Tài liệu liên quan: [Business Case](./01_Business_Case_v1.1.md) · [Hợp đồng thực hiện dự án](./03_Hop_dong_thuc_hien_du_an_v1.0.md) · [Project Charter](../01_Initiating/01_Project_Charter_v1.0.md) · [Assumption Log](../01_Initiating/02_Assumption_Log_v1.0.md)*
+*Tài liệu liên quan: Business Case · Hợp đồng thực hiện dự án · Project Charter · Assumption Log — cùng bộ tài liệu quản lý dự án PromptVideo.*

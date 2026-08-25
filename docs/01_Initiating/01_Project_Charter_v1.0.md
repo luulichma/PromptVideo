@@ -7,7 +7,7 @@
 | **Nhóm tiến trình** | Initiating                     |
 | **Tên tài liệu**    | Project Charter                |
 | **Phiên bản**       | Ver. 1.0                       |
-| **Nhóm thực hiện**  | `<<Tên nhóm>>`                 |
+| **Nhóm thực hiện**  | Nhóm 02                 |
 | **Ngày phát hành**  | 2026-08-20                     |
 | **Trạng thái**      | Draft — chờ phê duyệt          |
 
@@ -51,7 +51,7 @@
 
 <!-- ============================== NỘI DUNG ============================== -->
 
-> **Lưu ý về bối cảnh.** Tài liệu lập trên bối cảnh doanh nghiệp giả định (Enticy Studios) phục vụ môn Quản lý dự án phần mềm. Số liệu tài chính và khối lượng bán là giả định, xem [Business Case §9](../00_Pre-project/01_Business_Case_v1.1.md#9-phụ-lục-a--nguồn-và-giả-định-số-liệu).
+> **Lưu ý về bối cảnh.** Tài liệu lập trên bối cảnh doanh nghiệp giả định (Enticy Studios) phục vụ môn Quản lý dự án phần mềm. Số liệu tài chính và khối lượng bán là giả định, đăng ký kèm nguồn tại [Assumption Log](./02_Assumption_Log_v1.0.md).
 
 ---
 
@@ -438,7 +438,7 @@ Nhà tài trợ là người có thẩm quyền cao nhất của dự án và gi
 6. **Giải quyết vấn đề vượt cấp** mà Giám đốc dự án không xử lý được.
 7. **Ký nghiệm thu sản phẩm cuối cùng** theo mục 10.2.
 8. **Quyết định dừng dự án** bất kỳ lúc nào nếu căn cứ kinh doanh không còn đứng vững.
-9. **Chịu trách nhiệm theo dõi lợi ích sau khi dự án đóng**, theo [Benefit Management Plan §6.2](../00_Pre-project/02_Benefit_Management_Plan_v1.1.md#62-chuyển-giao-trách-nhiệm), và **chịu trách nhiệm sản xuất, định giá, bán các gói template thương mại** — hoạt động nằm ngoài phạm vi dự án.
+9. **Chịu trách nhiệm theo dõi lợi ích sau khi dự án đóng**, theo [Benefit Management Plan §6](../00_Pre-project/02_Benefit_Management_Plan_v1.1.md#6-benefits-owner), và **chịu trách nhiệm sản xuất, định giá, bán các gói template thương mại** — hoạt động nằm ngoài phạm vi dự án.
 
 ### 12.3. Chữ ký phê duyệt
 

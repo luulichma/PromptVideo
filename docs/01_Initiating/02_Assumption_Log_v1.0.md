@@ -7,7 +7,7 @@
 | **Nhóm tiến trình** | Initiating                        |
 | **Tên tài liệu**    | Assumption Log                    |
 | **Phiên bản**       | Ver. 1.1                          |
-| **Nhóm thực hiện**  | `<<Tên nhóm>>`                    |
+| **Nhóm thực hiện**  | Nhóm 02                    |
 | **Ngày phát hành**  | 2026-08-25                        |
 | **Trạng thái**      | Tài liệu sống — cập nhật liên tục |
 
@@ -160,7 +160,7 @@ Sổ được lập ở nhóm tiến trình Initiating và **cập nhật liên 
 | CT-04 | **Đội 3 thành viên bán thời gian, không tuyển thêm — tổng 450 giờ**                                    | Nguồn lực          | Bối cảnh môn học | Tổng công sức cố định và rất eo hẹp; rủi ro tập trung cao                                            | Ưu tiên hoá phạm vi nghiêm ngặt; không nhận thêm yêu cầu ngoài phạm vi; có phương án giảm phạm vi định sẵn                                                             |
 | CT-05 | Chỉ dùng thư viện và tài sản có giấy phép cho phép thương mại hoá **và phân phối lại**                 | Pháp lý            | Nhà tài trợ      | Loại bỏ thư viện GPL và tài sản chỉ có giấy phép dùng thương mại thông thường                        | Rà soát giấy phép tại mỗi mốc (AS-21, AS-11)                                                                                                                           |
 | CT-06 | Sản phẩm phải chạy được mà không cần cài đặt gì ngoài trình duyệt                                      | Kỹ thuật           | Định vị sản phẩm | Không dùng được thành phần gốc, không dùng WebAssembly nặng                                          | Toàn bộ chức năng dựa trên API tiêu chuẩn của trình duyệt                                                                                                              |
-| CT-07 | **Toàn bộ mã nguồn phát hành theo Apache 2.0 — không có phiên bản đóng, không có cổng khoá tính năng** | Pháp lý / Sản phẩm | Nhà tài trợ      | Loại bỏ mọi mô hình doanh thu dựa trên chặn truy cập; buộc doanh thu phải đến từ nội dung và dịch vụ | Mô hình M2 trong [Business Case §4.2](../00_Pre-project/01_Business_Case_v1.1.md#42-phương-án-mô-hình-doanh-thu); RQ-11 là điều kiện kỹ thuật để mô hình này chạy được |
+| CT-07 | **Toàn bộ mã nguồn phát hành theo Apache 2.0 — không có phiên bản đóng, không có cổng khoá tính năng** | Pháp lý / Sản phẩm | Nhà tài trợ      | Loại bỏ mọi mô hình doanh thu dựa trên chặn truy cập; buộc doanh thu phải đến từ nội dung và dịch vụ | Mô hình M2 trong [Business Case §3.2](../00_Pre-project/01_Business_Case_v1.1.md#32-phương-án-mô-hình-doanh-thu); RQ-11 là điều kiện kỹ thuật để mô hình này chạy được |
 
 ---
 
