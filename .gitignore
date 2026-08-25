@@ -19,3 +19,6 @@ $RECYCLE.BIN/
 *.xlsx
 *.pptx
 ~$*
+
+### Review logs (nội bộ, không commit)
+LOG.md
