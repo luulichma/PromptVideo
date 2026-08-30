@@ -2,7 +2,7 @@
 
 Thư mục này chứa toàn bộ tài liệu quản lý dự án của PromptVideo, tổ chức theo **Pre-project + 5 nhóm tiến trình** (process group) của PMBOK, đúng quy cách quản lý tài liệu mà môn học yêu cầu.
 
-> **Bối cảnh.** Nhánh `for-subjects-at-uni` phát triển dự án theo một **bối cảnh doanh nghiệp giả định** (Enticy Studios là tổ chức chủ quản) để phục vụ môn Quản lý dự án phần mềm tại Học viện Công nghệ Bưu chính Viễn thông. Mọi số liệu tài chính, quy mô người dùng và đơn giá là giả định có ghi chú, được đăng ký tại [Assumption Log](./01_Initiating/02_Assumption_Log_v1.0.md). Các thông số kỹ thuật là số liệu thật. Nhánh `main` giữ nguyên hướng mã nguồn mở, không mang bối cảnh này.
+> **Bối cảnh.** Bộ tài liệu phát triển dự án theo một **bối cảnh doanh nghiệp giả định** (Enticy Studios là tổ chức chủ quản) để phục vụ môn Quản lý dự án phần mềm tại Học viện Công nghệ Bưu chính Viễn thông. Mọi số liệu tài chính, quy mô thuê bao và đơn giá là giả định có ghi chú, được đăng ký tại [Assumption Log](./01_Initiating/02_Assumption_Log_v2.0.md). Các thông số kỹ thuật là số liệu thật.
 
 ---
 
@@ -10,12 +10,12 @@ Thư mục này chứa toàn bộ tài liệu quản lý dự án của PromptVi
 
 | STT | Tài liệu | Nhóm tiến trình | Phiên bản | Cập nhật | Nhóm phụ trách | Trạng thái |
 | --- | -------- | --------------- | --------- | -------- | -------------- | ---------- |
-| 1 | [Business Case](./00_Pre-project/01_Business_Case_v1.1.md) | Pre-project | Ver 1.1 | 2026-08-24 | Nhóm khởi tạo | Draft |
-| 2 | [Benefit Management Plan](./00_Pre-project/02_Benefit_Management_Plan_v1.1.md) | Pre-project | Ver 1.1 | 2026-08-24 | Nhóm khởi tạo | Draft |
-| 3 | [Hợp đồng thực hiện dự án](./00_Pre-project/03_Hop_dong_thuc_hien_du_an_v1.0.md) | Pre-project | Ver 1.0 | 2026-08-24 | Nhóm khởi tạo | Draft — chờ ký |
-| 4 | [Project Charter](./01_Initiating/01_Project_Charter_v1.0.md) | Initiating | Ver 1.0 | 2026-08-20 | Nhóm thực hiện | Draft |
-| 5 | [Assumption Log](./01_Initiating/02_Assumption_Log_v1.0.md) | Initiating | Ver 1.0 | 2026-08-20 | Nhóm thực hiện | Tài liệu sống |
-| 6 | [WBS & WBS Dictionary](./02_Planning/00_WBS_v1.0.md) | Planning | Ver 1.0 | 2026-08-24 | Nhóm thực hiện | Draft |
+| 1 | [Business Case](./00_Pre-project/01_Business_Case_v2.0.md) | Pre-project | Ver 2.0 | 2026-08-27 | Nhóm khởi tạo | Draft |
+| 2 | [Benefit Management Plan](./00_Pre-project/02_Benefit_Management_Plan_v2.0.md) | Pre-project | Ver 2.0 | 2026-08-27 | Nhóm khởi tạo | Draft |
+| 3 | [Hợp đồng thực hiện dự án](./00_Pre-project/03_Hop_dong_thuc_hien_du_an_v2.0.md) | Pre-project | Ver 2.0 | 2026-08-27 | Nhóm khởi tạo | Draft — chờ ký |
+| 4 | [Project Charter](./01_Initiating/01_Project_Charter_v2.0.md) | Initiating | Ver 2.0 | 2026-08-27 | Nhóm thực hiện | Draft |
+| 5 | [Assumption Log](./01_Initiating/02_Assumption_Log_v2.0.md) | Initiating | Ver 2.0 | 2026-08-27 | Nhóm thực hiện | Tài liệu sống |
+| 6 | [WBS & WBS Dictionary](./02_Planning/00_WBS_v2.0.md) | Planning | Ver 2.0 | 2026-08-27 | Nhóm thực hiện | Draft |
 
 Thứ tự đọc: **Business Case → Benefit Management Plan → Hợp đồng → Project Charter → Assumption Log**. Ba tài liệu đầu là *project business documents*, được lập **trước khi dự án được cấp phép**, nên nằm ở `00_Pre-project/`. Project Charter là tài liệu chính thức khai sinh dự án, và Assumption Log ra đời cùng nó — cả hai thuộc `01_Initiating/`.
 
@@ -23,15 +23,25 @@ Thứ tự đọc: **Business Case → Benefit Management Plan → Hợp đồng
 
 | Tài liệu | Trả lời câu hỏi | Nội dung đặc thù |
 | -------- | --------------- | ---------------- |
-| Business Case | *Có nên làm dự án này không?* | Nhu cầu thực tế, mục tiêu nghiệp vụ BO-01 → BO-06, phân tích phương án, **đánh giá khả thi** trên 5 khía cạnh |
+| Business Case | *Có nên làm dự án này không?* | Nhu cầu thực tế, mục tiêu nghiệp vụ BO-xx, phân tích phương án, **đánh giá khả thi** trên 5 khía cạnh |
 | Benefit Management Plan | *Dự án tạo ra lợi ích gì và đáng bao nhiêu?* | Danh mục lợi ích BN-xx, chỉ số đo MT-xx, và **thẩm định tài chính bằng NPV, BCR, Payback, ROI** |
-| Hợp đồng thực hiện dự án | *Hai bên cam kết gì với nhau?* | Tổng quan phạm vi, thời gian, ngân sách; nghiệm thu; kiểm soát thay đổi |
+| Hợp đồng thực hiện dự án | *Hai bên cam kết gì với nhau?* | Tổng quan phạm vi, thời gian, ngân sách; nghiệm thu; bảo hành; kiểm soát thay đổi |
 
-**Nội dung baseline (áp dụng cho cả bộ tài liệu):** mô hình doanh thu là **gói template có bản quyền + dịch vụ B2B** — không dùng thuê bao khoá tính năng, vì mô hình đó không thực thi được với sản phẩm mã nguồn mở chạy client-side. Quy mô đội 3 người (450 giờ), vốn tiền mặt 1.500.000 VND, không giới hạn độ dài video. Thẩm định tài chính: **NPV +165,1 triệu VND, BCR 2,08, hoà vốn ở 48% kịch bản cơ sở**.
+**Nội dung baseline (áp dụng cho cả bộ tài liệu):**
 
-**Thay đổi ở Ver 1.1 (Business Case và Benefit Management Plan):** hai tài liệu được tách lại theo đúng chuyên môn và rút gọn về đúng vai trò. Business Case giữ mạch nhu cầu — mục tiêu — phương án — khả thi — khuyến nghị, với mục tiêu nghiệp vụ BO-01 → BO-06 đặt tại §1.1; toàn bộ phần tính toán tài chính chuyển sang Benefit Management Plan §4, nơi bốn công cụ NPV, BCR, Payback và ROI được trình bày kèm công thức và cách áp dụng.
+| Hạng mục | Giá trị |
+| -------- | ------- |
+| Kiến trúc | **P4** — render trong trình duyệt bằng WebCodecs + máy chủ tài khoản, giấy phép, thanh toán |
+| Mô hình doanh thu | **M1** — thuê bao thường niên ba bậc: Miễn phí (3 video/tháng, watermark, 720p) · Cá nhân 599.000 VND/năm · Doanh nghiệp 4.900.000 VND/năm |
+| Giấy phép sản phẩm | Mã nguồn độc quyền, không công khai |
+| Quy mô | Đội 3 người — 450 giờ — 15 tuần (2026-08-24 → 2026-12-06) |
+| Vốn tiền mặt | 3.500.000 VND |
+| Thuê bao giả định | 100 / 320 / 650 Cá nhân · 3 / 10 / 20 Doanh nghiệp |
+| Thẩm định tài chính | **NPV +433,4 triệu VND · BCR 3,52 · hoà vốn ở 28% kịch bản cơ sở** |
 
-**Về liên kết chéo.** Hai tài liệu Ver 1.1 **không dùng liên kết inline sang tài liệu khác**, vì bản `.docx` được xuất riêng từng file nên mọi liên kết như vậy đều thành liên kết chết. Thay vào đó chúng nhắc tên tài liệu và số mục dưới dạng chữ (`Benefit Management Plan §4`), và tra nguồn số liệu theo mã `AS-xx` tại Assumption Log. Khi sửa số mục ở một tài liệu, phải soát lại các tài liệu còn lại: `grep -rn "Business Case §\|Benefit Management Plan §" docs/`
+**Quy ước mã ID.** Chuỗi truy vết là `BO-xx` → `OB-xx` → `BN-xx` → `MT-xx`, cộng `RQ/NF-xx`, `AS/CT-xx`, `RS-xx`, `SH-xx`, `DL-xx`. **Mã không bao giờ được cấp lại**: khi một mục không còn hiệu lực, mã của nó bị rút và ghi vào mục *Mã không còn sử dụng* của tài liệu tương ứng, chứ không gán cho nội dung mới. Nhờ vậy mọi viện dẫn cũ không bao giờ trỏ nhầm. Danh sách mã đã rút: [Assumption Log §9](./01_Initiating/02_Assumption_Log_v2.0.md), Charter §3.1 (OB-05), §4.1 (RQ-11), §6 (RS-08), §9 (SH-09).
+
+**Về liên kết chéo.** Business Case và Benefit Management Plan **không dùng liên kết inline sang tài liệu khác**, vì bản `.docx` được xuất riêng từng file nên mọi liên kết như vậy đều thành liên kết chết. Thay vào đó chúng nhắc tên tài liệu và số mục dưới dạng chữ (`Benefit Management Plan §4`), và tra nguồn số liệu theo mã `AS-xx` tại Assumption Log. Khi sửa số mục ở một tài liệu, phải soát lại các tài liệu còn lại: `grep -rn "Business Case §\|Benefit Management Plan §" docs/`
 
 Mẫu tài liệu trống: [`_template/00_Document_Template_v1.0.md`](./_template/00_Document_Template_v1.0.md)
 
@@ -45,17 +55,17 @@ docs/
 ├── _template/
 │   └── 00_Document_Template_v1.0.md   ← khung chuẩn cho tài liệu mới
 ├── _archive/                          ← bản cũ đã bị thay thế, giữ để đối chiếu
-│   ├── 01_Business_Case_v1.0.md
-│   └── 02_Benefit_Management_Plan_v1.0.md
+│   ├── 01_Business_Case_v1.0.md          ← các bản v1 đã bị thay thế
+│   └── ... (8 file)
 ├── 00_Pre-project/
-│   ├── 01_Business_Case_v1.1.md
-│   ├── 02_Benefit_Management_Plan_v1.1.md
-│   └── 03_Hop_dong_thuc_hien_du_an_v1.0.md
+│   ├── 01_Business_Case_v2.0.md
+│   ├── 02_Benefit_Management_Plan_v2.0.md
+│   └── 03_Hop_dong_thuc_hien_du_an_v2.0.md
 ├── 01_Initiating/
-│   ├── 01_Project_Charter_v1.0.md
-│   └── 02_Assumption_Log_v1.0.md
+│   ├── 01_Project_Charter_v2.0.md
+│   └── 02_Assumption_Log_v2.0.md
 ├── 02_Planning/
-│   ├── 00_WBS_v1.0.md
+│   ├── 00_WBS_v2.0.md
 │   ├── 01_Requirements_Specification_...  ← chưa lập
 │   └── 02_Scope_Management_Plan_...       ← chưa lập
 ├── 03_Executing/                      ┐
@@ -78,8 +88,8 @@ Sáu thư mục nhóm tiến trình là cố định, tạo sẵn kể cả khi 
 `Thứ tự_Tên_tài_liệu_phiên bản.md` — số thứ tự **đếm lại từ 01 trong mỗi thư mục**, theo thứ tự tài liệu được tạo ra. Dùng gạch dưới thay dấu cách, không dấu tiếng Việt.
 
 ```
-01_Business_Case_v1.1.md
-02_Benefit_Management_Plan_v1.1.md
+01_Business_Case_v2.0.md
+02_Benefit_Management_Plan_v2.0.md
 ```
 
 Bản Word/Excel nộp cho thầy giữ nguyên quy cách này với đuôi tương ứng (`.docx`, `.xlsx`).
@@ -124,10 +134,12 @@ Theo mẫu giảng viên cung cấp, thứ tự cố định:
 
 1. **Điền hết placeholder.** Soát bằng: `grep -rn '<<' docs/`
 2. **Kiểm tra nhất quán chéo:**
-   - Summary Budget trong Project Charter, Điều 4 Hợp đồng và bảng chi phí tại Benefit Management Plan §4.1 khớp nhau: **1.500.000 VND tiền mặt + 450 giờ công**
+   - Summary Budget trong Project Charter §8, Điều 4 Hợp đồng và bảng chi phí tại Benefit Management Plan §4.1 khớp nhau: **3.500.000 VND tiền mặt + 450 giờ công**
    - Chuỗi truy vết đầy đủ: `BO-xx` (Business Case §1.1) → `OB-xx` (Charter §3.1) → `BN-xx` (BMP §2) → `MT-xx` (BMP §7)
-   - NPV +165,1 triệu · BCR 2,08 · ngưỡng hoà vốn 48% xuất hiện thống nhất ở Business Case, BMP và Hợp đồng
-   - Mọi giả định nêu trong các tài liệu đều có ID `AS-xx` trong Assumption Log
+   - NPV +433,4 triệu · BCR 3,52 · ngưỡng hoà vốn 28% xuất hiện thống nhất ở Business Case, BMP và Hợp đồng
+   - Giá và hạn mức ba bậc thuê bao ghi giống nhau ở Business Case §3.2, Charter §4.1 và Hợp đồng §2.2
+   - Tổng giờ WBS theo mốc khớp đúng Charter §8.4: 23 / 48 / 67 / 101 / 78 / 74 / 45 / 14 = **450**
+   - Mọi giả định nêu trong các tài liệu đều có ID `AS-xx` trong Assumption Log, và không mã nào bị cấp lại (Assumption Log §9)
 3. **Kiểm tra ràng buộc đề bài:** kinh phí < 1.000.000.000 VND, thời gian ≤ 6 tháng, ít nhất 3 deliverable nghiệp vụ chính.
 4. **Cập nhật bảng danh mục ở đầu file này** nếu có tài liệu mới hoặc phiên bản mới.
 5. **Convert sang Word:** mở file `.md` bằng Word hoặc dùng Pandoc; thẻ `<div style="page-break-after: always">` tương ứng một ngắt trang thủ công. Đặt tên bản `.docx` theo đúng quy cách ở trên.
@@ -136,4 +148,9 @@ Theo mẫu giảng viên cung cấp, thứ tự cố định:
 
 ## Trạng thái hiện tại
 
-Bộ tài liệu **Pre-project** đã đủ ba tài liệu: Business Case và Benefit Management Plan ở **Ver 1.1**, Hợp đồng thực hiện dự án ở **Ver 1.0** — tất cả đang chờ phê duyệt và ký. Bộ **Initiating** ở Ver 1.0, còn thiếu Stakeholder Register. Nhóm **Planning** đã có WBS & WBS Dictionary; các tài liệu còn lại dự kiến gồm: Requirements Specification, Scope Management Plan, Schedule Management Plan, Cost Management Plan, Risk Register, Stakeholder Engagement Plan.
+Toàn bộ sáu tài liệu đang ở **Ver 2.0**, thống nhất trên cùng một baseline: kiến trúc P4, mô hình doanh thu M1, vốn 3.500.000 VND, 450 giờ, 15 tuần. Bộ **Pre-project** và **Initiating** đang chờ phê duyệt và ký; bộ Initiating còn thiếu Stakeholder Register. Nhóm **Planning** đã có WBS & WBS Dictionary; các tài liệu còn lại dự kiến gồm: Requirements Specification, Scope Management Plan, Schedule Management Plan, Cost Management Plan, Risk Register, Stakeholder Engagement Plan.
+
+**Hai điểm cần theo dõi ngay từ giai đoạn Planning**, đều đã ghi trong tài liệu nhưng chưa có phương án chốt:
+
+1. **Tải theo tuần vượt năng lực ở M2 → M5** (WBS §9.3). Tổng 450 giờ đúng bằng năng lực 15 tuần × 30 giờ, nên bốn mốc giữa chạy ở 112–130% và chỉ được bù bằng phần dưới mức ở hai đầu. Schedule Management Plan phải chọn một trong hai hướng: dồn giờ trước ở M0–M1, hoặc giảm phạm vi theo thứ tự cắt tại WBS §9.2.
+2. **Hồ sơ cổng thanh toán** (AS-43, RS-10). Phải nộp tại M2 dù kết quả chỉ cần ở M6, vì thời gian duyệt nằm ngoài tầm kiểm soát của đội.
