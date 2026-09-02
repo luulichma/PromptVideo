@@ -6,9 +6,9 @@
 | ------------------- | ------------------------------ |
 | **Nhóm tiến trình** | Initiating                     |
 | **Tên tài liệu**    | Assumption Log                 |
-| **Phiên bản**       | Ver. 2.0                       |
+| **Phiên bản**       | Ver. 2.1                       |
 | **Nhóm thực hiện**  | Nhóm 02                        |
-| **Ngày phát hành**  | 2026-08-27                     |
+| **Ngày phát hành**  | 2026-09-01                     |
 | **Trạng thái**      | Tài liệu sống                  |
 
 <div style="page-break-after: always"></div>
@@ -28,6 +28,7 @@
 | -- | --------- | ------------- | -------------- | ----------------- | --------------- | --------------- |
 | 1  | Ver 1.0   | 2026-08-20    | Tạo mới        | Khởi tạo sổ giả định và ràng buộc: quy ước mã, trạng thái, quy trình xác minh, danh mục AS và CT theo nhóm | Nguyễn Thế Chiến | Phạm Quang Anh |
 | 2  | Ver 2.0   | 2026-08-27    | Chỉnh sửa lớn  | Cập nhật danh mục theo mô hình dịch vụ máy chủ thu phí thuê bao thường niên: bổ sung giả định về giá, số thuê bao, tỷ lệ gia hạn, cổng thanh toán, hạ tầng máy chủ, kết nối Internet và dữ liệu cá nhân; cập nhật ràng buộc về vốn, hạ tầng và giấy phép sản phẩm | Nguyễn Thế Chiến | Phạm Quang Anh |
+| 3  | Ver 2.1   | 2026-09-01    | Chỉnh sửa      | Ghi rõ payback danh nghĩa và payback chiết khấu tại AS-39 (§8) cho khớp Business Case và Benefit Management Plan | Nguyễn Thế Chiến | Phạm Quang Anh |
 
 <div style="page-break-after: always"></div>
 
@@ -180,7 +181,7 @@ Năm giả định dưới đây được tách riêng vì **nếu một trong s
 | -- | --------------------- | ------------------------- |
 | **AS-42** — tỷ lệ gia hạn ≥ 70% | Quyết định phần lớn NPV, nhưng **chỉ đo được sau 12 tháng vận hành**. Trong suốt Năm 1 không có cách nào biết chắc mô hình có bền hay không | MT-16 (tỷ lệ chuyển đổi) và phản hồi định tính của người dùng trả phí trong 6 tháng đầu |
 | **AS-16** — bộ nhớ không tăng theo độ dài | Là lời hứa cốt lõi của sản phẩm. Sai thì mất một trong bốn đặc tính định vị, và phải sửa cả Business Case lẫn Charter | Kết quả nguyên mẫu tại M2 — đây là lý do M2 có tiêu chí hoàn thành nghiêm ngặt |
-| **AS-39** — 100 thuê bao Cá nhân Năm 1 | Payback ~0,84 năm hoàn toàn dựa vào con số này. Nếu Năm 1 chỉ đạt một nửa, payback lùi về ~1,7 năm | MT-14 hàng tháng từ tháng đầu tiên sau phát hành |
+| **AS-39** — 100 thuê bao Cá nhân Năm 1 | Payback ~0,84 năm danh nghĩa (~0,94 năm chiết khấu) hoàn toàn dựa vào con số này. Nếu Năm 1 chỉ đạt một nửa, payback lùi về ~1,7 năm | MT-14 hàng tháng từ tháng đầu tiên sau phát hành |
 | **AS-43** — cổng thanh toán duyệt trong 4 tuần | Nằm ngoài tầm kiểm soát của đội và chặn OB-15. Không thu được tiền thì sản phẩm chạy tốt cũng vô nghĩa | Trạng thái hồ sơ sau khi nộp ở M2; nếu quá 3 tuần chưa có phản hồi, kích hoạt phương án dự phòng |
 | **AS-03** — 3 người × 10 giờ/tuần | Toàn bộ lịch và phạm vi đứng trên con số này, và năng lực đúng bằng nhu cầu nên không có chỗ hụt | Số giờ công thực tế báo cáo hàng tuần; hụt hai tuần liên tiếp là tín hiệu phải giảm phạm vi |
 

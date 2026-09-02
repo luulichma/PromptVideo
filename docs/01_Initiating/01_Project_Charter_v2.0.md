@@ -6,9 +6,9 @@
 | ------------------- | ------------------------------ |
 | **Nhóm tiến trình** | Initiating                     |
 | **Tên tài liệu**    | Project Charter                |
-| **Phiên bản**       | Ver. 2.0                       |
+| **Phiên bản**       | Ver. 2.1                       |
 | **Nhóm thực hiện**  | Nhóm 02                        |
-| **Ngày phát hành**  | 2026-08-27                     |
+| **Ngày phát hành**  | 2026-09-01                     |
 | **Trạng thái**      | Draft — chờ phê duyệt          |
 
 <div style="page-break-after: always"></div>
@@ -28,6 +28,7 @@
 | -- | --------- | ------------- | -------------- | ----------------- | --------------- | --------------- |
 | 1  | Ver 1.0   | 2026-08-20    | Tạo mới        | Khởi tạo Project Charter theo 12 mục chuẩn: mục tiêu, phạm vi, mốc tiến độ, ngân sách, bên liên quan, thẩm quyền | Phạm Quang Anh | Phạm Quang Anh |
 | 2  | Ver 2.0   | 2026-08-27    | Chỉnh sửa lớn  | Cập nhật theo mô hình dịch vụ máy chủ thu phí thuê bao thường niên: bổ sung mục tiêu và yêu cầu về tài khoản, giấy phép, hạn mức và thanh toán; cập nhật ranh giới phạm vi, ngân sách, rủi ro, phân bổ công sức theo mốc và thẩm quyền | Phạm Quang Anh | Phạm Quang Anh |
+| 3  | Ver 2.1   | 2026-09-01    | Chỉnh sửa      | Lược bỏ nội dung trùng với Business Case và Benefit Management Plan tại §2.1, §6 và §8.2; ghi rõ payback danh nghĩa và payback chiết khấu tại §2.2; rút §9 về mức danh sách cao và chuyển bảng chi tiết sang Stakeholder Register, đánh số lại SH-01 → SH-09. Giữ nguyên cấu trúc 12 mục | Phạm Quang Anh | Phạm Quang Anh |
 
 <div style="page-break-after: always"></div>
 
@@ -80,7 +81,7 @@
 
 ### 2.1. Lý do thực hiện
 
-Ba nhóm người dùng — doanh nghiệp vừa và nhỏ, giáo viên, người sáng tạo nội dung — hiện mất khoảng **45 phút để tạo một video trình chiếu dài 60 giây**, và phải trả **180–276 USD mỗi năm** cho công cụ nước ngoài render trên máy chủ của nhà cung cấp. Năm hệ quả: chi phí cao so với mặt bằng thu nhập trong nước, không có hoá đơn hợp lệ để hạch toán, nội dung nội bộ bị đưa ra khỏi tổ chức, độ dài video bị giới hạn theo gói thuê bao, và kết quả xuất ra không ổn định giữa các lần chạy.
+Nhu cầu thị trường và sáu hạn chế của các công cụ hiện có được phân tích đầy đủ tại [Business Case §2](../00_Pre-project/01_Business_Case_v2.0.md#2-business-need): ba nhóm người dùng mục tiêu mất ~45 phút cho một video 60 giây và trả 180–276 USD/năm cho công cụ nước ngoài render trên máy chủ nhà cung cấp.
 
 PromptVideo giải quyết cả năm bằng một quyết định kiến trúc duy nhất: **mô tả video bằng dữ liệu, dựng bằng HTML/CSS, mã hoá theo luồng thành MP4 ngay trên máy người dùng qua WebCodecs, và đặt toàn bộ tài khoản – giấy phép – thanh toán trên một máy chủ dịch vụ.**
 
@@ -95,7 +96,7 @@ Phân tích đầy đủ tại [Business Case](../00_Pre-project/01_Business_Cas
 | Vốn tiền mặt (Năm 0)                    | 3.500.000 VND              |
 | Công sức quy đổi (không chi tiền)       | 450 giờ ≈ 36.000.000 VND   |
 | NPV — cơ sở kinh tế đầy đủ (3 năm, r = 12%) | +433.433.000 VND       |
-| Thời gian hoàn vốn — cơ sở kinh tế      | ~0,84 năm                  |
+| Thời gian hoàn vốn — cơ sở kinh tế      | ~0,84 năm (danh nghĩa) · ~0,94 năm (chiết khấu) |
 | Điểm hoà vốn                            | 28% kịch bản doanh thu cơ sở |
 | Đánh giá khả thi                        | Khả thi trên cả 5 khía cạnh: kỹ thuật, pháp lý, vận hành, tiến độ, nguồn lực |
 
@@ -273,19 +274,21 @@ Giả định và ràng buộc chi phối phạm vi được ghi đầy đủ t�
 
 ## 6. High-level Risks
 
-| ID    | Rủi ro                                                        | Khả năng | Tác động | Mức        | Chủ sở hữu | Ứng phó |
-| ----- | ------------------------------------------------------------- | -------- | -------- | ---------- | ---------- | ------- |
-| RS-01 | Nguyên mẫu mã hoá theo luồng không đạt trong thời gian dành cho M2–M4 | Trung bình | Cao | **Cao** | Trưởng nhóm kỹ thuật | Dựng nguyên mẫu ngay tuần 4; dự phòng xuất WebM/VP9; dự phòng giảm phạm vi xuống 3 mẫu và bỏ chức năng lưu/mở dự án |
-| RS-02 | Một thành viên rút lui hoặc không đủ 10 giờ/tuần               | Trung bình | Cao    | **Cao**    | Giám đốc dự án | Đội 3 người nên mất 1 người là mất 1/3 năng lực; xác nhận cam kết bằng văn bản tại M0 và mỗi 2 tuần; không để kiến thức tập trung vào một người |
-| RS-09 | **Máy chủ giấy phép ngừng hoạt động** — 100% người dùng trả phí không xuất được video | Trung bình | Cao | **Cao** | Trưởng nhóm kỹ thuật | Hệ quả trực tiếp của quyết định xác thực trực tuyến bắt buộc; giám sát và cảnh báo tự động; quy trình khôi phục viết sẵn và diễn tập tại M6; mục tiêu NF-10 ≥ 99%/tháng |
-| RS-11 | Tỷ lệ gia hạn thấp làm doanh thu Năm 2–3 sụp đổ                | Trung bình | Cao    | **Cao**    | Nhà tài trợ | Mô hình thuần thuê bao chỉ có một trụ doanh thu; theo dõi MT-15 và MT-16; điểm quyết định hết Quý 4 Năm 1 |
-| RS-10 | Cổng thanh toán không duyệt hồ sơ kịp mốc M6                  | Trung bình | Cao    | **Trung bình** | Nhà tài trợ | Nộp hồ sơ ngay tại M2 chứ không đợi tới M6; dự phòng thu tiền bằng chuyển khoản và kích hoạt giấy phép thủ công trong 3 tháng đầu |
+Mục này gán **khả năng, tác động và chủ sở hữu** cho từng rủi ro — phần Business Case §6 không có. Nội dung ứng phó chi tiết ghi tại [Business Case §6](../00_Pre-project/01_Business_Case_v2.0.md#6-risks-and-constraints); dưới đây chỉ nêu biện pháp then chốt.
+
+| ID    | Rủi ro                                                        | Khả năng | Tác động | Mức        | Chủ sở hữu | Biện pháp then chốt |
+| ----- | ------------------------------------------------------------- | -------- | -------- | ---------- | ---------- | ------------------- |
+| RS-01 | Nguyên mẫu mã hoá theo luồng không đạt trong thời gian dành cho M2–M4 | Trung bình | Cao | **Cao** | Trưởng nhóm kỹ thuật | Nguyên mẫu ngay tuần 4; giảm phạm vi nếu thất bại |
+| RS-02 | Một thành viên rút lui hoặc không đủ 10 giờ/tuần               | Trung bình | Cao    | **Cao**    | Giám đốc dự án | Cam kết bằng văn bản tại M0 và mỗi 2 tuần |
+| RS-09 | **Máy chủ giấy phép ngừng hoạt động** — người dùng trả phí không xuất được video | Trung bình | Cao | **Cao** | Trưởng nhóm kỹ thuật | Giám sát tự động; quy trình khôi phục diễn tập tại M6; NF-10 ≥ 99%/tháng |
+| RS-11 | Tỷ lệ gia hạn thấp làm doanh thu Năm 2–3 sụp đổ                | Trung bình | Cao    | **Cao**    | Nhà tài trợ | Theo dõi MT-15 và MT-16; điểm quyết định hết Quý 4 Năm 1 |
+| RS-10 | Cổng thanh toán không duyệt hồ sơ kịp mốc M6                  | Trung bình | Cao    | **Trung bình** | Nhà tài trợ | Nộp hồ sơ tại M2 chứ không đợi tới M6 |
 | RS-03 | Ghi file theo luồng không hoạt động trên Firefox/Safari        | Cao      | Trung bình | **Trung bình** | Trưởng nhóm kỹ thuật | Phương án dự phòng OPFS; công bố rõ giới hạn theo trình duyệt (RQ-10) |
 | RS-04 | Phạm vi bị nới rộng trong quá trình làm                       | Trung bình | Cao    | **Trung bình** | Giám đốc dự án | Với 450 giờ và một nhánh máy chủ mới, nới phạm vi là rủi ro nghiêm trọng — mọi thay đổi phải qua quy trình kiểm soát thay đổi (mục 10.3) |
-| RS-05 | Không mua được tài sản đồ hoạ có quyền phân phối lại trong ngân sách 700.000 VND | Trung bình | Trung bình | **Trung bình** | Trưởng nhóm sản phẩm | Ưu tiên nguồn CC0 (Unsplash, Pexels, Lucide, Phosphor); nếu không đủ, làm mẫu tối giản không dùng ảnh |
-| RS-12 | Rò rỉ dữ liệu tài khoản người dùng                            | Thấp     | Cao      | **Trung bình** | Trưởng nhóm kỹ thuật | Băm mật khẩu, không lưu thông tin thẻ, thu thập dữ liệu ở mức tối thiểu (NF-11); rà soát an toàn tại M6 |
-| RS-06 | Doanh thu dưới ngưỡng hoà vốn 28% kịch bản cơ sở              | Trung bình | Trung bình | Trung bình | Nhà tài trợ | Chi phí cố định thấp nên không lỗ tiền mặt; rà soát hàng quý; điểm quyết định hết Quý 4 Năm 1 |
-| RS-07 | Vấn đề bản quyền H.264 phát sinh khi thương mại hoá           | Thấp     | Cao      | Trung bình | Nhà tài trợ | Xác minh trước M4; dự phòng VP9/AV1 |
+| RS-05 | Không mua được tài sản đồ hoạ có quyền phân phối lại trong ngân sách 700.000 VND | Trung bình | Trung bình | **Trung bình** | Trưởng nhóm sản phẩm | Ưu tiên nguồn CC0; nếu không đủ, làm mẫu tối giản không dùng ảnh |
+| RS-12 | Rò rỉ dữ liệu tài khoản người dùng                            | Thấp     | Cao      | **Trung bình** | Trưởng nhóm kỹ thuật | Thu thập dữ liệu ở mức tối thiểu (NF-11); rà soát an toàn tại M6 |
+| RS-06 | Doanh thu dưới ngưỡng hoà vốn 28% kịch bản cơ sở              | Trung bình | Trung bình | Trung bình | Nhà tài trợ | Rà soát hàng quý; điểm quyết định hết Quý 4 Năm 1 |
+| RS-07 | Vấn đề bản quyền định dạng mã hoá phát sinh khi thương mại hoá | Thấp     | Cao      | Trung bình | Nhà tài trợ | Xác minh trước M4; dự phòng codec khác |
 
 Danh sách này ở mức khởi tạo. Sổ đăng ký rủi ro đầy đủ sẽ được lập ở nhóm tiến trình Planning. Mã RS-08 không còn được sử dụng và không được cấp lại.
 
@@ -320,15 +323,17 @@ Dự án có vốn tiền mặt nhỏ; chi phí chủ yếu là công sức củ
 
 ### 8.2. Ngân sách tiền mặt (Năm 0)
 
-| Hạng mục                                       | Cách tính                                     | Thành tiền (VND) | Tỷ trọng |
-| ---------------------------------------------- | --------------------------------------------- | ---------------: | -------: |
-| Phí khởi tạo và tích hợp cổng thanh toán       | Hồ sơ, phí kích hoạt (AS-43)                  |        1.500.000 |   42,9%  |
-| Tài sản đồ hoạ có bản quyền cho 5 mẫu đi kèm   | Ảnh, biểu tượng có quyền phân phối lại         |          700.000 |   20,0%  |
-| Máy chủ ảo và chứng chỉ (4 tháng trong dự án)  | 150.000 VND/tháng × 4                          |          600.000 |   17,1%  |
-| Tên miền năm đầu                               | 1 tên miền `.com`                              |          300.000 |    8,6%  |
-| Font chữ                                       | SIL OFL — Be Vietnam Pro, Noto Sans            |                0 |    0,0%  |
-| Dự phòng                                       |                                                |          400.000 |   11,4%  |
-| **TỔNG NGÂN SÁCH TIỀN MẶT**                    |                                                |   **3.500.000** | **100%** |
+Cách tính từng hạng mục ghi tại [Benefit Management Plan §4.1](../00_Pre-project/02_Benefit_Management_Plan_v2.0.md#41-chi-phí).
+
+| Hạng mục                                       | Thành tiền (VND) | Tỷ trọng |
+| ---------------------------------------------- | ---------------: | -------: |
+| Phí khởi tạo và tích hợp cổng thanh toán (AS-43) |      1.500.000 |   42,9%  |
+| Tài sản đồ hoạ có bản quyền cho 5 mẫu đi kèm   |          700.000 |   20,0%  |
+| Máy chủ ảo và chứng chỉ (4 tháng trong dự án)  |          600.000 |   17,1%  |
+| Tên miền năm đầu                               |          300.000 |    8,6%  |
+| Font chữ (SIL OFL)                             |                0 |    0,0%  |
+| Dự phòng                                       |          400.000 |   11,4%  |
+| **TỔNG NGÂN SÁCH TIỀN MẶT**                    |   **3.500.000** | **100%** |
 
 ### 8.3. Ngân sách công sức
 
@@ -336,7 +341,7 @@ Dự án có vốn tiền mặt nhỏ; chi phí chủ yếu là công sức củ
 | ------------------- | -------------------------------------------- | -----: | ------------: |
 | Công sức phát triển | 3 người × 15 tuần × 10 giờ/tuần              | **450** |    36.000.000 |
 
-Con số này khớp với [Benefit Management Plan §4.1](../00_Pre-project/02_Benefit_Management_Plan_v2.0.md#41-dữ-liệu-đầu-vào--chi-phí). Đơn giá quy đổi 80.000 VND/giờ là **chi phí cơ hội, không phải tiền chi ra**.
+Con số này khớp với [Benefit Management Plan §4.1](../00_Pre-project/02_Benefit_Management_Plan_v2.0.md#41-chi-phí). Đơn giá quy đổi 80.000 VND/giờ là **chi phí cơ hội, không phải tiền chi ra**.
 
 ### 8.4. Phân bổ công sức theo mốc
 
@@ -368,21 +373,13 @@ Con số này khớp với [Benefit Management Plan §4.1](../00_Pre-project/02_
 
 ## 9. Stakeholder List
 
-Đội chỉ có 3 thành viên nên **mỗi người kiêm nhiều vai trò**. Bảng dưới liệt kê theo vai trò; một người có thể xuất hiện ở nhiều dòng.
+Dự án có **9 bên liên quan, mã SH-01 → SH-09**, chia ba nhóm:
 
-| ID    | Bên liên quan            | Vai trò                       | Quan tâm chính                          | Ảnh hưởng | Cách tham gia |
-| ----- | ------------------------ | ----------------------------- | --------------------------------------- | --------- | ------------- |
-| SH-01 | Phạm Quang Anh          | Nhà tài trợ — Enticy Studios  | Giá trị thu về so với công sức bỏ ra; khả năng vận hành dịch vụ sau bàn giao | Cao | Phê duyệt Charter, rà soát tại mốc, quyết định thay đổi lớn |
-| SH-02 | Nguyễn Thế Chiến          | Giám đốc dự án                | Bàn giao đúng phạm vi, tiến độ, công sức | Cao       | Điều hành hàng ngày, báo cáo tuần |
-| SH-03 | Nguyễn Việt Quang          | Trưởng nhóm kỹ thuật          | Tính khả thi kỹ thuật, chất lượng mã     | Cao       | Quyết định kiến trúc, dựng nguyên mẫu |
-| SH-04 | Phạm Quang Anh          | Trưởng nhóm sản phẩm          | Trải nghiệm người dùng, chất lượng mẫu, cấu trúc bậc giá | Cao | Thu thập yêu cầu, thiết kế mẫu, kiểm thử người dùng |
-| SH-05 | Thầy Nguyễn Đình Quảng   | Giảng viên hướng dẫn          | Chất lượng và tính đầy đủ của tài liệu quản lý dự án | Cao | Đánh giá tài liệu theo từng nhóm tiến trình |
-| SH-06 | Doanh nghiệp vừa và nhỏ  | Khách hàng bậc Doanh nghiệp   | Hoá đơn VAT, hỗ trợ có cam kết, chi phí thấp, dữ liệu không rời tổ chức | Cao | Phỏng vấn yêu cầu, kiểm thử chấp nhận |
-| SH-07 | Giáo viên, giảng viên    | Khách hàng bậc Cá nhân        | Hỗ trợ tiếng Việt, dùng được trên máy trường, không giới hạn độ dài bài giảng | Trung bình | Phỏng vấn yêu cầu, kiểm thử chấp nhận |
-| SH-08 | Người sáng tạo nội dung  | Khách hàng bậc Cá nhân        | Tốc độ xuất, chất lượng hình ảnh         | Trung bình | Kiểm thử beta |
-| SH-10 | Nhà cung cấp cổng thanh toán | Đối tác                   | Hồ sơ hợp lệ, tuân thủ quy định về thanh toán và hoá đơn | Trung bình | Duyệt hồ sơ, đối soát giao dịch hàng tháng |
+- **Nội bộ (SH-01 → SH-04)** — Nhà tài trợ, Giám đốc dự án, Trưởng nhóm kỹ thuật, Trưởng nhóm sản phẩm. Đội chỉ có 3 người nên **mỗi người kiêm nhiều vai trò**; danh sách liệt kê theo vai trò chứ không theo người.
+- **Bên ngoài — quyền mạnh (SH-05, SH-06)** — Giảng viên hướng dẫn và khách hàng bậc Doanh nghiệp.
+- **Bên ngoài — quyền trung bình (SH-07 → SH-09)** — khách hàng bậc Cá nhân (giáo viên, người sáng tạo nội dung) và nhà cung cấp cổng thanh toán.
 
-Kế hoạch quản lý bên liên quan chi tiết sẽ được lập ở nhóm tiến trình Planning. Mã SH-09 không còn được sử dụng và không được cấp lại.
+Danh sách đầy đủ kèm phân loại, mức quyền, mức quan tâm, kỳ vọng và kênh liên lạc nằm tại [Stakeholder Register](./03_Stakeholder_Register_v1.0.md). Kế hoạch tham gia và kế hoạch truyền thông chi tiết sẽ được lập ở nhóm tiến trình Planning.
 
 ---
 
