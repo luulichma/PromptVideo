@@ -81,7 +81,7 @@
 
 ### 2.1. Lý do thực hiện
 
-Nhu cầu thị trường và sáu hạn chế của các công cụ hiện có được phân tích đầy đủ tại [Business Case §2](../00_Pre-project/01_Business_Case_v2.0.md#2-business-need): ba nhóm người dùng mục tiêu mất ~45 phút cho một video 60 giây và trả 180–276 USD/năm cho công cụ nước ngoài render trên máy chủ nhà cung cấp.
+Nhu cầu thị trường và sáu hạn chế của các công cụ hiện có được phân tích đầy đủ tại [Business Case §2](../00_Pre-project/01_Business_Case_v2.2.md#2-nhu-cầu-kinh-doanh): ba nhóm người dùng mục tiêu mất ~45 phút cho một video 60 giây và trả 180–276 USD/năm cho công cụ nước ngoài render trên máy chủ nhà cung cấp.
 
 PromptVideo giải quyết cả năm bằng một quyết định kiến trúc duy nhất: **mô tả video bằng dữ liệu, dựng bằng HTML/CSS, mã hoá theo luồng thành MP4 ngay trên máy người dùng qua WebCodecs, và đặt toàn bộ tài khoản – giấy phép – thanh toán trên một máy chủ dịch vụ.**
 
@@ -89,7 +89,7 @@ Cách chia này cho ba hệ quả trực tiếp. Máy chủ không chạm vào n
 
 ### 2.2. Căn cứ phê duyệt
 
-Phân tích đầy đủ tại [Business Case](../00_Pre-project/01_Business_Case_v2.0.md). Tóm tắt:
+Phân tích đầy đủ tại [Business Case](../00_Pre-project/01_Business_Case_v2.2.md). Tóm tắt:
 
 | Chỉ tiêu                                | Giá trị                    |
 | --------------------------------------- | -------------------------- |
@@ -107,7 +107,7 @@ Hai quyết định nền tảng đã được chốt trong Business Case:
 
 ### 2.3. Liên kết với chiến lược
 
-Dự án phục vụ mục tiêu của Enticy Studios về việc xây dựng dòng doanh thu định kỳ dự báo được với chi phí phục vụ thấp, đồng thời tạo tài sản kỹ thuật (bộ dựng khung hình, pipeline mã hoá theo luồng, mô-đun tài khoản – giấy phép) dùng lại được cho các sản phẩm sau. Chi tiết tại [Benefit Management Plan §3](../00_Pre-project/02_Benefit_Management_Plan_v2.0.md#3-strategic-alignment).
+Dự án phục vụ mục tiêu của Enticy Studios về việc xây dựng dòng doanh thu định kỳ dự báo được với chi phí phục vụ thấp, đồng thời tạo tài sản kỹ thuật (bộ dựng khung hình, pipeline mã hoá theo luồng, mô-đun tài khoản – giấy phép) dùng lại được cho các sản phẩm sau. Chi tiết tại [Benefit Management Plan §3](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md#3-liên-kết-chiến-lược).
 
 ---
 
@@ -274,7 +274,7 @@ Giả định và ràng buộc chi phối phạm vi được ghi đầy đủ t�
 
 ## 6. High-level Risks
 
-Mục này gán **khả năng, tác động và chủ sở hữu** cho từng rủi ro — phần Business Case §6 không có. Nội dung ứng phó chi tiết ghi tại [Business Case §6](../00_Pre-project/01_Business_Case_v2.0.md#6-risks-and-constraints); dưới đây chỉ nêu biện pháp then chốt.
+Mục này gán **khả năng, tác động và chủ sở hữu** cho từng rủi ro — phần Business Case §5 không có. Nội dung ứng phó chi tiết ghi tại [Business Case §5](../00_Pre-project/01_Business_Case_v2.2.md#5-khả-thi-rủi-ro-và-điều-kiện-phê-duyệt); dưới đây chỉ nêu biện pháp then chốt.
 
 | ID    | Rủi ro                                                        | Khả năng | Tác động | Mức        | Chủ sở hữu | Biện pháp then chốt |
 | ----- | ------------------------------------------------------------- | -------- | -------- | ---------- | ---------- | ------------------- |
@@ -323,7 +323,7 @@ Dự án có vốn tiền mặt nhỏ; chi phí chủ yếu là công sức củ
 
 ### 8.2. Ngân sách tiền mặt (Năm 0)
 
-Cách tính từng hạng mục ghi tại [Benefit Management Plan §4.1](../00_Pre-project/02_Benefit_Management_Plan_v2.0.md#41-chi-phí).
+Cách tính từng hạng mục ghi tại [Benefit Management Plan §4](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md#4-thẩm-định-tài-chính).
 
 | Hạng mục                                       | Thành tiền (VND) | Tỷ trọng |
 | ---------------------------------------------- | ---------------: | -------: |
@@ -341,7 +341,7 @@ Cách tính từng hạng mục ghi tại [Benefit Management Plan §4.1](../00_
 | ------------------- | -------------------------------------------- | -----: | ------------: |
 | Công sức phát triển | 3 người × 15 tuần × 10 giờ/tuần              | **450** |    36.000.000 |
 
-Con số này khớp với [Benefit Management Plan §4.1](../00_Pre-project/02_Benefit_Management_Plan_v2.0.md#41-chi-phí). Đơn giá quy đổi 80.000 VND/giờ là **chi phí cơ hội, không phải tiền chi ra**.
+Con số này khớp với [Benefit Management Plan §4](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md#4-thẩm-định-tài-chính). Đơn giá quy đổi 80.000 VND/giờ là **chi phí cơ hội, không phải tiền chi ra**.
 
 ### 8.4. Phân bổ công sức theo mốc
 
@@ -485,7 +485,7 @@ Nhà tài trợ là người có thẩm quyền cao nhất của dự án và gi
 7. **Giải quyết vấn đề vượt cấp** mà Giám đốc dự án không xử lý được.
 8. **Ký nghiệm thu sản phẩm cuối cùng** theo mục 10.2.
 9. **Quyết định dừng dự án** bất kỳ lúc nào nếu căn cứ kinh doanh không còn đứng vững.
-10. **Chịu trách nhiệm vận hành máy chủ dịch vụ và theo dõi lợi ích trong 3 năm sau khi dự án đóng**, theo [Benefit Management Plan §6](../00_Pre-project/02_Benefit_Management_Plan_v2.0.md#6-benefits-owner). Nghĩa vụ này gồm giữ máy chủ hoạt động, xử lý thanh toán, hỗ trợ khách hàng và gia hạn thuê bao — hoạt động nằm ngoài phạm vi dự án.
+10. **Chịu trách nhiệm vận hành máy chủ dịch vụ và theo dõi lợi ích trong 3 năm sau khi dự án đóng**, theo [Benefit Management Plan §6](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md#6-chủ-sở-hữu-lợi-ích). Nghĩa vụ này gồm giữ máy chủ hoạt động, xử lý thanh toán, hỗ trợ khách hàng và gia hạn thuê bao — hoạt động nằm ngoài phạm vi dự án.
 
 ### 12.3. Chữ ký phê duyệt
 
@@ -499,4 +499,4 @@ Bằng việc ký dưới đây, Nhà tài trợ chính thức uỷ quyền kh�
 
 ---
 
-*Tài liệu liên quan: [Business Case](../00_Pre-project/01_Business_Case_v2.0.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.0.md) · [Assumption Log](./02_Assumption_Log_v2.0.md)*
+*Tài liệu liên quan: [Business Case](../00_Pre-project/01_Business_Case_v2.2.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md) · [Assumption Log](./02_Assumption_Log_v2.0.md)*

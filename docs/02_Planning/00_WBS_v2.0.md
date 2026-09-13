@@ -71,7 +71,7 @@ WBS là thành phần của **Scope Baseline** cùng với Project Scope Stateme
 | [Project Charter §3.1](../01_Initiating/01_Project_Charter_v2.0.md#31-mục-tiêu-đo-được) | 15 mục tiêu đo được — nguồn của tiêu chí chấp nhận |
 | [Project Charter §7](../01_Initiating/01_Project_Charter_v2.0.md#7-summary-milestone-schedule) | 8 mốc M0 → M7 |
 | [Project Charter §8.4](../01_Initiating/01_Project_Charter_v2.0.md#84-phân-bổ-công-sức-theo-mốc) | Phân bổ 450 giờ theo mốc — ràng buộc mà tổng giờ WBS phải khớp |
-| [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.0.md) | Chỉ số MT-06 → MT-09 và yêu cầu đo baseline MT-06 trước mốc M1 |
+| [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md) | Chỉ số MT-06 → MT-09 và yêu cầu đo baseline MT-06 trước mốc M1 |
 | [Assumption Log](../01_Initiating/02_Assumption_Log_v2.0.md) | Ràng buộc CT-01 (15 tuần), CT-04 (450 giờ), CT-03 (trần hạ tầng), CT-05 và CT-08 (giấy phép) |
 
 ---
@@ -520,4 +520,4 @@ Mỗi lần tăng phiên bản phải cập nhật đồng thời: tên file, ô
 
 ---
 
-*Tài liệu liên quan: [Project Charter](../01_Initiating/01_Project_Charter_v2.0.md) · [Assumption Log](../01_Initiating/02_Assumption_Log_v2.0.md) · [Business Case](../00_Pre-project/01_Business_Case_v2.0.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.0.md)*
+*Tài liệu liên quan: [Project Charter](../01_Initiating/01_Project_Charter_v2.0.md) · [Assumption Log](../01_Initiating/02_Assumption_Log_v2.0.md) · [Business Case](../00_Pre-project/01_Business_Case_v2.2.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md)*

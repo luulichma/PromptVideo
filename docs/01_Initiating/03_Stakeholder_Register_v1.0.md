@@ -105,4 +105,4 @@ Mã `SH-xx` được đánh số liên tục từ SH-01. Khi một bên liên qu
 
 ---
 
-*Tài liệu liên quan: [Project Charter](./01_Project_Charter_v2.0.md) · [Assumption Log](./02_Assumption_Log_v2.0.md) · [Business Case](../00_Pre-project/01_Business_Case_v2.0.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.0.md)*
+*Tài liệu liên quan: [Project Charter](./01_Project_Charter_v2.0.md) · [Assumption Log](./02_Assumption_Log_v2.0.md) · [Business Case](../00_Pre-project/01_Business_Case_v2.2.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md)*

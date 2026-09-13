@@ -10,8 +10,8 @@ Thư mục này chứa toàn bộ tài liệu quản lý dự án của PromptVi
 
 | STT | Tài liệu | Nhóm tiến trình | Phiên bản | Cập nhật | Nhóm phụ trách | Trạng thái |
 | --- | -------- | --------------- | --------- | -------- | -------------- | ---------- |
-| 1 | [Business Case](./00_Pre-project/01_Business_Case_v2.0.md) | Pre-project | Ver 2.1 | 2026-09-01 | Nhóm khởi tạo | Draft |
-| 2 | [Benefit Management Plan](./00_Pre-project/02_Benefit_Management_Plan_v2.0.md) | Pre-project | Ver 2.1 | 2026-09-01 | Nhóm khởi tạo | Draft |
+| 1 | [Business Case](./00_Pre-project/01_Business_Case_v2.2.md) | Pre-project | Ver 2.2 | 2026-09-13 | Nhóm khởi tạo | Draft |
+| 2 | [Benefit Management Plan](./00_Pre-project/02_Benefit_Management_Plan_v2.2.md) | Pre-project | Ver 2.2 | 2026-09-13 | Nhóm khởi tạo | Draft |
 | 3 | [Hợp đồng thực hiện dự án](./00_Pre-project/03_Hop_dong_thuc_hien_du_an_v2.0.md) | Pre-project | Ver 2.0 | 2026-08-27 | Nhóm khởi tạo | Draft — chờ ký |
 | 4 | [Project Charter](./01_Initiating/01_Project_Charter_v2.0.md) | Initiating | Ver 2.1 | 2026-09-01 | Nhóm thực hiện | Draft |
 | 5 | [Assumption Log](./01_Initiating/02_Assumption_Log_v2.0.md) | Initiating | Ver 2.1 | 2026-09-01 | Nhóm thực hiện | Tài liệu sống |
@@ -56,11 +56,11 @@ docs/
 ├── _template/
 │   └── 00_Document_Template_v1.0.md   ← khung chuẩn cho tài liệu mới
 ├── _archive/                          ← bản cũ đã bị thay thế, giữ để đối chiếu
-│   ├── 01_Business_Case_v1.0.md          ← các bản v1 đã bị thay thế
-│   └── ... (8 file)
+│   ├── 01_Business_Case_v1.0.md          ← các bản cũ (v1.x, v2.0) đã bị thay thế
+│   └── ... (10 file)
 ├── 00_Pre-project/
-│   ├── 01_Business_Case_v2.0.md
-│   ├── 02_Benefit_Management_Plan_v2.0.md
+│   ├── 01_Business_Case_v2.2.md
+│   ├── 02_Benefit_Management_Plan_v2.2.md
 │   └── 03_Hop_dong_thuc_hien_du_an_v2.0.md
 ├── 01_Initiating/
 │   ├── 01_Project_Charter_v2.0.md
@@ -90,8 +90,8 @@ Sáu thư mục nhóm tiến trình là cố định, tạo sẵn kể cả khi 
 `Thứ tự_Tên_tài_liệu_phiên bản.md` — số thứ tự **đếm lại từ 01 trong mỗi thư mục**, theo thứ tự tài liệu được tạo ra. Dùng gạch dưới thay dấu cách, không dấu tiếng Việt.
 
 ```
-01_Business_Case_v2.0.md
-02_Benefit_Management_Plan_v2.0.md
+01_Business_Case_v2.2.md
+02_Benefit_Management_Plan_v2.2.md
 ```
 
 Bản Word/Excel nộp cho thầy giữ nguyên quy cách này với đuôi tương ứng (`.docx`, `.xlsx`).
@@ -136,7 +136,7 @@ Theo mẫu giảng viên cung cấp, thứ tự cố định:
 
 1. **Điền hết placeholder.** Soát bằng: `grep -rn '<<' docs/`
 2. **Kiểm tra nhất quán chéo:**
-   - Summary Budget trong Project Charter §8, Điều 4 Hợp đồng và bảng chi phí tại Benefit Management Plan §4.1 khớp nhau: **3.500.000 VND tiền mặt + 450 giờ công**
+   - Summary Budget trong Project Charter §8, Điều 4 Hợp đồng và bảng chi phí tại Benefit Management Plan §4 khớp nhau: **3.500.000 VND tiền mặt + 450 giờ công**
    - Chuỗi truy vết đầy đủ: `BO-xx` (Business Case §1.1) → `OB-xx` (Charter §3.1) → `BN-xx` (BMP §2) → `MT-xx` (BMP §7)
    - NPV +433,4 triệu · BCR 3,52 · ngưỡng hoà vốn 28% xuất hiện thống nhất ở Business Case, BMP và Hợp đồng
    - Giá và hạn mức ba bậc thuê bao ghi giống nhau ở Business Case §3.2, Charter §4.1 và Hợp đồng §2.2
@@ -150,7 +150,7 @@ Theo mẫu giảng viên cung cấp, thứ tự cố định:
 
 ## Trạng thái hiện tại
 
-Toàn bộ sáu tài liệu đang ở **Ver 2.0**, thống nhất trên cùng một baseline: kiến trúc P4, mô hình doanh thu M1, vốn 3.500.000 VND, 450 giờ, 15 tuần. Bộ **Pre-project** và **Initiating** đang chờ phê duyệt và ký; bộ Initiating còn thiếu Stakeholder Register. Nhóm **Planning** đã có WBS & WBS Dictionary; các tài liệu còn lại dự kiến gồm: Requirements Specification, Scope Management Plan, Schedule Management Plan, Cost Management Plan, Risk Register, Stakeholder Engagement Plan.
+Business Case và Benefit Management Plan đã lên **Ver 2.2** (tái cấu trúc, bỏ hệ mã tham chiếu chéo); các tài liệu còn lại ở **Ver 2.0 – 2.1**. Toàn bộ vẫn thống nhất trên cùng một baseline: kiến trúc P4, mô hình doanh thu M1, vốn 3.500.000 VND, 450 giờ, 15 tuần. Bộ **Pre-project** và **Initiating** đang chờ phê duyệt và ký; bộ Initiating còn thiếu Stakeholder Register. Nhóm **Planning** đã có WBS & WBS Dictionary; các tài liệu còn lại dự kiến gồm: Requirements Specification, Scope Management Plan, Schedule Management Plan, Cost Management Plan, Risk Register, Stakeholder Engagement Plan.
 
 **Hai điểm cần theo dõi ngay từ giai đoạn Planning**, đều đã ghi trong tài liệu nhưng chưa có phương án chốt:
 

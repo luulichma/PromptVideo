@@ -55,8 +55,8 @@
 
 **Căn cứ lập hợp đồng:**
 
-- [Business Case Ver 2.0](./01_Business_Case_v2.0.md) — khuyến nghị phê duyệt phương án kiến trúc P4 và mô hình doanh thu M1
-- [Benefit Management Plan Ver 2.0](./02_Benefit_Management_Plan_v2.0.md) — danh mục lợi ích và kết quả thẩm định tài chính (NPV +433,4 triệu VND, BCR 3,52)
+- [Business Case Ver 2.2](./01_Business_Case_v2.2.md) — khuyến nghị phê duyệt phương án kiến trúc P4 và mô hình doanh thu M1
+- [Benefit Management Plan Ver 2.2](./02_Benefit_Management_Plan_v2.2.md) — danh mục lợi ích và kết quả thẩm định tài chính (NPV +433,4 triệu VND, BCR 3,52)
 - Nhu cầu và năng lực thực tế của hai bên tại thời điểm ký
 
 ---
@@ -340,7 +340,7 @@ Trong mọi trường hợp chấm dứt, Bên B bàn giao toàn bộ mã nguồ
 1. Hợp đồng có hiệu lực kể từ ngày hai bên ký và kết thúc khi hoàn thành nghĩa vụ theo Điều 10.
 2. Hợp đồng được lập thành **02 bản**, mỗi bên giữ 01 bản, có giá trị như nhau.
 3. Mọi tranh chấp được giải quyết trước hết bằng thương lượng giữa hai bên. Nếu không đạt kết quả, đưa ra giảng viên hướng dẫn phân xử.
-4. Các tài liệu sau là **bộ phận không tách rời** của hợp đồng: [Business Case Ver 2.0](./01_Business_Case_v2.0.md), [Benefit Management Plan Ver 2.0](./02_Benefit_Management_Plan_v2.0.md), [Project Charter Ver 2.0](../01_Initiating/01_Project_Charter_v2.0.md), [Assumption Log Ver 2.0](../01_Initiating/02_Assumption_Log_v2.0.md). Khi có mâu thuẫn về chi tiết, **Project Charter được ưu tiên áp dụng**.
+4. Các tài liệu sau là **bộ phận không tách rời** của hợp đồng: [Business Case Ver 2.2](./01_Business_Case_v2.2.md), [Benefit Management Plan Ver 2.2](./02_Benefit_Management_Plan_v2.2.md), [Project Charter Ver 2.0](../01_Initiating/01_Project_Charter_v2.0.md), [Assumption Log Ver 2.0](../01_Initiating/02_Assumption_Log_v2.0.md). Khi có mâu thuẫn về chi tiết, **Project Charter được ưu tiên áp dụng**.
 5. Việc sửa đổi hợp đồng phải lập thành phụ lục có chữ ký của cả hai bên, và tăng phiên bản theo quy ước tại [docs/README.md](../README.md).
 
 <br>
@@ -365,4 +365,4 @@ Trong mọi trường hợp chấm dứt, Bên B bàn giao toàn bộ mã nguồ
 
 ---
 
-*Tài liệu liên quan: [Business Case](./01_Business_Case_v2.0.md) · [Benefit Management Plan](./02_Benefit_Management_Plan_v2.0.md) · [Project Charter](../01_Initiating/01_Project_Charter_v2.0.md) · [Assumption Log](../01_Initiating/02_Assumption_Log_v2.0.md)*
+*Tài liệu liên quan: [Business Case](./01_Business_Case_v2.2.md) · [Benefit Management Plan](./02_Benefit_Management_Plan_v2.2.md) · [Project Charter](../01_Initiating/01_Project_Charter_v2.0.md) · [Assumption Log](../01_Initiating/02_Assumption_Log_v2.0.md)*

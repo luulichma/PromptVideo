@@ -52,7 +52,7 @@
 
 ## 1. Mục đích
 
-Sổ này ghi lại **mọi điều được coi là đúng mà chưa được chứng minh** (giả định) và **mọi giới hạn mà dự án phải chấp nhận** (ràng buộc). Lý do tồn tại rất cụ thể: các con số trong [Business Case](../00_Pre-project/01_Business_Case_v2.0.md) và các cam kết trong [Project Charter](./01_Project_Charter_v2.0.md) đều đứng trên những giả định này. Nếu một giả định sai mà không ai phát hiện, cả chuỗi kết luận phía sau sai theo — nhưng không ai truy được về gốc.
+Sổ này ghi lại **mọi điều được coi là đúng mà chưa được chứng minh** (giả định) và **mọi giới hạn mà dự án phải chấp nhận** (ràng buộc). Lý do tồn tại rất cụ thể: các con số trong [Business Case](../00_Pre-project/01_Business_Case_v2.2.md) và các cam kết trong [Project Charter](./01_Project_Charter_v2.0.md) đều đứng trên những giả định này. Nếu một giả định sai mà không ai phát hiện, cả chuỗi kết luận phía sau sai theo — nhưng không ai truy được về gốc.
 
 Với mô hình thuê bao, sổ này còn giữ một vai trò thứ hai: **phần lớn giá trị dự án nằm ở những con số chỉ kiểm chứng được sau khi bàn giao** — số thuê bao, tỷ lệ gia hạn, tỷ lệ chuyển đổi. Không đăng ký chúng thành giả định có ngày kiểm chứng và người chịu trách nhiệm thì chúng sẽ trôi thành sự thật không ai nhớ đã giả định từ đâu.
 
@@ -200,4 +200,4 @@ Các mã dưới đây từng được cấp và nay không còn hiệu lực. T
 
 ---
 
-*Tài liệu liên quan: [Project Charter](./01_Project_Charter_v2.0.md) · [Business Case](../00_Pre-project/01_Business_Case_v2.0.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.0.md)*
+*Tài liệu liên quan: [Project Charter](./01_Project_Charter_v2.0.md) · [Business Case](../00_Pre-project/01_Business_Case_v2.2.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md)*
