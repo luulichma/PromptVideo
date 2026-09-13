@@ -22,3 +22,9 @@ $RECYCLE.BIN/
 
 ### Review logs (nội bộ, không commit)
 LOG.md
+### Bản nộp do nhóm xuất ra — ngoại lệ của rule *.docx / *.xlsx ở trên
+# output-docs/ chứa bản Word/Excel xuất từ docs/*.md, là sản phẩm của nhóm
+# nên được theo dõi để đồng bộ giữa các máy và giữ đúng bản đã nộp.
+!output-docs/**/*.docx
+!output-docs/**/*.xlsx
+!output-docs/**/*.pptx

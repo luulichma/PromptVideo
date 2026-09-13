@@ -2,7 +2,7 @@
 
 Thư mục này chứa toàn bộ tài liệu quản lý dự án của PromptVideo, tổ chức theo **Pre-project + 5 nhóm tiến trình** (process group) của PMBOK, đúng quy cách quản lý tài liệu mà môn học yêu cầu.
 
-> **Bối cảnh.** Bộ tài liệu phát triển dự án theo một **bối cảnh doanh nghiệp giả định** (Enticy Studios là tổ chức chủ quản) để phục vụ môn Quản lý dự án phần mềm tại Học viện Công nghệ Bưu chính Viễn thông. Mọi số liệu tài chính, quy mô thuê bao và đơn giá là giả định có ghi chú, được đăng ký tại [Assumption Log](./01_Initiating/02_Assumption_Log_v2.0.md). Các thông số kỹ thuật là số liệu thật.
+> **Bối cảnh.** Bộ tài liệu phát triển dự án theo một **bối cảnh doanh nghiệp giả định** (Enticy Studios là tổ chức chủ quản) để phục vụ môn Quản lý dự án phần mềm tại Học viện Công nghệ Bưu chính Viễn thông. Mọi số liệu tài chính, quy mô thuê bao và đơn giá là giả định có ghi chú, được đăng ký tại [Assumption Log](./01_Initiating/02_Assumption_Log_v2.2.md). Các thông số kỹ thuật là số liệu thật.
 
 ---
 
@@ -13,9 +13,9 @@ Thư mục này chứa toàn bộ tài liệu quản lý dự án của PromptVi
 | 1 | [Business Case](./00_Pre-project/01_Business_Case_v2.2.md) | Pre-project | Ver 2.2 | 2026-09-13 | Nhóm khởi tạo | Draft |
 | 2 | [Benefit Management Plan](./00_Pre-project/02_Benefit_Management_Plan_v2.2.md) | Pre-project | Ver 2.2 | 2026-09-13 | Nhóm khởi tạo | Draft |
 | 3 | [Hợp đồng thực hiện dự án](./00_Pre-project/03_Hop_dong_thuc_hien_du_an_v2.0.md) | Pre-project | Ver 2.0 | 2026-08-27 | Nhóm khởi tạo | Draft — chờ ký |
-| 4 | [Project Charter](./01_Initiating/01_Project_Charter_v2.0.md) | Initiating | Ver 2.1 | 2026-09-01 | Nhóm thực hiện | Draft |
-| 5 | [Assumption Log](./01_Initiating/02_Assumption_Log_v2.0.md) | Initiating | Ver 2.1 | 2026-09-01 | Nhóm thực hiện | Tài liệu sống |
-| 6 | [Stakeholder Register](./01_Initiating/03_Stakeholder_Register_v1.0.md) | Initiating | Ver 1.0 | 2026-09-01 | Nhóm thực hiện | Tài liệu sống |
+| 4 | [Project Charter](./01_Initiating/01_Project_Charter_v2.2.md) | Initiating | Ver 2.1 | 2026-09-01 | Nhóm thực hiện | Draft |
+| 5 | [Assumption Log](./01_Initiating/02_Assumption_Log_v2.2.md) | Initiating | Ver 2.1 | 2026-09-01 | Nhóm thực hiện | Tài liệu sống |
+| 6 | [Stakeholder Register](./01_Initiating/03_Stakeholder_Register_v2.0.md) | Initiating | Ver 1.0 | 2026-09-01 | Nhóm thực hiện | Tài liệu sống |
 | 7 | [WBS & WBS Dictionary](./02_Planning/00_WBS_v2.0.md) | Planning | Ver 2.0 | 2026-08-27 | Nhóm thực hiện | Draft |
 
 Thứ tự đọc: **Business Case → Benefit Management Plan → Hợp đồng → Project Charter → Assumption Log**. Ba tài liệu đầu là *project business documents*, được lập **trước khi dự án được cấp phép**, nên nằm ở `00_Pre-project/`. Project Charter là tài liệu chính thức khai sinh dự án; Assumption Log và Stakeholder Register ra đời cùng nó — cả ba thuộc `01_Initiating/`. **Stakeholder Register phải hoàn tất trước khi bắt đầu Planning**, vì kế hoạch tham gia và kế hoạch truyền thông đều lấy nó làm đầu vào.
@@ -40,7 +40,7 @@ Thứ tự đọc: **Business Case → Benefit Management Plan → Hợp đồng
 | Thuê bao giả định | 100 / 320 / 650 Cá nhân · 3 / 10 / 20 Doanh nghiệp |
 | Thẩm định tài chính | **NPV +433,4 triệu VND · BCR 3,52 · hoà vốn ở 28% kịch bản cơ sở** |
 
-**Quy ước mã ID.** Chuỗi truy vết là `BO-xx` → `OB-xx` → `BN-xx` → `MT-xx`, cộng `RQ/NF-xx`, `AS/CT-xx`, `RS-xx`, `SH-xx`, `DL-xx`. **Mã không bao giờ được cấp lại**: khi một mục không còn hiệu lực, mã của nó bị rút và ghi vào mục *Mã không còn sử dụng* của tài liệu tương ứng, chứ không gán cho nội dung mới. Nhờ vậy mọi viện dẫn cũ không bao giờ trỏ nhầm. Danh sách mã đã rút: [Assumption Log §9](./01_Initiating/02_Assumption_Log_v2.0.md), Charter §3.1 (OB-05), §4.1 (RQ-11), §6 (RS-08). **Ngoại lệ — `SH-xx`:** khi lập [Stakeholder Register](./01_Initiating/03_Stakeholder_Register_v1.0.md) (Ver 1.0), mã bên liên quan được đánh số lại liên tục SH-01 → SH-09; danh sách này ngắn và chỉ có 5 chỗ viện dẫn nên giữ khoảng trống không đáng.
+**Quy ước mã ID.** Chuỗi truy vết là `BO-xx` → `OB-xx` → `BN-xx` → `MT-xx`, cộng `RQ/NF-xx`, `AS/CT-xx`, `RS-xx`, `SH-xx`, `DL-xx`. **Mã không bao giờ được cấp lại**: khi một mục không còn hiệu lực, mã của nó bị rút và ghi vào mục *Mã không còn sử dụng* của tài liệu tương ứng, chứ không gán cho nội dung mới. Nhờ vậy mọi viện dẫn cũ không bao giờ trỏ nhầm. Danh sách mã đã rút: [Assumption Log §9](./01_Initiating/02_Assumption_Log_v2.2.md), Charter §3.1 (OB-05), §4.1 (RQ-11), §6 (RS-08). **Ngoại lệ — `SH-xx`:** khi lập [Stakeholder Register](./01_Initiating/03_Stakeholder_Register_v2.0.md) (Ver 1.0), mã bên liên quan được đánh số lại liên tục SH-01 → SH-09; danh sách này ngắn và chỉ có 5 chỗ viện dẫn nên giữ khoảng trống không đáng.
 
 **Về liên kết chéo.** Business Case và Benefit Management Plan **không dùng liên kết inline sang tài liệu khác**, vì bản `.docx` được xuất riêng từng file nên mọi liên kết như vậy đều thành liên kết chết. Thay vào đó chúng nhắc tên tài liệu và số mục dưới dạng chữ (`Benefit Management Plan §4`), và tra nguồn số liệu theo mã `AS-xx` tại Assumption Log. Khi sửa số mục ở một tài liệu, phải soát lại các tài liệu còn lại: `grep -rn "Business Case §\|Benefit Management Plan §" docs/`
 
@@ -63,9 +63,9 @@ docs/
 │   ├── 02_Benefit_Management_Plan_v2.2.md
 │   └── 03_Hop_dong_thuc_hien_du_an_v2.0.md
 ├── 01_Initiating/
-│   ├── 01_Project_Charter_v2.0.md
-│   ├── 02_Assumption_Log_v2.0.md
-│   └── 03_Stakeholder_Register_v1.0.md
+│   ├── 01_Project_Charter_v2.2.md
+│   ├── 02_Assumption_Log_v2.2.md
+│   └── 03_Stakeholder_Register_v2.0.md
 ├── 02_Planning/
 │   ├── 00_WBS_v2.0.md
 │   ├── 01_Requirements_Specification_...  ← chưa lập

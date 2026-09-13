@@ -51,7 +51,7 @@
 
 <!-- ============================== NỘI DUNG ============================== -->
 
-> **Mức chi tiết.** Hợp đồng chỉ xác định **tổng quan** phạm vi, thời gian và ngân sách. Chi tiết đầy đủ nằm ở [Project Charter](../01_Initiating/01_Project_Charter_v2.0.md) — tài liệu này chỉ nêu những gì hai bên cam kết với nhau, và trỏ tới Charter cho phần còn lại.
+> **Mức chi tiết.** Hợp đồng chỉ xác định **tổng quan** phạm vi, thời gian và ngân sách. Chi tiết đầy đủ nằm ở [Project Charter](../01_Initiating/01_Project_Charter_v2.2.md) — tài liệu này chỉ nêu những gì hai bên cam kết với nhau, và trỏ tới Charter cho phần còn lại.
 
 **Căn cứ lập hợp đồng:**
 
@@ -119,7 +119,7 @@ Sản phẩm được phát hành với **mã nguồn độc quyền, không cô
 
 **Hồ sơ cổng thanh toán.** Việc **nộp và theo đuổi hồ sơ đăng ký với cổng thanh toán** thuộc trách nhiệm Bên A (Điều 5), vì hồ sơ phải đứng tên tổ chức chủ quản. Bên B chịu trách nhiệm phần tích hợp kỹ thuật. Hai bên ghi nhận đây là hạng mục có thời gian xử lý nằm ngoài tầm kiểm soát của cả hai (rủi ro RS-10).
 
-Chi tiết đầy đủ về phạm vi, yêu cầu chức năng RQ-01 → RQ-17 và yêu cầu phi chức năng NF-01 → NF-11 nằm tại [Project Charter §4 và §5](../01_Initiating/01_Project_Charter_v2.0.md#4-high-level-requirements).
+Chi tiết đầy đủ về phạm vi, yêu cầu chức năng RQ-01 → RQ-17 và yêu cầu phi chức năng NF-01 → NF-11 nằm tại [Project Charter §4 và §5](../01_Initiating/01_Project_Charter_v2.2.md#4-high-level-requirements).
 
 ### 2.3. Sản phẩm bàn giao
 
@@ -201,7 +201,7 @@ Công sức này được quy đổi 80.000 VND/giờ, tương đương **36.000
 **Nghĩa vụ:**
 
 1. Cấp đủ và đúng hạn ngân sách 3.500.000 VND theo hai đợt tại mốc M0 và M2 (Điều 4.1).
-2. Phê duyệt [Project Charter](../01_Initiating/01_Project_Charter_v2.0.md) và bổ nhiệm Giám đốc dự án chậm nhất tại mốc M0.
+2. Phê duyệt [Project Charter](../01_Initiating/01_Project_Charter_v2.2.md) và bổ nhiệm Giám đốc dự án chậm nhất tại mốc M0.
 3. **Nộp và theo đuổi hồ sơ đăng ký với cổng thanh toán** đứng tên tổ chức chủ quản, chậm nhất tại mốc M2, và thông báo cho Bên B ngay khi có kết quả.
 4. **Ban hành Chính sách quyền riêng tư và Điều khoản sử dụng** trước khi sản phẩm mở đăng ký công khai.
 5. Phản hồi các yêu cầu phê duyệt của Bên B **trong vòng 3 ngày làm việc**. Quá hạn này mà không phản hồi thì coi như đã chấp thuận.
@@ -248,7 +248,7 @@ Công sức này được quy đổi 80.000 VND/giờ, tương đương **36.000
 
 ### 7.1. Nghiệm thu tại mốc
 
-Mỗi mốc M0 → M7 được nghiệm thu theo **tiêu chí hoàn thành** ghi tại [Project Charter §7](../01_Initiating/01_Project_Charter_v2.0.md#7-summary-milestone-schedule). Bốn mốc bắt buộc có mặt Bên A:
+Mỗi mốc M0 → M7 được nghiệm thu theo **tiêu chí hoàn thành** ghi tại [Project Charter §7](../01_Initiating/01_Project_Charter_v2.2.md#7-summary-milestone-schedule). Bốn mốc bắt buộc có mặt Bên A:
 
 | Mốc | Điều kiện nghiệm thu bắt buộc |
 | --- | ----------------------------- |
@@ -303,7 +303,7 @@ Mọi thay đổi về **phạm vi, tiến độ hoặc ngân sách** đều ph�
 
 **Nguyên tắc bắt buộc.** Với 450 giờ và biên an toàn bằng không, **mọi yêu cầu bổ sung phải đi kèm một đề xuất cắt bỏ tương ứng** hoặc một quyết định lùi mốc. Bên A không được yêu cầu Bên B "làm thêm mà vẫn giữ nguyên tiến độ".
 
-Quy trình chi tiết tại [Project Charter §10.3](../01_Initiating/01_Project_Charter_v2.0.md#103-kiểm-soát-thay-đổi).
+Quy trình chi tiết tại [Project Charter §10.3](../01_Initiating/01_Project_Charter_v2.2.md#103-kiểm-soát-thay-đổi).
 
 ---
 
@@ -340,7 +340,7 @@ Trong mọi trường hợp chấm dứt, Bên B bàn giao toàn bộ mã nguồ
 1. Hợp đồng có hiệu lực kể từ ngày hai bên ký và kết thúc khi hoàn thành nghĩa vụ theo Điều 10.
 2. Hợp đồng được lập thành **02 bản**, mỗi bên giữ 01 bản, có giá trị như nhau.
 3. Mọi tranh chấp được giải quyết trước hết bằng thương lượng giữa hai bên. Nếu không đạt kết quả, đưa ra giảng viên hướng dẫn phân xử.
-4. Các tài liệu sau là **bộ phận không tách rời** của hợp đồng: [Business Case Ver 2.2](./01_Business_Case_v2.2.md), [Benefit Management Plan Ver 2.2](./02_Benefit_Management_Plan_v2.2.md), [Project Charter Ver 2.0](../01_Initiating/01_Project_Charter_v2.0.md), [Assumption Log Ver 2.0](../01_Initiating/02_Assumption_Log_v2.0.md). Khi có mâu thuẫn về chi tiết, **Project Charter được ưu tiên áp dụng**.
+4. Các tài liệu sau là **bộ phận không tách rời** của hợp đồng: [Business Case Ver 2.2](./01_Business_Case_v2.2.md), [Benefit Management Plan Ver 2.2](./02_Benefit_Management_Plan_v2.2.md), [Project Charter Ver 2.2](../01_Initiating/01_Project_Charter_v2.2.md), [Assumption Log Ver 2.2](../01_Initiating/02_Assumption_Log_v2.2.md). Khi có mâu thuẫn về chi tiết, **Project Charter được ưu tiên áp dụng**.
 5. Việc sửa đổi hợp đồng phải lập thành phụ lục có chữ ký của cả hai bên, và tăng phiên bản theo quy ước tại [docs/README.md](../README.md).
 
 <br>
@@ -365,4 +365,4 @@ Trong mọi trường hợp chấm dứt, Bên B bàn giao toàn bộ mã nguồ
 
 ---
 
-*Tài liệu liên quan: [Business Case](./01_Business_Case_v2.2.md) · [Benefit Management Plan](./02_Benefit_Management_Plan_v2.2.md) · [Project Charter](../01_Initiating/01_Project_Charter_v2.0.md) · [Assumption Log](../01_Initiating/02_Assumption_Log_v2.0.md)*
+*Tài liệu liên quan: [Business Case](./01_Business_Case_v2.2.md) · [Benefit Management Plan](./02_Benefit_Management_Plan_v2.2.md) · [Project Charter](../01_Initiating/01_Project_Charter_v2.2.md) · [Assumption Log](../01_Initiating/02_Assumption_Log_v2.2.md)*

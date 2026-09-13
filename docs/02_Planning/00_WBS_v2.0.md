@@ -54,7 +54,7 @@
 
 Tài liệu này phân rã toàn bộ phạm vi dự án PromptVideo v1.0 thành các gói công việc (work package) có thể giao được cho một người, ước lượng được bằng giờ, và nghiệm thu được bằng tiêu chí khách quan.
 
-WBS là thành phần của **Scope Baseline** cùng với Project Scope Statement và tài liệu này (WBS Dictionary). Sau khi được phê duyệt, mọi thay đổi phải đi qua quy trình kiểm soát thay đổi tại [Project Charter §10.3](../01_Initiating/01_Project_Charter_v2.0.md#103-kiểm-soát-thay-đổi).
+WBS là thành phần của **Scope Baseline** cùng với Project Scope Statement và tài liệu này (WBS Dictionary). Sau khi được phê duyệt, mọi thay đổi phải đi qua quy trình kiểm soát thay đổi tại [Project Charter §10.3](../01_Initiating/01_Project_Charter_v2.2.md#103-kiểm-soát-thay-đổi).
 
 **Tài liệu này mô tả *công việc*, không mô tả *người*.** Cột "Phụ trách" trong WBS Dictionary là đề xuất chủ sở hữu gói việc để lập lịch; ma trận phân vai đầy đủ (RACI, %effort) nằm ở Resource Management Plan.
 
@@ -66,13 +66,13 @@ WBS là thành phần của **Scope Baseline** cùng với Project Scope Stateme
 
 | Nguồn | Nội dung sử dụng |
 | ----- | ---------------- |
-| [Project Charter §4](../01_Initiating/01_Project_Charter_v2.0.md#4-high-level-requirements) | 16 yêu cầu chức năng RQ-01 → RQ-17, 11 yêu cầu phi chức năng NF-01 → NF-11 |
-| [Project Charter §5.2, §5.3](../01_Initiating/01_Project_Charter_v2.0.md#52-ranh-giới-phạm-vi) | Ranh giới phạm vi và 8 sản phẩm bàn giao DL-01 → DL-08 |
-| [Project Charter §3.1](../01_Initiating/01_Project_Charter_v2.0.md#31-mục-tiêu-đo-được) | 15 mục tiêu đo được — nguồn của tiêu chí chấp nhận |
-| [Project Charter §7](../01_Initiating/01_Project_Charter_v2.0.md#7-summary-milestone-schedule) | 8 mốc M0 → M7 |
-| [Project Charter §8.4](../01_Initiating/01_Project_Charter_v2.0.md#84-phân-bổ-công-sức-theo-mốc) | Phân bổ 450 giờ theo mốc — ràng buộc mà tổng giờ WBS phải khớp |
+| [Project Charter §4](../01_Initiating/01_Project_Charter_v2.2.md#4-high-level-requirements) | 16 yêu cầu chức năng RQ-01 → RQ-17, 11 yêu cầu phi chức năng NF-01 → NF-11 |
+| [Project Charter §5.2, §5.3](../01_Initiating/01_Project_Charter_v2.2.md#52-ranh-giới-phạm-vi) | Ranh giới phạm vi và 8 sản phẩm bàn giao DL-01 → DL-08 |
+| [Project Charter §3.1](../01_Initiating/01_Project_Charter_v2.2.md#31-mục-tiêu-đo-được) | 15 mục tiêu đo được — nguồn của tiêu chí chấp nhận |
+| [Project Charter §7](../01_Initiating/01_Project_Charter_v2.2.md#7-summary-milestone-schedule) | 8 mốc M0 → M7 |
+| [Project Charter §8.4](../01_Initiating/01_Project_Charter_v2.2.md#84-phân-bổ-công-sức-theo-mốc) | Phân bổ 450 giờ theo mốc — ràng buộc mà tổng giờ WBS phải khớp |
 | [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md) | Chỉ số MT-06 → MT-09 và yêu cầu đo baseline MT-06 trước mốc M1 |
-| [Assumption Log](../01_Initiating/02_Assumption_Log_v2.0.md) | Ràng buộc CT-01 (15 tuần), CT-04 (450 giờ), CT-03 (trần hạ tầng), CT-05 và CT-08 (giấy phép) |
+| [Assumption Log](../01_Initiating/02_Assumption_Log_v2.2.md) | Ràng buộc CT-01 (15 tuần), CT-04 (450 giờ), CT-03 (trần hạ tầng), CT-05 và CT-08 (giấy phép) |
 
 ---
 
@@ -82,7 +82,7 @@ WBS là thành phần của **Scope Baseline** cùng với Project Scope Stateme
 
 Tổng công việc ở mỗi cấp bằng đúng 100% công việc của phần tử cha. Không có công việc nào nằm ngoài WBS; công việc không xuất hiện trong WBS thì không thuộc phạm vi dự án và không được làm.
 
-Hệ quả kiểm tra được: tổng giờ của 34 gói công việc bằng đúng **450 giờ**, và tổng giờ theo từng mốc khớp đúng bảng phân bổ tại [Charter §8.4](../01_Initiating/01_Project_Charter_v2.0.md#84-phân-bổ-công-sức-theo-mốc). Xem [§8.1](#81-theo-mốc--đối-chiếu-với-charter-84).
+Hệ quả kiểm tra được: tổng giờ của 34 gói công việc bằng đúng **450 giờ**, và tổng giờ theo từng mốc khớp đúng bảng phân bổ tại [Charter §8.4](../01_Initiating/01_Project_Charter_v2.2.md#84-phân-bổ-công-sức-theo-mốc). Xem [§8.1](#81-theo-mốc--đối-chiếu-với-charter-84).
 
 ### 3.2. Cấu trúc lai — vì sao không thuần một kiểu
 
@@ -101,7 +101,7 @@ Vì vậy cấp 1 gồm **năm nhánh tính năng nghiệp vụ**, cộng **mộ
 
 Quy tắc 8–80 giờ áp cho dự án quy mô lớn. Với tổng ngân sách 450 giờ, quy tắc đó chỉ cho ra khoảng 6–10 gói việc — quá thô để phân công cho 3 người trong 15 tuần. Tài liệu này dùng **dải 3–40 giờ**, tương ứng khoảng **một phần ba tuần đến bốn tuần công của một người**.
 
-Gói việc lớn nhất là **2.2.2 Bộ dựng lõi (38 giờ)**, nằm trên đường găng và được kiểm soát bằng ngưỡng cảnh báo 120% tại [Charter §8.5](../01_Initiating/01_Project_Charter_v2.0.md#85-quy-tắc-sử-dụng-dự-phòng-và-ngưỡng-cảnh-báo).
+Gói việc lớn nhất là **2.2.2 Bộ dựng lõi (38 giờ)**, nằm trên đường găng và được kiểm soát bằng ngưỡng cảnh báo 120% tại [Charter §8.5](../01_Initiating/01_Project_Charter_v2.2.md#85-quy-tắc-dự-phòng-và-ngưỡng-cảnh-báo).
 
 ### 3.4. Tài khoản kiểm soát
 
@@ -520,4 +520,4 @@ Mỗi lần tăng phiên bản phải cập nhật đồng thời: tên file, ô
 
 ---
 
-*Tài liệu liên quan: [Project Charter](../01_Initiating/01_Project_Charter_v2.0.md) · [Assumption Log](../01_Initiating/02_Assumption_Log_v2.0.md) · [Business Case](../00_Pre-project/01_Business_Case_v2.2.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md)*
+*Tài liệu liên quan: [Project Charter](../01_Initiating/01_Project_Charter_v2.2.md) · [Assumption Log](../01_Initiating/02_Assumption_Log_v2.2.md) · [Business Case](../00_Pre-project/01_Business_Case_v2.2.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md)*
