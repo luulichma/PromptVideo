@@ -4,6 +4,8 @@ Thư mục này rút gọn 11 bài giảng môn **Quản lý dự án phần m�
 
 1. **Luật phải tuân** — tài liệu nào bắt buộc có, mỗi tài liệu bắt buộc chứa mục gì, công thức nào phải dùng đúng dạng thầy dạy.
 2. **Kiến thức dùng được** — bộ công cụ và kỹ thuật, kèm chỉ dẫn *khi nào dùng cái nào*.
+3. "md-docs" là bản markdown của các bộ tài liệu trong dự án, "official-docs" là bản docx chính thức để nộp.
+4. Các tài liệu _archive thì không cần thiết phải đọc
 
 Đây là **tài liệu nội bộ của đội, không nộp**. Nó tồn tại để bộ tài liệu trong [`docs/`](../docs/) không đi chệch yêu cầu môn học và không phình ra ngoài phạm vi được chấm.
 
@@ -17,11 +19,12 @@ Thư mục này rút gọn 11 bài giảng môn **Quản lý dự án phần m�
 | [02_Kien_thuc_su_dung.md](./02_Kien_thuc_su_dung.md) | Bộ công cụ theo từng lĩnh vực kiến thức, kèm tiêu chí chọn công cụ | Khi cần chọn kỹ thuật cho một mục cụ thể |
 | [03_Doi_chieu_voi_tai_lieu_hien_co.md](./03_Doi_chieu_voi_tai_lieu_hien_co.md) | Đối chiếu `docs/` với luật ở file 01 — thiếu gì, thừa gì, sai chỗ nào | Khi quyết định cắt gọn hoặc bổ sung tài liệu |
 
+
 ---
 
 ## Nguồn
 
-11 file PDF tại `F:\TaiLieu_Nam4_Ky1\PM - NDQ`, tổng 773 slide:
+11 file PDF tại `F:\Enticy Studios\PromptVideo\research\PM - NDQ`, tổng 773 slide:
 
 | Deck | Slide | Nội dung chính |
 | ---- | ----: | -------------- |
