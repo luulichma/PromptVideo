@@ -1,13 +1,17 @@
 # Research — Nghiên cứu tài liệu môn học
 
-Thư mục này rút gọn 11 bài giảng môn **Quản lý dự án phần mềm (PM — thầy Nguyễn Đình Quảng)** thành hai thứ dùng được ngay:
+Thư mục này rút gọn 11 bài giảng môn **Quản lý dự án phần mềm (PM — thầy Nguyễn Đình Quảng)** để phục vụ bài tập lớn PromptVideo theo **mô hình gói thuê bao thường niên**.
+
+**Căn cứ định hướng:** [Business Case v2.1](../official-docs/00_Pre-project/01_Business_Case_v2.1.docx) và [Benefit Management Plan v2.1](../official-docs/00_Pre-project/02_Benefit_Management_Plan_v2.1.docx). Trình duyệt xử lý video cục bộ; máy chủ quản lý tài khoản, quyền sử dụng, hạn mức và thanh toán. Xem [README dự án](../README.vi.md) để nắm phạm vi và ba gói dự kiến.
+
+## Cách sử dụng
 
 1. **Luật phải tuân** — tài liệu nào bắt buộc có, mỗi tài liệu bắt buộc chứa mục gì, công thức nào phải dùng đúng dạng thầy dạy.
 2. **Kiến thức dùng được** — bộ công cụ và kỹ thuật, kèm chỉ dẫn *khi nào dùng cái nào*.
 3. "md-docs" là bản markdown của các bộ tài liệu trong dự án, "official-docs" là bản docx chính thức để nộp.
 4. Các tài liệu _archive thì không cần thiết phải đọc
 
-Đây là **tài liệu nội bộ của đội, không nộp**. Nó tồn tại để bộ tài liệu trong [`docs/`](../docs/) không đi chệch yêu cầu môn học và không phình ra ngoài phạm vi được chấm.
+Đây là **tài liệu nội bộ của đội, không nộp**. Nó giúp bộ hồ sơ trong [official-docs/](../official-docs/) và các bản làm việc trong [md-docs/](../md-docs/) bám yêu cầu môn học và phạm vi được chấm. Bản chính thức không đồng nghĩa đã được phê duyệt; xem trạng thái trong từng file.
 
 ---
 
@@ -15,9 +19,9 @@ Thư mục này rút gọn 11 bài giảng môn **Quản lý dự án phần m�
 
 | File | Nội dung | Dùng khi nào |
 | ---- | -------- | ------------ |
-| [01_Quy_tac_bat_buoc.md](./01_Quy_tac_bat_buoc.md) | Luật cứng: cấu trúc bắt buộc của từng tài liệu, công thức, ngưỡng, quy tắc phân rã | Trước khi viết hoặc sửa bất kỳ tài liệu nào trong `docs/` |
+| [01_Quy_tac_bat_buoc.md](./01_Quy_tac_bat_buoc.md) | Luật cứng: cấu trúc bắt buộc của từng tài liệu, công thức, ngưỡng, quy tắc phân rã | Trước khi viết hoặc sửa hồ sơ dự án |
 | [02_Kien_thuc_su_dung.md](./02_Kien_thuc_su_dung.md) | Bộ công cụ theo từng lĩnh vực kiến thức, kèm tiêu chí chọn công cụ | Khi cần chọn kỹ thuật cho một mục cụ thể |
-| [03_Doi_chieu_voi_tai_lieu_hien_co.md](./03_Doi_chieu_voi_tai_lieu_hien_co.md) | Đối chiếu `docs/` với luật ở file 01 — thiếu gì, thừa gì, sai chỗ nào | Khi quyết định cắt gọn hoặc bổ sung tài liệu |
+| [03_Doi_chieu_voi_tai_lieu_hien_co.md](./03_Doi_chieu_voi_tai_lieu_hien_co.md) | Đối chiếu bộ tài liệu ở thời điểm rà soát trước đây với luật ở file 01 | Tham khảo khi rà soát; phải kiểm tra lại từng nhận xét với bản chính thức hiện có |
 
 
 ---
@@ -44,9 +48,9 @@ Thư mục này rút gọn 11 bài giảng môn **Quản lý dự án phần m�
 
 ---
 
-## Ba kết luận quan trọng nhất
+## Các kết luận từ lần đối chiếu trước
 
-Rút ra khi đối chiếu 11 deck với `docs/` — chi tiết ở [file 03](./03_Doi_chieu_voi_tai_lieu_hien_co.md):
+Các nhận xét dưới đây ghi nhận bộ tài liệu tại thời điểm đối chiếu, khi còn dùng đường dẫn `docs/`; **không phải kết luận kiểm tra bộ chính thức hiện tại**. Ví dụ, `official-docs/01_Initiating/` hiện đã có Stakeholder Register dạng Excel. Chi tiết lần đối chiếu trước ở [file 03](./03_Doi_chieu_voi_tai_lieu_hien_co.md):
 
 1. **Bộ tài liệu hiện tại dài gấp nhiều lần mẫu của thầy.** Project Charter mẫu (PM03 slide 26) gói trọn 12 mục trong **một slide**; bản của nhóm là **505 dòng**. Assumption Log mẫu có **7 dòng và 5 cột**; bản của nhóm có **~56 mục**. Độ dài không phải tiêu chí chấm — độ đầy đủ và nhất quán mới là.
 

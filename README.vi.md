@@ -1,132 +1,108 @@
-# Slide-to-Video Generator
+# PromptVideo
 
-Tạo video trình chiếu MP4 từ văn bản và hình ảnh. Toàn bộ quá trình dựng và xuất video chạy trong trình duyệt — không cần máy chủ.
+PromptVideo là dự án dịch vụ web tạo video trình chiếu MP4 từ văn bản và hình ảnh, kinh doanh theo **gói thuê bao thường niên**. Trình duyệt dựng và mã hoá video trên máy người dùng; máy chủ quản lý tài khoản, giấy phép sử dụng, hạn mức và thanh toán.
 
-**Trạng thái: đang phát triển.** Chưa dùng được cho việc thật.
+Đây là **bài tập lớn môn Quản lý dự án phần mềm** tại Học viện Công nghệ Bưu chính Viễn thông, với Enticy Studios là tổ chức chủ quản trong bối cảnh giả định. Giá gói, dự báo doanh thu và nguồn lực là giả định phục vụ bài tập, chưa phải thông tin chào bán hoặc kết quả thực tế.
 
 *[English](./README.md)*
 
----
+## Định hướng hiện tại
 
-## Ý tưởng
+Hướng phát triển thống nhất là **dịch vụ thuê bao với xử lý video cục bộ và quản lý quyền sử dụng trên máy chủ**, theo bộ Pre-project chính thức phiên bản 2.1.
 
-Phần lớn công cụ tạo video bằng AI hiện nay đi theo hướng sinh ra hình ảnh. Hướng đó tốn tài nguyên, khó kiểm soát, và kết quả mỗi lần một khác.
+Hai tài liệu Pre-project v2.1 đang ở trạng thái **Draft — chờ phê duyệt**. README phản ánh hướng làm bài đã thống nhất; các mục tiêu sản phẩm vẫn cần được triển khai và nghiệm thu.
 
-Dự án này đi hướng ngược lại: **mô tả video bằng dữ liệu, dựng bằng HTML/CSS, rồi ghi lại thành MP4 ngay trên máy người dùng.**
+## Căn cứ và thứ tự đọc
 
-Ba hệ quả:
+Đọc hồ sơ theo thứ tự sau để nắm đúng bối cảnh và tránh dùng nhầm tài liệu lịch sử:
 
-- Không cần máy chủ render — chi phí vận hành gần bằng không
-- Ảnh và nội dung không rời khỏi máy người dùng
-- Video xuất ra luôn giống hệt nhau, không phụ thuộc máy nhanh hay chậm
+1. [Business Case v2.1](./official-docs/00_Pre-project/01_Business_Case_v2.1.docx) — nhu cầu, phương án được chọn, ba nghiệp vụ, mô hình thuê bao và điều kiện triển khai.
+2. [Benefit Management Plan v2.1](./official-docs/00_Pre-project/02_Benefit_Management_Plan_v2.1.docx) — lợi ích, cách đo, thẩm định tài chính và trách nhiệm theo dõi sau bàn giao.
+3. [Project Charter v2.1](./official-docs/01_Initiating/01_Project_Charter_v2.1.docx) — mục tiêu, phạm vi cấp cao, mốc chính và thẩm quyền dự án.
+4. [Assumption Log v2.1](./official-docs/01_Initiating/02_Assumption_Log_v2.1.docx) — các giả định và ràng buộc cần theo dõi.
+5. [Stakeholder Register v1.0](./official-docs/01_Initiating/03_Stakeholder_Register_v1.0.xlsx) — các bên liên quan và phương án tham gia.
 
----
+Tên thư mục `official-docs/` thể hiện nơi lưu bộ hồ sơ dùng để nộp; trạng thái phê duyệt phải được xác định từ nội dung của từng tài liệu. Phiên bản hiện hành của bộ tài liệu định hướng là **v2.1**.
 
-## Cách hoạt động
+## Người dùng và giá trị sản phẩm
 
-```
-JSON mô tả cảnh  →  Bộ dựng theo từng khung hình  →  WebCodecs  →  MP4
-```
+Người dùng mục tiêu gồm doanh nghiệp vừa và nhỏ, giáo viên/giảng viên và người sáng tạo nội dung tại Việt Nam.
 
-1. **Mô tả cảnh** — Video được biểu diễn bằng một cấu trúc JSON: danh sách cảnh, mỗi cảnh có bố cục, nội dung chữ, ảnh, thời lượng và hiệu ứng.
-2. **Dựng theo từng khung hình** — Bộ dựng nhận vào số thứ tự khung hình và trả về trạng thái DOM tại đúng thời điểm đó.
-3. **Mã hoá** — Từng khung được vẽ lên canvas rồi đưa vào `VideoEncoder` của WebCodecs, ghép thành MP4.
+Mục tiêu chính:
 
-**Điểm mấu chốt:** mọi hiệu ứng là hàm của số khung hình, không dùng CSS animation chạy theo đồng hồ thật. Đây là lý do video xuất ra không bị trôi hay giật, và cũng là lý do dự án không dùng thẳng thư viện animation có sẵn.
+- Tạo video chuẩn 5 cảnh, dài 60 giây trong dưới 5 phút.
+- Hiển thị tiếng Việt đúng, gồm dấu và cách ngắt dòng.
+- Giữ văn bản, hình ảnh và nội dung video trên máy người dùng.
+- Hỗ trợ video dài bằng xử lý theo luồng, kiểm soát mức sử dụng bộ nhớ.
+- Cung cấp mức giá nội địa và tạo doanh thu định kỳ để duy trì vận hành.
 
----
+Đây là **mục tiêu cần kiểm chứng**, chưa phải tính năng đã hoàn thành.
 
-## Định dạng cảnh
+## Ba nghiệp vụ
 
-```json
-{
-  "fps": 30,
-  "width": 1920,
-  "height": 1080,
-  "scenes": [
-    {
-      "template": "title-center",
-      "duration": 90,
-      "content": {
-        "title": "Báo cáo quý III",
-        "subtitle": "Phòng Kinh doanh"
-      },
-      "transition": { "in": "fade-up", "out": "fade" }
-    }
-  ]
-}
-```
+| Nghiệp vụ | Phạm vi và đầu ra |
+| ---------- | ---------------- |
+| **A. Sản xuất video** | Biên tập văn bản và ảnh, chọn mẫu, xem trước, dựng và xuất MP4 trên máy người dùng. |
+| **B. Đăng ký, cấp phép và thanh toán** | Tạo tài khoản, quản lý gói thuê bao, kiểm tra quyền xuất, đếm hạn mức, thanh toán, hết hạn và gia hạn. |
+| **C. Quản trị và vận hành dịch vụ** | Quản lý mẫu và tài sản đồ hoạ, giám sát máy chủ, hỗ trợ khách hàng và theo dõi lợi ích sau bàn giao. |
 
-Định dạng này là hợp đồng giữa các phần của hệ thống. Giao diện sinh ra nó, bộ dựng đọc nó, bộ mẫu định nghĩa các giá trị hợp lệ.
+## Kiến trúc dự kiến
 
----
+```text
+Trình duyệt
+  Văn bản + hình ảnh → JSON mô tả cảnh → Xem trước / dựng từng khung hình
+                                               ↓
+                          Kiểm tra quyền xuất với máy chủ
+                                               ↓
+                                  WebCodecs → MP4 cục bộ
 
-## Tính năng hiện có
-
-- [ ] Bộ dựng theo từng khung hình
-- [ ] Xuất MP4 bằng WebCodecs
-- [ ] Xem trước trong trình duyệt
-- [ ] Thư viện mẫu trình chiếu
-- [ ] Nhập nội dung bằng biểu mẫu
-- [ ] Lưu và mở lại dự án
-
----
-
-## Lộ trình
-
-- Xử lý chữ tiếng Việt đầy đủ — dấu, ngắt dòng, canh chữ trong khung hình dọc
-- Ghép chữ và ảnh lên video nền có sẵn
-- Sinh nội dung cảnh tự động từ một đoạn văn bản dài
-- Xuất kèm file phụ đề
-- Khung hình dọc cho mạng xã hội
-- Chèn nhạc nền
-
----
-
-## Giới hạn hiện tại
-
-- Cần trình duyệt hỗ trợ WebCodecs: Chrome 94+, Firefox 130+ trên máy tính, Safari 26+
-- Firefox trên Android chưa hỗ trợ
-- Safari 16.4 đến 18.7 chỉ mã hoá được phần hình, không có phần âm thanh
-- Ghi file trực tiếp ra đĩa cần File System Access API — hiện chỉ có trên trình duyệt nhân Chromium; các trình duyệt khác dùng phương án dự phòng qua OPFS
-- Tốc độ xuất phụ thuộc phần cứng máy người dùng
-
----
-
-## Chạy thử
-
-```bash
-npm install
-npm run dev
+Máy chủ dịch vụ
+  Tài khoản · Gói thuê bao · Giấy phép sử dụng · Hạn mức · Thanh toán
 ```
 
----
+Hiệu ứng được xác định theo số khung hình để trạng thái hình ảnh không phụ thuộc tốc độ chạy của máy. JSON mô tả cảnh là dữ liệu chung giữa trình biên tập, bộ dựng và thư viện mẫu; định dạng chi tiết cần được chốt khi thiết kế.
 
-## Đóng góp
+**Xuất video cần Internet** để kiểm tra giấy phép sử dụng và hạn mức. Dựng và mã hoá diễn ra trong trình duyệt; máy chủ xử lý dữ liệu tài khoản, quyền sử dụng, lượt xuất và thanh toán. Ranh giới thiết kế là **0 byte nội dung người dùng được gửi lên máy chủ**.
 
-Dự án đang ở giai đoạn đầu, cấu trúc còn thay đổi nhiều. Nếu muốn tham gia, mở issue trước khi gửi pull request để tránh làm trùng việc.
+## Gói thuê bao dự kiến
 
----
+| Gói | Giá | Quyền lợi theo Business Case |
+| --- | ---: | --------------------------- |
+| Miễn phí | 0 VND | 3 video/tháng, watermark, tối đa 720p, đủ 5 mẫu. |
+| Cá nhân | 599.000 VND/năm | Không giới hạn số video, 1080p, không watermark. |
+| Doanh nghiệp | 4.900.000 VND/năm | Quyền lợi gói Cá nhân, 5 chỗ, hoá đơn VAT, phản hồi hỗ trợ trong 1 ngày làm việc. |
 
-## Nhánh và bối cảnh môn học
+Quyền xuất và hạn mức được quản lý ở máy chủ, trình duyệt thực hiện theo quyền được cấp. Mục tiêu không giới hạn độ dài video cần được chứng minh bằng nguyên mẫu xử lý theo luồng; khác với hạn mức số video của gói Miễn phí.
 
-Dự án có hai nhánh đi theo hai hướng khác nhau:
+## Phạm vi và ràng buộc bài tập
 
-| Nhánh | Hướng phát triển |
-| ----- | ---------------- |
-| `main` | Mã nguồn mở thuần tuý. Không mang bối cảnh doanh nghiệp, không có tài liệu quản lý dự án. |
-| `for-subjects-at-uni` | Bài tập môn Quản lý dự án phần mềm. Dự án được đặt trong một **bối cảnh doanh nghiệp giả định** (Enticy Studios là tổ chức chủ quản) để có đủ dữ kiện lập Business Case, phân tích tài chính và quản lý lợi ích. Phần mềm vẫn là mã nguồn mở Apache 2.0 trong cả hai nhánh — doanh thu trong bối cảnh giả định đến từ gói template có bản quyền và dịch vụ, không từ việc khoá tính năng. |
+- **Nguồn lực:** 3 thành viên, tổng 450 giờ công trong 15 tuần, từ 24/08/2026 đến 06/12/2026.
+- **Vốn tiền mặt:** 3.500.000 VND; công sức được tính riêng khi đánh giá hiệu quả kinh tế.
+- **Phạm vi sản phẩm:** trình biên tập, bộ dựng/xem trước, xuất MP4, 5 mẫu, lưu/mở dự án và các nghiệp vụ tài khoản, thuê bao, thanh toán, quản trị.
+- **Điều kiện tại M2:** chứng minh nguyên mẫu xử lý theo luồng và nộp hồ sơ cổng thanh toán. Nếu nguyên mẫu không đạt, phương án giảm phạm vi là còn 3 mẫu và bỏ lưu/mở dự án, giữ ngày bàn giao.
+- **Sau bàn giao:** đơn vị vận hành tiếp nhận dịch vụ và theo dõi lợi ích trong 3 năm. Doanh thu và tỷ lệ gia hạn là kết quả cần đo sau triển khai.
 
-Toàn bộ tài liệu quản lý dự án nằm trong [docs/](./docs/), tổ chức thành sáu thư mục — Pre-project và năm nhóm tiến trình PMBOK. Pre-project gồm [Business Case](./docs/00_Pre-project/01_Business_Case_v1.1.md) và [Benefit Management Plan](./docs/00_Pre-project/02_Benefit_Management_Plan_v1.1.md); Initiating gồm [Project Charter](./docs/01_Initiating/01_Project_Charter_v1.0.md) và [Assumption Log](./docs/01_Initiating/02_Assumption_Log_v1.0.md).
+Các phép tính dòng tiền, NPV, BCR và thời gian hoàn vốn hiện nằm trong Benefit Management Plan; tra trực tiếp tài liệu nguồn để tránh sao chép số liệu ở nhiều nơi.
 
-**Lưu ý:** mọi số liệu tài chính, quy mô người dùng và đơn giá trong các tài liệu đó là **giả định phục vụ học tập**, được đăng ký và theo dõi tại Assumption Log. Các thông số kỹ thuật (hỗ trợ trình duyệt, giới hạn bộ nhớ) là số liệu thật.
+## Trạng thái kho dự án
 
----
+Kho hiện tập trung vào hồ sơ quản lý dự án và nghiên cứu môn học. Chưa có cấu hình ứng dụng `package.json` hoặc bộ lệnh chạy được xác nhận, nên chưa có hướng dẫn chạy thử phần mềm.
 
-## Bối cảnh
+| Thư mục | Vai trò |
+| -------- | ------- |
+| [official-docs/](./official-docs/) | Bộ tài liệu chính thức dùng để nộp; trạng thái phê duyệt ghi trong từng file. |
+| [md-docs/](./md-docs/) | Mẫu hỗ trợ soạn tài liệu mới. |
+| [research/](./research/) | Quy tắc, kiến thức từ bài giảng và nội dung đối chiếu dùng để soạn, rà soát hồ sơ. |
+| [archive/](./archive/) | Tài liệu Markdown và các phiên bản cũ chỉ dùng để tra cứu lịch sử. |
 
-Dự án khởi nguồn từ bài tập môn Quản lý dự án phần mềm tại Học viện Công nghệ Bưu chính Viễn thông.
+## Nguyên tắc sử dụng tài liệu
 
-## Giấy phép
-
-Apache 2.0
+- Lấy bộ Pre-project trong `official-docs/` làm căn cứ cho định hướng sản phẩm và mô hình kinh doanh. Khi README khác tài liệu chính thức, ưu tiên tài liệu chính thức.
+- Đọc [quy tắc bắt buộc](./research/01_Quy_tac_bat_buoc.md) trước khi viết hoặc sửa hồ sơ; chọn kỹ thuật phù hợp theo [kiến thức sử dụng](./research/02_Kien_thuc_su_dung.md).
+- Mỗi nội dung chi tiết có một tài liệu nguồn. Các tài liệu khác chỉ tóm tắt và dẫn chiếu để tránh duy trì cùng một số liệu ở nhiều nơi.
+- Phân biệt mục tiêu, giả định và dự báo với kết quả đã đo hoặc nội dung đã nghiệm thu. Mọi số liệu tài chính, quy mô thuê bao và đơn giá trong hồ sơ là giả định học tập.
+- Khi tài liệu còn ở trạng thái **Draft**, cập nhật trực tiếp phiên bản hiện tại. Sau khi **Approved**, tạo phiên bản mới nếu nội dung thay đổi và đưa phiên bản bị thay thế vào `_archive`.
+- Khi tăng phiên bản, cập nhật đồng thời tên file, số phiên bản trong tài liệu, lịch sử thay đổi và mọi dẫn chiếu liên quan.
+- Hồ sơ được tổ chức theo Pre-project và năm nhóm tiến trình PMBOK: `00_Pre-project`, `01_Initiating`, `02_Planning`, `03_Executing`, `04_Monitoring_and_Controlling`, `05_Closing`.
+- Dùng [Document Template v1.0](./md-docs/_template/00_Document_Template_v1.0.md) khi tạo hồ sơ mới. Bản nộp tuân theo cấu trúc: trang bìa → bảng xác nhận và lịch sử cập nhật → mục lục → nội dung.
+- Các nhận xét đối chiếu và tài liệu trong `archive/` phải được kiểm tra lại với bộ chính thức trước khi sử dụng.

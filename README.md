@@ -1,132 +1,90 @@
-# Slide-to-Video Generator
+# PromptVideo
 
-Turn text and images into MP4 presentation videos. Everything — rendering and encoding — runs in the browser. No server.
+PromptVideo is a planned web service that turns text and images into MP4 presentation videos, offered through **annual subscription plans**. The browser renders and encodes video on the user's device; a service backend manages accounts, usage licenses, quotas, and payments.
 
-**Status: work in progress.** Not usable for real work yet.
+This is a **Software Project Management coursework project** at the Posts and Telecommunications Institute of Technology, with Enticy Studios as the sponsoring organisation in a hypothetical business setting. Prices, revenue projections, and resource estimates are coursework assumptions, not a live commercial offer or measured results.
 
 *[Tiếng Việt](./README.vi.md)*
 
----
+## Current direction
 
-## The idea
+The agreed direction is **a subscription service with local video processing and server-managed access**, based on the official Pre-project documents:
 
-Most AI video tools generate pixels. That is expensive, hard to control, and gives you a different result every run.
+- [Business Case v2.1](./official-docs/00_Pre-project/01_Business_Case_v2.1.docx): business needs, selected approach, three business areas, subscription plans, and implementation conditions.
+- [Benefit Management Plan v2.1](./official-docs/00_Pre-project/02_Benefit_Management_Plan_v2.1.docx): benefits, measurement, financial appraisal, and ownership after handover.
 
-This project goes the other way: **describe the video as data, render it with HTML/CSS, and encode it to MP4 on the user's own machine.**
+Both documents are **drafts awaiting approval**. This README reflects the agreed coursework direction; product targets still require implementation and acceptance testing.
 
-Three consequences:
+## Users and intended value
 
-- No render servers — operating cost is close to zero
-- Images and content never leave the user's device
-- The same input always produces the same output, regardless of machine speed
+Target users are small and medium businesses, teachers and lecturers, and content creators in Vietnam.
 
----
+Key targets:
 
-## How it works
+- Create a standard five-scene, 60-second video in under five minutes.
+- Render Vietnamese text correctly, including diacritics and line breaks.
+- Keep text, images, and video content on the user's device.
+- Support long videos through streaming processing with controlled memory use.
+- Offer local pricing and recurring revenue to sustain operations.
 
-```
-Scene JSON  →  Frame-based renderer  →  WebCodecs  →  MP4
-```
+These are **targets to validate**, not completed features.
 
-1. **Scene description** — A video is a JSON structure: a list of scenes, each with a layout, text content, images, duration, and transitions.
-2. **Frame-based rendering** — The renderer takes a frame number and returns the exact DOM state for that moment in time.
-3. **Encoding** — Each frame is drawn to a canvas and fed to the WebCodecs `VideoEncoder`, then muxed into MP4.
+## Three business areas
 
-**The key constraint:** every animation is a function of frame number. CSS animations, which run on wall-clock time, are deliberately not used — they drift and stutter when captured frame by frame. This is why the project has its own renderer instead of wrapping an existing animation library.
+| Area | Scope and output |
+| ---- | ---------------- |
+| **A. Video production** | Edit text and images, select templates, preview, render, and export MP4 locally. |
+| **B. Registration, licensing, and payments** | Create accounts, manage subscriptions, check export access, count usage, process payments, expiry, and renewals. |
+| **C. Service administration and operations** | Manage templates and graphics, monitor the backend, support customers, and track benefits after handover. |
 
----
+## Planned architecture
 
-## Scene format
+```text
+Browser
+  Text + images → Scene JSON → Preview / frame-based rendering
+                                         ↓
+                           Check export access with backend
+                                         ↓
+                               WebCodecs → Local MP4
 
-```json
-{
-  "fps": 30,
-  "width": 1920,
-  "height": 1080,
-  "scenes": [
-    {
-      "template": "title-center",
-      "duration": 90,
-      "content": {
-        "title": "Q3 Report",
-        "subtitle": "Sales Team"
-      },
-      "transition": { "in": "fade-up", "out": "fade" }
-    }
-  ]
-}
+Service backend
+  Accounts · Subscription plans · Usage licenses · Quotas · Payments
 ```
 
-This format is the contract between the parts of the system. The editor produces it, the renderer consumes it, the template library defines what values are valid.
+Effects are determined by frame number so that visual state does not depend on execution speed. Scene JSON is the shared data contract between the editor, renderer, and template library; its detailed format remains a design task.
 
----
+**Export requires an Internet connection** to check usage licenses and quotas. Rendering and encoding take place in the browser; the backend handles account data, access rights, export counts, and payments. The design boundary is **zero bytes of user content uploaded to the server**.
 
-## Current features
+## Proposed subscription plans
 
-- [ ] Frame-based renderer
-- [ ] MP4 export via WebCodecs
-- [ ] In-browser preview
-- [ ] Template library
-- [ ] Form-based content input
-- [ ] Save and reload projects
+| Plan | Price | Entitlements in the Business Case |
+| ---- | ----: | -------------------------------- |
+| Free | VND 0 | 3 videos/month, watermark, up to 720p, all 5 templates. |
+| Individual | VND 599,000/year | Unlimited video count, 1080p, no watermark. |
+| Business | VND 4,900,000/year | Individual entitlements, 5 seats, VAT invoices, support response within 1 business day. |
 
----
+Export access and quotas are managed by the backend and applied by the browser. The target of unrestricted video duration requires validation through a streaming prototype; it is separate from the Free plan's video-count quota.
 
-## Roadmap
+## Coursework scope and constraints
 
-- Full Vietnamese typography — diacritics, line breaking, vertical-frame alignment
-- Overlay text and images on existing background video
-- Generate scenes automatically from a long block of text
-- Subtitle file export
-- Vertical formats for social platforms
-- Background audio
+- **Resources:** 3 team members, 450 total hours over 15 weeks, from 24 August to 6 December 2026.
+- **Cash budget:** VND 3,500,000; labour is accounted for separately in economic appraisal.
+- **Product scope:** editor, renderer/preview, MP4 export, 5 templates, project save/load, accounts, subscriptions, payments, and administration.
+- **M2 conditions:** demonstrate the streaming prototype and submit the payment-provider application. If the prototype fails, the scope reduction is 3 templates and removal of project save/load, retaining the delivery date.
+- **After handover:** the operating organisation takes over the service and tracks benefits for 3 years. Revenue and renewal rates must be measured after launch.
 
----
+Cash-flow calculations, NPV, BCR, and payback currently reside in the Benefit Management Plan. Consult that source rather than duplicating financial figures across summaries.
 
-## Known limitations
+## Repository status
 
-- Requires WebCodecs support: Chrome 94+, Firefox 130+ on desktop, Safari 26+
-- Firefox on Android is not supported
-- Safari 16.4 through 18.7 can encode video but not audio
-- Writing straight to disk needs the File System Access API — Chromium-based browsers only; others fall back to OPFS
-- Export speed depends entirely on the user's hardware
+The repository currently focuses on project management documents and coursework research. It has no application `package.json` or verified run commands, so software setup instructions are not yet available.
 
----
+| Directory | Purpose |
+| --------- | ------- |
+| [official-docs/](./official-docs/) | Official submission documents; each file records its own approval status. |
+| [md-docs/](./md-docs/) | Markdown documents, WBS, templates, and working notes; counterparts to the official set are incomplete. |
+| [research/](./research/) | Internal summaries of lecture requirements and techniques for drafting and reviewing the coursework documents. |
 
-## Running locally
+## Using the documents
 
-```bash
-npm install
-npm run dev
-```
-
----
-
-## Contributing
-
-The project is early and the structure still changes often. Open an issue before sending a pull request so we do not duplicate work.
-
----
-
-## Branches and coursework context
-
-The project runs on two branches with different aims:
-
-| Branch | Direction |
-| ------ | --------- |
-| `main` | Pure open source. No business framing, no project management documents. |
-| `for-subjects-at-uni` | Coursework for Software Project Management. The project is placed in a **hypothetical business context** (Enticy Studios as the sponsoring organisation) so there is enough material for a business case, financial analysis, and benefit management. The software stays Apache 2.0 open source on both branches — revenue in the hypothetical context comes from licensed template packs and services, never from gating features. |
-
-All project management documents live in [docs/](./docs/), organised into six folders — Pre-project plus the five PMBOK process groups. They are written in Vietnamese with English section headings, following the template the course provides. Pre-project holds the [Business Case](./docs/00_Pre-project/01_Business_Case_v1.1.md) and [Benefit Management Plan](./docs/00_Pre-project/02_Benefit_Management_Plan_v1.1.md); Initiating holds the [Project Charter](./docs/01_Initiating/01_Project_Charter_v1.0.md) and [Assumption Log](./docs/01_Initiating/02_Assumption_Log_v1.0.md).
-
-**Note:** every financial figure, user projection, and unit rate in those documents is a **coursework assumption**, registered and tracked in the Assumption Log. The technical figures (browser support, memory limits) are real.
-
----
-
-## Background
-
-Started as a coursework project for Software Project Management at the Posts and Telecommunications Institute of Technology.
-
-## License
-
-Apache 2.0
+Use the Pre-project set in `official-docs/` as the reference for product direction and the business model. Use the [course requirements](./research/01_Quy_tac_bat_buoc.md) when editing the documents. Recheck older comparisons and working notes against the official files before relying on them; `_archive` material is historical.
