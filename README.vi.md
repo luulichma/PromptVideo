@@ -46,6 +46,16 @@ Mục tiêu chính:
 | **B. Đăng ký, cấp phép và thanh toán** | Tạo tài khoản, quản lý gói thuê bao, kiểm tra quyền xuất, đếm hạn mức, thanh toán, hết hạn và gia hạn. |
 | **C. Quản trị và vận hành dịch vụ** | Quản lý mẫu và tài sản đồ hoạ, giám sát máy chủ, hỗ trợ khách hàng và theo dõi lợi ích sau bàn giao. |
 
+### Phân công trách nhiệm
+
+| Nghiệp vụ | Chủ sở hữu | Người kiểm tra | Người xác nhận |
+| ---------- | ---------- | -------------- | --------------- |
+| **A. Sản xuất video** | Chiến | Việt Quang | Quang Anh |
+| **B. Đăng ký, cấp phép và thanh toán** | Việt Quang | Quang Anh | Chiến |
+| **C. Quản trị và vận hành dịch vụ** | Quang Anh | Chiến | Việt Quang |
+
+Chủ sở hữu chịu trách nhiệm điều phối và hoàn thành đầu ra của nghiệp vụ; người kiểm tra rà soát chất lượng, tính nhất quán; người xác nhận chấp thuận kết quả trước khi chuyển sang bước tiếp theo.
+
 ## Kiến trúc dự kiến
 
 ```text
