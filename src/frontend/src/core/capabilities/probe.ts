@@ -29,8 +29,12 @@ export type CapabilityReport = {
 type NavigatorWithDeviceMemory = Navigator & { deviceMemory?: number }
 type WindowWithFilePicker = Window & { showSaveFilePicker?: unknown }
 
-async function probeVideoCodec(width: number, height: number): Promise<CapabilityResult> {
-  if (typeof VideoEncoder === 'undefined') return { state: 'unsupported', detail: 'VideoEncoder không tồn tại' }
+async function probeVideoCodec(
+  width: number,
+  height: number,
+): Promise<CapabilityResult> {
+  if (typeof VideoEncoder === 'undefined')
+    return { state: 'unsupported', detail: 'VideoEncoder không tồn tại' }
   try {
     const result = await VideoEncoder.isConfigSupported({
       codec: 'avc1.42001f',
@@ -46,12 +50,16 @@ async function probeVideoCodec(width: number, height: number): Promise<Capabilit
       detail: `${width}×${height} · avc1.42001f`,
     }
   } catch (error) {
-    return { state: 'unknown', detail: error instanceof Error ? error.message : String(error) }
+    return {
+      state: 'unknown',
+      detail: error instanceof Error ? error.message : String(error),
+    }
   }
 }
 
 async function probeAudioCodec(): Promise<CapabilityResult> {
-  if (typeof AudioEncoder === 'undefined') return { state: 'unsupported', detail: 'AudioEncoder không tồn tại' }
+  if (typeof AudioEncoder === 'undefined')
+    return { state: 'unsupported', detail: 'AudioEncoder không tồn tại' }
   try {
     const result = await AudioEncoder.isConfigSupported({
       codec: 'mp4a.40.2',
@@ -59,15 +67,22 @@ async function probeAudioCodec(): Promise<CapabilityResult> {
       numberOfChannels: 2,
       bitrate: 128_000,
     })
-    return { state: result.supported ? 'supported' : 'unsupported', detail: 'AAC-LC · 48 kHz · stereo' }
+    return {
+      state: result.supported ? 'supported' : 'unsupported',
+      detail: 'AAC-LC · 48 kHz · stereo',
+    }
   } catch (error) {
-    return { state: 'unknown', detail: error instanceof Error ? error.message : String(error) }
+    return {
+      state: 'unknown',
+      detail: error instanceof Error ? error.message : String(error),
+    }
   }
 }
 
 export async function runCapabilityProbe(): Promise<CapabilityReport> {
   const navigatorWithMemory = navigator as NavigatorWithDeviceMemory
-  const hasWebCodecs = typeof VideoEncoder !== 'undefined' && typeof VideoFrame !== 'undefined'
+  const hasWebCodecs =
+    typeof VideoEncoder !== 'undefined' && typeof VideoFrame !== 'undefined'
   const hasOpfs = typeof navigator.storage?.getDirectory === 'function'
   const [h264720p, h2641080p, aac] = await Promise.all([
     probeVideoCodec(1280, 720),
@@ -88,31 +103,45 @@ export async function runCapabilityProbe(): Promise<CapabilityReport> {
     capabilities: {
       webCodecs: {
         state: hasWebCodecs ? 'supported' : 'unsupported',
-        detail: hasWebCodecs ? 'VideoEncoder + VideoFrame' : 'Thiếu WebCodecs encode',
+        detail: hasWebCodecs
+          ? 'VideoEncoder + VideoFrame'
+          : 'Thiếu WebCodecs encode',
       },
       h264720p,
       h2641080p,
       aac,
       offscreenCanvas: {
-        state: typeof OffscreenCanvas !== 'undefined' ? 'supported' : 'unsupported',
-        detail: typeof OffscreenCanvas !== 'undefined' ? 'OffscreenCanvas khả dụng' : 'Chỉ dùng HTMLCanvasElement',
+        state:
+          typeof OffscreenCanvas !== 'undefined' ? 'supported' : 'unsupported',
+        detail:
+          typeof OffscreenCanvas !== 'undefined'
+            ? 'OffscreenCanvas khả dụng'
+            : 'Chỉ dùng HTMLCanvasElement',
       },
       opfs: {
         state: hasOpfs ? 'supported' : 'unsupported',
         detail: hasOpfs ? 'navigator.storage.getDirectory' : 'Không có OPFS',
       },
       fileSystemAccess: {
-        state: typeof (window as WindowWithFilePicker).showSaveFilePicker === 'function' ? 'supported' : 'unsupported',
-        detail: typeof (window as WindowWithFilePicker).showSaveFilePicker === 'function'
-          ? 'Có thể ghi trực tiếp ra file'
-          : 'Dùng Blob download',
+        state:
+          typeof (window as WindowWithFilePicker).showSaveFilePicker ===
+          'function'
+            ? 'supported'
+            : 'unsupported',
+        detail:
+          typeof (window as WindowWithFilePicker).showSaveFilePicker ===
+          'function'
+            ? 'Có thể ghi trực tiếp ra file'
+            : 'Dùng Blob download',
       },
     },
   }
 }
 
 export function downloadJson(value: unknown, filename: string): void {
-  const blob = new Blob([JSON.stringify(value, null, 2)], { type: 'application/json' })
+  const blob = new Blob([JSON.stringify(value, null, 2)], {
+    type: 'application/json',
+  })
   const url = URL.createObjectURL(blob)
   const anchor = document.createElement('a')
   anchor.href = url
@@ -120,4 +149,3 @@ export function downloadJson(value: unknown, filename: string): void {
   anchor.click()
   URL.revokeObjectURL(url)
 }
-

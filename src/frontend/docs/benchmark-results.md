@@ -18,17 +18,17 @@ Trạng thái: **Kết quả sơ bộ đạt trên một môi trường Windows/
 4. Tải JSON sau mỗi nhóm chạy và lưu cùng MP4 mẫu.
 5. Ghi số đo do browser cung cấp; dùng `N/A` nếu browser không cung cấp peak JS heap/RAM estimate.
 
-| Tier | OS / browser | CPU / RAM | Mode | Run | Time | Peak JS heap | File | Duration delta | First/last black | Kết quả |
-| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| 1 sơ bộ | Windows / HeadlessChrome 152 | 12 threads / 16 GiB estimate | 720p OPFS | 1 | 34.86 s | 35.44 MB | 3.09 MB | 0 frame | Không/Không | Pass |
-| 1 sơ bộ | Windows / HeadlessChrome 152 | 12 threads / 16 GiB estimate | 720p OPFS | 2 | 33.82 s | 32.07 MB | 3.09 MB | 0 frame | Không/Không | Pass |
-| 1 sơ bộ | Windows / HeadlessChrome 152 | 12 threads / 16 GiB estimate | 720p OPFS | 3 | 36.26 s | 36.11 MB | 3.09 MB | 0 frame | Không/Không | Pass |
-| 1 sơ bộ | Windows / HeadlessChrome 152 | 12 threads / 16 GiB estimate | 720p Buffer | 1 | 33.45 s | 40.56 MB | 3.09 MB | 0 frame | Không/Không | Pass |
-| 1 | Windows / Edge | Chờ đo | 720p Stream | 1 | — | — | — | — | — | Chờ |
-| 1 | macOS / Chrome | Chờ đo | 720p Stream | 1 | — | — | — | — | — | Chờ |
-| 1 | Linux / Chrome | Chờ đo | 720p Stream | 1 | — | — | — | — | — | Chờ |
-| 2 | macOS / Safari | Chờ đo | 720p capability-gated | 1 | — | — | — | — | — | Chờ |
-| 2 | Desktop / Firefox | Chờ đo | 720p capability-gated | 1 | — | — | — | — | — | Chờ |
+| Tier    | OS / browser                 | CPU / RAM                    | Mode                  | Run |    Time | Peak JS heap |    File | Duration delta | First/last black | Kết quả |
+| ------- | ---------------------------- | ---------------------------- | --------------------- | --: | ------: | -----------: | ------: | -------------: | ---------------- | ------- |
+| 1 sơ bộ | Windows / HeadlessChrome 152 | 12 threads / 16 GiB estimate | 720p OPFS             |   1 | 34.86 s |     35.44 MB | 3.09 MB |        0 frame | Không/Không      | Pass    |
+| 1 sơ bộ | Windows / HeadlessChrome 152 | 12 threads / 16 GiB estimate | 720p OPFS             |   2 | 33.82 s |     32.07 MB | 3.09 MB |        0 frame | Không/Không      | Pass    |
+| 1 sơ bộ | Windows / HeadlessChrome 152 | 12 threads / 16 GiB estimate | 720p OPFS             |   3 | 36.26 s |     36.11 MB | 3.09 MB |        0 frame | Không/Không      | Pass    |
+| 1 sơ bộ | Windows / HeadlessChrome 152 | 12 threads / 16 GiB estimate | 720p Buffer           |   1 | 33.45 s |     40.56 MB | 3.09 MB |        0 frame | Không/Không      | Pass    |
+| 1       | Windows / Edge               | Chờ đo                       | 720p Stream           |   1 |       — |            — |       — |              — | —                | Chờ     |
+| 1       | macOS / Chrome               | Chờ đo                       | 720p Stream           |   1 |       — |            — |       — |              — | —                | Chờ     |
+| 1       | Linux / Chrome               | Chờ đo                       | 720p Stream           |   1 |       — |            — |       — |              — | —                | Chờ     |
+| 2       | macOS / Safari               | Chờ đo                       | 720p capability-gated |   1 |       — |            — |       — |              — | —                | Chờ     |
+| 2       | Desktop / Firefox            | Chờ đo                       | 720p capability-gated |   1 |       — |            — |       — |              — | —                | Chờ     |
 
 ## Kết luận
 

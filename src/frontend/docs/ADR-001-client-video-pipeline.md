@@ -35,4 +35,3 @@ PromptVideo cần render project 5 cảnh/60 giây mà không gửi text, ảnh,
 
 - WebCodecs codec selection: https://developer.mozilla.org/en-US/docs/Web/API/WebCodecs_API/Codec_selection
 - Mediabunny writing/output targets: https://mediabunny.dev/guide/writing-media-files
-

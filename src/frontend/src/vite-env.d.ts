@@ -22,4 +22,3 @@ interface FileSystemFileHandle {
 interface FileSystemWritableFileStream extends WritableStream {
   write(data: unknown): Promise<void>
 }
-

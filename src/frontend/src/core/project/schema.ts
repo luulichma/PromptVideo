@@ -33,7 +33,9 @@ export const sceneV1Schema = z.object({
   durationSeconds: positiveNumber,
   background: z.string().regex(/^#[0-9a-f]{6}$/i),
   transitionSeconds: z.number().min(0).max(2).default(0),
-  layers: z.array(z.discriminatedUnion('type', [textLayerV1Schema, imageLayerV1Schema])),
+  layers: z.array(
+    z.discriminatedUnion('type', [textLayerV1Schema, imageLayerV1Schema]),
+  ),
 })
 
 export const projectDocumentV1Schema = z.object({
@@ -63,4 +65,3 @@ export type TemplateManifestV1 = z.infer<typeof templateManifestV1Schema>
 export function parseProjectDocument(input: unknown): ProjectDocumentV1 {
   return projectDocumentV1Schema.parse(input)
 }
-

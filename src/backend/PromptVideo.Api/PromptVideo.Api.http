@@ -1,0 +1,6 @@
+@PromptVideo.Api_HostAddress = http://localhost:5228
+
+GET {{PromptVideo.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

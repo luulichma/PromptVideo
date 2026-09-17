@@ -28,4 +28,3 @@ npm.cmd run test:e2e
 ```
 
 Kết quả benchmark thực tế được tải từ nút **Tải báo cáo JSON** và điền vào `docs/benchmark-results.md`. Không suy diễn peak memory nếu browser không cung cấp `performance.memory`.
-

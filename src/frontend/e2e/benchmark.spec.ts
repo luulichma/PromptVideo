@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test'
 
-test('exports three OPFS runs and one Buffer fallback run', async ({ page }) => {
+test('exports three OPFS runs and one Buffer fallback run', async ({
+  page,
+}) => {
   await page.goto('/')
   await expect(page.getByText(/secure context/)).toBeVisible()
   await page.getByRole('button', { name: 'Render snapshot × 3' }).click()

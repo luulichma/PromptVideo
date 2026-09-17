@@ -1,0 +1,77 @@
+name: application-ci
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - '.github/workflows/ci.yml'
+  pull_request:
+    paths:
+      - 'src/**'
+      - '.github/workflows/ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src
+    services:
+      postgres:
+        image: postgres:18.6-alpine3.23
+        env:
+          POSTGRES_DB: promptvideo
+          POSTGRES_USER: promptvideo
+          POSTGRES_PASSWORD: promptvideo_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U promptvideo -d promptvideo"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      ConnectionStrings__Postgres: Host=localhost;Port=5432;Database=promptvideo;Username=promptvideo;Password=promptvideo_ci
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: src/global.json
+          cache: true
+          cache-dependency-path: src/**/packages.lock.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: src/frontend/package-lock.json
+      - name: Restore .NET tools and packages
+        run: |
+          dotnet tool restore
+          dotnet restore PromptVideo.sln
+      - name: Build backend
+        run: dotnet build PromptVideo.sln --no-restore --configuration Release
+      - name: Apply migrations to a clean database
+        run: >-
+          dotnet tool run dotnet-ef database update
+          --project backend/PromptVideo.Api
+          --startup-project backend/PromptVideo.Api
+          --configuration Release
+          --no-build
+      - name: Test backend
+        run: dotnet test PromptVideo.sln --no-restore --no-build --configuration Release
+      - name: Install frontend dependencies
+        run: npm ci
+        working-directory: src/frontend
+      - name: Regenerate TypeScript API contract
+        run: npm run generate:api
+        working-directory: src/frontend
+      - name: Verify generated contracts are committed
+        run: |
+          git add --intent-to-add -- contracts/openapi frontend/src/generated/api
+          git diff --exit-code -- contracts/openapi frontend/src/generated/api
+      - name: Check and build frontend
+        run: npm run check
+        working-directory: src/frontend

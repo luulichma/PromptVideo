@@ -61,7 +61,11 @@ export async function exportProjectMp4(
     codec: 'avc',
     quality: new Quality({ bitrate: resolution.bitrate }),
     keyFrameInterval: 2,
-    transform: { width: resolution.width, height: resolution.height, fit: 'fill' },
+    transform: {
+      width: resolution.width,
+      height: resolution.height,
+      fit: 'fill',
+    },
   })
   const totalFrames = getTotalFrames(project)
   output.addVideoTrack(videoSource, { frameRate: project.fps })
@@ -71,14 +75,22 @@ export async function exportProjectMp4(
   try {
     await output.start()
     for (let frameIndex = 0; frameIndex < totalFrames; frameIndex += 1) {
-      if (options.signal?.aborted) throw new DOMException('Export đã hủy', 'AbortError')
-      renderProjectFrame(canvas.getContext('2d')!, project, frameIndex, assets, options.watermark)
+      if (options.signal?.aborted)
+        throw new DOMException('Export đã hủy', 'AbortError')
+      renderProjectFrame(
+        canvas.getContext('2d')!,
+        project,
+        frameIndex,
+        assets,
+        options.watermark,
+      )
       await videoSource.add(frameIndex / project.fps, 1 / project.fps, {
         keyFrame: frameIndex % (project.fps * 2) === 0,
       })
       if (frameIndex % 15 === 0 || frameIndex === totalFrames - 1) {
         const heapBytes = readHeapBytes()
-        if (heapBytes !== null) peakJsHeapBytes = Math.max(peakJsHeapBytes ?? 0, heapBytes)
+        if (heapBytes !== null)
+          peakJsHeapBytes = Math.max(peakJsHeapBytes ?? 0, heapBytes)
         options.onProgress?.(frameIndex + 1, totalFrames)
       }
     }
@@ -89,7 +101,11 @@ export async function exportProjectMp4(
   }
 
   const blob = await outputTarget.finish()
-  const validation = await validateMp4(blob, getProjectDuration(project), project.fps)
+  const validation = await validateMp4(
+    blob,
+    getProjectDuration(project),
+    project.fps,
+  )
   return {
     blob,
     result: {
@@ -106,4 +122,3 @@ export async function exportProjectMp4(
     },
   }
 }
-

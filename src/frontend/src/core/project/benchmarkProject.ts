@@ -82,4 +82,3 @@ export const benchmarkTemplateManifest = {
   previewAssetId: 'benchmark-mark',
   supportedProjectVersion: 1,
 } as const
-

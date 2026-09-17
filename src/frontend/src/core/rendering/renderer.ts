@@ -1,31 +1,47 @@
-import type { ImageLayerV1, ProjectDocumentV1, SceneV1, TextLayerV1 } from '../project/schema'
+import type {
+  ImageLayerV1,
+  ProjectDocumentV1,
+  SceneV1,
+  TextLayerV1,
+} from '../project/schema'
 import { getTimelineFrame } from '../project/timeline'
 
-export type RenderImageSource = HTMLImageElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas
+export type RenderImageSource =
+  HTMLImageElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas
 export type RenderAssets = ReadonlyMap<string, RenderImageSource>
 
 const BUNDLED_FONT_FAMILY = 'Noto Sans Variable'
 
-function renderTextLayer(context: CanvasRenderingContext2D, layer: TextLayerV1): void {
+function renderTextLayer(
+  context: CanvasRenderingContext2D,
+  layer: TextLayerV1,
+): void {
   context.globalAlpha = layer.opacity
   context.fillStyle = layer.color
   context.font = `${layer.fontWeight} ${layer.fontSize}px "${BUNDLED_FONT_FAMILY}"`
   context.textAlign = layer.align
   context.textBaseline = 'top'
-  const x = layer.align === 'center'
-    ? layer.x + layer.width / 2
-    : layer.align === 'right' ? layer.x + layer.width : layer.x
+  const x =
+    layer.align === 'center'
+      ? layer.x + layer.width / 2
+      : layer.align === 'right'
+        ? layer.x + layer.width
+        : layer.x
   context.fillText(layer.text, x, layer.y, layer.width)
 }
 
 function getImageDestination(layer: ImageLayerV1, image: RenderImageSource) {
-  const sourceWidth = image instanceof HTMLImageElement ? image.naturalWidth : image.width
-  const sourceHeight = image instanceof HTMLImageElement ? image.naturalHeight : image.height
-  if (layer.fit === 'fill') return { x: layer.x, y: layer.y, width: layer.width, height: layer.height }
+  const sourceWidth =
+    image instanceof HTMLImageElement ? image.naturalWidth : image.width
+  const sourceHeight =
+    image instanceof HTMLImageElement ? image.naturalHeight : image.height
+  if (layer.fit === 'fill')
+    return { x: layer.x, y: layer.y, width: layer.width, height: layer.height }
 
-  const scale = layer.fit === 'cover'
-    ? Math.max(layer.width / sourceWidth, layer.height / sourceHeight)
-    : Math.min(layer.width / sourceWidth, layer.height / sourceHeight)
+  const scale =
+    layer.fit === 'cover'
+      ? Math.max(layer.width / sourceWidth, layer.height / sourceHeight)
+      : Math.min(layer.width / sourceWidth, layer.height / sourceHeight)
   const width = sourceWidth * scale
   const height = sourceHeight * scale
   return {
@@ -45,7 +61,13 @@ function renderImageLayer(
   if (!image) throw new Error(`Thiếu asset "${layer.assetId}"`)
   const destination = getImageDestination(layer, image)
   context.globalAlpha = layer.opacity
-  context.drawImage(image, destination.x, destination.y, destination.width, destination.height)
+  context.drawImage(
+    image,
+    destination.x,
+    destination.y,
+    destination.width,
+    destination.height,
+  )
 }
 
 function renderScene(
@@ -97,8 +119,17 @@ export function renderProjectFrame(
   context.globalAlpha = 1
 }
 
-export async function hashCanvas(context: CanvasRenderingContext2D): Promise<string> {
-  const pixels = context.getImageData(0, 0, context.canvas.width, context.canvas.height)
+export async function hashCanvas(
+  context: CanvasRenderingContext2D,
+): Promise<string> {
+  const pixels = context.getImageData(
+    0,
+    0,
+    context.canvas.width,
+    context.canvas.height,
+  )
   const digest = await crypto.subtle.digest('SHA-256', pixels.data)
-  return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('')
+  return Array.from(new Uint8Array(digest), (byte) =>
+    byte.toString(16).padStart(2, '0'),
+  ).join('')
 }

@@ -1,0 +1,6 @@
+# The OpenAPI document and the TypeScript client are written with LF by their
+# generators. Without pinning eol=lf, a Windows checkout (core.autocrlf=true)
+# converts them to CRLF and the "contracts are committed" drift check fails on
+# every run even when nothing changed.
+src/contracts/openapi/*.json text eol=lf
+src/frontend/src/generated/** text eol=lf

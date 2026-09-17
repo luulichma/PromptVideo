@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test'
 
-test('probes capabilities and produces three identical snapshots', async ({ page }) => {
+test('probes capabilities and produces three identical snapshots', async ({
+  page,
+}) => {
   await page.goto('/')
   await expect(page.getByText('Capability probe')).toBeVisible()
   await expect(page.getByText(/secure context/)).toBeVisible()

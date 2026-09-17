@@ -9,13 +9,17 @@ describe('ProjectDocumentV1 schema', () => {
   })
 
   it('rejects an unsupported version with a clear path and message', () => {
-    const result = parseProjectDocument.bind(null, { ...benchmarkProject, version: 2 })
+    const result = parseProjectDocument.bind(null, {
+      ...benchmarkProject,
+      version: 2,
+    })
     expect(result).toThrow(/Chỉ hỗ trợ project version 1/)
     expect(result).toThrow(/version/)
   })
 
   it('accepts the benchmark template manifest', () => {
-    expect(templateManifestV1Schema.parse(benchmarkTemplateManifest)).toEqual(benchmarkTemplateManifest)
+    expect(templateManifestV1Schema.parse(benchmarkTemplateManifest)).toEqual(
+      benchmarkTemplateManifest,
+    )
   })
 })
-

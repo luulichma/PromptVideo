@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import { benchmarkProject } from './benchmarkProject'
-import { getProjectDuration, getTimelineFrame, getTotalFrames } from './timeline'
+import {
+  getProjectDuration,
+  getTimelineFrame,
+  getTotalFrames,
+} from './timeline'
 
 describe('benchmark timeline', () => {
   it('contains exactly five scenes, 60 seconds and 1,800 frames', () => {
@@ -22,8 +26,11 @@ describe('benchmark timeline', () => {
 
   it('derives transition progress from frameIndex/fps', () => {
     expect(getTimelineFrame(benchmarkProject, 337).transitionProgress).toBe(0)
-    expect(getTimelineFrame(benchmarkProject, 342).transitionProgress).toBeCloseTo(0.2)
-    expect(getTimelineFrame(benchmarkProject, 359).transitionProgress).toBeCloseTo(0.9556, 3)
+    expect(
+      getTimelineFrame(benchmarkProject, 342).transitionProgress,
+    ).toBeCloseTo(0.2)
+    expect(
+      getTimelineFrame(benchmarkProject, 359).transitionProgress,
+    ).toBeCloseTo(0.9556, 3)
   })
 })
-

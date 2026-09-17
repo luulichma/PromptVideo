@@ -28,3 +28,16 @@ LOG.md
 !output-docs/**/*.docx
 !output-docs/**/*.xlsx
 !output-docs/**/*.pptx
+
+### Application build output and local configuration
+src/**/bin/
+src/**/obj/
+src/frontend/node_modules/
+src/frontend/dist/
+src/backend/PromptVideo.Api/wwwroot/*
+!src/backend/PromptVideo.Api/wwwroot/.gitkeep
+src/.env
+src/**/.env.local
+src/**/coverage/
+src/**/playwright-report/
+src/**/test-results/
