@@ -1,0 +1,32 @@
+{
+  "wallClockMs": 8901,
+  "result": {
+    "capturedAt": "2026-09-17T18:07:48.175Z",
+    "projectId": "feasibility-benchmark-v1",
+    "outputPath": "opfs",
+    "resolution": "720p",
+    "watermark": true,
+    "elapsedMilliseconds": 8804.5,
+    "peakJsHeapBytes": null,
+    "fileSizeBytes": 2491882,
+    "validation": {
+      "durationSeconds": 60,
+      "durationDeltaFrames": 0,
+      "frameCount": 1800,
+      "width": 1280,
+      "height": 720,
+      "codec": "avc",
+      "firstFrameBlack": false,
+      "lastFrameBlack": false,
+      "isValid": true,
+      "errors": []
+    },
+    "environment": {
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "language": "en-US",
+      "hardwareConcurrency": 12,
+      "deviceMemoryGiB": 16
+    }
+  }
+}

@@ -50,15 +50,24 @@ async function prepareOpfsTarget(
   }
 }
 
-async function prepareFileTarget(
+/**
+ * Opens the save dialog. Must run on the main thread: the picker needs the user
+ * activation of the click, which does not cross into a worker.
+ */
+export async function pickExportFile(
   filename: string,
-): Promise<PreparedOutputTarget> {
+): Promise<FileSystemFileHandle> {
   if (!window.showSaveFilePicker)
     throw new Error('File System Access API không khả dụng')
-  const handle = await window.showSaveFilePicker({
+  return window.showSaveFilePicker({
     suggestedName: filename,
     types: [{ description: 'MP4 video', accept: { 'video/mp4': ['.mp4'] } }],
   })
+}
+
+async function prepareHandleTarget(
+  handle: FileSystemFileHandle,
+): Promise<PreparedOutputTarget> {
   const writable = await handle.createWritable()
   return {
     path: 'file',
@@ -67,11 +76,19 @@ async function prepareFileTarget(
   }
 }
 
+/**
+ * @param handle - A file handle the caller already obtained from
+ * {@link pickExportFile}. The worker receives one this way because it cannot
+ * open the picker itself.
+ */
 export async function prepareOutputTarget(
   path: ExportPath,
   filename: string,
+  handle?: FileSystemFileHandle,
 ): Promise<PreparedOutputTarget> {
-  if (path === 'file') return prepareFileTarget(filename)
+  if (path === 'file') {
+    return prepareHandleTarget(handle ?? (await pickExportFile(filename)))
+  }
   if (path === 'opfs') return prepareOpfsTarget(filename)
   return prepareBufferTarget()
 }

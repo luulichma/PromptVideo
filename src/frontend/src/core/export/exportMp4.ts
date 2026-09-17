@@ -2,15 +2,23 @@ import { CanvasSource, Mp4OutputFormat, Output, Quality } from 'mediabunny'
 import type { CapabilityReport } from '../capabilities/probe'
 import type { ProjectDocumentV1 } from '../project/schema'
 import { getProjectDuration, getTotalFrames } from '../project/timeline'
-import { renderProjectFrame, type RenderAssets } from '../rendering/renderer'
+import {
+  renderProjectFrame,
+  type RenderAssets,
+  type RenderContext,
+} from '../rendering/renderer'
+import { RESOLUTIONS, type ExportResolution } from './encoderSupport'
 import { prepareOutputTarget, type ExportPath } from './outputTarget'
 import { validateMp4, type Mp4Validation } from './validateMp4'
+
+/** Preview draws to a canvas element, the export worker to an OffscreenCanvas. */
+export type EncodeSurface = HTMLCanvasElement | OffscreenCanvas
 
 type PerformanceWithMemory = Performance & {
   memory?: { usedJSHeapSize: number }
 }
 
-export type ExportResolution = '720p' | '1080p'
+export type { ExportResolution }
 
 export type ExportOptions = {
   path: ExportPath
@@ -19,6 +27,8 @@ export type ExportOptions = {
   filename: string
   signal?: AbortSignal
   onProgress?: (completedFrames: number, totalFrames: number) => void
+  /** Obtained on the main thread; the worker cannot open a file picker. */
+  fileHandle?: FileSystemFileHandle
 }
 
 export type ExportBenchmarkResult = {
@@ -38,25 +48,23 @@ function readHeapBytes(): number | null {
   return (performance as PerformanceWithMemory).memory?.usedJSHeapSize ?? null
 }
 
-function getResolution(resolution: ExportResolution) {
-  return resolution === '1080p'
-    ? { width: 1920, height: 1080, bitrate: 8_000_000 }
-    : { width: 1280, height: 720, bitrate: 4_000_000 }
-}
-
 export async function exportProjectMp4(
-  canvas: HTMLCanvasElement,
+  canvas: EncodeSurface,
   project: ProjectDocumentV1,
   assets: RenderAssets,
   environment: CapabilityReport['browser'],
   options: ExportOptions,
 ): Promise<{ blob: Blob; result: ExportBenchmarkResult }> {
-  const outputTarget = await prepareOutputTarget(options.path, options.filename)
+  const outputTarget = await prepareOutputTarget(
+    options.path,
+    options.filename,
+    options.fileHandle,
+  )
   const output = new Output({
     format: new Mp4OutputFormat({ fastStart: false }),
     target: outputTarget.target,
   })
-  const resolution = getResolution(options.resolution)
+  const resolution = RESOLUTIONS[options.resolution]
   const videoSource = new CanvasSource(canvas, {
     codec: 'avc',
     quality: new Quality({ bitrate: resolution.bitrate }),
@@ -78,7 +86,7 @@ export async function exportProjectMp4(
       if (options.signal?.aborted)
         throw new DOMException('Export đã hủy', 'AbortError')
       renderProjectFrame(
-        canvas.getContext('2d')!,
+        canvas.getContext('2d') as RenderContext,
         project,
         frameIndex,
         assets,
@@ -96,6 +104,8 @@ export async function exportProjectMp4(
     }
     await output.finalize()
   } catch (error) {
+    // Cancel releases the encoder and the partially written file. Without it a
+    // cancelled export leaves a worker holding both until the tab is closed.
     if (output.state === 'started') await output.cancel()
     throw error
   }

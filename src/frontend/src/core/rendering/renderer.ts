@@ -48,8 +48,12 @@ function sourceSize(image: RenderImageSource): {
   width: number
   height: number
 } {
-  return image instanceof HTMLImageElement
-    ? { width: image.naturalWidth, height: image.naturalHeight }
+  // Deliberately not `instanceof HTMLImageElement`: the renderer also runs in
+  // the export worker, where that constructor does not exist and the check
+  // throws. An <img> is the only source whose size lives on naturalWidth.
+  const natural = (image as HTMLImageElement).naturalWidth
+  return natural
+    ? { width: natural, height: (image as HTMLImageElement).naturalHeight }
     : { width: image.width, height: image.height }
 }
 

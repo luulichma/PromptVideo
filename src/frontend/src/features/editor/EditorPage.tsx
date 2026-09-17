@@ -14,6 +14,7 @@ import {
 } from '../../core/storage/projectStore'
 import { EDITOR_TEMPLATES } from '../../core/templates/templates'
 import { useCapabilities } from '../account/useCapabilities'
+import { ExportPanel } from './ExportPanel'
 import { PreviewCanvas } from './PreviewCanvas'
 import { SceneInspector } from './SceneInspector'
 import { SceneList } from './SceneList'
@@ -266,7 +267,15 @@ export function EditorPage() {
           watermark={watermark}
           onTimestampChange={setTimestamp}
         />
-        <SceneInspector scene={scene} onAssetsChanged={reload} />
+        <div className="space-y-4">
+          <ExportPanel
+            project={project}
+            assets={assets}
+            capabilities={capabilities}
+            blocked={errors.length > 0}
+          />
+          <SceneInspector scene={scene} onAssetsChanged={reload} />
+        </div>
       </div>
     </div>
   )
