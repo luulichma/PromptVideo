@@ -33,7 +33,7 @@ public static class SubscriptionsModule
         var plans = endpoints.MapGroup("/api/plans").WithTags("Subscriptions");
         plans.MapGet("/", GetPlansAsync).WithName("GetPlans").AllowAnonymous();
 
-        var me = endpoints.MapGroup("/api/me").WithTags("Subscriptions").RequireAuthorization();
+        var me = endpoints.MapGroup("/api/me").WithTags("Subscriptions").RequireAuthorization().ProducesAuthFailures();
         me.MapGet("/capabilities", GetCapabilitiesAsync).WithName("GetMyCapabilities");
 
         if (!environment.IsProduction())
@@ -41,7 +41,8 @@ public static class SubscriptionsModule
             var payments = endpoints.MapGroup("/api/payments/fake")
                 .WithTags("Payments")
                 .RequireAuthorization()
-                .AddEndpointFilter<AntiforgeryEndpointFilter>();
+                .AddEndpointFilter<AntiforgeryEndpointFilter>()
+                .ProducesAuthFailures(includeForbidden: true);
             payments.MapPost("/checkout", FakeCheckoutAsync).WithName("StartFakeCheckout");
         }
 

@@ -15,6 +15,7 @@ function createTextLayers(index: number): TextLayerV1[] {
     {
       id: `title-${index + 1}`,
       type: 'text',
+      role: 'title',
       text: title,
       x: 90,
       y: 350,
@@ -25,11 +26,13 @@ function createTextLayers(index: number): TextLayerV1[] {
       fontFamily: 'Noto Sans',
       fontSize: 62,
       fontWeight: 800,
+      lineHeight: 1.25,
       align: 'left',
     },
     {
       id: `subtitle-${index + 1}`,
       type: 'text',
+      role: 'subtitle',
       text: subtitle,
       x: 94,
       y: 452,
@@ -40,6 +43,7 @@ function createTextLayers(index: number): TextLayerV1[] {
       fontFamily: 'Noto Sans',
       fontSize: 28,
       fontWeight: 500,
+      lineHeight: 1.25,
       align: 'left',
     },
   ]
@@ -52,6 +56,9 @@ export const benchmarkProject: ProjectDocumentV1 = {
   width: 1280,
   height: 720,
   fps: 30,
+  templateId: 'technical-benchmark',
+  safeArea: { top: 0.08, bottom: 0.12, left: 0.06, right: 0.06 },
+  assets: [],
   scenes: SCENE_COLORS.map((background, index) => ({
     id: `scene-${index + 1}`,
     name: `Cảnh ${index + 1}`,
@@ -62,6 +69,7 @@ export const benchmarkProject: ProjectDocumentV1 = {
       {
         id: `image-${index + 1}`,
         type: 'image',
+        role: 'image',
         assetId: 'benchmark-mark',
         x: 850,
         y: 94,
@@ -69,6 +77,9 @@ export const benchmarkProject: ProjectDocumentV1 = {
         height: 330,
         opacity: 0.95,
         fit: 'contain',
+        offsetX: 0,
+        offsetY: 0,
+        scale: 1,
       },
       ...createTextLayers(index),
     ],

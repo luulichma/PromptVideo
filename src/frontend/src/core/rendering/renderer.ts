@@ -4,63 +4,100 @@ import type {
   SceneV1,
   TextLayerV1,
 } from '../project/schema'
-import { getTimelineFrame } from '../project/timeline'
+import { getTimelineFrame, getTimelineFrameAt } from '../project/timeline'
+import { BUNDLED_FONT_FAMILY, alignedX, layerFont, wrapText } from './text'
 
 export type RenderImageSource =
   HTMLImageElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas
 export type RenderAssets = ReadonlyMap<string, RenderImageSource>
 
-const BUNDLED_FONT_FAMILY = 'Noto Sans Variable'
+/**
+ * Preview draws to a canvas on screen, export draws to an OffscreenCanvas in a
+ * worker. Both satisfy this type, which is what lets one renderer serve both.
+ */
+export type RenderContext =
+  CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D
 
-function renderTextLayer(
-  context: CanvasRenderingContext2D,
-  layer: TextLayerV1,
-): void {
-  context.globalAlpha = layer.opacity
-  context.fillStyle = layer.color
-  context.font = `${layer.fontWeight} ${layer.fontSize}px "${BUNDLED_FONT_FAMILY}"`
-  context.textAlign = layer.align
-  context.textBaseline = 'top'
-  const x =
-    layer.align === 'center'
-      ? layer.x + layer.width / 2
-      : layer.align === 'right'
-        ? layer.x + layer.width
-        : layer.x
-  context.fillText(layer.text, x, layer.y, layer.width)
+export type RenderOptions = {
+  assets?: RenderAssets
+  /** Draws the free-plan mark. Whether it is required is the server's decision. */
+  watermark?: boolean
 }
 
-function getImageDestination(layer: ImageLayerV1, image: RenderImageSource) {
-  const sourceWidth =
-    image instanceof HTMLImageElement ? image.naturalWidth : image.width
-  const sourceHeight =
-    image instanceof HTMLImageElement ? image.naturalHeight : image.height
-  if (layer.fit === 'fill')
-    return { x: layer.x, y: layer.y, width: layer.width, height: layer.height }
+function renderTextLayer(context: RenderContext, layer: TextLayerV1): void {
+  context.globalAlpha = layer.opacity
+  context.fillStyle = layer.color
+  context.font = layerFont(layer)
+  context.textAlign = layer.align
+  context.textBaseline = 'top'
 
-  const scale =
+  const lineHeight = layer.fontSize * layer.lineHeight
+  const x = alignedX(layer)
+  const lines = wrapText(context, layer.text, layer.width)
+
+  lines.forEach((line, index) => {
+    const y = layer.y + index * lineHeight
+    // Stop at the bottom of the layer box rather than spilling over whatever is
+    // underneath; the editor surfaces overflow separately.
+    if (y + lineHeight > layer.y + layer.height + lineHeight) return
+    context.fillText(line, x, y)
+  })
+}
+
+function sourceSize(image: RenderImageSource): {
+  width: number
+  height: number
+} {
+  return image instanceof HTMLImageElement
+    ? { width: image.naturalWidth, height: image.naturalHeight }
+    : { width: image.width, height: image.height }
+}
+
+export function getImageDestination(
+  layer: ImageLayerV1,
+  image: RenderImageSource,
+) {
+  const source = sourceSize(image)
+  if (layer.fit === 'fill') {
+    return {
+      x: layer.x + layer.offsetX,
+      y: layer.y + layer.offsetY,
+      width: layer.width * layer.scale,
+      height: layer.height * layer.scale,
+    }
+  }
+
+  const base =
     layer.fit === 'cover'
-      ? Math.max(layer.width / sourceWidth, layer.height / sourceHeight)
-      : Math.min(layer.width / sourceWidth, layer.height / sourceHeight)
-  const width = sourceWidth * scale
-  const height = sourceHeight * scale
+      ? Math.max(layer.width / source.width, layer.height / source.height)
+      : Math.min(layer.width / source.width, layer.height / source.height)
+  const scale = base * layer.scale
+  const width = source.width * scale
+  const height = source.height * scale
+
   return {
-    x: layer.x + (layer.width - width) / 2,
-    y: layer.y + (layer.height - height) / 2,
+    x: layer.x + (layer.width - width) / 2 + layer.offsetX,
+    y: layer.y + (layer.height - height) / 2 + layer.offsetY,
     width,
     height,
   }
 }
 
 function renderImageLayer(
-  context: CanvasRenderingContext2D,
+  context: RenderContext,
   layer: ImageLayerV1,
   assets: RenderAssets,
 ): void {
   const image = assets.get(layer.assetId)
   if (!image) throw new Error(`Thiếu asset "${layer.assetId}"`)
+
   const destination = getImageDestination(layer, image)
+  context.save()
   context.globalAlpha = layer.opacity
+  // Cover and zoom both overflow the box by design, so clip to it.
+  context.beginPath()
+  context.rect(layer.x, layer.y, layer.width, layer.height)
+  context.clip()
   context.drawImage(
     image,
     destination.x,
@@ -68,10 +105,11 @@ function renderImageLayer(
     destination.width,
     destination.height,
   )
+  context.restore()
 }
 
 function renderScene(
-  context: CanvasRenderingContext2D,
+  context: RenderContext,
   scene: SceneV1,
   assets: RenderAssets,
   alpha: number,
@@ -91,37 +129,66 @@ function renderScene(
   context.restore()
 }
 
-function renderWatermark(context: CanvasRenderingContext2D): void {
-  const label = 'PROMPTVIDEO · FEASIBILITY SPIKE'
+function renderWatermark(context: RenderContext): void {
   context.save()
   context.font = `700 18px "${BUNDLED_FONT_FAMILY}"`
   context.textAlign = 'right'
   context.textBaseline = 'bottom'
   context.fillStyle = 'rgba(255,255,255,.82)'
-  context.fillText(label, context.canvas.width - 36, context.canvas.height - 28)
+  context.fillText(
+    'PROMPTVIDEO',
+    context.canvas.width - 36,
+    context.canvas.height - 28,
+  )
   context.restore()
 }
 
-export function renderProjectFrame(
-  context: CanvasRenderingContext2D,
-  project: ProjectDocumentV1,
-  frameIndex: number,
-  assets: RenderAssets,
-  watermark = false,
+function paint(
+  context: RenderContext,
+  frame: ReturnType<typeof getTimelineFrame>,
+  options: RenderOptions,
 ): void {
-  const frame = getTimelineFrame(project, frameIndex)
+  const assets = options.assets ?? new Map()
   context.clearRect(0, 0, context.canvas.width, context.canvas.height)
   renderScene(context, frame.scene, assets, 1)
   if (frame.nextScene && frame.transitionProgress > 0) {
     renderScene(context, frame.nextScene, assets, frame.transitionProgress)
   }
-  if (watermark) renderWatermark(context)
+  if (options.watermark) renderWatermark(context)
   context.globalAlpha = 1
 }
 
-export async function hashCanvas(
-  context: CanvasRenderingContext2D,
-): Promise<string> {
+/**
+ * The single drawing entry point, shared by preview and export.
+ *
+ * Both callers pass a timestamp rather than a frame index so that a preview
+ * scrubbing in seconds and an encoder stepping in frames cannot drift apart:
+ * the timestamp is quantised to a frame here, once, for everyone.
+ */
+export function renderFrame(
+  project: ProjectDocumentV1,
+  timestampSeconds: number,
+  surface: RenderContext,
+  options: RenderOptions = {},
+): void {
+  paint(surface, getTimelineFrameAt(project, timestampSeconds), options)
+}
+
+/** Frame-indexed entry point for encoders that count frames. */
+export function renderProjectFrame(
+  context: RenderContext,
+  project: ProjectDocumentV1,
+  frameIndex: number,
+  assets: RenderAssets,
+  watermark = false,
+): void {
+  paint(context, getTimelineFrame(project, frameIndex), {
+    assets,
+    watermark,
+  })
+}
+
+export async function hashCanvas(context: RenderContext): Promise<string> {
   const pixels = context.getImageData(
     0,
     0,

@@ -21,7 +21,8 @@ public static class ExportsModule
         var group = endpoints.MapGroup("/api/exports/reservations")
             .WithTags("Exports")
             .RequireAuthorization()
-            .AddEndpointFilter<AntiforgeryEndpointFilter>();
+            .AddEndpointFilter<AntiforgeryEndpointFilter>()
+            .ProducesAuthFailures();
 
         group.MapPost("/", ReserveAsync).WithName("ReserveExport");
         group.MapPost("/{reservationId:guid}/complete", CompleteAsync).WithName("CompleteExport");

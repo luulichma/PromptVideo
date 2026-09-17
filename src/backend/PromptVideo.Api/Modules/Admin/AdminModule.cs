@@ -17,7 +17,8 @@ public static class AdminModule
 
         var group = endpoints.MapGroup("/api/admin")
             .WithTags("Admin")
-            .RequireAuthorization(Roles.AdminPolicy);
+            .RequireAuthorization(Roles.AdminPolicy)
+            .ProducesAuthFailures(includeForbidden: true);
 
         group.MapGet("/templates", GetAllTemplatesAsync).WithName("GetAdminTemplates");
         group.MapPost("/templates/{templateKey}/status", SetTemplateStatusAsync)

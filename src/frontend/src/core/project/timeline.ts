@@ -21,6 +21,17 @@ export function getTotalFrames(project: ProjectDocumentV1): number {
   return Math.round(getProjectDuration(project) * project.fps)
 }
 
+/**
+ * Quantises a timestamp to the nearest frame, so a preview scrubbed in seconds
+ * and an encoder stepping in frames resolve to the same picture.
+ */
+export function getTimelineFrameAt(
+  project: ProjectDocumentV1,
+  timestampSeconds: number,
+): TimelineFrame {
+  return getTimelineFrame(project, Math.round(timestampSeconds * project.fps))
+}
+
 export function getTimelineFrame(
   project: ProjectDocumentV1,
   frameIndex: number,

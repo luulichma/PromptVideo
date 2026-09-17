@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 test('exports three OPFS runs and one Buffer fallback run', async ({
   page,
 }) => {
-  await page.goto('/')
+  await page.goto('/spike')
   await expect(page.getByText(/secure context/)).toBeVisible()
   await page.getByRole('button', { name: 'Render snapshot × 3' }).click()
   await expect(page.getByText('Ổn định qua 3 lần render')).toBeVisible()

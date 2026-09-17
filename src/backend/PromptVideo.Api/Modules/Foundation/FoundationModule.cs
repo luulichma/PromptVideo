@@ -15,6 +15,7 @@ public static class FoundationModule
         group.MapGet("/health", GetHealthAsync).WithName("GetFoundationHealth");
         group.MapGet("/private", () => Results.NoContent())
             .RequireAuthorization()
+            .ProducesAuthFailures()
             .WithName("GetPrivateFoundationStatus");
         group.MapPost("/csrf-check", () => Results.NoContent())
             .AddEndpointFilter<AntiforgeryEndpointFilter>()
