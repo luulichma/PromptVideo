@@ -88,3 +88,14 @@ The repository currently focuses on project management documents and coursework 
 ## Using the documents
 
 Use the Pre-project set in `official-docs/` as the reference for product direction and the business model. Use the [course requirements](./research/01_Quy_tac_bat_buoc.md) when editing the documents. Recheck older comparisons and working notes against the official files before relying on them; `_archive` material is historical.
+## License
+
+PromptVideo is proprietary software. Copyright (c) 2026 luulichma
+<luulichma@gmail.com>, all rights reserved. Use, copying, modification, and
+redistribution of the source code require a separate written licence — see
+[LICENSE](./LICENSE). Use of the hosted service is governed by the
+subscription terms and the usage licence issued to each account, which grant
+no rights to the source code.
+
+Third-party components keep their own licences; they are listed in
+[THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md).

@@ -116,3 +116,15 @@ Kho hiện tập trung vào hồ sơ quản lý dự án và nghiên cứu môn 
 - Hồ sơ được tổ chức theo Pre-project và năm nhóm tiến trình PMBOK: `00_Pre-project`, `01_Initiating`, `02_Planning`, `03_Executing`, `04_Monitoring_and_Controlling`, `05_Closing`.
 - Dùng [Document Template v1.0](./md-docs/_template/00_Document_Template_v1.0.md) khi tạo hồ sơ mới. Bản nộp tuân theo cấu trúc: trang bìa → bảng xác nhận và lịch sử cập nhật → mục lục → nội dung.
 - Các nhận xét đối chiếu và tài liệu trong `archive/` phải được kiểm tra lại với bộ chính thức trước khi sử dụng.
+
+## Giấy phép
+
+PromptVideo là phần mềm độc quyền. Bản quyền (c) 2026 luulichma
+<luulichma@gmail.com>, bảo lưu mọi quyền. Việc sử dụng, sao chép, chỉnh sửa
+hoặc phân phối lại mã nguồn đều cần giấy phép riêng bằng văn bản — xem
+[LICENSE](./LICENSE). Việc sử dụng dịch vụ trực tuyến tuân theo điều khoản
+thuê bao và usage license cấp cho từng tài khoản; các điều khoản đó không
+kèm theo bất kỳ quyền nào đối với mã nguồn.
+
+Các thành phần bên thứ ba giữ nguyên giấy phép riêng, liệt kê tại
+[THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md).

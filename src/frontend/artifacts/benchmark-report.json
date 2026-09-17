@@ -1,0 +1,430 @@
+{
+  "plan": "01-feasibility-spike",
+  "project": {
+    "version": 1,
+    "id": "feasibility-benchmark-v1",
+    "name": "PromptVideo — Feasibility benchmark",
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "scenes": [
+      {
+        "id": "scene-1",
+        "name": "Cảnh 1",
+        "durationSeconds": 12,
+        "background": "#0d366f",
+        "transitionSeconds": 0.75,
+        "layers": [
+          {
+            "id": "image-1",
+            "type": "image",
+            "assetId": "benchmark-mark",
+            "x": 850,
+            "y": 94,
+            "width": 330,
+            "height": 330,
+            "opacity": 0.95,
+            "fit": "contain"
+          },
+          {
+            "id": "title-1",
+            "type": "text",
+            "text": "Ý tưởng thành hình",
+            "x": 90,
+            "y": 350,
+            "width": 880,
+            "height": 100,
+            "opacity": 1,
+            "color": "#ffffff",
+            "fontFamily": "Noto Sans",
+            "fontSize": 62,
+            "fontWeight": 800,
+            "align": "left"
+          },
+          {
+            "id": "subtitle-1",
+            "type": "text",
+            "text": "Dựng video ngay trên thiết bị của bạn",
+            "x": 94,
+            "y": 452,
+            "width": 760,
+            "height": 56,
+            "opacity": 0.86,
+            "color": "#ffffff",
+            "fontFamily": "Noto Sans",
+            "fontSize": 28,
+            "fontWeight": 500,
+            "align": "left"
+          }
+        ]
+      },
+      {
+        "id": "scene-2",
+        "name": "Cảnh 2",
+        "durationSeconds": 12,
+        "background": "#0f5b78",
+        "transitionSeconds": 0.75,
+        "layers": [
+          {
+            "id": "image-2",
+            "type": "image",
+            "assetId": "benchmark-mark",
+            "x": 850,
+            "y": 94,
+            "width": 330,
+            "height": 330,
+            "opacity": 0.95,
+            "fit": "contain"
+          },
+          {
+            "id": "title-2",
+            "type": "text",
+            "text": "Năm cảnh · một nhịp",
+            "x": 90,
+            "y": 350,
+            "width": 880,
+            "height": 100,
+            "opacity": 1,
+            "color": "#ffffff",
+            "fontFamily": "Noto Sans",
+            "fontSize": 62,
+            "fontWeight": 800,
+            "align": "left"
+          },
+          {
+            "id": "subtitle-2",
+            "type": "text",
+            "text": "Timeline chính xác đến từng khung hình",
+            "x": 94,
+            "y": 452,
+            "width": 760,
+            "height": 56,
+            "opacity": 0.86,
+            "color": "#ffffff",
+            "fontFamily": "Noto Sans",
+            "fontSize": 28,
+            "fontWeight": 500,
+            "align": "left"
+          }
+        ]
+      },
+      {
+        "id": "scene-3",
+        "name": "Cảnh 3",
+        "durationSeconds": 12,
+        "background": "#236b63",
+        "transitionSeconds": 0.75,
+        "layers": [
+          {
+            "id": "image-3",
+            "type": "image",
+            "assetId": "benchmark-mark",
+            "x": 850,
+            "y": 94,
+            "width": 330,
+            "height": 330,
+            "opacity": 0.95,
+            "fit": "contain"
+          },
+          {
+            "id": "title-3",
+            "type": "text",
+            "text": "Tiếng Việt trọn vẹn",
+            "x": 90,
+            "y": 350,
+            "width": 880,
+            "height": 100,
+            "opacity": 1,
+            "color": "#ffffff",
+            "fontFamily": "Noto Sans",
+            "fontSize": 62,
+            "fontWeight": 800,
+            "align": "left"
+          },
+          {
+            "id": "subtitle-3",
+            "type": "text",
+            "text": "Font được đóng gói, không phụ thuộc hệ thống",
+            "x": 94,
+            "y": 452,
+            "width": 760,
+            "height": 56,
+            "opacity": 0.86,
+            "color": "#ffffff",
+            "fontFamily": "Noto Sans",
+            "fontSize": 28,
+            "fontWeight": 500,
+            "align": "left"
+          }
+        ]
+      },
+      {
+        "id": "scene-4",
+        "name": "Cảnh 4",
+        "durationSeconds": 12,
+        "background": "#80531d",
+        "transitionSeconds": 0.75,
+        "layers": [
+          {
+            "id": "image-4",
+            "type": "image",
+            "assetId": "benchmark-mark",
+            "x": 850,
+            "y": 94,
+            "width": 330,
+            "height": 330,
+            "opacity": 0.95,
+            "fit": "contain"
+          },
+          {
+            "id": "title-4",
+            "type": "text",
+            "text": "Không tải dữ liệu lên",
+            "x": 90,
+            "y": 350,
+            "width": 880,
+            "height": 100,
+            "opacity": 1,
+            "color": "#ffffff",
+            "fontFamily": "Noto Sans",
+            "fontSize": 62,
+            "fontWeight": 800,
+            "align": "left"
+          },
+          {
+            "id": "subtitle-4",
+            "type": "text",
+            "text": "Hình ảnh và nội dung luôn ở máy của bạn",
+            "x": 94,
+            "y": 452,
+            "width": 760,
+            "height": 56,
+            "opacity": 0.86,
+            "color": "#ffffff",
+            "fontFamily": "Noto Sans",
+            "fontSize": 28,
+            "fontWeight": 500,
+            "align": "left"
+          }
+        ]
+      },
+      {
+        "id": "scene-5",
+        "name": "Cảnh 5",
+        "durationSeconds": 12,
+        "background": "#713249",
+        "transitionSeconds": 0,
+        "layers": [
+          {
+            "id": "image-5",
+            "type": "image",
+            "assetId": "benchmark-mark",
+            "x": 850,
+            "y": 94,
+            "width": 330,
+            "height": 330,
+            "opacity": 0.95,
+            "fit": "contain"
+          },
+          {
+            "id": "title-5",
+            "type": "text",
+            "text": "Sẵn sàng để xuất",
+            "x": 90,
+            "y": 350,
+            "width": 880,
+            "height": 100,
+            "opacity": 1,
+            "color": "#ffffff",
+            "fontFamily": "Noto Sans",
+            "fontSize": 62,
+            "fontWeight": 800,
+            "align": "left"
+          },
+          {
+            "id": "subtitle-5",
+            "type": "text",
+            "text": "MP4 720p · 30 fps · 60 giây",
+            "x": 94,
+            "y": 452,
+            "width": 760,
+            "height": 56,
+            "opacity": 0.86,
+            "color": "#ffffff",
+            "fontFamily": "Noto Sans",
+            "fontSize": 28,
+            "fontWeight": 500,
+            "align": "left"
+          }
+        ]
+      }
+    ]
+  },
+  "capabilities": {
+    "capturedAt": "2026-09-17T02:31:08.272Z",
+    "secureContext": true,
+    "browser": {
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "platform": "Windows",
+      "language": "en-US",
+      "hardwareConcurrency": 12,
+      "deviceMemoryGiB": 16
+    },
+    "capabilities": {
+      "webCodecs": {
+        "state": "supported",
+        "detail": "VideoEncoder + VideoFrame"
+      },
+      "h264720p": {
+        "state": "supported",
+        "detail": "1280×720 · avc1.42001f"
+      },
+      "h2641080p": {
+        "state": "unsupported",
+        "detail": "1920×1080 · avc1.42001f"
+      },
+      "aac": {
+        "state": "supported",
+        "detail": "AAC-LC · 48 kHz · stereo"
+      },
+      "offscreenCanvas": {
+        "state": "supported",
+        "detail": "OffscreenCanvas khả dụng"
+      },
+      "opfs": {
+        "state": "supported",
+        "detail": "navigator.storage.getDirectory"
+      },
+      "fileSystemAccess": {
+        "state": "supported",
+        "detail": "Có thể ghi trực tiếp ra file"
+      }
+    }
+  },
+  "snapshot": {
+    "hashes": [
+      "71e7a74ee8dc1f01ff0c7d5b33d26499bd3992622985e9be3762ac35fa8bc5d8",
+      "71e7a74ee8dc1f01ff0c7d5b33d26499bd3992622985e9be3762ac35fa8bc5d8",
+      "71e7a74ee8dc1f01ff0c7d5b33d26499bd3992622985e9be3762ac35fa8bc5d8"
+    ],
+    "stable": true
+  },
+  "exports": [
+    {
+      "capturedAt": "2026-09-17T02:33:28.009Z",
+      "projectId": "feasibility-benchmark-v1",
+      "outputPath": "buffer",
+      "resolution": "720p",
+      "watermark": true,
+      "elapsedMilliseconds": 33447.70000000298,
+      "peakJsHeapBytes": 40560130,
+      "fileSizeBytes": 3086766,
+      "validation": {
+        "durationSeconds": 60,
+        "durationDeltaFrames": 0,
+        "frameCount": 1800,
+        "width": 1280,
+        "height": 720,
+        "codec": "avc",
+        "firstFrameBlack": false,
+        "lastFrameBlack": false,
+        "isValid": true,
+        "errors": []
+      },
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+        "platform": "Windows",
+        "language": "en-US",
+        "hardwareConcurrency": 12,
+        "deviceMemoryGiB": 16
+      }
+    },
+    {
+      "capturedAt": "2026-09-17T02:32:54.413Z",
+      "projectId": "feasibility-benchmark-v1",
+      "outputPath": "opfs",
+      "resolution": "720p",
+      "watermark": true,
+      "elapsedMilliseconds": 36262.20000000298,
+      "peakJsHeapBytes": 36110681,
+      "fileSizeBytes": 3086766,
+      "validation": {
+        "durationSeconds": 60,
+        "durationDeltaFrames": 0,
+        "frameCount": 1800,
+        "width": 1280,
+        "height": 720,
+        "codec": "avc",
+        "firstFrameBlack": false,
+        "lastFrameBlack": false,
+        "isValid": true,
+        "errors": []
+      },
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+        "platform": "Windows",
+        "language": "en-US",
+        "hardwareConcurrency": 12,
+        "deviceMemoryGiB": 16
+      }
+    },
+    {
+      "capturedAt": "2026-09-17T02:32:17.653Z",
+      "projectId": "feasibility-benchmark-v1",
+      "outputPath": "opfs",
+      "resolution": "720p",
+      "watermark": true,
+      "elapsedMilliseconds": 33824.60000000149,
+      "peakJsHeapBytes": 32070736,
+      "fileSizeBytes": 3086766,
+      "validation": {
+        "durationSeconds": 60,
+        "durationDeltaFrames": 0,
+        "frameCount": 1800,
+        "width": 1280,
+        "height": 720,
+        "codec": "avc",
+        "firstFrameBlack": false,
+        "lastFrameBlack": false,
+        "isValid": true,
+        "errors": []
+      },
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+        "platform": "Windows",
+        "language": "en-US",
+        "hardwareConcurrency": 12,
+        "deviceMemoryGiB": 16
+      }
+    },
+    {
+      "capturedAt": "2026-09-17T02:31:43.394Z",
+      "projectId": "feasibility-benchmark-v1",
+      "outputPath": "opfs",
+      "resolution": "720p",
+      "watermark": true,
+      "elapsedMilliseconds": 34857.5,
+      "peakJsHeapBytes": 35443352,
+      "fileSizeBytes": 3086766,
+      "validation": {
+        "durationSeconds": 60,
+        "durationDeltaFrames": 0,
+        "frameCount": 1800,
+        "width": 1280,
+        "height": 720,
+        "codec": "avc",
+        "firstFrameBlack": false,
+        "lastFrameBlack": false,
+        "isValid": true,
+        "errors": []
+      },
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+        "platform": "Windows",
+        "language": "en-US",
+        "hardwareConcurrency": 12,
+        "deviceMemoryGiB": 16
+      }
+    }
+  ]
+}
