@@ -181,3 +181,55 @@ test('switching through all five templates keeps the text', async ({
     )
   }
 })
+
+/** Serves the admin's template catalog; every other API call stays refused. */
+async function serveCatalog(page: Page, activeKeys: string[]): Promise<void> {
+  await page.route(
+    (url) => url.pathname.startsWith('/api/'),
+    (route) =>
+      new URL(route.request().url()).pathname === '/api/templates'
+        ? route.fulfill({
+            json: activeKeys.map((templateKey) => ({
+              templateKey,
+              name: templateKey,
+              version: 1,
+              status: 'Active',
+              manifestJson: '{}',
+            })),
+          })
+        : route.abort('connectionrefused'),
+  )
+}
+
+test('a template the admin retired is no longer offered but old work still opens', async ({
+  page,
+}) => {
+  await serveCatalog(page, ['classic', 'bold', 'minimal', 'story', 'promo'])
+  await page.goto('/')
+  await page.getByLabel('Tên project').fill('Dùng mẫu sắp bị gỡ')
+  await page.getByLabel('Template').selectOption('promo')
+  await page.getByRole('button', { name: 'Tạo project' }).click()
+  await expect(page.getByTestId('preview-canvas')).toBeVisible()
+  await expect(page.getByTestId('template-withdrawn')).toHaveCount(0)
+
+  // The admin retires "promo"; the next load sees the shorter catalog.
+  await page.unroute((url) => url.pathname.startsWith('/api/'))
+  await serveCatalog(page, ['classic', 'bold', 'minimal', 'story'])
+  await page.reload()
+
+  await expect(page.getByTestId('preview-canvas')).toBeVisible()
+  await expect(page.getByTestId('template-withdrawn')).toBeVisible()
+  await expect(page.getByLabel('Template')).toHaveValue('promo')
+
+  // Leaving it is one way: new work cannot pick it.
+  await page.goto('/')
+  // The bundled list shows until the catalog answers; wait for the answer.
+  await expect(page.getByLabel('Template').locator('option')).toHaveCount(4)
+  const offered = await page
+    .getByLabel('Template')
+    .locator('option')
+    .evaluateAll((options) =>
+      options.map((option) => (option as HTMLOptionElement).value),
+    )
+  expect(offered).toEqual(['classic', 'bold', 'minimal', 'story'])
+})

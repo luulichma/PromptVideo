@@ -10,7 +10,7 @@ export type ExportReservation = {
 }
 
 export type ReservationRefusal = {
-  code: 'unauthenticated' | 'quota' | 'forbidden' | 'offline' | 'server'
+  code: 'unauthenticated' | 'quota' | 'invalid-request' | 'offline' | 'server'
   message: string
 }
 
@@ -28,28 +28,40 @@ function toNullableNumber(value: unknown): number | null {
   return toNumber(value)
 }
 
-function describeStatus(status: number, detail?: string): ReservationRefusal {
+/**
+ * Turns a refused reserve into what the user is told.
+ *
+ * The messages are ours, never the server's: the API speaks English problem
+ * titles meant for developers, and echoing them would leave a Vietnamese UI
+ * explaining itself in a language the user did not choose. The status alone is
+ * the contract. On this endpoint 403 means only one thing — the monthly quota
+ * is spent — because an unauthenticated caller gets 401 and the plan's height
+ * ceiling is applied by clamping, not by refusing.
+ */
+export function describeStatus(status: number): ReservationRefusal {
   if (status === 401) {
     return {
       code: 'unauthenticated',
       message: 'Hãy đăng nhập để xuất video.',
     }
   }
-  if (status === 402 || status === 409 || status === 429) {
-    return {
-      code: 'quota',
-      message: detail ?? 'Bạn đã dùng hết lượt xuất của chu kỳ này.',
-    }
-  }
   if (status === 403) {
     return {
-      code: 'forbidden',
-      message: detail ?? 'Gói hiện tại không cho phép độ phân giải này.',
+      code: 'quota',
+      message:
+        'Bạn đã dùng hết lượt xuất của tháng này. Nâng cấp gói để xuất không giới hạn, hoặc chờ sang tháng mới.',
+    }
+  }
+  if (status === 400) {
+    return {
+      code: 'invalid-request',
+      message:
+        'Yêu cầu xuất không hợp lệ (độ phân giải không được hỗ trợ). Hãy chọn lại độ phân giải rồi thử lại.',
     }
   }
   return {
     code: 'server',
-    message: detail ?? `Máy chủ trả lỗi ${status}.`,
+    message: `Máy chủ chưa xử lý được yêu cầu xuất (mã ${status}). Hãy thử lại sau ít phút.`,
   }
 }
 
@@ -75,14 +87,7 @@ export async function reserveExport(
     )
 
     if (error || !data) {
-      const detail =
-        error && typeof error === 'object' && 'detail' in error
-          ? String((error as { detail?: unknown }).detail ?? '')
-          : ''
-      return {
-        ok: false,
-        refusal: describeStatus(response.status, detail || undefined),
-      }
+      return { ok: false, refusal: describeStatus(response.status) }
     }
 
     return {

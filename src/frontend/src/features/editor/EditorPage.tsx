@@ -12,7 +12,8 @@ import {
   findRecoverableDraft,
   loadProject,
 } from '../../core/storage/projectStore'
-import { EDITOR_TEMPLATES } from '../../core/templates/templates'
+import { isWithdrawn, selectableTemplates } from '../../core/templates/catalog'
+import { findTemplate } from '../../core/templates/templates'
 import { useCapabilities } from '../account/useCapabilities'
 import { ExportPanel } from './ExportPanel'
 import { PreviewCanvas } from './PreviewCanvas'
@@ -25,6 +26,7 @@ import {
   useSelectedScene,
 } from './editorStore'
 import { useProjectAssets } from './useProjectAssets'
+import { useTemplateCatalog } from './useTemplateCatalog'
 
 /** Scene and layer both matter: one scene can raise the same code twice. */
 function issueKey(issue: ValidationIssue): string {
@@ -55,6 +57,7 @@ export function EditorPage() {
   const { canUndo, canRedo } = useHistoryFlags()
   const { assets, reload } = useProjectAssets(project)
   const capabilities = useCapabilities()
+  const catalog = useTemplateCatalog()
 
   const [timestamp, setTimestamp] = useState(0)
   const [notFound, setNotFound] = useState(false)
@@ -144,6 +147,8 @@ export function EditorPage() {
       ? capabilities.capabilities.watermarkRequired
       : true
 
+  const withdrawn = isWithdrawn(project.templateId, catalog)
+
   return (
     <div className="space-y-4">
       {recovery && (
@@ -226,13 +231,31 @@ export function EditorPage() {
           onChange={(event) => run(switchTemplate(event.target.value))}
           className="rounded-md border border-slate-300 px-3 py-2"
         >
-          {EDITOR_TEMPLATES.map((template) => (
+          {withdrawn && (
+            // Listed only as the current value, so the project still shows
+            // what it uses; once left, it cannot be picked again.
+            <option value={project.templateId}>
+              {findTemplate(project.templateId).name} (không còn trong danh mục)
+            </option>
+          )}
+          {selectableTemplates(catalog).map((template) => (
             <option key={template.id} value={template.id}>
               {template.name} — {template.description}
             </option>
           ))}
         </select>
       </label>
+
+      {withdrawn && (
+        <p
+          role="status"
+          data-testid="template-withdrawn"
+          className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-2 text-sm text-amber-900"
+        >
+          Mẫu của dự án này đã được gỡ khỏi danh mục. Dự án vẫn xem trước và
+          xuất được; hãy chọn mẫu khác nếu muốn dùng mẫu đang được hỗ trợ.
+        </p>
+      )}
 
       {errors.length > 0 && (
         <ul

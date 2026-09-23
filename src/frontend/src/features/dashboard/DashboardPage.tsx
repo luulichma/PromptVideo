@@ -9,7 +9,8 @@ import {
   saveProject,
   type ProjectSummary,
 } from '../../core/storage/projectStore'
-import { EDITOR_TEMPLATES } from '../../core/templates/templates'
+import { selectableTemplates } from '../../core/templates/catalog'
+import { useTemplateCatalog } from '../editor/useTemplateCatalog'
 
 const dateFormat = new Intl.DateTimeFormat('vi-VN', {
   dateStyle: 'short',
@@ -20,7 +21,14 @@ export function DashboardPage() {
   const navigate = useNavigate()
   const [projects, setProjects] = useState<ProjectSummary[]>([])
   const [name, setName] = useState('Dự án mới')
-  const [templateId, setTemplateId] = useState(EDITOR_TEMPLATES[0].id)
+  const templates = selectableTemplates(useTemplateCatalog())
+  const [chosenTemplateId, setTemplateId] = useState<string | null>(null)
+  // A choice the catalog has since withdrawn falls back to the first offered.
+  const templateId = templates.some(
+    (template) => template.id === chosenTemplateId,
+  )
+    ? chosenTemplateId
+    : (templates[0]?.id ?? null)
   const [message, setMessage] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const fileInput = useRef<HTMLInputElement>(null)
@@ -47,6 +55,7 @@ export function DashboardPage() {
 
   async function handleCreate(event: React.FormEvent) {
     event.preventDefault()
+    if (!templateId) return
     const project = createProject(name.trim() || 'Dự án mới', { templateId })
     await saveProject(project)
     navigate(`/editor/${project.id}`)
@@ -97,11 +106,11 @@ export function DashboardPage() {
           <label className="flex flex-col gap-1 text-sm">
             <span className="font-medium">Template</span>
             <select
-              value={templateId}
+              value={templateId ?? ''}
               onChange={(event) => setTemplateId(event.target.value)}
               className="rounded-md border border-slate-300 px-3 py-2"
             >
-              {EDITOR_TEMPLATES.map((template) => (
+              {templates.map((template) => (
                 <option key={template.id} value={template.id}>
                   {template.name}
                 </option>
@@ -110,6 +119,8 @@ export function DashboardPage() {
           </label>
           <button
             type="submit"
+            disabled={!templateId}
+            title={templateId ? undefined : 'Chưa có mẫu nào đang mở'}
             className="rounded-md bg-sky-700 px-4 py-2 text-sm font-medium text-white hover:bg-sky-800"
           >
             Tạo project
