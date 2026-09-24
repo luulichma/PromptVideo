@@ -1,0 +1,354 @@
+{
+  "packages": [
+    {
+      "id": "4.4.1",
+      "name": "Danh mục mẫu và tài sản đồ họa",
+      "type": "WP",
+      "O": 14,
+      "M": 20,
+      "P": 32,
+      "owner": "Phạm Quang Anh",
+      "milestone": "M3",
+      "basis": "Tái dùng list/status; bổ sung validator/version, upload ảnh, kiểm tham chiếu và kiểm thử của gói; tE=(O+M+P)/3.",
+      "scope": "REQ-C-01,02,03; NF-C-02; phần mẫu NF-C-03",
+      "status": "Có mã một phần; chưa đủ CRUD/assets"
+    },
+    {
+      "id": "4.4.2",
+      "name": "Hồ sơ hỗ trợ và giao tiếp điều chỉnh hạn mức",
+      "type": "PP",
+      "O": 10,
+      "M": 18,
+      "P": 32,
+      "owner": "Phạm Quang Anh",
+      "milestone": "M6",
+      "basis": "Tra cứu, ticket và client adjustment; B sở hữu service giao dịch quota ở4.3.2, không tính lại. Phân rã DOC-02.",
+      "scope": "REQ-C-04,05,09; phần quota NF-C-03",
+      "status": "Chưa triển khai; hợp đồng IF-CB-01 đã chốt"
+    },
+    {
+      "id": "4.4.3",
+      "name": "Giám sát, health và dữ liệu đo lợi ích",
+      "type": "WP",
+      "O": 8,
+      "M": 12,
+      "P": 22,
+      "owner": "Phạm Quang Anh",
+      "milestone": "M6",
+      "basis": "Có snapshot metrics/readiness; còn kỳ đo, failure fixture và nguồn LI. Không tính3nămvậnhành hoặc giả30ngàyuptime.",
+      "scope": "REQ-C-06,07,08; NF-C-01",
+      "status": "Có mã một phần; chưa đo đủ"
+    },
+    {
+      "id": "4.4.4",
+      "name": "Giao diện quản trị",
+      "type": "PP",
+      "O": 8,
+      "M": 14,
+      "P": 26,
+      "owner": "Phạm Quang Anh",
+      "milestone": "M6",
+      "basis": "Ba khu vực mẫu, hỗ trợ,metrics với quyền/loading/lỗi. Phân rã sau schema tại DOC-02.",
+      "scope": "UI của REQ-C-01..09",
+      "status": "Chưa chứng minh giao diện đầy đủ"
+    }
+  ],
+  "activities": [
+    {
+      "id": "ACT-4.4.1-01",
+      "wbs": "4.4.1",
+      "name": "Chuẩn hóa model/catalog và validator manifest/version",
+      "hours": 7,
+      "predecessors": [
+        "ACT-4.1-01",
+        "ACT-3.2-01"
+      ],
+      "owner": "Phạm Quang Anh"
+    },
+    {
+      "id": "ACT-4.4.1-02",
+      "wbs": "4.4.1",
+      "name": "Hoàn thiện ảnh dùng chung và kiểm tham chiếu",
+      "hours": 9,
+      "predecessors": [
+        "ACT-4.4.1-01"
+      ],
+      "owner": "Phạm Quang Anh"
+    },
+    {
+      "id": "ACT-4.4.1-03",
+      "wbs": "4.4.1",
+      "name": "Kiểm unit/integration gói, quyền, trạng thái và audit",
+      "hours": 6,
+      "predecessors": [
+        "ACT-4.4.1-02"
+      ],
+      "owner": "Phạm Quang Anh"
+    },
+    {
+      "id": "ACT-4.4.3-01",
+      "wbs": "4.4.3",
+      "name": "Định nghĩa kỳ metrics, nguồn LI và fixture",
+      "hours": 5,
+      "predecessors": [
+        "ACT-4.1-01",
+        "ACT-3.2-01"
+      ],
+      "owner": "Phạm Quang Anh"
+    },
+    {
+      "id": "ACT-4.4.3-02",
+      "wbs": "4.4.3",
+      "name": "Hoàn thiện health/error và bộ dữ liệu theo kỳ",
+      "hours": 5,
+      "predecessors": [
+        "ACT-4.4.3-01"
+      ],
+      "owner": "Phạm Quang Anh"
+    },
+    {
+      "id": "ACT-4.4.3-03",
+      "wbs": "4.4.3",
+      "name": "Kiểm metrics/failure health/redaction, lưu kết quả",
+      "hours": 4,
+      "predecessors": [
+        "ACT-4.4.3-02"
+      ],
+      "owner": "Phạm Quang Anh"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-C-01",
+      "description": "Danh mục và vòng đời mẫu",
+      "objective": "OB-04; RQ-06; Charter §5",
+      "design": "C_01 §3–7; P03 IF-CA-01/IF-CB-01",
+      "code": "Modules/Admin; Modules/Templates; frontend/core/templates",
+      "testIds": [
+        "TC-C-01",
+        "TC-C-02",
+        "TC-C-03",
+        "TC-C-05",
+        "TC-C-06",
+        "TC-C-09"
+      ],
+      "status": "Có mã một phần; chưa đủ CRUD/validation",
+      "wbs": "4.4.1"
+    },
+    {
+      "id": "REQ-C-02",
+      "description": "Ảnh đồ họa dùng chung",
+      "objective": "Charter §5; hỗ trợ OB-04",
+      "design": "C_01 §3–7; P03 IF-CA-01/IF-CB-01",
+      "code": "Chưa có module asset admin được xác minh",
+      "testIds": [
+        "TC-C-04",
+        "TC-C-10"
+      ],
+      "status": "Chưa triển khai đầy đủ",
+      "wbs": "4.4.1"
+    },
+    {
+      "id": "REQ-C-03",
+      "description": "Quyền Admin",
+      "objective": "Charter §5; NF-11 hỗ trợ",
+      "design": "C_01 §3–7; P03 IF-CA-01/IF-CB-01",
+      "code": "Infrastructure/Security; Modules/Admin",
+      "testIds": [
+        "TC-C-07",
+        "TC-C-08"
+      ],
+      "status": "Có code/test nguồn; chưa chạy lại",
+      "wbs": "4.4.1"
+    },
+    {
+      "id": "REQ-C-04",
+      "description": "Tra cứu hỗ trợ",
+      "objective": "Charter §5 nghiệp vụ C",
+      "design": "C_01 §3–7; P03 IF-CA-01/IF-CB-01",
+      "code": "Chưa có route được xác minh",
+      "testIds": [
+        "TC-C-11"
+      ],
+      "status": "Chưa làm",
+      "wbs": "4.4.2"
+    },
+    {
+      "id": "REQ-C-05",
+      "description": "Điều chỉnh hạn mức",
+      "objective": "Hỗ trợ OB-14; Charter §5",
+      "design": "C_01 §3–7; P03 IF-CA-01/IF-CB-01",
+      "code": "Service quota adjustment chưa có",
+      "testIds": [
+        "TC-C-12",
+        "TC-C-13",
+        "TC-C-14"
+      ],
+      "status": "Chưa làm; IF-CB-01 là đích",
+      "wbs": "4.4.2"
+    },
+    {
+      "id": "REQ-C-06",
+      "description": "Giám sát tổng hợp",
+      "objective": "Charter §5; hỗ trợ LI-04",
+      "design": "C_01 §3–7; P03 IF-CA-01/IF-CB-01",
+      "code": "Modules/Admin/GetMetricsAsync",
+      "testIds": [
+        "TC-C-21",
+        "TC-C-23"
+      ],
+      "status": "Có snapshot, chưa lọc kỳ; chưa chạy lại",
+      "wbs": "4.4.3"
+    },
+    {
+      "id": "REQ-C-07",
+      "description": "Dữ liệu đo lợi ích",
+      "objective": "BMP v2.2 LI-01..LI-05",
+      "design": "C_01 §3–7; P03 IF-CA-01/IF-CB-01",
+      "code": "Chưa có DailyMetricsJob; nguồn A/B và sổ vận hành",
+      "testIds": [
+        "TC-C-22"
+      ],
+      "status": "Chưa đo đủ theo kỳ",
+      "wbs": "4.4.3"
+    },
+    {
+      "id": "REQ-C-08",
+      "description": "Health/readiness",
+      "objective": "OB-16; NF-10",
+      "design": "C_01 §3–7; P03 IF-CA-01/IF-CB-01",
+      "code": "Modules/Foundation",
+      "testIds": [
+        "TC-C-24",
+        "TC-C-25"
+      ],
+      "status": "Có code/test nguồn; chưa chạy lại",
+      "wbs": "4.4.3"
+    },
+    {
+      "id": "REQ-C-09",
+      "description": "Ghi và theo dõi hỗ trợ",
+      "objective": "Charter §5 nghiệp vụ C",
+      "design": "C_01 §3–7; P03 IF-CA-01/IF-CB-01",
+      "code": "Sổ hỗ trợ demo; service/UI chưa có",
+      "testIds": [
+        "TC-C-15",
+        "TC-C-16"
+      ],
+      "status": "Workflow mô tả; chưa có ticket thực được xác minh",
+      "wbs": "4.4.2"
+    },
+    {
+      "id": "NF-C-01",
+      "description": "Hiệu năng dashboard p95<=2s",
+      "objective": "Ngưỡng nội bộ",
+      "design": "C_01 §3–7; P03 IF-CA-01/IF-CB-01",
+      "code": "Modules/Admin",
+      "testIds": [
+        "TC-C-23"
+      ],
+      "status": "Chưa đo",
+      "wbs": "4.4.3"
+    },
+    {
+      "id": "NF-C-02",
+      "description": "Kiểm định dạng và trần50MiB asset",
+      "objective": "Ngưỡng nội bộ",
+      "design": "C_01 §3–7; P03 IF-CA-01/IF-CB-01",
+      "code": "Chưa có upload admin được xác minh",
+      "testIds": [
+        "TC-C-04",
+        "TC-C-10"
+      ],
+      "status": "Chưa làm",
+      "wbs": "4.4.1"
+    },
+    {
+      "id": "NF-C-03",
+      "description": "Audit và giao dịch nguyên tử",
+      "objective": "Kiểm soát vận hành; hỗ trợ NF-11",
+      "design": "C_01 §3–7; P03 IF-CA-01/IF-CB-01",
+      "code": "Infrastructure/Audit; Modules/Admin",
+      "testIds": [
+        "TC-C-09",
+        "TC-C-12",
+        "TC-C-13",
+        "TC-C-14"
+      ],
+      "status": "Có audit một phần; quota chưa có",
+      "wbs": "4.4.1;4.4.2"
+    }
+  ],
+  "risks": [
+    {
+      "id": "R-C-01",
+      "cause": "Manifest catalog khác schema frontend",
+      "event": "Publish mẫu không tương thích",
+      "effect": "Sửa contract và hồi quy",
+      "p": 3,
+      "i": 3,
+      "probability": 0.5,
+      "impactHours": 8,
+      "owner": "Phạm Quang Anh",
+      "trigger": "Key/version không hỗ trợ hoặc TC-C-05 fail",
+      "response": "Validator/adapter; dừng publish bản lỗi; giữ phiên bản tương thích; C+A rà",
+      "status": "Open"
+    },
+    {
+      "id": "R-C-02",
+      "cause": "Bù lượt lặp hoặc audit tách quota",
+      "event": "UsagePeriod sai",
+      "effect": "Đối soát và sửa số lượt",
+      "p": 2,
+      "i": 4,
+      "probability": 0.3,
+      "impactHours": 12,
+      "owner": "Nguyễn Việt Quang",
+      "trigger": "Retry đổi kết quả hoặc thiếu audit",
+      "response": "Transaction/idempotency B; dừng adjustment; đối soát ledger rồi test lại. Reserve hạch toán một lần ở C, không cộng lại ở B.",
+      "status": "Open"
+    },
+    {
+      "id": "R-C-03",
+      "cause": "File sai hoặc không giới hạn",
+      "event": "Upload làm lỗi bộ nhớ/tham chiếu",
+      "effect": "Sửa upload và phục hồi asset",
+      "p": 2,
+      "i": 2,
+      "probability": 0.3,
+      "impactHours": 4,
+      "owner": "Phạm Quang Anh",
+      "trigger": "File trên50MiB được nhận, sai magic bytes hoặc tham chiếu mất",
+      "response": "Validate server/staging; dừng endpoint lỗi, phục hồi asset trước",
+      "status": "Open"
+    },
+    {
+      "id": "R-C-04",
+      "cause": "Nguồn/kỳ đo không thống nhất",
+      "event": "Snapshot hay dữ liệu giả lập bị gọi là lợi ích đạt",
+      "effect": "Sửa số liệu và báo cáo",
+      "p": 3,
+      "i": 3,
+      "probability": 0.5,
+      "impactHours": 8,
+      "owner": "Phạm Quang Anh",
+      "trigger": "Count tổng lịch sử bị gọi là tháng; giả lập gọi doanh thu thực",
+      "response": "Data dictionary, đối chiếu fixture/BMP; báo cáo sửa và ghi dữ liệu thiếu",
+      "status": "Open"
+    },
+    {
+      "id": "R-C-05",
+      "cause": "C kiêm mọi test và tổng hợp",
+      "event": "Vượt công suất",
+      "effect": "Chậm gate hồ sơ",
+      "p": 4,
+      "i": 4,
+      "probability": 0.7,
+      "impactHours": 12,
+      "owner": "Nguyễn Thế Chiến",
+      "trigger": "Remaining vượt giờ tuần; review chờ trên24h",
+      "response": "Vòng review DEC-002; Chiến cân lại thứ tự. Exposure8.4h vào reserve CHUNG, loại khỏi contingency C12.8h.",
+      "status": "Open"
+    }
+  ]
+}

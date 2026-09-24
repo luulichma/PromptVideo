@@ -1,0 +1,382 @@
+[
+  {
+    "id": "ACT-3.1-01",
+    "wbs": "3.1",
+    "name": "Hoàn thiện và tự kiểm: Kiến trúc và nguyên mẫu mã hóa",
+    "hours": 10,
+    "predecessors": [
+      "ACT-2.1-01"
+    ],
+    "owner": "Chiến",
+    "status": "Có sản phẩm; chưa nghiệm thu"
+  },
+  {
+    "id": "ACT-4.2.1-01",
+    "wbs": "4.2.1",
+    "name": "Hoàn thiện và tự kiểm: Trình soạn thảo nội dung",
+    "hours": 28.666666666666668,
+    "predecessors": [
+      "ACT-3.2-01",
+      "ACT-4.1-01"
+    ],
+    "owner": "Chiến",
+    "status": "Có sản phẩm; chưa nghiệm thu"
+  },
+  {
+    "id": "ACT-4.2.2-01",
+    "wbs": "4.2.2",
+    "name": "Hoàn thiện và tự kiểm: Thư viện năm mẫu trình chiếu",
+    "hours": 13.333333333333334,
+    "predecessors": [
+      "ACT-4.2.3-01"
+    ],
+    "owner": "Chiến",
+    "status": "Có sản phẩm; chưa nghiệm thu"
+  },
+  {
+    "id": "ACT-4.2.3-01",
+    "wbs": "4.2.3",
+    "name": "Hoàn thiện và tự kiểm: Bộ dựng và xem trước",
+    "hours": 24.666666666666668,
+    "predecessors": [
+      "ACT-3.2-01"
+    ],
+    "owner": "Chiến",
+    "status": "Có sản phẩm; chưa nghiệm thu"
+  },
+  {
+    "id": "ACT-4.2.4-01",
+    "wbs": "4.2.4",
+    "name": "Hoàn thiện và tự kiểm: Bộ xuất MP4 theo luồng",
+    "hours": 22,
+    "predecessors": [
+      "ACT-3.1-01",
+      "ACT-4.2.3-01"
+    ],
+    "owner": "Chiến",
+    "status": "Có sản phẩm; chưa nghiệm thu"
+  },
+  {
+    "id": "ACT-4.2.5-01",
+    "wbs": "4.2.5",
+    "name": "Hoàn thiện và tự kiểm: Kho dự án cục bộ",
+    "hours": 15.333333333333334,
+    "predecessors": [
+      "ACT-4.2.1-01"
+    ],
+    "owner": "Chiến",
+    "status": "Có sản phẩm; chưa nghiệm thu"
+  },
+  {
+    "id": "ACT-4.2.6-01",
+    "wbs": "4.2.6",
+    "name": "Hoàn thiện và tự kiểm: Kiểm quyền xuất và danh mục mẫu",
+    "hours": 23.666666666666668,
+    "predecessors": [
+      "ACT-4.2.4-01",
+      "ACT-4.3.2-01",
+      "ACT-4.4.1-01"
+    ],
+    "owner": "Chiến",
+    "status": "Một phần; ISS-G-001 và ISS-G-002 còn mở"
+  },
+  {
+    "id": "ACT-5.1-01",
+    "wbs": "5.1",
+    "name": "Hoàn thiện và tự kiểm: Bản tích hợp A–B–C và bằng chứng",
+    "hours": 16.333333333333332,
+    "predecessors": [
+      "ACT-4.2.6-01",
+      "ACT-4.2.5-01",
+      "ACT-4.3.3-01"
+    ],
+    "owner": "Chiến",
+    "status": "Blocked môi trường tích hợp"
+  },
+  {
+    "id": "ACT-4.3.1-01",
+    "wbs": "4.3.1",
+    "name": "Cấu hình tài khoản, đăng nhập và đổi mật khẩu",
+    "hours": 6,
+    "predecessors": [
+      "ACT-4.1-01",
+      "ACT-3.2-01"
+    ],
+    "owner": "Nguyễn Việt Quang"
+  },
+  {
+    "id": "ACT-4.3.1-02",
+    "wbs": "4.3.1",
+    "name": "Hoàn thiện role, lockout, CSRF và rate limit",
+    "hours": 4,
+    "predecessors": [
+      "ACT-4.3.1-01"
+    ],
+    "owner": "Nguyễn Việt Quang"
+  },
+  {
+    "id": "ACT-4.3.1-03",
+    "wbs": "4.3.1",
+    "name": "Kiểm test cục bộ và bàn giao API xác thực",
+    "hours": 4,
+    "predecessors": [
+      "ACT-4.3.1-02"
+    ],
+    "owner": "Nguyễn Việt Quang"
+  },
+  {
+    "id": "ACT-4.3.2-01",
+    "wbs": "4.3.2",
+    "name": "Hoàn thiện policy, snapshot và kỳ sử dụng UTC",
+    "hours": 6.666666666666667,
+    "predecessors": [
+      "ACT-4.3.1-03"
+    ],
+    "owner": "Nguyễn Việt Quang"
+  },
+  {
+    "id": "ACT-4.3.2-02",
+    "wbs": "4.3.2",
+    "name": "Hoàn thiện reserve/complete/cancel, concurrency và cộng lượt có kiểm soát",
+    "hours": 10.666666666666666,
+    "predecessors": [
+      "ACT-4.3.2-01"
+    ],
+    "owner": "Nguyễn Việt Quang"
+  },
+  {
+    "id": "ACT-4.3.2-03",
+    "wbs": "4.3.2",
+    "name": "Kiểm test cục bộ ranh giới hạn, TTL và hoàn lượt",
+    "hours": 6.666666666666667,
+    "predecessors": [
+      "ACT-4.3.2-02"
+    ],
+    "owner": "Nguyễn Việt Quang"
+  },
+  {
+    "id": "ACT-4.3.3-01",
+    "wbs": "4.3.3",
+    "name": "Hoàn thiện sự kiện, giả lập và chống lặp checkout",
+    "hours": 7.666666666666667,
+    "predecessors": [
+      "ACT-4.3.1-03"
+    ],
+    "owner": "Nguyễn Việt Quang"
+  },
+  {
+    "id": "ACT-4.3.3-02",
+    "wbs": "4.3.3",
+    "name": "Kết nối adapter/callback cổng thật sau hồ sơ được duyệt",
+    "hours": 12.333333333333334,
+    "predecessors": [
+      "ACT-4.3.3-01"
+    ],
+    "owner": "Nguyễn Việt Quang",
+    "externalGate": "Nhà cung cấp và hồ sơ cổng thật được chấp thuận; chưa có ngày xác nhận"
+  },
+  {
+    "id": "ACT-4.3.3-03",
+    "wbs": "4.3.3",
+    "name": "Hoàn thiện gia hạn, nhắc và test cục bộ",
+    "hours": 6.666666666666667,
+    "predecessors": [
+      "ACT-4.3.3-02"
+    ],
+    "owner": "Nguyễn Việt Quang"
+  },
+  {
+    "id": "ACT-4.3.4-01",
+    "wbs": "4.3.4",
+    "name": "Hoàn thiện trang auth và dữ liệu quyền",
+    "hours": 4.333333333333333,
+    "predecessors": [
+      "ACT-4.3.2-03"
+    ],
+    "owner": "Nguyễn Việt Quang"
+  },
+  {
+    "id": "ACT-4.3.4-02",
+    "wbs": "4.3.4",
+    "name": "Ghép mua/gia hạn và hạn thuê bao",
+    "hours": 6.666666666666667,
+    "predecessors": [
+      "ACT-4.3.3-03",
+      "ACT-4.3.4-01"
+    ],
+    "owner": "Nguyễn Việt Quang"
+  },
+  {
+    "id": "ACT-4.3.4-03",
+    "wbs": "4.3.4",
+    "name": "Ghép dữ liệu hóa đơn/chỗ sau hai PP phân rã và xong API",
+    "hours": 5,
+    "predecessors": [
+      "ACT-4.3.4-02"
+    ],
+    "owner": "Nguyễn Việt Quang",
+    "externalGate": "PP 4.3.5 và 4.3.6 được phân rã, API hoàn thành; chưa có thời điểm xác nhận"
+  },
+  {
+    "id": "ACT-4.4.1-01",
+    "wbs": "4.4.1",
+    "name": "Chuẩn hóa model/catalog và validator manifest/version",
+    "hours": 7,
+    "predecessors": [
+      "ACT-4.1-01",
+      "ACT-3.2-01"
+    ],
+    "owner": "Phạm Quang Anh"
+  },
+  {
+    "id": "ACT-4.4.1-02",
+    "wbs": "4.4.1",
+    "name": "Hoàn thiện ảnh dùng chung và kiểm tham chiếu",
+    "hours": 9,
+    "predecessors": [
+      "ACT-4.4.1-01"
+    ],
+    "owner": "Phạm Quang Anh"
+  },
+  {
+    "id": "ACT-4.4.1-03",
+    "wbs": "4.4.1",
+    "name": "Kiểm unit/integration gói, quyền, trạng thái và audit",
+    "hours": 6,
+    "predecessors": [
+      "ACT-4.4.1-02"
+    ],
+    "owner": "Phạm Quang Anh"
+  },
+  {
+    "id": "ACT-4.4.3-01",
+    "wbs": "4.4.3",
+    "name": "Định nghĩa kỳ metrics, nguồn LI và fixture",
+    "hours": 5,
+    "predecessors": [
+      "ACT-4.1-01",
+      "ACT-3.2-01"
+    ],
+    "owner": "Phạm Quang Anh"
+  },
+  {
+    "id": "ACT-4.4.3-02",
+    "wbs": "4.4.3",
+    "name": "Hoàn thiện health/error và bộ dữ liệu theo kỳ",
+    "hours": 5,
+    "predecessors": [
+      "ACT-4.4.3-01"
+    ],
+    "owner": "Phạm Quang Anh"
+  },
+  {
+    "id": "ACT-4.4.3-03",
+    "wbs": "4.4.3",
+    "name": "Kiểm metrics/failure health/redaction, lưu kết quả",
+    "hours": 4,
+    "predecessors": [
+      "ACT-4.4.3-02"
+    ],
+    "owner": "Phạm Quang Anh"
+  },
+  {
+    "id": "ACT-1.1-01",
+    "wbs": "1.1",
+    "name": "Hoàn thiện và tự kiểm: Bộ hồ sơ khởi tạo",
+    "hours": 23,
+    "predecessors": [],
+    "owner": "Chiến",
+    "status": "Có bản Draft; chưa xác minh chữ ký"
+  },
+  {
+    "id": "ACT-1.2-01",
+    "wbs": "1.2",
+    "name": "Hoàn thiện và tự kiểm: Kế hoạch quản lý dự án",
+    "hours": 28,
+    "predecessors": [
+      "ACT-2.1-01",
+      "ACT-3.2-01"
+    ],
+    "owner": "Chiến",
+    "status": "Có sản phẩm; chưa nghiệm thu"
+  },
+  {
+    "id": "ACT-1.3-01",
+    "wbs": "1.3",
+    "name": "Hoàn thiện và tự kiểm: Báo cáo theo dõi và kiểm soát",
+    "hours": 16,
+    "predecessors": [
+      "ACT-1.2-01"
+    ],
+    "owner": "Việt Quang",
+    "status": "Có sản phẩm; chưa nghiệm thu"
+  },
+  {
+    "id": "ACT-2.1-01",
+    "wbs": "2.1",
+    "name": "Hoàn thiện và tự kiểm: Đặc tả yêu cầu phần mềm",
+    "hours": 12,
+    "predecessors": [
+      "ACT-1.1-01"
+    ],
+    "owner": "Chiến",
+    "status": "Có sản phẩm; chưa nghiệm thu"
+  },
+  {
+    "id": "ACT-2.2-01",
+    "wbs": "2.2",
+    "name": "Hoàn thiện và tự kiểm: Ma trận truy vết yêu cầu",
+    "hours": 8,
+    "predecessors": [
+      "ACT-2.1-01",
+      "ACT-3.2-01"
+    ],
+    "owner": "Chiến",
+    "status": "Có sản phẩm; chưa nghiệm thu"
+  },
+  {
+    "id": "ACT-3.2-01",
+    "wbs": "3.2",
+    "name": "Hoàn thiện và tự kiểm: Đặc tả giao tiếp và schema dự án",
+    "hours": 23.333333333333332,
+    "predecessors": [
+      "ACT-2.1-01"
+    ],
+    "owner": "Chiến",
+    "status": "Có sản phẩm; chưa nghiệm thu"
+  },
+  {
+    "id": "ACT-4.1-01",
+    "wbs": "4.1",
+    "name": "Hoàn thiện và tự kiểm: Nền tảng mã nguồn và CI",
+    "hours": 24,
+    "predecessors": [
+      "ACT-3.1-01"
+    ],
+    "owner": "Việt Quang",
+    "status": "Có sản phẩm; chưa nghiệm thu"
+  },
+  {
+    "id": "ACT-6.2-01",
+    "wbs": "6.2",
+    "name": "Hoàn thiện và tự kiểm: Gói demo và hướng dẫn sử dụng",
+    "hours": 10,
+    "predecessors": [
+      "ACT-5.1-01"
+    ],
+    "owner": "Quang Anh",
+    "status": "Đã soạn hướng dẫn; chờ chạy lại"
+  },
+  {
+    "id": "ACT-6.3-01",
+    "wbs": "6.3",
+    "name": "Hoàn thiện và tự kiểm: Hồ sơ kết thúc và bài trình bày",
+    "hours": 12,
+    "predecessors": [
+      "ACT-6.2-01",
+      "ACT-1.3-01"
+    ],
+    "owner": "Quang Anh",
+    "status": "Working Draft"
+  }
+]

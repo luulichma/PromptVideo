@@ -1,0 +1,722 @@
+{
+  "module": "B",
+  "asOf": "2026-09-24",
+  "sourceCommit": "28a07efcc119493e0d89fbfb72ba422b864de747",
+  "forecastMeaning": "Total scope planning estimate; not ETC, actuals or approved baseline",
+  "capacityHoursPerWeek": 10,
+  "packages": [
+    {
+      "id": "4.3.1",
+      "name": "Mô-đun tài khoản và xác thực",
+      "type": "WP",
+      "O": 10,
+      "M": 14,
+      "P": 18,
+      "owner": "Nguyễn Việt Quang",
+      "milestone": "M2",
+      "basis": "Identity framework có sẵn; cấu hình auth/roles/lockout/CSRF/rate limit, test cục bộ. O/M/P=4+3+3 /6+4+4 /8+5+5; đánh giá lập kế hoạch24/09, tin cậy trung bình.",
+      "scope": "Toàn phạm vi B của gói; không tính nền tảng4.1 hoặc tích hợp5.1",
+      "status": "Có mã; cần kiểm bằng chứng",
+      "tE": 14
+    },
+    {
+      "id": "4.3.2",
+      "name": "Mô-đun giấy phép và hạn mức",
+      "type": "WP",
+      "O": 16,
+      "M": 22,
+      "P": 34,
+      "owner": "Nguyễn Việt Quang",
+      "milestone": "M5",
+      "basis": "Policy/snapshot5/6/9 + reservation/concurrency7/10/15 + ngoại lệUTC/TTL4/6/10; đọc source/test24/09, tin cậy trung bình.",
+      "scope": "Toàn phạm vi B; gồm phần thực thiB hợp đồngIF-CB-01, không lặp UI hỗ trợC hoặc tích hợp5.1",
+      "status": "Có mã một phần; lệch tích hợpISS-G-001",
+      "tE": 24
+    },
+    {
+      "id": "4.3.3",
+      "name": "Mô-đun thanh toán và gia hạn",
+      "type": "WP",
+      "O": 16,
+      "M": 24,
+      "P": 40,
+      "owner": "Nguyễn Việt Quang",
+      "milestone": "M6",
+      "basis": "Event/fake/dedup5/7/11 + adapter/callback thật7/11/19 + gia hạn/nhắc4/6/10; adapter chưa biết nhà cung cấp nên tin cậy thấp, thời gian chờ duyệt không quy thành giờ.",
+      "scope": "Toàn phạm vi: giả lập, event/retry, gia hạn/nhắc, adapter thật; không gồm hóa đơn/chỗ",
+      "status": "Có mã giả lập; cổng thật/nhắc chưa có",
+      "tE": 26.666666666666668
+    },
+    {
+      "id": "4.3.4",
+      "name": "Trang quản lý thuê bao",
+      "type": "WP",
+      "O": 10,
+      "M": 14,
+      "P": 24,
+      "owner": "Nguyễn Việt Quang",
+      "milestone": "M6",
+      "basis": "Auth/quyền3/4/6 + mua/gia hạn4/6/10 + hiển thị hóa đơn/chỗ3/4/8; AccountPage hiện cómộtphần; tin cậy thấp doAPIinvoice/seat cònPP.",
+      "scope": "Toàn bộ UI thuêbao, không bao logicBinvoice/seat",
+      "status": "Có trang auth+capabilities; thiếu nhiều phần",
+      "tE": 16
+    },
+    {
+      "id": "4.3.5",
+      "name": "Hóa đơn Doanh nghiệp",
+      "type": "PP",
+      "O": 12,
+      "M": 20,
+      "P": 34,
+      "owner": "Nguyễn Việt Quang",
+      "milestone": "M6",
+      "basis": "Chưa có Invoice/schema/provider; ước lượng cấpgói theo judgment24/09, tin cậy thấp; cần xác minh quy tắc thuế/nguồn phát hành trước phân rã.",
+      "scope": "Invoice/entity/idempotency/quyềnxem; UI thuộc4.3.4",
+      "status": "Chưa triển khai; chưa lập hoạtđộngchi tiết",
+      "tE": 22
+    },
+    {
+      "id": "4.3.6",
+      "name": "Quản lý 5 chỗ Doanh nghiệp",
+      "type": "PP",
+      "O": 14,
+      "M": 24,
+      "P": 40,
+      "owner": "Nguyễn Việt Quang",
+      "milestone": "M6",
+      "basis": "Chưa cóSeat; gồm member/owner/quota5/revoke/expiry/concurrency; judgment24/09 tin cậy thấp; phânrãsauquyềnmember/contractchốt.",
+      "scope": "Seat/entity/permission/lifecycle; UI thuộc4.3.4",
+      "status": "Chưa triển khai; chưa lập hoạtđộngchi tiết",
+      "tE": 26
+    }
+  ],
+  "activities": [
+    {
+      "id": "ACT-4.3.1-01",
+      "wbs": "4.3.1",
+      "name": "Cấu hình tài khoản, đăng nhập và đổi mật khẩu",
+      "hours": 6,
+      "predecessors": [
+        "ACT-4.1-01",
+        "ACT-3.2-01"
+      ],
+      "owner": "Nguyễn Việt Quang"
+    },
+    {
+      "id": "ACT-4.3.1-02",
+      "wbs": "4.3.1",
+      "name": "Hoàn thiện role, lockout, CSRF và rate limit",
+      "hours": 4,
+      "predecessors": [
+        "ACT-4.3.1-01"
+      ],
+      "owner": "Nguyễn Việt Quang"
+    },
+    {
+      "id": "ACT-4.3.1-03",
+      "wbs": "4.3.1",
+      "name": "Kiểm test cục bộ và bàn giao API xác thực",
+      "hours": 4,
+      "predecessors": [
+        "ACT-4.3.1-02"
+      ],
+      "owner": "Nguyễn Việt Quang"
+    },
+    {
+      "id": "ACT-4.3.2-01",
+      "wbs": "4.3.2",
+      "name": "Hoàn thiện policy, snapshot và kỳ sử dụng UTC",
+      "hours": 6.666666666666667,
+      "predecessors": [
+        "ACT-4.3.1-03"
+      ],
+      "owner": "Nguyễn Việt Quang"
+    },
+    {
+      "id": "ACT-4.3.2-02",
+      "wbs": "4.3.2",
+      "name": "Hoàn thiện reserve/complete/cancel, concurrency và cộng lượt có kiểm soát",
+      "hours": 10.666666666666666,
+      "predecessors": [
+        "ACT-4.3.2-01"
+      ],
+      "owner": "Nguyễn Việt Quang"
+    },
+    {
+      "id": "ACT-4.3.2-03",
+      "wbs": "4.3.2",
+      "name": "Kiểm test cục bộ ranh giới hạn, TTL và hoàn lượt",
+      "hours": 6.666666666666667,
+      "predecessors": [
+        "ACT-4.3.2-02"
+      ],
+      "owner": "Nguyễn Việt Quang"
+    },
+    {
+      "id": "ACT-4.3.3-01",
+      "wbs": "4.3.3",
+      "name": "Hoàn thiện sự kiện, giả lập và chống lặp checkout",
+      "hours": 7.666666666666667,
+      "predecessors": [
+        "ACT-4.3.1-03"
+      ],
+      "owner": "Nguyễn Việt Quang"
+    },
+    {
+      "id": "ACT-4.3.3-02",
+      "wbs": "4.3.3",
+      "name": "Kết nối adapter/callback cổng thật sau hồ sơ được duyệt",
+      "hours": 12.333333333333334,
+      "predecessors": [
+        "ACT-4.3.3-01"
+      ],
+      "owner": "Nguyễn Việt Quang",
+      "externalGate": "Nhà cung cấp và hồ sơ cổng thật được chấp thuận; chưa có ngày xác nhận"
+    },
+    {
+      "id": "ACT-4.3.3-03",
+      "wbs": "4.3.3",
+      "name": "Hoàn thiện gia hạn, nhắc và test cục bộ",
+      "hours": 6.666666666666667,
+      "predecessors": [
+        "ACT-4.3.3-02"
+      ],
+      "owner": "Nguyễn Việt Quang"
+    },
+    {
+      "id": "ACT-4.3.4-01",
+      "wbs": "4.3.4",
+      "name": "Hoàn thiện trang auth và dữ liệu quyền",
+      "hours": 4.333333333333333,
+      "predecessors": [
+        "ACT-4.3.2-03"
+      ],
+      "owner": "Nguyễn Việt Quang"
+    },
+    {
+      "id": "ACT-4.3.4-02",
+      "wbs": "4.3.4",
+      "name": "Ghép mua/gia hạn và hạn thuê bao",
+      "hours": 6.666666666666667,
+      "predecessors": [
+        "ACT-4.3.3-03",
+        "ACT-4.3.4-01"
+      ],
+      "owner": "Nguyễn Việt Quang"
+    },
+    {
+      "id": "ACT-4.3.4-03",
+      "wbs": "4.3.4",
+      "name": "Ghép dữ liệu hóa đơn/chỗ sau hai PP phân rã và xong API",
+      "hours": 5,
+      "predecessors": [
+        "ACT-4.3.4-02"
+      ],
+      "owner": "Nguyễn Việt Quang",
+      "externalGate": "PP 4.3.5 và 4.3.6 được phân rã, API hoàn thành; chưa có thời điểm xác nhận"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-B-01",
+      "description": "Đăng ký email duy nhất, mật khẩu tối thiểu 10 ký tự; tài khoản mới dùng Free.",
+      "objective": "OB-14",
+      "design": "B_01 §3; P03",
+      "code": "IdentityModule; ApplicationUser",
+      "testIds": [
+        "TC-B-09",
+        "TC-B-57"
+      ],
+      "status": "Có mã và ca thử; email trùng chưa có ca riêng",
+      "wbs": "4.3.1"
+    },
+    {
+      "id": "REQ-B-02",
+      "description": "Đăng nhập/đăng xuất; cookie HttpOnly, hỗ trợ bearer; 401 khi chưa xác thực, 403 khi thiếu quyền.",
+      "objective": "OB-13",
+      "design": "B_01 §3; P03",
+      "code": "IdentityModule; AuthResponseConventions",
+      "testIds": [
+        "TC-B-51",
+        "TC-B-52",
+        "TC-B-53"
+      ],
+      "status": "Có mã và ca thử; chưa có kết quả chạy mới",
+      "wbs": "4.3.1"
+    },
+    {
+      "id": "REQ-B-03",
+      "description": "Đổi mật khẩu trong phiên hợp lệ; 5 lần sai khóa 15 phút, lần tiếp theo dù đúng vẫn từ chối.",
+      "objective": "OB-13 (hỗ trợ); NF-B-05",
+      "design": "B_01 §3; P03",
+      "code": "IdentityModule",
+      "testIds": [
+        "TC-B-54",
+        "TC-B-56"
+      ],
+      "status": "Có mã và ca thử; chưa có kết quả chạy mới",
+      "wbs": "4.3.1"
+    },
+    {
+      "id": "REQ-B-04",
+      "description": "Phân vai User/Admin; seed admin có kiểm soát; User thường không gọi được chức năng quản trị.",
+      "objective": "OB-13 (hỗ trợ)",
+      "design": "B_01 §3; P03",
+      "code": "Roles; ReferenceDataSeeder; AdminModule",
+      "testIds": [
+        "TC-B-53"
+      ],
+      "status": "Có mã và ca thử; không chứng minh mọi endpoint tương lai",
+      "wbs": "4.3.1"
+    },
+    {
+      "id": "REQ-B-05",
+      "description": "Danh mục Free/Personal/Business và policy đúng bảng gói, đọc được công khai, dữ liệu thiếu phải báo lỗi.",
+      "objective": "OB-13, OB-14, OB-15",
+      "design": "B_01 §3; P03",
+      "code": "PlanCatalog; PlanCapabilities; SubscriptionsModule",
+      "testIds": [
+        "TC-B-10"
+      ],
+      "status": "Có mã và ca thử; chưa có kết quả chạy mới",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "REQ-B-06",
+      "description": "Máy chủ tự giải quyền trước mỗi reserve; snapshot mới có TTL 60 giây. Thuê bao hết hạn chuyển Free ở lần kiểm tra kế tiếp.",
+      "objective": "OB-13",
+      "design": "B_01 §3; P03",
+      "code": "EntitlementService; ExportReservationService",
+      "testIds": [
+        "TC-B-15",
+        "TC-B-32"
+      ],
+      "status": "Có mã và ca thử một phần; snapshot không phải token gửi lại cho reserve",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "REQ-B-07",
+      "description": "Free yêu cầu 1080p được cấp 720p + watermark; trả phí 1080p không watermark; A phải xuất theo quyền trả về.",
+      "objective": "OB-14",
+      "design": "B_01 §3; P03",
+      "code": "PlanCatalog; ExportReservationService; frontend export",
+      "testIds": [
+        "TC-B-31"
+      ],
+      "status": "API có mã và ca thử; file đầu ra A–B chưa kiểm chứng kỳ này",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "REQ-B-08",
+      "description": "UsagePeriod theo tháng UTC; tháng mới tạo kỳ mới; cancel hoàn về kỳ của reservation.",
+      "objective": "OB-14",
+      "design": "B_01 §3; P03",
+      "code": "UsagePeriod; ExportReservationService",
+      "testIds": [
+        "TC-B-40",
+        "TC-B-98"
+      ],
+      "status": "Có test chuyển tháng; cancel xuyên tháng còn thiếu ca chạy",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "REQ-B-09",
+      "description": "Free chỉ giữ/hoàn tất tối đa 3 lượt trong tháng; yêu cầu thứ tư trả 403 kèm thông báo hạn mức.",
+      "objective": "OB-14",
+      "design": "B_01 §3; P03",
+      "code": "ExportsModule; ExportReservationService",
+      "testIds": [
+        "TC-B-34"
+      ],
+      "status": "Có mã và ca thử; chưa có kết quả chạy mới",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "REQ-B-10",
+      "description": "Reserve tăng bộ đếm ngay; retry cùng UserId+key không tăng lần hai; complete giữ nguyên số đã tính.",
+      "objective": "OB-13, OB-14",
+      "design": "B_01 §3; P03",
+      "code": "ExportReservationService; ApplicationDbContext",
+      "testIds": [
+        "TC-B-33",
+        "TC-B-35",
+        "TC-B-37"
+      ],
+      "status": "Có mã và ca thử; chưa có kết quả chạy mới",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "REQ-B-11",
+      "description": "8 reserve đồng thời của Free quota 3 cho đúng 3 Reserved và 5 QuotaExceeded; DB không vượt 3.",
+      "objective": "OB-14; NF-B-03",
+      "design": "B_01 §3; P03",
+      "code": "ExportReservationService; UsagePeriod xmin",
+      "testIds": [
+        "TC-B-36"
+      ],
+      "status": "Có test concurrency; chưa chạy lại kỳ này",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "REQ-B-12",
+      "description": "Hủy/lỗi trước complete hoàn một lần; completed không hoàn; reservation quá TTL không complete; A chỉ giao file sau complete được xác nhận.",
+      "objective": "OB-13, OB-14",
+      "design": "B_01 §3; P03",
+      "code": "ExportReservationService; DataRetentionService; frontend reservation",
+      "testIds": [
+        "TC-B-37",
+        "TC-B-38",
+        "TC-B-39",
+        "TC-B-41",
+        "TC-B-99"
+      ],
+      "status": "Có mã B; A lệch quyết định giao file: ISS-G-001; TTL/sweep cần phân biệt",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "REQ-B-13",
+      "description": "Mua gói năm; thanh toán hợp lệ kích hoạt tự động không quá 5 phút. Demo phải ghi giả lập, không thu tiền.",
+      "objective": "OB-15",
+      "design": "B_01 §3; P03",
+      "code": "PaymentGateway; SubscriptionService; SubscriptionsModule",
+      "testIds": [
+        "TC-B-13",
+        "TC-B-21",
+        "TC-B-22",
+        "TC-B-25",
+        "TC-B-95"
+      ],
+      "status": "Có mô phỏng và test cấp quyền; cổng thật/pending/failed chưa triển khai đầy đủ",
+      "wbs": "4.3.3"
+    },
+    {
+      "id": "REQ-B-14",
+      "description": "Sự kiện thanh toán trùng không cấp quyền hai lần; sai tiền bị từ chối. Retry checkout cùng thao tác cũng phải chống lặp.",
+      "objective": "OB-15",
+      "design": "B_01 §3; P03",
+      "code": "SubscriptionService; PaymentEvent",
+      "testIds": [
+        "TC-B-23",
+        "TC-B-24",
+        "TC-B-100"
+      ],
+      "status": "Event dedup có mã/test; checkout chưa có client idempotency key",
+      "wbs": "4.3.3"
+    },
+    {
+      "id": "REQ-B-15",
+      "description": "Gia hạn còn hiệu lực cộng 12 tháng từ hạn cũ; hết hạn tính từ kích hoạt mới; nhắc trước 7 ngày và 1 ngày.",
+      "objective": "OB-15",
+      "design": "B_01 §3; P03",
+      "code": "SubscriptionService; phần nhắc chưa có",
+      "testIds": [
+        "TC-B-14",
+        "TC-B-16",
+        "TC-B-17"
+      ],
+      "status": "Gia hạn có mã, thiếu ca riêng; nhắc hạn chưa có bằng chứng",
+      "wbs": "4.3.3"
+    },
+    {
+      "id": "REQ-B-16",
+      "description": "Hết hạn trả phí về Free; giữ nguyên số đã dùng trong UsagePeriod tháng hiện tại, không tặng lại 3 lượt.",
+      "objective": "OB-13, OB-14",
+      "design": "B_01 §3; P03",
+      "code": "EntitlementService; PlanCapabilities; ExportReservationService",
+      "testIds": [
+        "TC-B-15",
+        "TC-B-42",
+        "TC-B-97"
+      ],
+      "status": "Fallback có mã/test; dùng lại quota sau paid cần test riêng",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "REQ-B-17",
+      "description": "Mỗi giao dịch Applied Business sinh một hóa đơn; trùng sự kiện không sinh lại, owner được xem; thông tin thuế lấy cấu hình đã xác minh.",
+      "objective": "OB-15",
+      "design": "B_01 §3; P03",
+      "code": "Chưa có Invoice/entity/API",
+      "testIds": [
+        "TC-B-71",
+        "TC-B-72",
+        "TC-B-73",
+        "TC-B-74"
+      ],
+      "status": "Chưa triển khai; PP; không chốt VAT 10% thành quy định thuế",
+      "wbs": "4.3.5"
+    },
+    {
+      "id": "REQ-B-18",
+      "description": "Business có tối đa 5 tài khoản gồm owner; cấp/thu hồi phải kiểm quyền, khi hết hạn mất quyền dùng chung.",
+      "objective": "OB-15",
+      "design": "B_01 §3; P03",
+      "code": "PlanCatalog chỉ có Seats=5; chưa có Seat/entity/API",
+      "testIds": [
+        "TC-B-61",
+        "TC-B-62",
+        "TC-B-63",
+        "TC-B-64"
+      ],
+      "status": "Có dữ liệu số chỗ; chức năng quản lý chưa triển khai, PP",
+      "wbs": "4.3.6"
+    },
+    {
+      "id": "REQ-B-19",
+      "description": "Trang thuê bao có gói, lượt, hạn, mua/gia hạn, hóa đơn và chỗ theo quyền; dữ liệu khớp API.",
+      "objective": "OB-15",
+      "design": "B_01 §3; P03",
+      "code": "frontend features/account/AccountPage.tsx; useCapabilities.ts",
+      "testIds": [
+        "TC-B-81"
+      ],
+      "status": "Có auth + bảng quyền; còn thiếu hạn thuê bao/mua/gia hạn/hóa đơn/chỗ",
+      "wbs": "4.3.4"
+    },
+    {
+      "id": "REQ-B-20",
+      "description": "Rate limit auth theo cấu hình; đổi danh tính phải lấy antiforgery mới; request ghi thiếu CSRF bị chặn.",
+      "objective": "OB-13 (hỗ trợ); NF-B-05",
+      "design": "B_01 §3; P03",
+      "code": "Program; AntiforgeryEndpointFilter; IdentityModule",
+      "testIds": [
+        "TC-B-55",
+        "TC-B-52"
+      ],
+      "status": "Có mã/test; 3/5 phút là cấu hình test, mặc định code 10/1 phút",
+      "wbs": "4.3.1"
+    },
+    {
+      "id": "REQ-B-21",
+      "description": "Audit nghiệp vụ và telemetry không chứa nội dung/email/password/key; giữ dữ liệu theo chính sách và phân quyền.",
+      "objective": "OB-09; NF-B-06",
+      "design": "B_01 §3; P03",
+      "code": "AuditService; AdminModule; Logging; DataRetentionService",
+      "testIds": [
+        "TC-B-91",
+        "TC-B-39"
+      ],
+      "status": "Có test một số sự kiện; chưa chứng minh audit toàn bộ vòng đời hoặc vận hành retention",
+      "wbs": "4.3.1,4.3.2,4.3.3"
+    },
+    {
+      "id": "NF-B-01",
+      "description": "Kiểm quyền p95 ≤ 1 giây",
+      "objective": "NF-09 của Charter",
+      "design": "B_01 §3.5",
+      "code": "EntitlementService; ExportsModule",
+      "testIds": [
+        "TC-B-93"
+      ],
+      "status": "Chưa đo tải/độ trễ kỳ này",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "NF-B-02",
+      "description": "0 byte nội dung project/ảnh/video gửi đến B",
+      "objective": "OB-09",
+      "design": "B_01 §3.5",
+      "code": "ExportsModule DTO; frontend reservation",
+      "testIds": [
+        "TC-B-94"
+      ],
+      "status": "Đã đọc schema; chưa có HAR thật kỳ này",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "NF-B-03",
+      "description": "Không vượt quota khi request đồng thời; trạng thái và bộ đếm nhất quán",
+      "objective": "OB-14",
+      "design": "B_01 §3.5",
+      "code": "UsagePeriod; ExportReservationService",
+      "testIds": [
+        "TC-B-36",
+        "TC-B-99"
+      ],
+      "status": "Có test reserve; chưa chứng minh mọi race complete/cancel/sweep",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "NF-B-04",
+      "description": "Độ phủ module B ≥ 70%; bất biến quota/idempotency có test",
+      "objective": "OB-12; ngưỡng áp dụng nội bộ cho B",
+      "design": "B_01 §3.5",
+      "code": "PromptVideo.Api.Tests",
+      "testIds": [
+        "TC-B-92"
+      ],
+      "status": "Chưa có báo cáo coverage xác minh",
+      "wbs": "4.3.1,4.3.2,4.3.3"
+    },
+    {
+      "id": "NF-B-05",
+      "description": "Mật khẩu băm; cookie/bearer; CSRF; lockout; rate limit đúng cấu hình",
+      "objective": "OB-13 (hỗ trợ); quy tắc bảo mật B",
+      "design": "B_01 §3.5",
+      "code": "IdentityModule; Infrastructure/Security",
+      "testIds": [
+        "TC-B-51",
+        "TC-B-52",
+        "TC-B-53",
+        "TC-B-54",
+        "TC-B-55",
+        "TC-B-56"
+      ],
+      "status": "Có mã và ca thử; chưa có kết quả mới",
+      "wbs": "4.3.1"
+    },
+    {
+      "id": "NF-B-06",
+      "description": "Health/metrics/audit không lộ nội dung; chính sách retention được cấu hình và kiểm",
+      "objective": "OB-09; yêu cầu vận hành B/C",
+      "design": "B_01 §3.5",
+      "code": "FoundationModule; AdminModule; DataRetentionService",
+      "testIds": [
+        "TC-B-91",
+        "TC-B-39"
+      ],
+      "status": "Có mã/test; sweep mặc định tắt, chu kỳ6h",
+      "wbs": "4.3.2"
+    },
+    {
+      "id": "NF-B-07",
+      "description": "Testcontainers tách DB; fake gateway không đăng ký và không map trong Production, kể cả Admin",
+      "objective": "QT-B-6; nguyên tắc môi trường",
+      "design": "B_01 §3.5",
+      "code": "SubscriptionsModule; PostgresContainerFixture",
+      "testIds": [
+        "TC-B-95"
+      ],
+      "status": "Có test chặn Production; ngoài Dev/Testing còn cần test quyền Admin",
+      "wbs": "4.3.3"
+    }
+  ],
+  "risks": [
+    {
+      "id": "R-B-01",
+      "cause": "Nhà cung cấp chưa duyệt hồ sơ",
+      "event": "Adapter thật chậm sẵn sàng",
+      "effect": "Trễ OB-15, phát sinh công chuẩn bị",
+      "p": 3,
+      "i": 4,
+      "probability": 0.5,
+      "impactHours": 12,
+      "owner": "Nguyễn Việt Quang",
+      "trigger": "Cổng chưa sẵn sàng trước ACT-4.3.3-02",
+      "response": "Chuẩn bị hồ sơ; giữ demo giả lập; trình hoãn nghiệm thu OB-15 nếu cần, không thay bằng kích hoạt tay",
+      "status": "Đang theo dõi; xác suất và giờ là phán đoán lập kế hoạch 24/09"
+    },
+    {
+      "id": "R-B-02",
+      "cause": "Retry và event đến đồng thời",
+      "event": "Giao dịch cấp kỳ nhiều lần",
+      "effect": "Sửa dữ liệu và khôi phục quyền",
+      "p": 2,
+      "i": 4,
+      "probability": 0.3,
+      "impactHours": 12,
+      "owner": "Nguyễn Việt Quang",
+      "trigger": "Hai lần cấp kỳ cho cùng thao tác thanh toán",
+      "response": "Unique event và operation key; phần sửa ISS-G-003 đã ở WP; reserve chỉ cho lỗi còn lại sau sửa",
+      "status": "Đang theo dõi; xác suất và giờ là phán đoán lập kế hoạch 24/09"
+    },
+    {
+      "id": "R-B-03",
+      "cause": "Cạnh tranh cập nhật UsagePeriod",
+      "event": "Reserve vượt quota",
+      "effect": "Sai hạn mức và cần đối soát dữ liệu",
+      "p": 2,
+      "i": 3,
+      "probability": 0.3,
+      "impactHours": 8,
+      "owner": "Nguyễn Việt Quang",
+      "trigger": "Consumed vượt quota hoặc lỗi race không xử lý",
+      "response": "xmin và retry; test trong WP; contingency dùng cho lỗi mới sau biện pháp phòng ngừa",
+      "status": "Đang theo dõi; xác suất và giờ là phán đoán lập kế hoạch 24/09"
+    },
+    {
+      "id": "R-B-04",
+      "cause": "Đua trạng thái sau khi sửa hợp đồng A–B",
+      "event": "Cancel/complete/sweep hoàn sai lượt",
+      "effect": "Sai hạn mức, phát sinh công sửa",
+      "p": 3,
+      "i": 4,
+      "probability": 0.5,
+      "impactHours": 16,
+      "owner": "Nguyễn Việt Quang",
+      "trigger": "Test trạng thái cuối không khớp bộ đếm sau khi đã sửa ISS-G-001",
+      "response": "Sửa ISS-G-001 nằm trong gói hiện hành; reserve này chỉ cho sai lệch chưa biết còn lại, không tính hai lần",
+      "status": "Đang theo dõi; xác suất và giờ là phán đoán lập kế hoạch 24/09"
+    },
+    {
+      "id": "R-B-05",
+      "cause": "Nhầm kỳ UTC hoặc hết hạn paid",
+      "event": "Reset hoặc hoàn sai tháng",
+      "effect": "Người dùng mất hoặc được thêm lượt sai",
+      "p": 2,
+      "i": 3,
+      "probability": 0.3,
+      "impactHours": 6,
+      "owner": "Nguyễn Việt Quang",
+      "trigger": "TC-B-97/98 thất bại hoặc phát hiện kỳ sai",
+      "response": "UTC và UsagePeriodId gốc; test nằm trong WP; contingency dùng cho sai lệch mới",
+      "status": "Đang theo dõi; xác suất và giờ là phán đoán lập kế hoạch 24/09"
+    },
+    {
+      "id": "R-B-06",
+      "cause": "Cấu hình môi trường sai",
+      "event": "Giả lập mở trong Production",
+      "effect": "Phải dừng phát hành và sửa cấu hình",
+      "p": 1,
+      "i": 4,
+      "probability": 0.1,
+      "impactHours": 16,
+      "owner": "Nguyễn Việt Quang",
+      "trigger": "Route fake hoặc DI còn đăng ký tại Production",
+      "response": "Không đăng ký/map Production; kiểm gate triển khai; không cho Admin bỏ qua",
+      "status": "Đang theo dõi; xác suất và giờ là phán đoán lập kế hoạch 24/09"
+    },
+    {
+      "id": "R-B-07",
+      "cause": "Quy tắc gói thay đổi sau chốt",
+      "event": "Phạm vi và ước lượng tăng",
+      "effect": "Trễ lịch và tăng ngân sách",
+      "p": 2,
+      "i": 3,
+      "probability": 0.3,
+      "impactHours": 8,
+      "owner": "Nguyễn Việt Quang",
+      "trigger": "Yêu cầu thay giá, quota, chỗ hoặc dữ liệu hóa đơn",
+      "response": "Ghi Change Log; đánh giá phạm vi/lịch/chi phí; trình đúng thẩm quyền",
+      "status": "Đang theo dõi; xác suất và giờ là phán đoán lập kế hoạch 24/09"
+    },
+    {
+      "id": "R-B-08",
+      "cause": "Trường dữ liệu nhạy cảm lọt vào log",
+      "event": "Telemetry chứa dữ liệu thừa",
+      "effect": "Phát sinh công xử lý và sửa",
+      "p": 2,
+      "i": 4,
+      "probability": 0.3,
+      "impactHours": 12,
+      "owner": "Nguyễn Việt Quang",
+      "trigger": "Log có email/password/key/nội dung",
+      "response": "Allowlist và test redaction đã ở WP; reserve dành cho phát sinh sau phòng ngừa",
+      "status": "Đang theo dõi; xác suất và giờ là phán đoán lập kế hoạch 24/09"
+    },
+    {
+      "id": "R-B-09",
+      "cause": "Công suất 10 giờ/tuần chia cho nhiều việc",
+      "event": "Review B hoặc ghép kế hoạch chậm",
+      "effect": "Chậm bàn giao và tăng công điều phối",
+      "p": 3,
+      "i": 3,
+      "probability": 0.5,
+      "impactHours": 8,
+      "owner": "Nguyễn Việt Quang",
+      "trigger": "Đầu vào trễ hơn 1 ngày làm việc hoặc vượt 10 giờ/tuần",
+      "response": "Chiến điều phối, ưu tiên tích hợp; không coi 29/09 là hạn hoàn tất toàn sản phẩm",
+      "status": "Đang theo dõi; xác suất và giờ là phán đoán lập kế hoạch 24/09"
+    }
+  ]
+}

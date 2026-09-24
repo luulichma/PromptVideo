@@ -1,0 +1,14 @@
+{
+  "head": "28a07efcc119493e0d89fbfb72ba422b864de747",
+  "workingTree": "Có thay đổi trước nhiệm vụ; HEAD không thay thế hash file tại lần rà",
+  "sha256": {
+    "design-note/evidence/2026-09-24/frontend-vitest.json": "814c3e280c88384428ee8b74af60b540ab7340e15d4e32edb21b7797d12c7b3d",
+    "design-note/evidence/2026-09-24/frontend-vitest.log": "5d0a001a7dc4a31330ca87163fd597d0692a570ec19215e3e0f0bbb177563fa8",
+    "design-note/evidence/2026-09-24/backend-tests.trx": "c163c4edfe1d24fa2ce55b0b89285813e5881add389d9cdd73315a23b331eac4",
+    "design-note/evidence/2026-09-24/backend-tests.log": "2df4a431bc5f92fb4d38a469258137b9ea0e3b52969817c7fee65fb9515e27e9",
+    "src/frontend/src/core/export/exportProject.ts": "dd44cc85b24a7591fb5b110a6d61e9de08381c436178dab63b9aa3fd271e0298",
+    "src/frontend/src/core/export/reservation.ts": "11d545634bd95ed1042f0a01a0a27d0daf3220c536dc9bc540c72032b10148b3",
+    "src/frontend/src/core/project/schema.ts": "e145bb76202bddb650487931268d4e10dfbf9114b1565e429b7ded213907207c",
+    "src/backend/PromptVideo.Api/Modules/Exports/ExportReservationService.cs": "dee908ae82a31358755840ad2a00508e1f22e0b991e5a60b18992dc6b43500e2"
+  }
+}

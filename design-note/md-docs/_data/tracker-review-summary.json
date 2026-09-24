@@ -1,0 +1,170 @@
+{
+  "file": "F:/Enticy Studios/PromptVideo/phan-cong-theo-giai-doan.xlsx",
+  "preservedCells": 189,
+  "changedCells": [
+    "A4",
+    "E7",
+    "D13",
+    "G13",
+    "D14",
+    "G14",
+    "D15",
+    "G15",
+    "D16",
+    "G16",
+    "D17",
+    "G17",
+    "D18",
+    "G18",
+    "D19",
+    "G19",
+    "D20",
+    "G20",
+    "D21",
+    "G21",
+    "D22",
+    "G22",
+    "D23",
+    "G23",
+    "D24",
+    "G24",
+    "D25",
+    "G25",
+    "D26",
+    "G26",
+    "D27",
+    "G27",
+    "D28",
+    "G28",
+    "D29",
+    "G29",
+    "D30",
+    "G30",
+    "D31",
+    "G31",
+    "D32",
+    "G32",
+    "D33",
+    "G33",
+    "D34",
+    "G34",
+    "F29",
+    "F30",
+    "F31"
+  ],
+  "sheet": "Việc theo giai đoạn",
+  "range": "A1:G34",
+  "links": [
+    {
+      "row": 13,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/02_Planning/_module-input/A_San_xuat_video/A_01_Yeu_cau_va_kiem_thu_v1.0.md",
+      "status": "Dự thảo; chờ review"
+    },
+    {
+      "row": 14,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/02_Planning/_module-input/B_Tai_khoan_thue_bao/B_01_Yeu_cau_va_kiem_thu_v1.0.md",
+      "status": "Dự thảo; chờ review"
+    },
+    {
+      "row": 15,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/02_Planning/_module-input/C_Quan_tri_van_hanh/C_01_Yeu_cau_va_kiem_thu_v1.0.md",
+      "status": "Dự thảo; chờ review"
+    },
+    {
+      "row": 16,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/02_Planning/05_WBS_and_WBS_Dictionary_v1.0.md",
+      "status": "Dự thảo; chờ review"
+    },
+    {
+      "row": 17,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/outputs/bo-ho-so-theo-module/02_Planning/10_Schedule_and_CPM_v1.0.xlsx",
+      "status": "Chưa duyệt baseline"
+    },
+    {
+      "row": 18,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/outputs/bo-ho-so-theo-module/02_Planning/11_Cost_Budget_Procurement_v1.0.xlsx",
+      "status": "Chưa duyệt baseline"
+    },
+    {
+      "row": 19,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/02_Planning/06_Quality_Plan_and_Test_Cases_v1.0.md",
+      "status": "Dự thảo; chờ review"
+    },
+    {
+      "row": 20,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/outputs/bo-ho-so-theo-module/02_Planning/12_RACI_and_Communication_Matrix_v1.0.xlsx",
+      "status": "Dự thảo; chờ review"
+    },
+    {
+      "row": 21,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/outputs/bo-ho-so-theo-module/02_Planning/13_Risk_Register_v1.0.xlsx",
+      "status": "Dự thảo; chờ review"
+    },
+    {
+      "row": 22,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/02_Planning/01_Project_Management_Plan_v1.0.md",
+      "status": "Dự thảo; chờ review"
+    },
+    {
+      "row": 23,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/03_Executing/_module-input/A_03_Thiet_ke_thuc_hien_va_huong_dan_v1.0.md",
+      "status": "Thiếu nghiệm thu"
+    },
+    {
+      "row": 24,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/03_Executing/_module-input/B_03_Thiet_ke_thuc_hien_va_huong_dan_v1.0.md",
+      "status": "Bị chặn môi trường"
+    },
+    {
+      "row": 25,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/03_Executing/_module-input/C_03_Thiet_ke_thuc_hien_va_huong_dan_v1.0.md",
+      "status": "Thiếu nghiệm thu"
+    },
+    {
+      "row": 26,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/04_Monitoring_and_Controlling/01_Project_Status_Report_v1.0.md",
+      "status": "Thiếu actual"
+    },
+    {
+      "row": 27,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/outputs/bo-ho-so-theo-module/03_Executing/05_Work_Log_and_Actuals_v1.0.xlsx",
+      "status": "Thiếu actual"
+    },
+    {
+      "row": 28,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/outputs/bo-ho-so-theo-module/04_Monitoring_and_Controlling/05_Test_Results_and_Defects_v1.0.xlsx",
+      "status": "Chưa kiểm tra chéo"
+    },
+    {
+      "row": 29,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/04_Monitoring_and_Controlling/_module-input/A_04_Theo_doi_kiem_thu_va_thay_doi_v1.0.md",
+      "status": "Chưa kiểm tra chéo"
+    },
+    {
+      "row": 30,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/04_Monitoring_and_Controlling/_module-input/B_04_Theo_doi_kiem_thu_va_thay_doi_v1.0.md",
+      "status": "Chưa kiểm tra chéo"
+    },
+    {
+      "row": 31,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/04_Monitoring_and_Controlling/_module-input/C_04_Theo_doi_kiem_thu_va_thay_doi_v1.0.md",
+      "status": "Chưa kiểm tra chéo"
+    },
+    {
+      "row": 32,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/05_Closing/01_Final_Project_Report_v1.0.md",
+      "status": "Dự thảo; chưa chốt"
+    },
+    {
+      "row": 33,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/05_Closing/_module-input/B_05_Ket_qua_ban_giao_va_bai_hoc_v1.0.md",
+      "status": "Dự thảo; chưa chốt"
+    },
+    {
+      "row": 34,
+      "path": "F:/Enticy Studios/PromptVideo/design-note/md-docs/05_Closing/02_Handover_and_Outstanding_Items_v1.0.md",
+      "status": "Dự thảo; chưa chốt"
+    }
+  ],
+  "formulaErrors": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+}

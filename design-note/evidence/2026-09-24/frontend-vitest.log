@@ -1,0 +1,30 @@
+
+> frontend@0.0.0 test
+> vitest run --reporter=default --reporter=json --outputFile=../../design-note/evidence/2026-09-24/frontend-vitest.json
+
+
+ RUN  v5.0.1 F:/Enticy Studios/PromptVideo/src/frontend
+
+ ✓ src/core/export/encoderSupport.test.ts (6 tests) 14ms
+ ✓ src/core/export/storageBudget.test.ts (7 tests) 11ms
+ ✓ src/core/rendering/text.test.ts (9 tests) 15ms
+ ✓ src/core/project/timeline.test.ts (3 tests) 12ms
+ ✓ src/core/export/reservation.test.ts (8 tests) 60ms
+ ✓ src/core/project/safeArea.test.ts (6 tests) 8ms
+ ✓ src/core/templates/templates.test.ts (6 tests) 18ms
+ ✓ src/core/project/validation.test.ts (10 tests) 18ms
+ ✓ src/core/project/history.test.ts (6 tests) 16ms
+ ✓ src/core/export/exportProject.test.ts (10 tests) 24ms
+ ✓ src/core/templates/catalog.test.ts (5 tests) 6ms
+ ✓ src/core/project/schema.test.ts (3 tests) 18ms
+
+ Test Files  12 passed (12)
+      Tests  79 passed (79)
+   Start at  08:57:41
+   Duration  3.44s (import 46%, transform 39%, worker 12%, tests 4%)
+
+  Transform  transforming modules took 2.39s · 39% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+JSON report written to F:/Enticy Studios/PromptVideo/design-note/evidence/2026-09-24/frontend-vitest.json

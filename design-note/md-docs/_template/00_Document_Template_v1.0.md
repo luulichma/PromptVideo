@@ -1,56 +1,21 @@
-<!-- ============================ TRANG 1 — BÌA ============================ -->
+# <<Mã tài liệu — Tên tài liệu>>
 
-# PromptVideo — Slide-to-Video Generator
-
-|                      |                                    |
-| -------------------- | ---------------------------------- |
-| **Nhóm tiến trình**  | `<<Pre-project / Initiating / Planning / Executing / Monitoring and Controlling / Closing>>`  |
-| **Tên tài liệu**     | `<<Tên tài liệu>>`                 |
-| **Phiên bản**        | Ver. 1.0                           |
-| **Nhóm thực hiện**   | `<<Tên nhóm>>`                     |
-| **Ngày phát hành**   | `<<YYYY-MM-DD>>`                   |
-| **Trạng thái**       | Draft / In Review / Approved       |
-
-<div style="page-break-after: always"></div>
-
-<!-- ======================= TRANG 2 — XÁC NHẬN & LỊCH SỬ ======================= -->
-
-## Xác nhận
-
-| Người tạo        | Người kiểm tra     | Người xác nhận     |
-| ---------------- | ------------------ | ------------------ |
-| `<<Họ và tên>>`  | `<<Họ và tên>>`    | `<<Họ và tên>>`    |
-|                  | `<<Họ và tên>>`    | `<<Họ và tên>>`    |
-|                  | `<<Họ và tên>>`    | `<<Họ và tên>>`    |
+| Thuộc tính | Nội dung cần điền |
+| --- | --- |
+| Phiên bản / ngày | <<v1.0 / YYYY-MM-DD>> |
+| Trạng thái | Draft / Đã review / Đã phát hành; ghi căn cứ |
+| Chủ nội dung | <<Người chịu trách nhiệm>> |
+| Người kiểm tra được giao | <<Tên; chưa phải chữ ký>> |
+| Xác nhận đã thực hiện | Chưa có; chỉ điền người/ngày/bằng chứng sau khi họ xác nhận |
 
 ## Lịch sử cập nhật
 
-| No | Phiên bản | Ngày thay đổi | Lý do thay đổi | Nội dung thay đổi | Người thực hiện | Người phê duyệt |
-| -- | --------- | ------------- | -------------- | ----------------- | --------------- | --------------- |
-| 1  | Ver 1.0   | `<<YYYY-MM-DD>>` | Tạo mới | Khởi tạo tài liệu | `<<Họ và tên>>` | `<<Họ và tên>>` |
+Ghi phiên bản, ngày, lý do, nội dung đổi, người thực hiện và nguồn xác nhận nếu có. Không điền tên người phê duyệt như thể đã ký.
 
-<div style="page-break-after: always"></div>
+## Nội dung
 
-<!-- ============================ TRANG 3 — MỤC LỤC ============================ -->
+Mục đích/phạm vi; nguồn và giả định; nội dung chuyên môn; số liệu và bằng chứng; vấn đề còn mở có người xử lý; đầu ra/điều kiện hoàn tất.
 
-## Mục lục
+## Kiểm tra trước khi giao
 
-1. [Mục thứ nhất](#1-muc-thu-nhat)
-2. [Mục thứ hai](#2-muc-thu-hai)
-
-<div style="page-break-after: always"></div>
-
-<!-- ============================== NỘI DUNG ============================== -->
-
-## 1. Mục thứ nhất
-
-## 2. Mục thứ hai
-
----
-
-### Ghi chú cho người dùng mẫu này
-
-- Giữ nguyên thứ tự **bìa → xác nhận + lịch sử cập nhật → mục lục → nội dung**. Đây là format thầy yêu cầu.
-- Mọi chỗ `<<...>>` là placeholder bắt buộc điền trước khi nộp. Soát bằng: `grep -rn '<<' docs/`
-- Tăng version theo quy ước ghi trong [docs/README.md](../README.md).
-- Khi convert sang Word: `<div style="page-break-after: always">` tương ứng một ngắt trang thủ công.
+Mã theo [danh mục mã](../00_Quyet_dinh_va_quy_uoc_ma.md); link tồn tại; số tổng khớp; forecast khác actual; chưa đo ghi chưa đo; không cấp lại mã TC. Chủ module tự kiểm rồi chuyển người review. Markdown là nguồn soạn; outputs là bản làm việc/bản xuất; official-docs là bản phát hành đúng trạng thái.

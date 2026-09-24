@@ -1,3 +1,5 @@
+> **Bản lịch sử — đã được thay thế ngày 24/09/2026.** Dùng [B_01 — Yêu cầu và kiểm thử](../design-note/md-docs/02_Planning/_module-input/B_Tai_khoan_thue_bao/B_01_Yeu_cau_va_kiem_thu_v1.0.md) và [B_02 — WBS, ước lượng, rủi ro](../design-note/md-docs/02_Planning/_module-input/B_Tai_khoan_thue_bao/B_02_WBS_uoc_luong_rui_ro_v1.0.md) để ghép hồ sơ hiện hành. Nội dung dưới giữ nguyên làm nguồn lịch sử: mã 7.x/RQ nội bộ, quy tắc quota, tổng 60 giờ, dự phòng 6 giờ, RACI và các tuyên bố phê duyệt/kiểm chứng cũ không còn được dùng làm quyết định hiện hành.
+
 <!-- ============================ TRANG 1 — BÌA ============================ -->
 
 # PromptVideo — Slide-to-Video Generator

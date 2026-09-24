@@ -1,0 +1,390 @@
+{
+  "packages": [
+    {
+      "id": "1.1",
+      "name": "Bộ hồ sơ khởi tạo",
+      "owner": "Chiến",
+      "O": 18,
+      "M": 23,
+      "P": 28,
+      "type": "WP",
+      "milestone": "M0",
+      "basis": "Forecast23h của hồ sơ đã có; không suy ra giờ đã làm.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có bản Draft; chưa xác minh chữ ký"
+    },
+    {
+      "id": "1.2",
+      "name": "Kế hoạch quản lý dự án",
+      "owner": "Chiến",
+      "O": 20,
+      "M": 28,
+      "P": 36,
+      "type": "WP",
+      "milestone": "DOC-02",
+      "basis": "Ghép PMP và kế hoạch thành phần; gồm QA tài liệu, RACI, rủi ro.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "1.3",
+      "name": "Báo cáo theo dõi và kiểm soát",
+      "owner": "Việt Quang",
+      "O": 12,
+      "M": 16,
+      "P": 20,
+      "type": "WP",
+      "milestone": "DOC-03",
+      "basis": "PP cũ được mở thành WP: work log, issue/change, báo cáo, EVM có điều kiện.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "2.1",
+      "name": "Đặc tả yêu cầu phần mềm",
+      "owner": "Chiến",
+      "O": 8,
+      "M": 12,
+      "P": 16,
+      "type": "WP",
+      "milestone": "DOC-01",
+      "basis": "Hợp nhất yêu cầu ba module, tiêu chí và ngoại lệ.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "2.2",
+      "name": "Ma trận truy vết yêu cầu",
+      "owner": "Chiến",
+      "O": 6,
+      "M": 8,
+      "P": 10,
+      "type": "WP",
+      "milestone": "DOC-02",
+      "basis": "Ghép mã duy nhất; nối Charter, thiết kế, code, TC, trạng thái.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "3.2",
+      "name": "Đặc tả giao tiếp và schema dự án",
+      "owner": "Chiến",
+      "O": 17,
+      "M": 22,
+      "P": 31,
+      "type": "WP",
+      "milestone": "DOC-01",
+      "basis": "Schema A cũ8/10/16 + giao tiếp chung9/12/15; tE23⅓h. Trong đó11⅓h thuộc A,12h dùng chung.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "4.1",
+      "name": "Nền tảng mã nguồn và CI",
+      "owner": "Việt Quang",
+      "O": 18,
+      "M": 24,
+      "P": 30,
+      "type": "WP",
+      "milestone": "M2",
+      "basis": "Repo, DB, CSRF, OpenAPI, CI, PWA; chuyển đầu mối B để chia tải, không đổi tổng24h.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "6.1",
+      "name": "Bản phát hành production",
+      "owner": "Quang Anh",
+      "O": 12,
+      "M": 20,
+      "P": 28,
+      "type": "PP",
+      "milestone": "M6",
+      "basis": "HTTPS, migration, backup/restore, rollback và triển khai; không thay bằng demo.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Chưa nghiệm thu"
+    },
+    {
+      "id": "6.2",
+      "name": "Gói demo và hướng dẫn sử dụng",
+      "owner": "Quang Anh",
+      "O": 6,
+      "M": 10,
+      "P": 14,
+      "type": "WP",
+      "milestone": "DOC-04",
+      "basis": "Kịch bản, seed, hướng dẫn cài/chạy và xử lý sự cố.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Đã soạn hướng dẫn; chờ chạy lại"
+    },
+    {
+      "id": "6.3",
+      "name": "Hồ sơ kết thúc và bài trình bày",
+      "owner": "Quang Anh",
+      "O": 8,
+      "M": 12,
+      "P": 16,
+      "type": "WP",
+      "milestone": "DOC-05",
+      "basis": "Final snapshot, bài học, mục lục bàn giao, nội dung slide.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Working Draft"
+    },
+    {
+      "id": "6.4",
+      "name": "Biên bản nghiệm thu sản phẩm",
+      "owner": "Chiến",
+      "O": 6,
+      "M": 8,
+      "P": 10,
+      "type": "PP",
+      "milestone": "M7",
+      "basis": "Control Quality → Validate Scope → Close; chưa ký thay sponsor.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Chưa đủ điều kiện"
+    }
+  ],
+  "activities": [
+    {
+      "id": "ACT-1.1-01",
+      "wbs": "1.1",
+      "name": "Hoàn thiện và tự kiểm: Bộ hồ sơ khởi tạo",
+      "hours": 23,
+      "predecessors": [],
+      "owner": "Chiến",
+      "status": "Có bản Draft; chưa xác minh chữ ký"
+    },
+    {
+      "id": "ACT-1.2-01",
+      "wbs": "1.2",
+      "name": "Hoàn thiện và tự kiểm: Kế hoạch quản lý dự án",
+      "hours": 28,
+      "predecessors": [
+        "ACT-2.1-01",
+        "ACT-3.2-01"
+      ],
+      "owner": "Chiến",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "ACT-1.3-01",
+      "wbs": "1.3",
+      "name": "Hoàn thiện và tự kiểm: Báo cáo theo dõi và kiểm soát",
+      "hours": 16,
+      "predecessors": [
+        "ACT-1.2-01"
+      ],
+      "owner": "Việt Quang",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "ACT-2.1-01",
+      "wbs": "2.1",
+      "name": "Hoàn thiện và tự kiểm: Đặc tả yêu cầu phần mềm",
+      "hours": 12,
+      "predecessors": [
+        "ACT-1.1-01"
+      ],
+      "owner": "Chiến",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "ACT-2.2-01",
+      "wbs": "2.2",
+      "name": "Hoàn thiện và tự kiểm: Ma trận truy vết yêu cầu",
+      "hours": 8,
+      "predecessors": [
+        "ACT-2.1-01",
+        "ACT-3.2-01"
+      ],
+      "owner": "Chiến",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "ACT-3.2-01",
+      "wbs": "3.2",
+      "name": "Hoàn thiện và tự kiểm: Đặc tả giao tiếp và schema dự án",
+      "hours": 23.333333333333332,
+      "predecessors": [
+        "ACT-2.1-01"
+      ],
+      "owner": "Chiến",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "ACT-4.1-01",
+      "wbs": "4.1",
+      "name": "Hoàn thiện và tự kiểm: Nền tảng mã nguồn và CI",
+      "hours": 24,
+      "predecessors": [
+        "ACT-3.1-01"
+      ],
+      "owner": "Việt Quang",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "ACT-6.2-01",
+      "wbs": "6.2",
+      "name": "Hoàn thiện và tự kiểm: Gói demo và hướng dẫn sử dụng",
+      "hours": 10,
+      "predecessors": [
+        "ACT-5.1-01"
+      ],
+      "owner": "Quang Anh",
+      "status": "Đã soạn hướng dẫn; chờ chạy lại"
+    },
+    {
+      "id": "ACT-6.3-01",
+      "wbs": "6.3",
+      "name": "Hoàn thiện và tự kiểm: Hồ sơ kết thúc và bài trình bày",
+      "hours": 12,
+      "predecessors": [
+        "ACT-6.2-01",
+        "ACT-1.3-01"
+      ],
+      "owner": "Quang Anh",
+      "status": "Working Draft"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "NF-G-01",
+      "description": "0byte nội dung người dùng rời trình duyệt",
+      "objective": "OB-09,NF-03",
+      "design": "P03 IF-AB-01/IF-CA-01",
+      "code": "A export + B API + C logs",
+      "testIds": [
+        "TC-I-05"
+      ],
+      "status": "Not Run: thiếu HAR thật",
+      "wbs": "5.1"
+    }
+  ],
+  "risks": [],
+  "calendar": {
+    "startDate": "2026-09-24",
+    "hoursPerWeek": 10,
+    "hoursPerDay": 2,
+    "workDays": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri"
+    ],
+    "basis": "Giả định năng lực; forecast toàn phạm vi, không phải ETC"
+  },
+  "milestones": [
+    {
+      "id": "DOC-01",
+      "date": "2026-09-26",
+      "name": "Đầu vào module"
+    },
+    {
+      "id": "DOC-02",
+      "date": "2026-09-29",
+      "name": "Planning ghép"
+    },
+    {
+      "id": "DOC-03",
+      "date": "2026-10-02",
+      "name": "Bằng chứng/kiểm soát"
+    },
+    {
+      "id": "DOC-04",
+      "date": "2026-10-05",
+      "name": "Bàn giao dự thảo"
+    },
+    {
+      "id": "DOC-05",
+      "date": "2026-10-07",
+      "name": "Review hồ sơ"
+    }
+  ],
+  "cash": [
+    {
+      "id": "CASH-01",
+      "wbs": "4.3.3",
+      "name": "Phí cổng thanh toán",
+      "amount": 1500000
+    },
+    {
+      "id": "CASH-02",
+      "wbs": "4.4.1",
+      "name": "Tài sản đồ họa",
+      "amount": 700000
+    },
+    {
+      "id": "CASH-03",
+      "wbs": "6.1",
+      "name": "VPS",
+      "amount": 600000
+    },
+    {
+      "id": "CASH-04",
+      "wbs": "6.1",
+      "name": "Tên miền",
+      "amount": 300000
+    }
+  ],
+  "budget": {
+    "charterHours": 450,
+    "capHours": 495,
+    "cashCap": 3500000,
+    "cashReserve": 400000,
+    "hourRate": 80000,
+    "managementReserveHours": null
+  },
+  "changes": [
+    {
+      "id": "CR-G-001",
+      "status": "Phương án nội bộ đã chọn; baseline sponsor chưa phê duyệt",
+      "description": "Giữ toàn phạm vi, dùng forecast mới để điều chỉnh nguồn lực/lịch; không ép về450/495h; không tăng tiền mặt3.5triệu.",
+      "owner": "Chiến"
+    }
+  ],
+  "issues": [
+    {
+      "id": "ISS-G-001",
+      "name": "Complete lỗi nhưng A vẫn giao file",
+      "owner": "Chiến + Việt Quang",
+      "status": "Open",
+      "evidence": "EV-005",
+      "action": "Chỉ giao kết quả sau complete được xác nhận; retry/đối soát an toàn; thử offline và TTL."
+    },
+    {
+      "id": "ISS-G-002",
+      "name": "Thiếu snapshot/version mẫu trong dự án",
+      "owner": "Chiến + Quang Anh",
+      "status": "Open",
+      "evidence": "EV-005",
+      "action": "Chốt schema/migration; đóng gói presentation có phiên bản; testRetired/offline."
+    },
+    {
+      "id": "ISS-G-003",
+      "name": "Fake checkout thiếu khóa chống lặp phía client",
+      "owner": "Việt Quang",
+      "status": "Open",
+      "evidence": "EV-005",
+      "action": "Thêm idempotency request; testclicklặp độc lập replayevent."
+    },
+    {
+      "id": "ISS-G-004",
+      "name": "Docker daemon không sẵn sàng",
+      "owner": "Việt Quang",
+      "status": "Blocked",
+      "evidence": "EV-002",
+      "action": "Khôi phục môi trườngDocker rồi chạy lại42integrationfail; không coi là42lỗinghiệpvụ."
+    },
+    {
+      "id": "ISS-G-005",
+      "name": "Chưa đủ actual/baseline cho EVM",
+      "owner": "Việt Quang",
+      "status": "Open",
+      "evidence": "Rà hồ sơ24/09",
+      "action": "Thu worklog có ngày và nguồn, baseline timephased được duyệt; không giả định AC=0."
+    }
+  ],
+  "actuals": [],
+  "taskstatuses": []
+}

@@ -1,0 +1,142 @@
+@startwbs
+<style>
+wbsDiagram {
+  FontName Arial
+  FontSize 12
+  node {
+    Padding 6
+    RoundCorner 8
+    LineColor #555555
+  }
+  :depth(0) {
+    BackgroundColor #1F4E79
+    FontColor white
+    FontStyle bold
+    FontSize 15
+  }
+  :depth(1) {
+    BackgroundColor #BDD7EE
+    FontStyle bold
+  }
+  .sum {
+    BackgroundColor #FFF2CC
+    FontStyle bold
+  }
+  .done {
+    BackgroundColor #C6EFCE
+  }
+  .todo {
+    BackgroundColor #FFFFFF
+  }
+  .pp {
+    BackgroundColor #EDEDED
+    LineStyle 4
+    FontColor #555555
+  }
+}
+</style>
+title WBS — PromptVideo v2.1 theo giai đoạn phát triển (tổng 498 h)
+legend right
+  Xanh nhạt: giai đoạn · Vàng: phân hệ (tổng của các gói bên dưới)
+  Xanh lá: đã có sản phẩm · Trắng: work package còn làm
+  Xám, viền đứt: planning package (phân rã sau)
+endlegend
+
+*:0. PromptVideo v2.1
+498 h · 100%;
+
+**:1. Quản lý dự án
+67 h · 13,4%;
+***:1.1 Bộ hồ sơ khởi tạo
+23 h; <<done>>
+***:1.2 Kế hoạch quản lý dự án
+(PMP và các baseline)
+28 h; <<todo>>
+***:1.3 Báo cáo theo dõi và kiểm soát
+16 h; <<pp>>
+
+**:2. Yêu cầu
+20 h · 4,0%;
+***:2.1 Đặc tả yêu cầu phần mềm
+(A, B, C)
+12 h; <<todo>>
+***:2.2 Ma trận truy vết yêu cầu
+8 h; <<todo>>
+
+**:3. Thiết kế
+33 h · 6,7%;
+***:3.1 Tài liệu kiến trúc
+và nguyên mẫu mã hóa
+10 h; <<done>>
+***:3.2 Đặc tả giao tiếp
+và định dạng dữ liệu cảnh
+23 h; <<todo>>
+
+**:4. Xây dựng
+263 h · 52,8%;
+***:4.1 Nền tảng mã nguồn và CI
+24 h; <<done>>
+***:4.2 Ứng dụng tạo video (A)
+139 h; <<sum>>
+****:4.2.1 Trình soạn thảo nội dung
+29 h; <<done>>
+****:4.2.2 Thư viện 5 mẫu trình chiếu
+13 h; <<done>>
+****:4.2.3 Bộ dựng và xem trước
+25 h; <<done>>
+****:4.2.4 Bộ xuất MP4 theo luồng
+22 h; <<done>>
+****:4.2.5 Kho dự án cục bộ
+15 h; <<done>>
+****:4.2.6 Mô-đun kiểm quyền xuất
+và danh mục mẫu
+24 h; <<todo>>
+****:4.2.7 Chức năng tạm dừng xuất
+và cảnh báo trình duyệt
+11 h; <<pp>>
+***:4.3 Dịch vụ tài khoản
+và thuê bao (B)
+60 h; <<sum>>
+****:4.3.1 Mô-đun tài khoản và xác thực
+14 h; <<done>>
+****:4.3.2 Mô-đun giấy phép và hạn mức
+20 h; <<done>>
+****:4.3.3 Mô-đun thanh toán và gia hạn
+16 h; <<todo>>
+****:4.3.4 Trang quản lý thuê bao
+10 h; <<todo>>
+***:4.4 Cổng quản trị
+và vận hành (C)
+40 h; <<sum>>
+****:4.4.1 Mô-đun quản lý mẫu và tài sản
+12 h; <<todo>>
+****:4.4.2 Mô-đun hỗ trợ khách hàng
+8 h; <<todo>>
+****:4.4.3 Bảng giám sát và đo lợi ích
+10 h; <<todo>>
+****:4.4.4 Giao diện quản trị
+10 h; <<todo>>
+
+**:5. Tích hợp và kiểm thử
+65 h · 13,0%;
+***:5.1 Bản tích hợp A–B–C
+và báo cáo kiểm thử tích hợp
+16 h; <<todo>>
+***:5.2 Báo cáo hiệu năng
+và tính xác định
+28 h; <<pp>>
+***:5.3 Báo cáo nghiệm thu độ tin cậy,
+tiếng Việt và dễ dùng
+21 h; <<pp>>
+
+**:6. Triển khai và bàn giao
+50 h · 10,0%;
+***:6.1 Bản phát hành production
+20 h; <<pp>>
+***:6.2 Gói demo và hướng dẫn sử dụng
+10 h; <<todo>>
+***:6.3 Hồ sơ kết thúc và slide bảo vệ
+12 h; <<todo>>
+***:6.4 Biên bản nghiệm thu v1.0
+8 h; <<pp>>
+@endwbs

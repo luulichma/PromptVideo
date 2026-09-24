@@ -1,3 +1,5 @@
+> **BẢN LỊCH SỬ — đã được thay thế ngày 24/09/2026.** Không tiếp tục sửa nội dung kế hoạch ở bản này. Bản hiện hành là [C_01 — Yêu cầu và kiểm thử](../design-note/md-docs/02_Planning/_module-input/C_Quan_tri_van_hanh/C_01_Yeu_cau_va_kiem_thu_v1.0.md), [C_02 — WBS, ước lượng và rủi ro](../design-note/md-docs/02_Planning/_module-input/C_Quan_tri_van_hanh/C_02_WBS_uoc_luong_rui_ro_v1.0.md), [P06 — Chất lượng](../design-note/md-docs/02_Planning/06_Quality_Plan_and_Test_Cases_v1.0.md) và [P07 — Nguồn lực, truyền thông](../design-note/md-docs/02_Planning/07_Resource_and_Communication_Plan_v1.0.md). Các mã WBS 8.x, QC-n, Inactive, OB/MT gán sai, phạm vi audio và phân công cũ bên dưới chỉ được giữ để truy vết. Áp dụng [quyết định và mã hiện hành](../design-note/md-docs/00_Quyet_dinh_va_quy_uoc_ma.md).
+
 <!-- ============================ TRANG 1 — BÌA ============================ -->
 
 # PromptVideo — Slide-to-Video Generator
