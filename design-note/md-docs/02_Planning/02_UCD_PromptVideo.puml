@@ -1,0 +1,77 @@
+@startuml
+title Sơ đồ use case tổng — PromptVideo
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam linetype polyline
+skinparam nodesep 30
+skinparam ranksep 90
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #333333
+}
+
+' ===== Actor bên trái: người dùng cuối =====
+actor "Khách" as Khach
+actor "User" as User
+' Gạch đơn trong left to right = xếp dọc: User nằm ngay dưới Khách
+Khach <|- User
+
+rectangle "Hệ thống PromptVideo" {
+  package "A. Sản xuất video" {
+    usecase "UC-A1\nQuản lý dự án video" as A1
+    usecase "UC-A2\nBiên tập nội dung cảnh" as A2
+    usecase "UC-A3\nChọn / đổi mẫu video" as A3
+    usecase "UC-A4\nXem trước video" as A4
+    usecase "UC-A5\nXuất video MP4" as A5
+  }
+
+  package "B. Tài khoản và thuê bao" {
+    usecase "UC-B6\nCấp quyền và trừ lượt xuất" as B6
+    usecase "UC-B5\nMua / gia hạn gói" as B5
+    usecase "UC-B4\nXem gói dịch vụ" as B4
+    usecase "UC-B1\nĐăng ký tài khoản" as B1
+    usecase "UC-B2\nĐăng nhập / đăng xuất" as B2
+  }
+
+  package "C. Quản trị và vận hành" {
+    usecase "UC-C1\nQuản lý mẫu video" as C1
+    usecase "UC-C3\nXử lý yêu cầu hỗ trợ" as C3
+    usecase "UC-C4\nĐiều chỉnh hạn mức" as C4
+    usecase "UC-C5\nGiám sát vận hành" as C5
+  }
+}
+
+' ===== Actor bên phải: quản trị và hệ thống ngoài =====
+actor "Admin" as Admin
+actor "Cổng thanh toán" as Pay <<hệ thống ngoài>>
+
+' Association không mũi tên; viết Actor -- UC để actor nằm bên trái
+Khach -- A1
+Khach -- A2
+Khach -- A3
+Khach -- A4
+Khach -- B4
+Khach -- B1
+Khach -- B2
+
+User -- A5
+User -- B5
+
+' Viết UC -- Actor để actor nằm bên phải
+B2 -- Admin
+C1 -- Admin
+C3 -- Admin
+C5 -- Admin
+
+B5 -- Pay
+
+' Include/extend dùng gạch đơn = nối dọc giữa hai use case cạnh nhau
+A5 .> B6 : <<include>>
+C4 .> C3 : <<extend>>
+
+' Giữ thứ tự các nhóm từ trên xuống: A -> B -> C
+A5 -[hidden]- B6
+B2 -[hidden]- C1
+
+@enduml

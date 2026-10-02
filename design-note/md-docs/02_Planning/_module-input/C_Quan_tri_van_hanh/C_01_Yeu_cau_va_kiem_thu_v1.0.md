@@ -38,11 +38,10 @@ C cung cấp danh mục mẫu, tài sản đồ họa dùng chung, quyền quả
 
 | Tác nhân | Quyền và trách nhiệm |
 | --- | --- |
-| Admin | Quản lý mẫu, xem metrics, xử lý ticket và yêu cầu điều chỉnh hạn mức; quyền được kiểm ở máy chủ |
+| Admin | Quản lý mẫu, xem metrics, xử lý ticket và yêu cầu điều chỉnh hạn mức; theo dõi health và dữ liệu lợi ích sau bàn giao khi có xác nhận tiếp nhận; quyền được kiểm ở máy chủ |
 | Người dùng | Đọc danh mục Active; gửi mã lỗi/mã reservation cần hỗ trợ; không có quyền quản trị |
 | A | Tiêu thụ metadata, áp trình bày từ bundle và giữ nội dung cục bộ |
 | B | Sở hữu định danh, thuê bao, UsagePeriod, reservation và giao dịch quota |
-| Người tiếp nhận vận hành | Theo dõi health và dữ liệu lợi ích sau bàn giao khi có xác nhận tiếp nhận |
 
 - **QT-C-1:** mọi API `/api/admin/*` kiểm chính sách Admin; chưa đăng nhập trả 401, đã đăng nhập không đủ quyền trả 403. Cookie và cơ chế chống CSRF hiện có phải được dùng đúng; không ghi mặc định hệ thống chỉ xác thực bằng JWT.
 - **QT-C-2:** tài sản ảnh dùng chung của quản trị tách khỏi ảnh người dùng; người dùng không có quyền thay đổi global asset. Tài sản còn được tham chiếu phải được giữ hoặc chuyển phiên bản an toàn.
