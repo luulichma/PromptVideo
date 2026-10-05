@@ -18,6 +18,8 @@ PromptVideo/
 │   ├── 00_Muc_luc_va_chi_dan_ho_so.md
 │   ├── 00_Quyet_dinh_va_quy_uoc_ma.md
 │   ├── 00_Bao_cao_quan_ly_du_an_PromptVideo_v1.0.md
+│   ├── TRACKER.md  (trạng thái review từng tài liệu)
+│   ├── _review/  (báo cáo review theo skill pm-ndq)
 │   ├── _template/  (T0, T1, T2)
 │   ├── _data/  (dữ liệu chuẩn và kết quả kiểm workbook)
 │   ├── _history/  (nguồn cũ để truy vết)
