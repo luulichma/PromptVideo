@@ -375,7 +375,7 @@ Nguồn hợp đồng hiện hành là [P03](<03_Interface_Specification_v1.0.md
 | IF-CA-01 | Lọc Active, giữ snapshot/version mẫu cũ, nhãn cache offline | Draft/Active/Retired; metadata có version; publication kiểm tương thích | List/status đã có; snapshot/migration chưa đủ: ISS-G-002 |
 | IF-CB-01 | Không gọi trực tiếp từ editor; hiển thị quota sau refresh | C hỗ trợ qua B với ticket, lý do, idempotency, audit, giao dịch nguyên tử | Hợp đồng đã chốt; endpoint chưa triển khai |
 
-API, lỗi và TC-I-01–06 do P03 sở hữu. A dẫn mã, không tự tạo phiên bản TC-I khác. Free xuất ba lần rồi chặn lần4; hủy xác nhận hoàn lượt; Admin kích hoạt fake non-Production; Retired và dự án cũ; HAR0byte; đo độ trễ reserve là sáu luồng chuẩn.
+API, lỗi và TC-I-01–06 do P03 sở hữu. A dẫn mã, không tự tạo phiên bản TC-I khác. Free xuất ba lần rồi chặn lần 4; hủy xác nhận hoàn lượt; Admin kích hoạt fake non-Production; Retired và dự án cũ; HAR0byte; đo độ trễ reserve là sáu luồng chuẩn.
 
 
 ## Phụ lục B — Đặc tả module B

@@ -34,15 +34,15 @@ Vòng cố định: **A — Việt Quang kiểm, Quang Anh xác nhận; B — Qu
 
 ## 3. Công suất và lịch nguồn lực
 
-**Giả định lập kế hoạch đã chọn:** 10 giờ/người/tuần. Đợt hồ sơ 24/09–07/10 có hai tuần kế hoạch: 24–30/09 và 01–07/10. Mỗi người20 giờ, nhóm60 giờ. Đây là năng lực kế hoạch, không phải số giờ thành viên đã làm hay đã xác nhận rảnh. Nhóm cập nhật lịch thực khi có dữ liệu; không chờ dữ liệu để bỏ trống kế hoạch.
+**Giả định lập kế hoạch đã chọn:** 10 giờ/người/tuần. Đợt hồ sơ 24/09–07/10 có hai tuần kế hoạch: 24–30/09 và 01–07/10. Mỗi người 20 giờ, nhóm 60 giờ. Đây là năng lực kế hoạch, không phải số giờ thành viên đã làm hay đã xác nhận rảnh. Nhóm cập nhật lịch thực khi có dữ liệu; không chờ dữ liệu để bỏ trống kế hoạch.
 
-| Thành viên | Tuần24–30/09 | Tuần01–07/10 | Tổng đợt | Ưu tiên dùng giờ |
+| Thành viên | Tuần 24–30/09 | Tuần 01–07/10 | Tổng đợt | Ưu tiên dùng giờ |
 | --- | ---: | ---: | ---: | --- |
 | Chiến | 10h | 10h | 20h | A_01/_02, P03–P05/P01/P09; kiểm C; ghép phạm vi và kết luận |
 | Việt Quang | 10h | 10h | 20h | B_01/_02, P08/P10/P11/P13; kiểm A; actual/issue/số cuối |
 | Quang Anh | 10h | 10h | 20h | C_01/_02, P06/P07/P12; kiểm B; danh mục evidence/hướng dẫn/bàn giao |
 
-P10 chọn lịch phân bổ theo năng lực này và phải hiển thị vượt tải nếu tổng việc lớn hơn60 giờ. Không xếp20 giờ cho mỗi người thành “rảnh4 giờ mọi tối”. Các mốc sau là cổng giao hồ sơ; **không cam kết xây xong toàn bộ module trong hai tuần**. Riêng C forecast 72 giờ xây dựng còn chưa tính nhiệm vụ chung cho thấy phải tách lịch sản phẩm khỏi lịch viết hồ sơ.
+P10 chọn lịch phân bổ theo năng lực này và phải hiển thị vượt tải nếu tổng việc lớn hơn 60 giờ. Không xếp 20 giờ cho mỗi người thành “rảnh 4 giờ mọi tối”. Các mốc sau là cổng giao hồ sơ; **không cam kết xây xong toàn bộ module trong hai tuần**. Riêng C forecast 72 giờ xây dựng còn chưa tính nhiệm vụ chung cho thấy phải tách lịch sản phẩm khỏi lịch viết hồ sơ.
 
 | Cổng | Hạn | Đầu ra và điều kiện | Chủ tập hợp |
 | --- | --- | --- | --- |
@@ -62,7 +62,7 @@ Khi vượt công suất: Việt Quang tính chênh lệch từ remaining estima
 | Đọc/chạy frontend A | Chiến chuẩn bị, Việt Quang kiểm | Node/npm theo README; browser có probe; ghi phiên bản; dùng fixture5 cảnh / 60 giây |
 | Backend B/C và PostgreSQL | Việt Quang/Quang Anh chuẩn bị | .NET theo src/README; Docker daemon và Testcontainers; nếu thiếu ghi Blocked, chủ môi trường là người nhận lượt chạy |
 | Ma trận số liệu/bản xuất | Việt Quang workbook số, Quang Anh hình thức, mỗi chủ nội dung tự rà | Công cụ đọc XLSX/DOCX/PDF và thư mục dùng chung; bảo toàn dữ liệu nguồn/phiên bản |
-| Người kiểm độc lập và môi trường nhiều máy | Reviewer theo vòng; Chiến điều phối | Đặt trước lượt kiểm; nếu chưa có3 máy/100 lượt/10 người thì ghi chưa đủ tiêu chí tương ứng, không giả số |
+| Người kiểm độc lập và môi trường nhiều máy | Reviewer theo vòng; Chiến điều phối | Đặt trước lượt kiểm; nếu chưa có 3 máy/100 lượt/10 người thì ghi chưa đủ tiêu chí tương ứng, không giả số |
 | Hạ tầng phát hành, vận hành lợi ích | Chủ vai trò theo Charter khi tiếp nhận | Trước bàn giao thực xác nhận người nhận, quyền truy cập và kinh phí; giai đoạn hồ sơ chỉ ghi nhu cầu/cách kiểm |
 
 ## 5. RACI chuẩn cho P12
@@ -113,7 +113,7 @@ Mức tham gia dùng U chưa nhận biết, R phản đối, N trung lập, S h�
 | Giảng viên | Hồ sơ có phương pháp/nguồn, nhất quán và bảo vệ được | Chưa có phản hồi mới được ghi nhận | S/đánh giá đúng thẩm quyền | Chiến tập hợp câu hỏi và bộ đủ đọc; Quang Anh lưu phản hồi, kiểm thay đổi sau nhận |
 | Sponsor theo Charter | Biết forecast, rủi ro và mức đạt sản phẩm để quyết định | Chưa có quyết định mới được ghi nhận | L ở quyết định vượt quyền/nghiệm thu | Chiến chuẩn bị CR và evidence; không viết đã ký; xem trước thay đổi baseline |
 | Người vận hành/kinh doanh theo BMP | Có tài liệu chạy/khôi phục, nguồn số và lịch đo LI | Chưa xác nhận người nhận thực | S khi bàn giao; L với đo lợi ích được giao | Quang Anh chuẩn bị checklist, Việt Quang bàn giao nguồn số; xác nhận trước bàn giao thật |
-| Người dùng thử | Luồng dễ hiểu, không mất nội dung và quyền riêng tư được giữ | Chưa xác nhận đủ mẫu tham gia | S với thử nghiệm có kịch bản | Chiến chuẩn bị kịch bản, reviewer thu feedback; cần đủ10 người mới kết luậnOB-08 |
+| Người dùng thử | Luồng dễ hiểu, không mất nội dung và quyền riêng tư được giữ | Chưa xác nhận đủ mẫu tham gia | S với thử nghiệm có kịch bản | Chiến chuẩn bị kịch bản, reviewer thu feedback; cần đủ 10 người mới kết luận OB-08 |
 
 Hiệu quả engagement được xem bằng đầu vào giao đúng, số phản hồi còn treo và quyết định nhận được; không chấm điểm tâm lý thành viên theo suy đoán. Mâu thuẫn kỳ vọng phải có câu hỏi rõ, dữ kiện và chủ xử lý trong sổ issue.
 

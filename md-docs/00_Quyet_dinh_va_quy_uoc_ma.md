@@ -19,7 +19,7 @@
 | DEC-011 | Quy tắc A–B: giữ lượt tại reserve; complete giữ lượt đã tính; cancel hoàn đúng một lần; cancel qua tháng hoàn vào UsagePeriod gốc; hết hạn trả phí không xóa lịch sử sử dụng tháng. TTL reservation 30 phút. | Đích yêu cầu: chỉ giao kết quả xuất khi complete được xác nhận; lỗi/mất mạng giữ file cục bộ chờ xử lý và báo chưa hoàn tất. Mã hiện tại còn giao file khi complete lỗi/hết TTL: ISS-G-001, chưa được coi là đã sửa. Cách hỗ trợ xuất dài/đối soát là việc kỹ thuật còn phải kiểm chứng. |
 | DEC-012 | Mẫu dùng Draft/Active/Retired. C quản lý metadata/trạng thái; bộ trình bày tương ứng có phiên bản ở frontend. Dự án đã lưu giữ snapshot mẫu; Retired không được chọn mới khi tải danh mục hiện hành, dự án cũ vẫn mở/xuất với cảnh báo. | Khi offline chỉ dùng snapshot/danh mục đã biết, có nhãn thời điểm; không khẳng định đó là danh mục Active mới nhất. Manifest/version phải tương thích trước khi công bố. API đổi trạng thái hiện có không chứng minh đã có toàn bộ CRUD/upload. |
 | DEC-013 | Hỗ trợ C→B phải có Admin, mã yêu cầu hỗ trợ, khóa chống lặp, lý do, cập nhật quota nguyên tử và audit; việc này là hợp đồng dự kiến IF-CB-01. | Chưa có endpoint thì ghi chưa triển khai. Không dùng thao tác sửa DB tay làm chứng cứ đã có tính năng hỗ trợ. |
-| DEC-014 | Markdown là nguồn soạn; outputs là bản xuất/workbook làm việc; official-docs giữ bản phát hành hiện có cho đến khi được cập nhật đúng trạng thái. | Mỗi workbook một người sửa; không tạo nhiều RTM/Risk Register cùng là bản hiện hành. Bản cũ ở plan-note được đánh dấu lịch sử, giữ nguyên để truy vết. |
+| DEC-014 | Markdown (`md-docs/`) là nguồn soạn duy nhất; mọi docx/xlsx sinh từ Markdown, kể cả 9 workbook làm việc, nằm trong `official-docs/<giai đoạn>/` và được track trên git. Trạng thái Draft/Approved ghi trong từng file, không suy ra từ thư mục. *(Sửa 05/10/2026: bỏ thư mục outputs.)* | Mỗi workbook một người sửa; không tạo nhiều RTM/Risk Register cùng là bản hiện hành. Bản cũ ở plan-note được đánh dấu lịch sử, giữ nguyên để truy vết. |
 
 ## 2. Danh mục mã và cách sử dụng
 
@@ -49,7 +49,7 @@
 | B RQ-1…RQ-8 | QT-B-1…QT-B-8 | Quy tắc, không phải yêu cầu Charter. |
 | C QC-1…QC-4 | QT-C-1…QT-C-4 | Tránh nhầm QC là quy trình kiểm soát chất lượng. |
 | A 3.1 | 3.2, phần dữ liệu cảnh | Gộp cùng đặc tả giao tiếp; không cộng giờ lần nữa ngoài 3.2. |
-| A 3.2/3.3/3.4/3.5/3.6 | 4.2.1/4.2.2/4.2.3/4.2.4/4.2.5 | Editor/mẫu/render/export/lưu mở. Riêng gói xuất cũ3.5 có32h: tách10h nguyên mẫu sang3.1, chỉ22h còn ở4.2.4; không cộng đôi. |
+| A 3.2/3.3/3.4/3.5/3.6 | 4.2.1/4.2.2/4.2.3/4.2.4/4.2.5 | Editor/mẫu/render/export/lưu mở. Riêng gói xuất cũ 3.5 có 32h: tách 10h nguyên mẫu sang3.1, chỉ 22h còn ở 4.2.4; không cộng đôi. |
 | A 3.7 và 3.8 | 4.2.6 | Gộp client quyền xuất và danh mục mẫu; các activity giữ phân biệt bằng mã mới. |
 | A 3.9/3.10/3.11/3.12 | 5.1/5.2/5.3/4.2.7 | Tích hợp/hiệu năng/độ tin cậy–tiếng Việt–dễ dùng/tạm dừng–cảnh báo. |
 | B 7.1 | 4.3.1 | Tài khoản và xác thực. |
@@ -71,6 +71,6 @@ Các bản lịch sử có thể giữ mã cũ để giải thích nguồn. Mọ
 | ISS-G-003 | Fake checkout thiếu khóa chống lặp của request; khác với chống replay gateway event | Việt Quang |
 | ISS-G-004 | Docker daemon chưa hoạt động, cản backend integration/TC-I | Việt Quang |
 | ISS-G-005 | Thiếu actual, ETC và baseline được duyệt để báo tiến độ/EVM đúng căn cứ | Việt Quang |
-| CR-G-001 | Forecast599h vượt450/495h: giữ phạm vi, điều chỉnh lịch/nguồn lực; chưa có phê duyệt baseline từ sponsor | Chiến điều phối, Việt Quang tổng hợp |
+| CR-G-001 | Forecast 599h vượt 450/495h: giữ phạm vi, điều chỉnh lịch/nguồn lực; chưa có phê duyệt baseline từ sponsor | Chiến điều phối, Việt Quang tổng hợp |
 
 Không dùng ISS-G-004 cho thiếu actual hoặc ISS-G-005 cho một issue forecast khác. Chênh forecast dẫn CR-G-001. P13 chứa rủi ro; M03 chứa issue/change, không tự cấp lại mã ở module.

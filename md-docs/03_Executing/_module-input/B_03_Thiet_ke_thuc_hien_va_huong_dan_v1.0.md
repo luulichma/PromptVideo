@@ -29,9 +29,9 @@ B dùng ASP.NET Identity, PostgreSQL/EF Core, policy dữ liệu và dịch vụ
 | Mã bằng chứng chung | Nguồn / ngày / phiên bản | Kết quả và giới hạn |
 | --- | --- | --- |
 | EV-001 | [frontend-vitest.json](../../../evidence/2026-09-24/frontend-vitest.json), [log](../../../evidence/2026-09-24/frontend-vitest.log), 24/09; working tree HEAD nêu trên | 79/79 test frontend, 12 file; kiểm hành vi hiện hành, không chứng minh hợp đồng complete mới hoặc API thật |
-| EV-002 | [backend-tests.trx](../../../evidence/2026-09-24/backend-tests.trx), [log](../../../evidence/2026-09-24/backend-tests.log); 24/09 09:02 +07, .NET10 Windows | Runner:18 Passed, 42 Failed, 60 total. 42 ca bị lỗi khởi tạo Docker/Testcontainers; quản lý chất lượng phân loại Blocked môi trường, không kết luận42 lỗi nghiệp vụ |
-| EV-005 | Source ở bảng1, đọc24/09; commit nêu trên | Chứng minh mã/test tồn tại và các lệch hợp đồng; không thay thử runtime |
-| Nguồn lịch sử | [03-backend-core](../../../notes/mvp-plan/03-backend-core.md), ghi 17/09, không nêu commit tại bảng kết quả | Tuyên bố60/60; chưa có raw log/TRX trong chính nguồn đó. Giữ làm lịch sử, không gộp với lần chạy24/09 |
+| EV-002 | [backend-tests.trx](../../../evidence/2026-09-24/backend-tests.trx), [log](../../../evidence/2026-09-24/backend-tests.log); 24/09 09:02 +07, .NET10 Windows | Runner:18 Passed, 42 Failed, 60 total. 42 ca bị lỗi khởi tạo Docker/Testcontainers; quản lý chất lượng phân loại Blocked môi trường, không kết luận 42 lỗi nghiệp vụ |
+| EV-005 | Source ở bảng 1, đọc 24/09; commit nêu trên | Chứng minh mã/test tồn tại và các lệch hợp đồng; không thay thử runtime |
+| Nguồn lịch sử | [03-backend-core](../../../notes/mvp-plan/03-backend-core.md), ghi 17/09, không nêu commit tại bảng kết quả | Tuyên bố 60/60; chưa có raw log/TRX trong chính nguồn đó. Giữ làm lịch sử, không gộp với lần chạy 24/09 |
 
 Không tính số test unit frontend/backend thành số yêu cầu nghiệm thu. Một test có thể chỉ phủ một phần của nhiều REQ; coverage, p95, HAR và E2E thật vẫn thiếu.
 
@@ -42,7 +42,7 @@ Không tính số test unit frontend/backend thành số yêu cầu nghiệm thu
    ```powershell
    dotnet test src/backend/PromptVideo.Api.Tests/PromptVideo.Api.Tests.csproj -c Release --logger "trx; LogFileName=backend-tests.trx" --results-directory evidence/NEW-RUN-DATE
    ```
-   Thay NEW-RUN-DATE bằng thư mục lần chạy mới để giữ nguyên bằng chứng24/09.
+   Thay NEW-RUN-DATE bằng thư mục lần chạy mới để giữ nguyên bằng chứng 24/09.
 3. Ghi commit, môi trường, UTC/local timestamp, lệnh và file log. Nếu Docker chưa lên, giữ kết quả Blocked cho integration; sửa môi trường rồi chạy lại.
 4. Dùng B_01 §5 đối chiếu phương thức hiện có với TC-B; ca chưa có mã/test phải được bổ sung chứ không tự đánh dấu pass.
 5. Chạy E2E A–B bằng backend thật; dùng tài khoản kiểm thử và dữ liệu giả lập. Lưu HAR đã che token/password, screenshot/video kết quả; không đưa bí mật vào evidence.

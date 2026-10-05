@@ -29,11 +29,11 @@ LOG.md
 node_modules/
 
 ### Bản nộp do nhóm xuất ra — ngoại lệ của rule *.docx / *.xlsx ở trên
-# output-docs/ chứa bản Word/Excel xuất từ docs/*.md, là sản phẩm của nhóm
-# nên được theo dõi để đồng bộ giữa các máy và giữ đúng bản đã nộp.
-!output-docs/**/*.docx
-!output-docs/**/*.xlsx
-!output-docs/**/*.pptx
+# official-docs/ chứa mọi docx/xlsx sinh từ md-docs/ (gồm 9 workbook làm việc),
+# là sản phẩm của nhóm nên được track để đồng bộ giữa các máy (DEC-014).
+!official-docs/**/*.docx
+!official-docs/**/*.xlsx
+!official-docs/**/*.pptx
 
 ### Application build output and local configuration
 src/**/bin/

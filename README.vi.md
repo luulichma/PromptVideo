@@ -10,19 +10,19 @@ PromptVideo là dự án dịch vụ web tạo video trình chiếu MP4 từ vă
 
 Hướng phát triển thống nhất là **dịch vụ thuê bao với xử lý video cục bộ và quản lý quyền sử dụng trên máy chủ**, theo bộ Pre-project chính thức phiên bản 2.1.
 
-Hai tài liệu Pre-project v2.1 đang ở trạng thái **Draft — chờ phê duyệt**. README phản ánh hướng làm bài đã thống nhất; các mục tiêu sản phẩm vẫn cần được triển khai và nghiệm thu.
+Hai tài liệu Pre-project v2.2 đang ở trạng thái **Draft — chờ phê duyệt**. README phản ánh hướng làm bài đã thống nhất; các mục tiêu sản phẩm vẫn cần được triển khai và nghiệm thu.
 
 ## Căn cứ và thứ tự đọc
 
 Đọc hồ sơ theo thứ tự sau để nắm đúng bối cảnh và tránh dùng nhầm tài liệu lịch sử:
 
-1. [Business Case v2.1](./official-docs/00_Pre-project/01_Business_Case_v2.1.docx) — nhu cầu, phương án được chọn, ba nghiệp vụ, mô hình thuê bao và điều kiện triển khai.
-2. [Benefit Management Plan v2.1](./official-docs/00_Pre-project/02_Benefit_Management_Plan_v2.1.docx) — lợi ích, cách đo, thẩm định tài chính và trách nhiệm theo dõi sau bàn giao.
+1. [Business Case v2.2](./official-docs/00_Pre-project/01_Business_Case_v2.2.docx) — nhu cầu, phương án được chọn, ba nghiệp vụ, mô hình thuê bao và điều kiện triển khai.
+2. [Benefit Management Plan v2.2](./official-docs/00_Pre-project/02_Benefit_Management_Plan_v2.2.docx) — lợi ích, cách đo, thẩm định tài chính và trách nhiệm theo dõi sau bàn giao.
 3. [Project Charter v2.1](./official-docs/01_Initiating/01_Project_Charter_v2.1.docx) — mục tiêu, phạm vi cấp cao, mốc chính và thẩm quyền dự án.
 4. [Assumption Log v2.1](./official-docs/01_Initiating/02_Assumption_Log_v2.1.docx) — các giả định và ràng buộc cần theo dõi.
 5. [Stakeholder Register v1.0](./official-docs/01_Initiating/03_Stakeholder_Register_v1.0.xlsx) — các bên liên quan và phương án tham gia.
 
-Tên thư mục `official-docs/` thể hiện nơi lưu bộ hồ sơ dùng để nộp; trạng thái phê duyệt phải được xác định từ nội dung của từng tài liệu. Phiên bản hiện hành của bộ tài liệu định hướng là **v2.1**.
+Tên thư mục `official-docs/` thể hiện nơi lưu bộ hồ sơ dùng để nộp; trạng thái phê duyệt phải được xác định từ nội dung của từng tài liệu. Phiên bản hiện hành của bộ tài liệu định hướng là **v2.2** (Pre-project); Charter và Assumption Log vẫn là v2.1.
 
 ## Người dùng và giá trị sản phẩm
 

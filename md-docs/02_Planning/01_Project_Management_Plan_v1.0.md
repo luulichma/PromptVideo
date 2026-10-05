@@ -34,7 +34,7 @@ Chiến điều phối CCB nội bộ. Sửa kỹ thuật trong phạm vi phải
 | Truyền thông/stakeholder | Cập nhật ngắn hằng ngày trước 20:00 giờ Việt Nam, review theo các cổng DOC; ghi kết luận họp vào DEC/CR; gán chủ cho đầu vào bên ngoài | P07, P12, E02 |
 | Rủi ro | Nguyên nhân → sự kiện → hậu quả; phân biệt P/I và EMV, risk và issue; reserve chỉ chứa phần dư không trùng công cơ sở | P08, P13 |
 | Mua/thuê | Dự trù cổng 1,5 triệu, tài sản 700.000, VPS 600.000, tên miền 300.000 VND; chỉ đặt khi có nhu cầu và tiêu chí đầu ra; ghi chứng từ thực | P11 |
-| Cấu hình/thay đổi | Markdown là nguồn; outputs là sổ làm việc; official-docs là nơi xuất bản; giữ lịch sử; mỗi workbook có một chủ | G0, CR, M03 |
+| Cấu hình/thay đổi | Markdown là nguồn; official-docs chứa docx/xlsx sinh từ Markdown (gồm sổ làm việc), trạng thái ghi trong từng file; giữ lịch sử; mỗi workbook có một chủ | G0, CR, M03 |
 | Chuyển giao/kết thúc | QC → Validate Scope → bàn giao → Close; tiếp tục đo lợi ích dài hạn sau dự án | M06, C01–04 |
 
 ## 4. Baseline, forecast và lịch hồ sơ

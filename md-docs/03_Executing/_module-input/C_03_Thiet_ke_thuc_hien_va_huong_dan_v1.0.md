@@ -42,7 +42,7 @@ Không hướng dẫn sử dụng route support giả định như thể có th�
 | --- | --- | --- |
 | EV-005 kiểm mã nguồn | Có các file/endpoint/test nguồn nêu ở §1 | API đã chạy đạt, CRUD/adminUI đã hoàn tất |
 | EV-001, [frontend-vitest.json](../../../evidence/2026-09-24/frontend-vitest.json) | Ngày 24/09 frontend 79/79 tests trong12 files đạt; kiểm tên test thực trong JSON để đối chiếu catalog/templates | TC-C/TC-I end-to-end hoặc backend đều đạt |
-| EV-002, [backend-tests.trx](../../../evidence/2026-09-24/backend-tests.trx), [log](../../../evidence/2026-09-24/backend-tests.log) | Attempt backend 18 passed / 42 failed / 60 total; Docker/Testcontainers unavailable làm integration không chạy đúng điều kiện | Có42 lỗi nghiệp vụ, hoặc C được kiểm chứng runtime |
+| EV-002, [backend-tests.trx](../../../evidence/2026-09-24/backend-tests.trx), [log](../../../evidence/2026-09-24/backend-tests.log) | Attempt backend 18 passed / 42 failed / 60 total; Docker/Testcontainers unavailable làm integration không chạy đúng điều kiện | Có 42 lỗi nghiệp vụ, hoặc C được kiểm chứng runtime |
 
 Các EV được quản lý trong [INDEX](../../../evidence/INDEX.md). Khi có run mới, lưu runId/build/môi trường riêng và nối vào C_04/M05; không ghi đè bằng chứng thất bại cũ. Giờ thực do Quang Anh thực hiện và chi tiền mặt chưa được nguồn xác nhận: để **chưa ghi nhận**, không lấy 72 giờ forecast làm actual.
 

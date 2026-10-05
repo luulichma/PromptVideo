@@ -6,7 +6,7 @@
 
 ## 1. Nội dung bàn giao hiện tại
 
-Gồm mục lục G0, quyết định và mã, A/B/C_01–05, P01–P13, E01–E05, M01–M06, C01–C04, EV INDEX và mã nguồn. Markdown là nguồn sửa; 9 workbook trong outputs là sổ làm việc; official-docs giữ bản phát hành hiện có. Bộ hồ sơ mới chưa được xác nhận nghiệm thu.
+Gồm mục lục G0, quyết định và mã, A/B/C_01–05, P01–P13, E01–E05, M01–M06, C01–C04, EV INDEX và mã nguồn. Markdown là nguồn sửa; 9 workbook là sổ làm việc trong official-docs, trạng thái ghi trong từng file. Bộ hồ sơ mới chưa được xác nhận nghiệm thu.
 
 ## 2. Tồn đọng có người xử lý
 

@@ -10,8 +10,8 @@ This is a **Software Project Management coursework project** at the Posts and Te
 
 The agreed direction is **a subscription service with local video processing and server-managed access**, based on the official Pre-project documents:
 
-- [Business Case v2.1](./official-docs/00_Pre-project/01_Business_Case_v2.1.docx): business needs, selected approach, three business areas, subscription plans, and implementation conditions.
-- [Benefit Management Plan v2.1](./official-docs/00_Pre-project/02_Benefit_Management_Plan_v2.1.docx): benefits, measurement, financial appraisal, and ownership after handover.
+- [Business Case v2.2](./official-docs/00_Pre-project/01_Business_Case_v2.2.docx): business needs, selected approach, three business areas, subscription plans, and implementation conditions.
+- [Benefit Management Plan v2.2](./official-docs/00_Pre-project/02_Benefit_Management_Plan_v2.2.docx): benefits, measurement, financial appraisal, and ownership after handover.
 
 Both documents are **drafts awaiting approval**. This README reflects the agreed coursework direction; product targets still require implementation and acceptance testing.
 

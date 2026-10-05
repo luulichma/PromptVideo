@@ -4,8 +4,8 @@
 4. **Công sức WBS:** bản nháp ghi 498,3 giờ, vượt mức 450 giờ và trần 495 giờ trong Charter, chưa tính đầy đủ phần dự phòng nêu ở chính bản nháp. Chiến và Việt Quang phải đối soát trùng việc, phạm vi và ước lượng trước khi đề nghị chốt baseline. Không ép tổng về 450 bằng cách chia lại số giờ thiếu căn cứ.
 5. **Lịch:** bản hai tuần trước đề xuất 16–29/09 với 20 giờ/người/tuần; Charter dùng 10 giờ/người/tuần. Chưa coi đề xuất tăng giờ là cam kết. Lịch soạn tài liệu ở mục 4 dưới đây dùng ngày tương đối, tách khỏi lịch dự án giả định 24/08–06/12/2026.
 
-## Cập nhật sau chuẩn hóa24/09
+## Cập nhật sau chuẩn hóa 24/09
 
-Các mục nguồn cấp cao phía trên được giữ để thực hiện sau. Phần hồ sơ làm việc đã xử lý: dùng đúngBC/BMPv2.2 vàCharter/Assumptionv2.1; registryREQ/WBSduy nhất; forecast mới599h cóCR-G-001; lịchDOC24/09–07/10 và10h/người/tuần làgiảđịnh. Không sửa sốCharter hoặc ghi đãduyệtbaseline mới.
+Các mục nguồn cấp cao phía trên được giữ để thực hiện sau. Phần hồ sơ làm việc đã xử lý: dùng đúng BC/BMP v2.2 và Charter/Assumption v2.1; registry REQ/WBS duy nhất; forecast mới 599h có CR-G-001; lịch DOC 24/09–07/10 và 10h/người/tuần là giả định. Không sửa số Charter hoặc ghi đã duyệt baseline mới.
 
-Còn cần chứng cứ để đóng:phêduyệt/phiênbản tài liệu cấp cao,giờrảnh/actual/ETC,máyđo/ngườithử vànghiệmthu. Nguồn theo dõi hiện hành làG0/P10/P11/M03,không dùng lại số498.3h cũ nhưforecastmới.
+Còn cần chứng cứ để đóng: phê duyệt/phiên bản tài liệu cấp cao, giờ rảnh/actual/ETC, máy đo/người thử và nghiệm thu. Nguồn theo dõi hiện hành là G0/P10/P11/M03, không dùng lại số 498.3h cũ như forecast mới.

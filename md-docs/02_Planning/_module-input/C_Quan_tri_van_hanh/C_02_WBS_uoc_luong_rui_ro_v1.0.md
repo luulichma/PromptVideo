@@ -108,7 +108,7 @@ P1=.10, P2=.30, P3=.50, P4=.70, P5=.90 là phán đoán thống nhất, không p
 | --- | --- | --- | --- | --- | --- |
 | R-C-01 | Manifest catalog khác schema frontend → publish mẫu không render đúng → sửa contract và hồi quy | 3 / 3 / 9 | Key/version không được hỗ trợ hoặc validation TC-C-05 fail | Validator/adapter, contract fixture; dừng publish bản lỗi, giữ mẫu đã biết tương thích, Chiến rà A | Quang Anh / Open |
 | R-C-02 | Bù lượt lặp hoặc tách audit khỏi quota → sai UsagePeriod → người dùng nhận thừa/thiếu lượt và khó đối soát | 2 / 4 / 8 | Retry cho kết quả khác hoặc audit thiếu sau commit | B sở hữu transaction/idempotency; tạm dừng adjustment, đối soát ledger, sửa rồi thử đồng thời | Việt Quang phối hợp Quang Anh / Open |
-| R-C-03 | Nhận file sai/không giới hạn → lỗi bộ nhớ hoặc mẫu tham chiếu hỏng → sửa upload và phục hồi asset | 2 / 2 / 4 | File vượt50 MiB được nhận, sai magic bytes, tham chiếu mất | Kiểm phía server, staging asset trước publish; ngừng endpoint lỗi và phục hồi bản trước | Quang Anh / Open |
+| R-C-03 | Nhận file sai/không giới hạn → lỗi bộ nhớ hoặc mẫu tham chiếu hỏng → sửa upload và phục hồi asset | 2 / 2 / 4 | File vượt 50 MiB được nhận, sai magic bytes, tham chiếu mất | Kiểm phía server, staging asset trước publish; ngừng endpoint lỗi và phục hồi bản trước | Quang Anh / Open |
 | R-C-04 | Định nghĩa kỳ/nguồn khác nhau → dashboard bị dùng làm doanh thu hay lợi ích đã đạt → sửa số và báo cáo | 3 / 3 / 9 | Count tổng lịch sử bị gọi là tháng hoặc giả lập bị gọi doanh thu thực | Data dictionary và đối chiếu fixture/BMP; đánh dấu số sai, phát hành báo cáo sửa, không đoán dữ liệu thiếu | Quang Anh / Open |
 | R-C-05 | C kiêm tổng hợp và chạy mọi test → vượt công suất → gate hồ sơ chậm | 4 / 4 / 16 | Việc còn lại vượt giờ tuần hoặc review bị chờ >24h | Vòng kiểm chéo DEC-002, giao chủ module tự cấp bằng chứng; Chiến cân lại thứ tự, dùng phần reserve chung, báo ảnh hưởng gate | Chiến / Open, rủi ro nguồn lực chung |
 
@@ -116,10 +116,10 @@ P1=.10, P2=.30, P3=.50, P4=.70, P5=.90 là phán đoán thống nhất, không p
 | --- | ---: | ---: | --- | ---: | --- |
 | R-C-01 | 0,50 | 8 | Một vòng sửa contract 4h và hồi quy 4h | 4,0 | Contingency C |
 | R-C-02 | 0,30 | 12 | Đối soát/sửa 8h, retry và concurrency 4h; phần hậu quả, không lặp giờ phòng ngừa | 3,6 | Contingency C; P11 không cộng lần nữa ở B cho cùng sự kiện |
-| R-C-03 | 0,30 | 4 | Khoanh vùng2h + sửa/thử2h | 1,2 | Contingency C |
-| R-C-04 | 0,50 | 8 | Đối chiếu4h + tái lập báo cáo4h | 4,0 | Contingency C |
+| R-C-03 | 0,30 | 4 | Khoanh vùng 2h + sửa/thử 2h | 1,2 | Contingency C |
+| R-C-04 | 0,50 | 8 | Đối chiếu 4h + tái lập báo cáo 4h | 4,0 | Contingency C |
 | **C sản phẩm** | | | | **12,8** | Tổng định lượng, không giới hạn ở rủi ro cao |
-| R-C-05 | 0,70 | 12 | Phối hợp4h + một lượt review/ghép8h | 8,4 | Reserve chung; loại khỏi tổng C để tránh cộng đôi |
+| R-C-05 | 0,70 | 12 | Phối hợp 4h + một lượt review/ghép 8h | 8,4 | Reserve chung; loại khỏi tổng C để tránh cộng đôi |
 
 Không ghi “điểm 16 = 16 giờ”. Các con số là giả định ban đầu, xem lại khi có actuals. Cột hạch toán là nơi xem xét phần dự phòng nếu được cấp, không phải quyết định cấp toàn bộ exposure. R-C-01/R-C-04 có thể giao với biến động đã tính trong O/M/P; P11 chỉ cộng hậu quả dư được xác định ngoài base, không tự cộng đủ 12,8 giờ lên 72 giờ. R-C-02 không được cấp lại ở B; R-C-05 đối chiếu rủi ro quá tải của A trước xét reserve chung. Nếu P08 chọn tập rủi ro khác, P11 ghi rõ tập chọn và exposure còn lại; không chuyển exposure thành tiền mặt thực chi.
 

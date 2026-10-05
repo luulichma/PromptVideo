@@ -13,7 +13,7 @@
 | Ước lượng và chi phí | Có số làm tròn, phần hóa đơn/seats chưa đủ; schema và prototype dễ bị tính hai lần | 599 giờ từ 32 gói; P11 tính bằng công thức |
 | Tình trạng sản phẩm | Các mô tả “đã có” chưa tách rõ mức đáp ứng | Phân biệt có mã, có test, dùng mock và được nghiệm thu; ghi ISS-G-001–005 |
 | Phê duyệt và actual | Tên trong bảng không chứng minh đã duyệt; chưa có dữ liệu actual | Giữ Draft và ghi rõ phân công; không tự điền 0 cho EVM |
-| Ghép file | Nhiều nguồn cùng được xem là bản chính | Module hiện hành → tài liệu chung → outputs; bản ghi cũ giữ làm lịch sử |
+| Ghép file | Nhiều nguồn cùng được xem là bản chính | Module hiện hành → tài liệu chung → official-docs; bản ghi cũ giữ làm lịch sử |
 
 Codex thực hiện QA theo ủy quyền; hoạt động này không thay vòng review của thành viên. QC là kết quả kiểm thử tại M02/M05 và EV INDEX, khác bảng QA trên. Kết quả frontend 79/79 và backend 18/60 đạt, 42 thất bại do môi trường được ghi riêng.
 

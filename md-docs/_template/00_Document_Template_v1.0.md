@@ -18,4 +18,4 @@ Mục đích/phạm vi; nguồn và giả định; nội dung chuyên môn; số
 
 ## Kiểm tra trước khi giao
 
-Mã theo [danh mục mã](../00_Quyet_dinh_va_quy_uoc_ma.md); link tồn tại; số tổng khớp; forecast khác actual; chưa đo ghi chưa đo; không cấp lại mã TC. Chủ module tự kiểm rồi chuyển người review. Markdown là nguồn soạn; outputs là bản làm việc/bản xuất; official-docs là bản phát hành đúng trạng thái.
+Mã theo [danh mục mã](../00_Quyet_dinh_va_quy_uoc_ma.md); link tồn tại; số tổng khớp; forecast khác actual; chưa đo ghi chưa đo; không cấp lại mã TC. Chủ module tự kiểm rồi chuyển người review. Markdown là nguồn soạn; official-docs chứa bản xuất và bản làm việc, ghi đúng trạng thái.

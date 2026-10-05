@@ -57,12 +57,12 @@ Tất cả gói do **Nguyễn Việt Quang** chịu trách nhiệm nội dung; m
 
 | Đầu vào yêu cầu | Gói xây dựng | Gói chung cần dẫn, không cộng lại |
 | --- | --- | --- |
-| REQ-B-01..04,20, phần21; NF-B-05 | 4.3.1 | Nền tảng4.1; yêu cầu2.1; RTM2.2 |
-| REQ-B-05..12,16; NF-B-01/02/03/06 | 4.3.2 | Giao tiếp3.2; tích hợp/đo5.1/5.2 |
-| REQ-B-13..15, phần21; NF-B-07 | 4.3.3 | Triển khai6.1; xác nhận phạm vi6.4 |
-| REQ-B-19 | 4.3.4 | Tích hợp5.1; hướng dẫn6.2 |
-| REQ-B-17 | 4.3.5 | UI ở4.3.4 |
-| REQ-B-18 | 4.3.6 | UI ở4.3.4 |
+| REQ-B-01..04,20, phần 21; NF-B-05 | 4.3.1 | Nền tảng 4.1; yêu cầu 2.1; RTM2.2 |
+| REQ-B-05..12,16; NF-B-01/02/03/06 | 4.3.2 | Giao tiếp 3.2; tích hợp/đo 5.1/5.2 |
+| REQ-B-13..15, phần 21; NF-B-07 | 4.3.3 | Triển khai6.1; xác nhận phạm vi6.4 |
+| REQ-B-19 | 4.3.4 | Tích hợp 5.1; hướng dẫn 6.2 |
+| REQ-B-17 | 4.3.5 | UI ở 4.3.4 |
+| REQ-B-18 | 4.3.6 | UI ở 4.3.4 |
 | NF-B-04 | Kiểm thử cục bộ từng gói | Độ phủ/tổng hợp QA thuộc kế hoạch chất lượng chung |
 
 ## 3. Hoạt động và ước lượng từ dưới lên
@@ -136,7 +136,7 @@ Gate cổng thật và API 4.3.5/4.3.6 chưa có ngày xác nhận; vì vậy kh
 | --- | --- | --- |
 | Dự báo công B toàn phạm vi | 128,666666... giờ | Tổng O/M/P chưa làm tròn; không phải actual/ETC/baseline |
 | Giá trị công theo đơn giá Charter 80.000 VND/giờ | 10.293.333,33 VND | Chi phí cơ hội; không lấy từ quỹ tiền mặt |
-| Exposure rủi ro còn lại (phần5) | 33,4 giờ ≈ 2.672.000 VND công | Dữ liệu đầu vào dự phòng; chưa được phê duyệt thành contingency |
+| Exposure rủi ro còn lại (phần 5) | 33,4 giờ ≈ 2.672.000 VND công | Dữ liệu đầu vào dự phòng; chưa được phê duyệt thành contingency |
 | Kịch bản cộng toàn exposure | 162,066666... giờ ≈ 12.965.333,33 VND công | Chỉ độ nhạy dự báo; cần khử trùng rủi ro chung/giả định tương quan trước chốt |
 | Contingency đã được phê duyệt riêng B | Chưa có chứng cứ | Không tiếp tục lấy 6 giờ hoặc 10% của bản cũ làm baseline |
 | Management reserve | Quyết định ở cấp dự án theo đúng thẩm quyền | Tách khỏi cost baseline; không cộng một lần nữa ở mỗi module |
@@ -244,8 +244,8 @@ Lượt này chốt nội dung nội bộ theo ủy quyền người dùng; khô
 | --- | --- | --- |
 | CV-B-01 | B_01/B_02 tách và bản cũ dẫn lịch sử | Quang Anh kiểm, Chiến xác nhận nội bộ |
 | CV-B-02 | Sửa reserve/TTL/fake/expiry, RACI, baseline, authority, status | Kiểm chéo và sửa phần mềm theo ISS-G-001/003 |
-| CV-B-03 | 6 gói, 12 hoạt động WP, O/M/P và cơ sở; tổng mới không ép về 60 giờ | Đối soát actual/ETC, phân rãhai PP khi gần làm |
-| CV-B-04 | Thang P/I,9 rủi ro, exposure 33,4 tách reserve | Ghép rủi ro chung, khử trùng, duyệt contingency đúng quyền |
+| CV-B-03 | 6 gói, 12 hoạt động WP, O/M/P và cơ sở; tổng mới không ép về 60 giờ | Đối soát actual/ETC, phân rã hai PP khi gần làm |
+| CV-B-04 | Thang P/I, 9 rủi ro, exposure 33,4 tách reserve | Ghép rủi ro chung, khử trùng, duyệt contingency đúng quyền |
 | CV-B-05 | Dữ liệu B đủ đầu vào P10/P11 | Tổng hợp với A/C, cân công suất/gate; không có CPM đầy đủ khi PP chưa phân rã |
 | CV-B-06 | B_03/B_04 và danh mục phần thiếu | Ghi actual thực tế, chạy test có môi trường, cập nhật E05/M03/M04 |
 | CV-B-07 | Danh sách kiểm A theo quyền/độ phân giải/hủy/expiry/HAR | Việt Quang thực hiện review/test; chưa tự ghi đã review thay người |
