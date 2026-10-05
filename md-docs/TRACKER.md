@@ -24,22 +24,22 @@ Cách đếm cột 🔴: số dòng checklist 🔴 có kết quả **Thiếu**, 
 | P11 | [11_Cost_Budget_Procurement_v1.0.xlsx](<../official-docs/02_Planning/11_Cost_Budget_Procurement_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | — | chưa review | — |
 | P12 | [12_RACI_and_Communication_Matrix_v1.0.xlsx](<../official-docs/02_Planning/12_RACI_and_Communication_Matrix_v1.0.xlsx>) | Quang Anh | Draft, chưa nghiệm thu | — | chưa review | — |
 | P13 | [13_Risk_Register_v1.0.xlsx](<../official-docs/02_Planning/13_Risk_Register_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | — | chưa review | — |
-| E01 | [01_Implementation_and_Integration_Record_v1.0.md](<03_Executing/01_Implementation_and_Integration_Record_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | — | chưa review | — |
-| E02 | [02_Meeting_and_Decision_Log_v1.0.md](<03_Executing/02_Meeting_and_Decision_Log_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | — | chưa review | — |
-| E03 | [03_Installation_User_and_Operations_Guide_v1.0.md](<03_Executing/03_Installation_User_and_Operations_Guide_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | — | chưa review | — |
-| E04 | [04_Quality_Assurance_and_Lessons_Learned_v1.0.md](<03_Executing/04_Quality_Assurance_and_Lessons_Learned_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | — | chưa review | — |
+| E01 | [01_Implementation_and_Integration_Record_v1.0.md](<03_Executing/01_Implementation_and_Integration_Record_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 1 một phần | [review](<_review/E01_Implementation_and_Integration_Record_v1.0_review_2026-10-05.md>) |
+| E02 | [02_Meeting_and_Decision_Log_v1.0.md](<03_Executing/02_Meeting_and_Decision_Log_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 1 thiếu | [review](<_review/E02_Meeting_and_Decision_Log_v1.0_review_2026-10-05.md>) |
+| E03 | [03_Installation_User_and_Operations_Guide_v1.0.md](<03_Executing/03_Installation_User_and_Operations_Guide_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 | [review](<_review/E03_Installation_User_and_Operations_Guide_v1.0_review_2026-10-05.md>) |
+| E04 | [04_Quality_Assurance_and_Lessons_Learned_v1.0.md](<03_Executing/04_Quality_Assurance_and_Lessons_Learned_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 2 một phần | [review](<_review/E04_Quality_Assurance_and_Lessons_Learned_v1.0_review_2026-10-05.md>) |
 | E05 | [05_Work_Log_and_Actuals_v1.0.xlsx](<../official-docs/03_Executing/05_Work_Log_and_Actuals_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | — | chưa review | — |
-| M01 | [01_Project_Status_Report_v1.0.md](<04_Monitoring_and_Controlling/01_Project_Status_Report_v1.0.md>) | Việt Quang | Draft, chưa nghiệm thu | — | chưa review | — |
-| M02 | [02_Quality_and_Test_Report_v1.0.md](<04_Monitoring_and_Controlling/02_Quality_and_Test_Report_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | — | chưa review | — |
+| M01 | [01_Project_Status_Report_v1.0.md](<04_Monitoring_and_Controlling/01_Project_Status_Report_v1.0.md>) | Việt Quang | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 1 một phần | [review](<_review/M01_Project_Status_Report_v1.0_review_2026-10-05.md>) |
+| M02 | [02_Quality_and_Test_Report_v1.0.md](<04_Monitoring_and_Controlling/02_Quality_and_Test_Report_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 1 một phần | [review](<_review/M02_Quality_and_Test_Report_v1.0_review_2026-10-05.md>) |
 | M03 | [03_Issue_and_Change_Log_v1.0.xlsx](<../official-docs/04_Monitoring_and_Controlling/03_Issue_and_Change_Log_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | — | chưa review | — |
 | M04 | [04_Performance_and_EVM_v1.0.xlsx](<../official-docs/04_Monitoring_and_Controlling/04_Performance_and_EVM_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | — | chưa review | — |
 | M05 | [05_Test_Results_and_Defects_v1.0.xlsx](<../official-docs/04_Monitoring_and_Controlling/05_Test_Results_and_Defects_v1.0.xlsx>) | Quang Anh | Draft, chưa nghiệm thu | — | chưa review | — |
-| M06 | [06_Scope_Validation_Record_v1.0.md](<04_Monitoring_and_Controlling/06_Scope_Validation_Record_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | — | chưa review | — |
-| CR-G-001 | [CR-G-001_Dieu_chinh_lich_va_nguon_luc.md](<04_Monitoring_and_Controlling/change-requests/CR-G-001_Dieu_chinh_lich_va_nguon_luc.md>) | — | Draft, chưa nghiệm thu | — | chưa review | — |
-| C01 | [01_Final_Project_Report_v1.0.md](<05_Closing/01_Final_Project_Report_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | — | chưa review | — |
-| C02 | [02_Handover_and_Outstanding_Items_v1.0.md](<05_Closing/02_Handover_and_Outstanding_Items_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | — | chưa review | — |
-| C03 | [03_Lessons_Learned_Report_v1.0.md](<05_Closing/03_Lessons_Learned_Report_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | — | chưa review | — |
-| C04 | [04_Presentation_and_Demo_Script_v1.0.md](<05_Closing/04_Presentation_and_Demo_Script_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | — | chưa review | — |
+| M06 | [06_Scope_Validation_Record_v1.0.md](<04_Monitoring_and_Controlling/06_Scope_Validation_Record_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 1 một phần | [review](<_review/M06_Scope_Validation_Record_v1.0_review_2026-10-05.md>) |
+| CR-G-001 | [CR-G-001_Dieu_chinh_lich_va_nguon_luc.md](<04_Monitoring_and_Controlling/change-requests/CR-G-001_Dieu_chinh_lich_va_nguon_luc.md>) | — | Draft, chưa nghiệm thu | 2026-10-05 | 1 thiếu · 1 một phần | [review](<_review/CR-G-001_review_2026-10-05.md>) |
+| C01 | [01_Final_Project_Report_v1.0.md](<05_Closing/01_Final_Project_Report_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 3 thiếu · 2 một phần | [review](<_review/C01_Final_Project_Report_v1.0_review_2026-10-05.md>) |
+| C02 | [02_Handover_and_Outstanding_Items_v1.0.md](<05_Closing/02_Handover_and_Outstanding_Items_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 | [review](<_review/C02_Handover_and_Outstanding_Items_v1.0_review_2026-10-05.md>) |
+| C03 | [03_Lessons_Learned_Report_v1.0.md](<05_Closing/03_Lessons_Learned_Report_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 2 một phần | [review](<_review/C03_Lessons_Learned_Report_v1.0_review_2026-10-05.md>) |
+| C04 | [04_Presentation_and_Demo_Script_v1.0.md](<05_Closing/04_Presentation_and_Demo_Script_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 | [review](<_review/C04_Presentation_and_Demo_Script_v1.0_review_2026-10-05.md>) |
 
 ## Ghi chú
 
