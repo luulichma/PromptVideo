@@ -8,7 +8,7 @@ Nguồn sự thật cho hồ sơ PromptVideo, rút từ 11 deck bài giảng c�
 | `rules/` | ② Luật rút gọn theo tài liệu, mỗi dòng có mức 🔴/🟡/🔵 và trích slide. Bắt đầu từ `rules/00_index.md`. |
 | `build-slides.mjs` | Sinh lại `slides/` từ PDF. |
 | `check-citations.mjs` | Kiểm mọi trích dẫn `PMxx:n` trong markdown. |
-| `pdf/` (tuỳ chọn) | Đặt PDF bài giảng ở đây nếu không dùng `design-note/research/PM - NDQ/`. |
+| `pdf/` | PDF bài giảng PM01–PM11, nguồn để sinh `slides/`. |
 
 Skill dùng các file này: `.claude/skills/pm-ndq/SKILL.md`.
 
@@ -17,7 +17,7 @@ Skill dùng các file này: `.claude/skills/pm-ndq/SKILL.md`.
 Cần `pdftotext` (có sẵn trong Git Bash trên Windows; Linux: gói `poppler-utils`).
 
 ```bash
-node knowledge/build-slides.mjs              # đọc knowledge/pdf/, nếu không có thì design-note/research/PM - NDQ/
+node knowledge/build-slides.mjs              # đọc knowledge/pdf/
 node knowledge/build-slides.mjs "đường/dẫn/pdf"
 ```
 
@@ -26,8 +26,8 @@ Tên PDF phải bắt đầu bằng `PM01`…`PM11`. Sau khi sinh lại, chạy 
 ## Kiểm trích dẫn
 
 ```bash
-node knowledge/check-citations.mjs                      # mặc định: knowledge/rules, .claude/skills, design-note/md-docs
-node knowledge/check-citations.mjs design-note/md-docs/05_Closing/01_Final_Project_Report_v1.0.md
+node knowledge/check-citations.mjs                      # mặc định: knowledge/rules, .claude/skills, md-docs
+node knowledge/check-citations.mjs md-docs/05_Closing/01_Final_Project_Report_v1.0.md
 ```
 
 - Nhận dạng `PM03:27` và khoảng `PM07:46–48` (gạch ngang thường hoặc en dash).

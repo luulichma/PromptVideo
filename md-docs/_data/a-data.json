@@ -1,0 +1,732 @@
+{
+  "packages": [
+    {
+      "id": "3.1",
+      "name": "Kiến trúc và nguyên mẫu mã hóa",
+      "owner": "Chiến",
+      "O": 6,
+      "M": 10,
+      "P": 14,
+      "type": "WP",
+      "milestone": "M2",
+      "basis": "Tách 6/10/14h nguyên mẫu khỏi gói xuất A cũ 20/28/48; phần còn lại 14/18/34, tổng không đổi.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "4.2.1",
+      "name": "Trình soạn thảo nội dung",
+      "owner": "Chiến",
+      "O": 20,
+      "M": 26,
+      "P": 40,
+      "type": "WP",
+      "milestone": "M5",
+      "basis": "Biểu mẫu, ảnh EXIF, undo/redo, bàn phím và xử lý ảnh lỗi.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "4.2.2",
+      "name": "Thư viện năm mẫu trình chiếu",
+      "owner": "Chiến",
+      "O": 8,
+      "M": 12,
+      "P": 20,
+      "type": "WP",
+      "milestone": "M3",
+      "basis": "Năm bộ bố cục/màu và khung vàng; biến động do sai khác render.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "4.2.3",
+      "name": "Bộ dựng và xem trước",
+      "owner": "Chiến",
+      "O": 16,
+      "M": 22,
+      "P": 36,
+      "type": "WP",
+      "milestone": "M3",
+      "basis": "Renderer Canvas, xuống dòng tiếng Việt, parity; khác GPU/font.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "4.2.4",
+      "name": "Bộ xuất MP4 theo luồng",
+      "owner": "Chiến",
+      "O": 14,
+      "M": 18,
+      "P": 34,
+      "type": "WP",
+      "milestone": "M4",
+      "basis": "Worker, ba đường ghi, dọn tài nguyên, encoder/dung lượng; đã tách nguyên mẫu sang3.1.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "4.2.5",
+      "name": "Kho dự án cục bộ",
+      "owner": "Chiến",
+      "O": 10,
+      "M": 14,
+      "P": 22,
+      "type": "WP",
+      "milestone": "M5",
+      "basis": "IndexedDB/OPFS, gói checksum, phục hồi; migration snapshot thuộc3.2/4.2.6.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "4.2.6",
+      "name": "Kiểm quyền xuất và danh mục mẫu",
+      "owner": "Chiến",
+      "O": 16,
+      "M": 21,
+      "P": 34,
+      "type": "WP",
+      "milestone": "M5",
+      "basis": "Cộng gói cũ3.7 (9/12/18) và3.8 (7/9/16); gồm xử lý complete và tương thích mẫu, không cộng lỗi đã biết lần nữa.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Một phần; ISS-G-001 và ISS-G-002 còn mở"
+    },
+    {
+      "id": "4.2.7",
+      "name": "Tạm dừng xuất và cảnh báo trình duyệt",
+      "owner": "Chiến",
+      "O": 6,
+      "M": 10,
+      "P": 18,
+      "type": "PP",
+      "milestone": "M4",
+      "basis": "Chưa có thiết kế pause/resume; giữ trong phạm vi.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Chưa triển khai"
+    },
+    {
+      "id": "5.1",
+      "name": "Bản tích hợp A–B–C và bằng chứng",
+      "owner": "Chiến",
+      "O": 11,
+      "M": 14,
+      "P": 24,
+      "type": "WP",
+      "milestone": "DOC-03",
+      "basis": "TC-I, HAR, kiểm trên trình duyệt; thử máy chủ thật phụ thuộc Docker.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Blocked môi trường tích hợp"
+    },
+    {
+      "id": "5.2",
+      "name": "Báo cáo hiệu năng và tính xác định",
+      "owner": "Chiến",
+      "O": 16,
+      "M": 24,
+      "P": 44,
+      "type": "PP",
+      "milestone": "M4",
+      "basis": "1080p, bộ nhớ×10, checksum3máy; cần máy tham chiếu.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Chưa đủ bằng chứng"
+    },
+    {
+      "id": "5.3",
+      "name": "Báo cáo độ tin cậy, tiếng Việt và dễ dùng",
+      "owner": "Chiến",
+      "O": 12,
+      "M": 18,
+      "P": 32,
+      "type": "PP",
+      "milestone": "M6",
+      "basis": "134tổ hợp,100lần xuất,10người thử; chưa có lịch tuyển.",
+      "scope": "Toàn phạm vi Charter v2.1",
+      "status": "Chưa đủ bằng chứng"
+    }
+  ],
+  "activities": [
+    {
+      "id": "ACT-3.1-01",
+      "wbs": "3.1",
+      "name": "Hoàn thiện và tự kiểm: Kiến trúc và nguyên mẫu mã hóa",
+      "hours": 10,
+      "predecessors": [
+        "ACT-2.1-01"
+      ],
+      "owner": "Chiến",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "ACT-4.2.1-01",
+      "wbs": "4.2.1",
+      "name": "Hoàn thiện và tự kiểm: Trình soạn thảo nội dung",
+      "hours": 28.666666666666668,
+      "predecessors": [
+        "ACT-3.2-01",
+        "ACT-4.1-01"
+      ],
+      "owner": "Chiến",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "ACT-4.2.2-01",
+      "wbs": "4.2.2",
+      "name": "Hoàn thiện và tự kiểm: Thư viện năm mẫu trình chiếu",
+      "hours": 13.333333333333334,
+      "predecessors": [
+        "ACT-4.2.3-01"
+      ],
+      "owner": "Chiến",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "ACT-4.2.3-01",
+      "wbs": "4.2.3",
+      "name": "Hoàn thiện và tự kiểm: Bộ dựng và xem trước",
+      "hours": 24.666666666666668,
+      "predecessors": [
+        "ACT-3.2-01"
+      ],
+      "owner": "Chiến",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "ACT-4.2.4-01",
+      "wbs": "4.2.4",
+      "name": "Hoàn thiện và tự kiểm: Bộ xuất MP4 theo luồng",
+      "hours": 22,
+      "predecessors": [
+        "ACT-3.1-01",
+        "ACT-4.2.3-01"
+      ],
+      "owner": "Chiến",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "ACT-4.2.5-01",
+      "wbs": "4.2.5",
+      "name": "Hoàn thiện và tự kiểm: Kho dự án cục bộ",
+      "hours": 15.333333333333334,
+      "predecessors": [
+        "ACT-4.2.1-01"
+      ],
+      "owner": "Chiến",
+      "status": "Có sản phẩm; chưa nghiệm thu"
+    },
+    {
+      "id": "ACT-4.2.6-01",
+      "wbs": "4.2.6",
+      "name": "Hoàn thiện và tự kiểm: Kiểm quyền xuất và danh mục mẫu",
+      "hours": 23.666666666666668,
+      "predecessors": [
+        "ACT-4.2.4-01",
+        "ACT-4.3.2-01",
+        "ACT-4.4.1-01"
+      ],
+      "owner": "Chiến",
+      "status": "Một phần; ISS-G-001 và ISS-G-002 còn mở"
+    },
+    {
+      "id": "ACT-5.1-01",
+      "wbs": "5.1",
+      "name": "Hoàn thiện và tự kiểm: Bản tích hợp A–B–C và bằng chứng",
+      "hours": 16.333333333333332,
+      "predecessors": [
+        "ACT-4.2.6-01",
+        "ACT-4.2.5-01",
+        "ACT-4.3.3-01"
+      ],
+      "owner": "Chiến",
+      "status": "Blocked môi trường tích hợp"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-A-01",
+      "description": "Tạo và kiểm tra dữ liệu cảnh 5 cảnh/60 giây",
+      "objective": "RQ-01, RQ-07",
+      "design": "notes/mvp-plan/01 (schema), notes/mvp-plan/04",
+      "code": "`core/project/schema.ts`, `validation.ts`, `timeline.ts`, `createProject.ts`",
+      "testIds": [
+        "TC-A-01",
+        "TC-A-02",
+        "TC-A-33"
+      ],
+      "status": "Có code + test xanh",
+      "wbs": "3.2"
+    },
+    {
+      "id": "REQ-A-02",
+      "description": "Nhập chữ tiếng Việt bằng biểu mẫu",
+      "objective": "RQ-07, OB-07",
+      "design": "notes/mvp-plan/04",
+      "code": "`features/editor/SceneInspector.tsx`, `core/rendering/text.ts`, `core/project/safeArea.ts`",
+      "testIds": [
+        "TC-A-03",
+        "TC-A-04",
+        "TC-A-34"
+      ],
+      "status": "Có code + test xanh; TC-A-04 (134 tổ hợp) chưa làm",
+      "wbs": "4.2.1"
+    },
+    {
+      "id": "REQ-A-03",
+      "description": "Chèn ảnh cục bộ",
+      "objective": "RQ-09, OB-09",
+      "design": "notes/mvp-plan/04",
+      "code": "`core/images/importImage.ts`, `core/storage/assetStore.ts`",
+      "testIds": [
+        "TC-A-05"
+      ],
+      "status": "Có code + test xanh",
+      "wbs": "4.2.1"
+    },
+    {
+      "id": "REQ-A-04",
+      "description": "Chọn mẫu, đổi mẫu không mất dữ liệu",
+      "objective": "RQ-06, OB-04",
+      "design": "notes/mvp-plan/04",
+      "code": "`core/templates/templates.ts`",
+      "testIds": [
+        "TC-A-06"
+      ],
+      "status": "Có code + test xanh (5 mẫu); OB-04 chưa nghiệm thu",
+      "wbs": "4.2.2"
+    },
+    {
+      "id": "REQ-A-05",
+      "description": "Chỉ dùng mẫu Active theo danh mục C",
+      "objective": "RQ-06",
+      "design": "Charter §5.1 (giáp ranh A–C); file 03 (chưa lập)",
+      "code": "`core/templates/catalog.ts`, `features/editor/useTemplateCatalog.ts`, `features/dashboard/DashboardPage.tsx`, `features/editor/EditorPage.tsx`. Backend (C): `Modules/Templates/TemplatesModule.cs`",
+      "testIds": [
+        "TC-A-07",
+        "TC-I-04"
+      ],
+      "status": "Một phần; thiếu snapshot/version (ISS-G-002)",
+      "wbs": "4.2.6"
+    },
+    {
+      "id": "REQ-A-06",
+      "description": "Xem trước theo timeline, cùng bộ dựng với xuất",
+      "objective": "RQ-02, RQ-05, RQ-12",
+      "design": "notes/mvp-plan/04, notes/mvp-plan/05",
+      "code": "`core/rendering/renderer.ts`, `features/editor/PreviewCanvas.tsx`",
+      "testIds": [
+        "TC-A-08"
+      ],
+      "status": "Có code + test xanh",
+      "wbs": "4.2.3"
+    },
+    {
+      "id": "REQ-A-07",
+      "description": "Xuất MP4 theo luồng bằng WebCodecs",
+      "objective": "RQ-03, OB-01, OB-02",
+      "design": "notes/mvp-plan/05; `src/frontend/docs/ADR-001-client-video-pipeline.md`",
+      "code": "`core/export/exportWorker.ts`, `exportMp4.ts`, `outputTarget.ts`, `storageBudget.ts`, `validateMp4.ts`",
+      "testIds": [
+        "TC-A-09",
+        "TC-A-14",
+        "TC-A-25",
+        "TC-A-26"
+      ],
+      "status": "Có code + test xanh (TC-A-09, TC-A-14); TC-A-25/26 mới đo trên HeadlessChrome 152",
+      "wbs": "4.2.4"
+    },
+    {
+      "id": "REQ-A-08",
+      "description": "Tiến trình, ETA, hủy; tạm dừng",
+      "objective": "RQ-04",
+      "design": "notes/mvp-plan/05",
+      "code": "`core/export/exportClient.ts`, `features/editor/ExportPanel.tsx`",
+      "testIds": [
+        "TC-A-10",
+        "TC-A-11",
+        "TC-A-31"
+      ],
+      "status": "Có code + test xanh (tiến trình, hủy); **tạm dừng chưa làm**",
+      "wbs": "4.2.7"
+    },
+    {
+      "id": "REQ-A-09",
+      "description": "Phát hiện trình duyệt không hỗ trợ",
+      "objective": "RQ-10, AS-10",
+      "design": "notes/mvp-plan/05; `src/frontend/docs/capability-matrix.md`",
+      "code": "`core/export/encoderSupport.ts`, `core/capabilities/probe.ts`",
+      "testIds": [
+        "TC-A-13",
+        "TC-A-32"
+      ],
+      "status": "Có code + test xanh (lúc xuất); **trang báo lúc mở ứng dụng chưa làm**",
+      "wbs": "4.2.7"
+    },
+    {
+      "id": "REQ-A-10",
+      "description": "Hỏi quyền B trước mỗi lần xuất",
+      "objective": "RQ-14, OB-13",
+      "design": "notes/mvp-plan/05; B §3.6.3",
+      "code": "`core/export/reservation.ts`, `core/export/exportProject.ts`",
+      "testIds": [
+        "TC-A-12",
+        "TC-A-15",
+        "TC-A-17",
+        "TC-I-01"
+      ],
+      "status": "Một phần; complete lỗi vẫn giao file (ISS-G-001)",
+      "wbs": "4.2.6"
+    },
+    {
+      "id": "REQ-A-11",
+      "description": "Áp `grantedHeight` và watermark theo quyền",
+      "objective": "RQ-15, OB-14",
+      "design": "notes/mvp-plan/05; B REQ-B-07",
+      "code": "`core/export/exportProject.ts`, `core/rendering/renderer.ts` (`renderWatermark`)",
+      "testIds": [
+        "TC-A-16",
+        "TC-I-03"
+      ],
+      "status": "Có code, chưa test với máy chủ thật",
+      "wbs": "4.2.6"
+    },
+    {
+      "id": "REQ-A-12",
+      "description": "Báo rõ lý do bị từ chối",
+      "objective": "RQ-10, OB-14",
+      "design": "§6.1 tài liệu này",
+      "code": "`core/export/reservation.ts` (`describeStatus`)",
+      "testIds": [
+        "TC-A-18",
+        "TC-A-19"
+      ],
+      "status": "Có code + test xanh (đã sửa ánh xạ 403/400/429 ngày 23/09, A3.7.2); chưa chạy với máy chủ B thật",
+      "wbs": "4.2.6"
+    },
+    {
+      "id": "REQ-A-13",
+      "description": "Tự lưu và phục hồi cục bộ",
+      "objective": "RQ-08, NF-06",
+      "design": "notes/mvp-plan/04",
+      "code": "`core/storage/database.ts`, `projectStore.ts`, `assetStore.ts`, `features/editor/editorStore.ts`",
+      "testIds": [
+        "TC-A-21",
+        "TC-A-35"
+      ],
+      "status": "Có code + test xanh",
+      "wbs": "4.2.5"
+    },
+    {
+      "id": "REQ-A-14",
+      "description": "Xuất/nhập gói dự án có checksum",
+      "objective": "RQ-08",
+      "design": "notes/mvp-plan/04",
+      "code": "`core/package/projectPackage.ts`",
+      "testIds": [
+        "TC-A-22"
+      ],
+      "status": "Có code + test xanh",
+      "wbs": "4.2.5"
+    },
+    {
+      "id": "NF-A-01",
+      "description": "Tiếng Việt 134 tổ hợp",
+      "objective": "OB-07, NF-05",
+      "design": "notes/mvp-plan/04",
+      "code": "`core/rendering/text.ts`",
+      "testIds": [
+        "TC-A-03",
+        "TC-A-04"
+      ],
+      "status": "Một phần: bộ chuỗi hiện có xanh; bộ 134 chưa làm",
+      "wbs": "5.3"
+    },
+    {
+      "id": "NF-A-02",
+      "description": "Tốc độ ≤ 1,5× ở 1080p30",
+      "objective": "OB-01, NF-01",
+      "design": "notes/mvp-plan/01, notes/mvp-plan/05",
+      "code": "`core/export/*`; `e2e/benchmark.spec.ts`",
+      "testIds": [
+        "TC-A-25"
+      ],
+      "status": "Có số đo 720p một môi trường; 1080p chưa đo",
+      "wbs": "5.2"
+    },
+    {
+      "id": "NF-A-03",
+      "description": "Bộ nhớ < 15% khi dài ×10",
+      "objective": "OB-02, NF-02",
+      "design": "notes/mvp-plan/01, notes/mvp-plan/05",
+      "code": "`core/export/outputTarget.ts`",
+      "testIds": [
+        "TC-A-26",
+        "TC-A-27"
+      ],
+      "status": "Có số đo JS heap luồng chính; Worker và ×10 chưa đo",
+      "wbs": "5.2"
+    },
+    {
+      "id": "NF-A-04",
+      "description": "0 byte nội dung rời máy",
+      "objective": "OB-09, NF-03",
+      "design": "notes/mvp-plan/04, notes/mvp-plan/06",
+      "code": "Toàn bộ `core/*`; request chỉ ở `reservation.ts`, `useCapabilities.ts`",
+      "testIds": [
+        "TC-A-24",
+        "TC-I-05"
+      ],
+      "status": "Chưa có tệp bằng chứng",
+      "wbs": "5.1"
+    },
+    {
+      "id": "NF-A-05",
+      "description": "Trình duyệt hỗ trợ, ≥ 95%/100 lần",
+      "objective": "OB-06, AS-10",
+      "design": "notes/mvp-plan/00 §5; capability-matrix",
+      "code": "`core/capabilities/probe.ts`",
+      "testIds": [
+        "TC-A-25",
+        "TC-A-29"
+      ],
+      "status": "Chưa làm (ma trận và 100 lần)",
+      "wbs": "5.3"
+    },
+    {
+      "id": "NF-A-06",
+      "description": "Checksum giống nhau trên 3 máy",
+      "objective": "OB-03, NF-04, AS-17",
+      "design": "notes/mvp-plan/01",
+      "code": "`core/rendering/renderer.ts`; `e2e/golden.spec.ts`",
+      "testIds": [
+        "TC-A-06",
+        "TC-A-28"
+      ],
+      "status": "Khung vàng xanh trên 1 máy; 3 máy chưa làm",
+      "wbs": "5.2"
+    },
+    {
+      "id": "NF-A-07",
+      "description": "Không treo giao diện khi xuất",
+      "objective": "OB-08",
+      "design": "notes/mvp-plan/05",
+      "code": "`core/export/exportWorker.ts`",
+      "testIds": [
+        "TC-A-10"
+      ],
+      "status": "Có code + test xanh",
+      "wbs": "5.3"
+    },
+    {
+      "id": "NF-A-08",
+      "description": "Dễ dùng: 10 phút, 8/10 người",
+      "objective": "OB-08",
+      "design": "notes/mvp-plan/04",
+      "code": "`features/*`",
+      "testIds": [
+        "TC-A-30",
+        "TC-A-34"
+      ],
+      "status": "Bàn phím xanh; thử với người dùng chưa làm",
+      "wbs": "5.3"
+    },
+    {
+      "id": "NF-A-09",
+      "description": "Độ phủ ≥ 70%",
+      "objective": "OB-12",
+      "design": "notes/mvp-plan/07",
+      "code": "`core/rendering`, `core/export`",
+      "testIds": [],
+      "status": "Chưa đo",
+      "wbs": "5.3"
+    },
+    {
+      "id": "NF-A-10",
+      "description": "Chạy không cần cài đặt; soạn thảo không cần máy chủ",
+      "objective": "NF-06, CT-06",
+      "design": "notes/mvp-plan/02 (PWA), notes/mvp-plan/04",
+      "code": "`vite.config.ts` (PWA), `features/editor/*`",
+      "testIds": [
+        "TC-A-35"
+      ],
+      "status": "Có code + test xanh",
+      "wbs": "5.3"
+    }
+  ],
+  "risks": [
+    {
+      "id": "R-A-01",
+      "cause": "Encoder1080p không hỗ trợ",
+      "event": "Không xuất được1080p",
+      "effect": "Không chứng minhOB-01",
+      "p": 3,
+      "i": 4,
+      "probability": 0.5,
+      "impactHours": 12,
+      "owner": "Chiến",
+      "trigger": "Probefalse trên máyđo",
+      "response": "Thử máy có giao diện; mượn máy tham chiếu; công bố giới hạn.",
+      "status": "Theo dõi",
+      "reserveEligible": false,
+      "basis": "Ước lượng phán đoán; exposure chưa phải reserve được duyệt. Rủi ro đã biết/đo chuẩn nằmbase."
+    },
+    {
+      "id": "R-A-02",
+      "cause": "Không đo được bộ nhớWorker",
+      "event": "Thiếu số liệu đỉnh",
+      "effect": "Không chứng minhOB-02",
+      "p": 4,
+      "i": 3,
+      "probability": 0.7,
+      "impactHours": 8,
+      "owner": "Chiến",
+      "trigger": "Phương pháp đo không lặp lại",
+      "response": "Thử đo bộ nhớ tiến trình; phần đo chuẩn đã nằm5.2.",
+      "status": "Theo dõi",
+      "reserveEligible": false,
+      "basis": "Ước lượng phán đoán; exposure chưa phải reserve được duyệt. Rủi ro đã biết/đo chuẩn nằmbase."
+    },
+    {
+      "id": "R-A-03",
+      "cause": "Mất mạng saureserve",
+      "event": "Complete thất bại",
+      "effect": "Láchquota nếu vẫn giao file",
+      "p": 3,
+      "i": 3,
+      "probability": 0.5,
+      "impactHours": 8,
+      "owner": "Việt Quang",
+      "trigger": "TC-A-20khôngđạt",
+      "response": "DEC-011; ISS-G-001 là lỗi đã biết, không cộng reserve lầnhai.",
+      "status": "Theo dõi",
+      "reserveEligible": false,
+      "basis": "Ước lượng phán đoán; exposure chưa phải reserve được duyệt. Rủi ro đã biết/đo chuẩn nằmbase."
+    },
+    {
+      "id": "R-A-04",
+      "cause": "Lệch ánh xạ lỗiAPI",
+      "event": "Thông báo sai",
+      "effect": "Người dùng không biết lý do",
+      "p": 2,
+      "i": 2,
+      "probability": 0.3,
+      "impactHours": 4,
+      "owner": "Chiến",
+      "trigger": "TC-A-18fail",
+      "response": "Contract testHTTP và thông điệp; unit hiệnpass.",
+      "status": "Theo dõi",
+      "reserveEligible": false,
+      "basis": "Ước lượng phán đoán; exposure chưa phải reserve được duyệt. Rủi ro đã biết/đo chuẩn nằmbase."
+    },
+    {
+      "id": "R-A-05",
+      "cause": "Danh mục thay đổi khioffline",
+      "event": "Dùng mẫu cũ",
+      "effect": "Sai trạng thái/phiên bản",
+      "p": 3,
+      "i": 3,
+      "probability": 0.5,
+      "impactHours": 8,
+      "owner": "Chiến",
+      "trigger": "TC-I-04fail",
+      "response": "DEC-012; snapshot,nhãncache; ISS-G-002đã tính ởbase.",
+      "status": "Theo dõi",
+      "reserveEligible": false,
+      "basis": "Ước lượng phán đoán; exposure chưa phải reserve được duyệt. Rủi ro đã biết/đo chuẩn nằmbase."
+    },
+    {
+      "id": "R-A-06",
+      "cause": "Năng lực10h/người/tuần",
+      "event": "Quá tải tổng hợp",
+      "effect": "TrượtDOCgate",
+      "p": 4,
+      "i": 4,
+      "probability": 0.7,
+      "impactHours": 10,
+      "owner": "Chiến",
+      "trigger": "Nhu cầu > năng lực kỳ",
+      "response": "Chia tổng hợpB/C; lịchsanbằng; giờ đã dự kiến không cộngthànhreserve.",
+      "status": "Theo dõi",
+      "reserveEligible": false,
+      "basis": "Ước lượng phán đoán; exposure chưa phải reserve được duyệt. Rủi ro đã biết/đo chuẩn nằmbase."
+    },
+    {
+      "id": "R-A-07",
+      "cause": "GPU/font khác nhau",
+      "event": "Checksum khác",
+      "effect": "Không đạtOB-03",
+      "p": 3,
+      "i": 3,
+      "probability": 0.5,
+      "impactHours": 8,
+      "owner": "Chiến",
+      "trigger": "Khác máy2",
+      "response": "Giữfontđónggói; đo3máy; CR nếu tiêu chí không khảthi.",
+      "status": "Theo dõi",
+      "reserveEligible": false,
+      "basis": "Ước lượng phán đoán; exposure chưa phải reserve được duyệt. Rủi ro đã biết/đo chuẩn nằmbase."
+    },
+    {
+      "id": "R-A-08",
+      "cause": "Tier2 thiếuOPFS",
+      "event": "Lỗi lưu hoặc tăngRAM",
+      "effect": "Giảm khả năng xuất",
+      "p": 3,
+      "i": 2,
+      "probability": 0.5,
+      "impactHours": 4,
+      "owner": "Chiến",
+      "trigger": "Probe/storagefail",
+      "response": "Giới hạnTier2; filepickerfallback; đo trước côngbố.",
+      "status": "Theo dõi",
+      "reserveEligible": false,
+      "basis": "Ước lượng phán đoán; exposure chưa phải reserve được duyệt. Rủi ro đã biết/đo chuẩn nằmbase."
+    },
+    {
+      "id": "R-A-09",
+      "cause": "Không mượn được máy",
+      "event": "Không đủ ma trận",
+      "effect": "Không nghiệmthuOB",
+      "p": 3,
+      "i": 3,
+      "probability": 0.5,
+      "impactHours": 8,
+      "owner": "Chiến",
+      "trigger": "Thiếu máy trước5.2",
+      "response": "Chốt người cungcấp/máy; không thay bằng kếtluận từheadless.",
+      "status": "Theo dõi",
+      "reserveEligible": false,
+      "basis": "Ước lượng phán đoán; exposure chưa phải reserve được duyệt. Rủi ro đã biết/đo chuẩn nằmbase."
+    },
+    {
+      "id": "R-A-10",
+      "cause": "Xuất kéo dài quáTTL",
+      "event": "Complete409",
+      "effect": "Không đóng lượt thànhcông",
+      "p": 2,
+      "i": 3,
+      "probability": 0.3,
+      "impactHours": 8,
+      "owner": "Việt Quang",
+      "trigger": "TC-A-36fail",
+      "response": "DEC-011; thiết kế đốisoát/xuất dài trong4.3.2.",
+      "status": "Theo dõi",
+      "reserveEligible": false,
+      "basis": "Ước lượng phán đoán; exposure chưa phải reserve được duyệt. Rủi ro đã biết/đo chuẩn nằmbase."
+    },
+    {
+      "id": "R-A-11",
+      "cause": "Đề nghị audio/AI/khungdọc",
+      "event": "Phình phạmvi",
+      "effect": "Trượt lịch và chi phí",
+      "p": 3,
+      "i": 3,
+      "probability": 0.5,
+      "impactHours": 8,
+      "owner": "Chiến",
+      "trigger": "REQmới ngoàiCharter",
+      "response": "Kiểm soát thay đổi; không đưa vào demo mặcđịnh.",
+      "status": "Theo dõi",
+      "reserveEligible": false,
+      "basis": "Ước lượng phán đoán; exposure chưa phải reserve được duyệt. Rủi ro đã biết/đo chuẩn nằmbase."
+    }
+  ]
+}

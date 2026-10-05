@@ -1,0 +1,52 @@
+{
+  "tracker": {
+    "range": true,
+    "merges": true,
+    "panes": true,
+    "columns": true,
+    "rowHeights": true,
+    "tables": true,
+    "cellStyleIds": true
+  },
+  "beforeSheets": [
+    {
+      "state": "visible",
+      "name": "Việc theo giai đoạn",
+      "sheetId": "1",
+      "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id": "rId5"
+    }
+  ],
+  "afterSheets": [
+    {
+      "name": "Việc theo giai đoạn",
+      "sheetId": "1",
+      "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id": "R92fec52390b64779"
+    }
+  ],
+  "validationCount": [
+    1,
+    1
+  ],
+  "chart": {
+    "file": "F:\\Enticy Studios\\PromptVideo\\official-docs\\02_Planning\\11_Cost_Budget_Procurement_v1.0.xlsx",
+    "series": 1,
+    "strokeColors": [
+      {
+        "val": "203B5E"
+      },
+      {
+        "val": "CCCCCC"
+      },
+      {
+        "val": "CCCCCC"
+      },
+      {
+        "val": "D9D9D9"
+      }
+    ]
+  },
+  "cachedFormulaErrors": [],
+  "validationStrings": [
+    "<ns0:dataValidation xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\" type=\"list\" allowBlank=\"1\" sqref=\"G7:G34\"><ns0:formula1>\"Chưa rà soát,Dự thảo; chờ review,Chưa duyệt baseline,Thiếu nghiệm thu,Bị chặn môi trường,Thiếu actual,Chưa kiểm tra chéo,Dự thảo; chưa chốt,Hoàn thành có bằng chứng\"</ns0:formula1></ns0:dataValidation>"
+  ]
+}

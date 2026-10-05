@@ -100,15 +100,17 @@ Kho hiện tập trung vào hồ sơ quản lý dự án và nghiên cứu môn 
 
 | Thư mục | Vai trò |
 | -------- | ------- |
-| [official-docs/](./official-docs/) | Bộ tài liệu chính thức dùng để nộp; trạng thái phê duyệt ghi trong từng file. |
-| [md-docs/](./md-docs/) | Mẫu hỗ trợ soạn tài liệu mới. |
-| [research/](./research/) | Quy tắc, kiến thức từ bài giảng và nội dung đối chiếu dùng để soạn, rà soát hồ sơ. |
-| [archive/](./archive/) | Tài liệu Markdown và các phiên bản cũ chỉ dùng để tra cứu lịch sử. |
+| [knowledge/](./knowledge/) | PDF bài giảng, text slide sinh tự động và luật môn học có trích slide; bắt đầu từ [rules/00_index.md](./knowledge/rules/00_index.md). |
+| [md-docs/](./md-docs/) | Hồ sơ markdown: nguồn sửa duy nhất, kèm quyết định, mẫu và dữ liệu. |
+| [official-docs/](./official-docs/) | Bản Word/Excel sinh từ `md-docs/` để nộp; trạng thái phê duyệt ghi trong từng file. |
+| [evidence/](./evidence/) | Kết quả chạy test và bằng chứng mà hồ sơ dẫn tới. |
+| [notes/](./notes/) | Ghi chú họp, kế hoạch làm việc và kế hoạch phần mềm MVP; không phải hồ sơ nộp. |
+| [archive/](./archive/) | Tài liệu đã bị thay thế, chỉ dùng để tra cứu lịch sử; không sửa. |
 
 ## Nguyên tắc sử dụng tài liệu
 
 - Lấy bộ Pre-project trong `official-docs/` làm căn cứ cho định hướng sản phẩm và mô hình kinh doanh. Khi README khác tài liệu chính thức, ưu tiên tài liệu chính thức.
-- Đọc [quy tắc bắt buộc](./research/01_Quy_tac_bat_buoc.md) trước khi viết hoặc sửa hồ sơ; chọn kỹ thuật phù hợp theo [kiến thức sử dụng](./research/02_Kien_thuc_su_dung.md).
+- Đọc [luật môn học](./knowledge/rules/00_index.md) trước khi viết hoặc sửa hồ sơ; dùng skill `pm-ndq` (`write`, `review`) để soạn và chấm.
 - Mỗi nội dung chi tiết có một tài liệu nguồn. Các tài liệu khác chỉ tóm tắt và dẫn chiếu để tránh duy trì cùng một số liệu ở nhiều nơi.
 - Phân biệt mục tiêu, giả định và dự báo với kết quả đã đo hoặc nội dung đã nghiệm thu. Mọi số liệu tài chính, quy mô thuê bao và đơn giá trong hồ sơ là giả định học tập.
 - Khi tài liệu còn ở trạng thái **Draft**, cập nhật trực tiếp phiên bản hiện tại. Sau khi **Approved**, tạo phiên bản mới nếu nội dung thay đổi và đưa phiên bản bị thay thế vào `_archive`.

@@ -11,8 +11,8 @@ Skill này chỉ điều phối. Nội dung luật nằm ở `knowledge/rules/`,
 
 1. `knowledge/slides/PMxx.md`: text slide, sinh tự động, không sửa tay.
 2. `knowledge/rules/`: luật theo tài liệu, mỗi dòng 🔴/🟡 có trích slide.
-3. `DEC-nnn` trong `design-note/md-docs/00_Quyet_dinh_va_quy_uoc_ma.md`.
-4. Hồ sơ markdown `design-note/md-docs/`.
+3. `DEC-nnn` trong `md-docs/00_Quyet_dinh_va_quy_uoc_ma.md`.
+4. Hồ sơ markdown `md-docs/`.
 5. docx/xlsx: chỉ sinh từ ④.
 
 Mức: 🔴 Bắt buộc · 🟡 Mẫu thầy · 🔵 Diễn giải. Định nghĩa đầy đủ ở `knowledge/rules/00_index.md` §2.
@@ -44,7 +44,7 @@ Bảng chi tiết theo đường dẫn hồ sơ hiện có: `00_index.md` §3.
 
 1. Tra bảng trên, nạp **đúng một** file luật (thêm `16_tools-catalog.md` chỉ khi cần tra công cụ).
 2. Nạp các DEC mà file luật nêu ở dòng "Liên quan DEC".
-3. Nạp đầu vào module liên quan: `design-note/md-docs/*/_module-input/` (A, B, C) và tài liệu đầu vào mà file luật nêu (ví dụ Charter cần Business Case).
+3. Nạp đầu vào module liên quan: `md-docs/*/_module-input/` (A, B, C) và tài liệu đầu vào mà file luật nêu (ví dụ Charter cần Business Case).
 4. Viết theo thứ tự mục của file luật. Đủ mọi mục 🔴. Mục 🟡 nào bỏ thì ghi lý do. Mục 🔵 ghi rõ là diễn giải.
 5. Trích slide `(PMxx:n)` cạnh mỗi khẳng định lấy từ bài giảng. Cần xem nguyên văn thì grep `knowledge/slides/` theo đúng `## PMxx:n`; không đọc cả deck.
 6. Dùng khung chung (`00_index.md` §4) và mã theo DEC-004.
@@ -64,5 +64,5 @@ Bảng chi tiết theo đường dẫn hồ sơ hiện có: `00_index.md` §3.
 - Trả lời tiếng Việt; thuật ngữ PM giữ tiếng Anh như slide.
 - Trích slide sai thì sửa luật ②, không sửa slide ①. Slide sinh lại bằng `node knowledge/build-slides.mjs`.
 - Không ghi "đã duyệt", "đã đạt" khi chưa có bằng chứng (DEC-009, DEC-007).
-- `design-note/research/01_Quy_tac_bat_buoc.md`, `02_Kien_thuc_su_dung.md` đã bị thay thế: trích dẫn lệch +1 slide, không dùng.
+- `archive/research-2026-09/01_Quy_tac_bat_buoc.md`, `02_Kien_thuc_su_dung.md` đã bị thay thế: trích dẫn lệch +1 slide, không dùng.
 - Dời/xoá file, commit, push: hỏi Chiến trước.

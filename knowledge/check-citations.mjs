@@ -2,7 +2,7 @@
 // Lỗi (exit 1): deck/slide không tồn tại trong knowledge/slides/.
 // Cảnh báo: slide chỉ có hình hoặc gần như không có text, nên trích dẫn đó không tự kiểm được.
 // Chạy: node knowledge/check-citations.mjs [file-hoặc-thư-mục …]
-// Mặc định quét knowledge/rules, .claude/skills, design-note/md-docs.
+// Mặc định quét knowledge/rules, .claude/skills, md-docs.
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -33,7 +33,7 @@ const walk = (p) =>
       : [];
 
 const args = process.argv.slice(2);
-const targets = (args.length ? args : ["knowledge/rules", ".claude/skills", "design-note/md-docs"])
+const targets = (args.length ? args : ["knowledge/rules", ".claude/skills", "md-docs"])
   .map((t) => join(root, t))
   .filter((t) => existsSync(t));
 const files = targets.flatMap(walk).filter((f) => !f.startsWith(slidesDir));

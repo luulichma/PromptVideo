@@ -8,7 +8,7 @@ import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const candidates = [process.argv[2], join(here, "pdf"), join(here, "..", "design-note", "research", "PM - NDQ")];
+const candidates = [process.argv[2], join(here, "pdf")];
 const pdfDir = candidates.find((d) => d && existsSync(d) && readdirSync(d).some((f) => f.endsWith(".pdf")));
 if (!pdfDir) throw new Error("Không tìm thấy thư mục chứa PDF bài giảng");
 

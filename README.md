@@ -81,13 +81,16 @@ The repository currently focuses on project management documents and coursework 
 
 | Directory | Purpose |
 | --------- | ------- |
-| [official-docs/](./official-docs/) | Official submission documents; each file records its own approval status. |
-| [md-docs/](./md-docs/) | Markdown documents, WBS, templates, and working notes; counterparts to the official set are incomplete. |
-| [research/](./research/) | Internal summaries of lecture requirements and techniques for drafting and reviewing the coursework documents. |
+| [knowledge/](./knowledge/) | Lecture PDFs, auto-generated slide text, and course rules with slide citations; start at [rules/00_index.md](./knowledge/rules/00_index.md). |
+| [md-docs/](./md-docs/) | Markdown project documents: the single editable source, plus decisions, templates, and data. |
+| [official-docs/](./official-docs/) | Word/Excel files generated from `md-docs/` for submission; each file records its own approval status. |
+| [evidence/](./evidence/) | Test runs and other evidence cited by the documents. |
+| [notes/](./notes/) | Team meeting notes, working plans, and the MVP software plan; not submission documents. |
+| [archive/](./archive/) | Superseded material kept for history only; do not edit. |
 
 ## Using the documents
 
-Use the Pre-project set in `official-docs/` as the reference for product direction and the business model. Use the [course requirements](./research/01_Quy_tac_bat_buoc.md) when editing the documents. Recheck older comparisons and working notes against the official files before relying on them; `_archive` material is historical.
+Use the Pre-project set in `official-docs/` as the reference for product direction and the business model. Use the [course rules](./knowledge/rules/00_index.md) when editing the documents. Recheck older comparisons and working notes against the official files before relying on them; `_archive` material is historical.
 ## License
 
 PromptVideo is proprietary software. Copyright (c) 2026 luulichma

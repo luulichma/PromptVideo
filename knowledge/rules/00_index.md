@@ -7,8 +7,8 @@ Kiểm trích dẫn: `node knowledge/check-citations.mjs knowledge/rules`.
 
 1. `knowledge/slides/`: text slide sinh tự động từ PDF, không sửa tay.
 2. `knowledge/rules/`: luật rút gọn theo tài liệu; mỗi dòng 🔴/🟡 phải trích slide ①.
-3. Quyết định nhóm `DEC-nnn` (`design-note/md-docs/00_Quyet_dinh_va_quy_uoc_ma.md`): chỉ được chọn trong khoảng slide cho phép, không được trái 🔴.
-4. Hồ sơ markdown (`design-note/md-docs/`).
+3. Quyết định nhóm `DEC-nnn` (`md-docs/00_Quyet_dinh_va_quy_uoc_ma.md`): chỉ được chọn trong khoảng slide cho phép, không được trái 🔴.
+4. Hồ sơ markdown (`md-docs/`).
 5. Bản docx/xlsx: chỉ sinh từ ④, không sửa tay rồi bỏ quên bản md.
 
 Khi ② mâu thuẫn ①: sửa ②. Khi ④ mâu thuẫn ②/③: sửa ④ hoặc lập DEC mới có lý do.
@@ -59,7 +59,7 @@ Dòng 🔵 không bắt buộc trích slide; nếu dựa vào slide hình thì g
 
 ## 5. Đính chính so với research cũ
 
-Áp cho `design-note/research/01_Quy_tac_bat_buoc.md` và `02_Kien_thuc_su_dung.md`; hai file này **đã bị thay thế** bởi thư mục này. Giữ nguyên trong P1, xử lý ở P2.
+Áp cho `archive/research-2026-09/01_Quy_tac_bat_buoc.md` và `02_Kien_thuc_su_dung.md`; hai file này **đã bị thay thế** bởi thư mục này. Đã dời vào archive và gắn nhãn ĐÃ THAY THẾ ở P2.
 
 1. Mọi trích dẫn cũ lệch +1 slide ở cả 11 deck (`PM03:26` cũ = `PM03:27` thật). Chạy `check-citations` trên bản cũ sẽ báo nhiều slide tiêu đề mục.
 2. Charter: slide ghi "May contain" 8 mục (PM03:26); mẫu 12 mục chỉ là ví dụ (PM03:27). Mức 🟡, không phải 🔴.
@@ -70,5 +70,5 @@ Dòng 🔵 không bắt buộc trích slide; nếu dựa vào slide hình thì g
 
 ## 6. Việc để lại cho P2/P3
 
-- P2: đánh dấu "đã thay thế" vào đầu `design-note/research/01`, `02`; dời cây thư mục bằng `git mv`, sửa link và đường dẫn trong scripts.
+- P2 (xong 05/10/2026): dời cây thư mục bằng `git mv`, sửa link và đường dẫn; research cũ vào `archive/research-2026-09/`, PDF vào `knowledge/pdf/`, script Python một lần vào `archive/scripts-2026-09-24/`.
 - P3: `.gitignore` chặn mọi `*.docx`/`*.xlsx`, ngoại lệ trỏ tới `output-docs/` không tồn tại; `md-docs/00_Pre-project`, `01_Initiating` trống; README ghi Pre-project v2.1 nhưng `official-docs` có v2.2; script normalize làm mất dấu cách ("Cập nhật24/09/2026", "phụ tráchA").
