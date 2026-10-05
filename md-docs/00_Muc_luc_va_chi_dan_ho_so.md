@@ -21,6 +21,13 @@ PromptVideo/
 │   ├── _template/  (T0, T1, T2)
 │   ├── _data/  (dữ liệu chuẩn và kết quả kiểm workbook)
 │   ├── _history/  (nguồn cũ để truy vết)
+│   ├── 00_Pre-project/
+│   │   ├── 01_Business_Case_v2.2.md
+│   │   └── 02_Benefit_Management_Plan_v2.2.md
+│   ├── 01_Initiating/
+│   │   ├── 01_Project_Charter_v2.1.md
+│   │   ├── 02_Assumption_Log_v2.1.md
+│   │   └── 03_Stakeholder_Register_v1.0.md
 │   ├── 02_Planning/
 │   │   ├── 01_Project_Management_Plan_v1.0.md
 │   │   ├── 02_Requirements_Specification_v1.0.md
@@ -86,7 +93,7 @@ PromptVideo/
 | [P06 — 06_Quality_Plan_and_Test_Cases_v1.0.md](<02_Planning/06_Quality_Plan_and_Test_Cases_v1.0.md>) | QA/QC, mục tiêu chất lượng, các mức kiểm thử, ngưỡng và điều kiện chuyển nghiệm thu. | Quang Anh | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
 | [P07 — 07_Resource_and_Communication_Plan_v1.0.md](<02_Planning/07_Resource_and_Communication_Plan_v1.0.md>) | Vai trò, nguồn lực, công suất, lịch trao đổi, stakeholder và vòng review. | Quang Anh | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
 | [P08 — 08_Risk_Management_Plan_v1.0.md](<02_Planning/08_Risk_Management_Plan_v1.0.md>) | Nhận diện, đánh giá, ứng phó và theo dõi rủi ro; phân biệt exposure/reserve/base. | Việt Quang | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
-| [P09 — 09_Requirements_Traceability_Matrix_v1.0.xlsx](<../official-docs/02_Planning/09_Requirements_Traceability_Matrix_v1.0.xlsx>) | RTM65REQ/NF nối Charter, thiết kế, code, TC, trạng thái và nguồn. | Chiến | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
+| [P09 — 09_Requirements_Traceability_Matrix_v1.0.xlsx](<../official-docs/02_Planning/09_Requirements_Traceability_Matrix_v1.0.xlsx>) | RTM 65 REQ/NF nối Charter, thiết kế, code, TC, trạng thái và nguồn. | Chiến | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
 | [P10 — 10_Schedule_and_CPM_v1.0.xlsx](<../official-docs/02_Planning/10_Schedule_and_CPM_v1.0.xlsx>) | Ước lượng, 35 activities, CPM logic và lịch san bằng WP; PP/cổng ngoài và giả định được tách rõ. | Việt Quang | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
 | [P11 — 11_Cost_Budget_Procurement_v1.0.xlsx](<../official-docs/02_Planning/11_Cost_Budget_Procurement_v1.0.xlsx>) | Giờ/chi phí cơ hội, tiền mặt, mua/thuê, dự phòng và so sánh Charter; công thức giữ độ chính xác. | Việt Quang | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
 | [P12 — 12_RACI_and_Communication_Matrix_v1.0.xlsx](<../official-docs/02_Planning/12_RACI_and_Communication_Matrix_v1.0.xlsx>) | RACI, nhu cầu/lịch nguồn lực, truyền thông và stakeholder engagement. | Quang Anh | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
@@ -101,7 +108,7 @@ PromptVideo/
 | [M03 — 03_Issue_and_Change_Log_v1.0.xlsx](<../official-docs/04_Monitoring_and_Controlling/03_Issue_and_Change_Log_v1.0.xlsx>) | Sổ 5 issue và CR-G-001, owner, tác động, quyết định và điều kiện đóng. | Việt Quang | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
 | [M04 — 04_Performance_and_EVM_v1.0.xlsx](<../official-docs/04_Monitoring_and_Controlling/04_Performance_and_EVM_v1.0.xlsx>) | Theo dõi hiệu suất/EVM có điều kiện; không tính khi thiếu baseline hoặc actual. | Việt Quang | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
 | [M05 — 05_Test_Results_and_Defects_v1.0.xlsx](<../official-docs/04_Monitoring_and_Controlling/05_Test_Results_and_Defects_v1.0.xlsx>) | Kết quả test/lỗi và yêu cầu kiểm lại; phân biệt Pass, Fail môi trường, Blocked, Not Run. | Quang Anh | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
-| [M06 — 06_Scope_Validation_Record_v1.0.md](<04_Monitoring_and_Controlling/06_Scope_Validation_Record_v1.0.md>) | Hồ sơ chuẩn bị ValidateScope; chưa ký nghiệm thu khi chưa đủ QC. | Chiến | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
+| [M06 — 06_Scope_Validation_Record_v1.0.md](<04_Monitoring_and_Controlling/06_Scope_Validation_Record_v1.0.md>) | Hồ sơ chuẩn bị Validate Scope; chưa ký nghiệm thu khi chưa đủ QC. | Chiến | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
 | [C01 — 01_Final_Project_Report_v1.0.md](<05_Closing/01_Final_Project_Report_v1.0.md>) | Tổng kết đợt chuẩn hóa hồ sơ, so sánh mục tiêu/kết quả, giới hạn và lợi ích cần theo dõi. | Chiến | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
 | [C02 — 02_Handover_and_Outstanding_Items_v1.0.md](<05_Closing/02_Handover_and_Outstanding_Items_v1.0.md>) | Danh mục bàn giao và tồn đọng có owner, bằng chứng đóng và người tiếp nhận. | Quang Anh | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
 | [C03 — 03_Lessons_Learned_Report_v1.0.md](<05_Closing/03_Lessons_Learned_Report_v1.0.md>) | Bài học có nguyên nhân, hành động áp dụng và người duy trì. | Quang Anh | Đã soạn/kiểm cấu trúc; chưa nghiệm thu |
@@ -111,7 +118,7 @@ PromptVideo/
 
 | File | Nội dung | Người chịu trách nhiệm |
 | --- | --- | --- |
-|X_01|Yêu cầu, quy tắc, tiêu chí, TC và truy vết|A: Chiến; B: Việt Quang; C: QuangAnh |
+|X_01|Yêu cầu, quy tắc, tiêu chí, TC và truy vết|A: Chiến; B: Việt Quang; C: Quang Anh |
 |X_02|WBS/dictionary, activity, O/M/P, chi phí, rủi ro|Chủ module; VQ tổng hợp số liệu |
 |X_03|Thiết kế/thực hiện, hướng dẫn và nhật ký có nguồn|Chủ module |
 |X_04|Trạng thái, test/lỗi, issue/change và việc còn lại|Chủ module; người review cung cấp kết quả thật |
@@ -121,7 +128,7 @@ Mỗi người sửa module của mình trước; người tổng hợp ghép v�
 
 ## 5. Nguồn cấp cao, lịch và trạng thái phát hành
 
-BusinessCase/BenefitManagementPlanv2.2; Charter/AssumptionLogv2.1; StakeholderRegisterv1.0 ở official-docs là nguồn đối chiếu. Pre-project và Initiating đã có; chưa suy ra đã ký chỉ từ tên thư mục. Phần nợ kiểm tra nguồn cấp cao được giữ riêng trongno-tai-lieu.md.
+[Business Case](00_Pre-project/01_Business_Case_v2.2.md)/[Benefit Management Plan](00_Pre-project/02_Benefit_Management_Plan_v2.2.md) v2.2; [Charter](01_Initiating/01_Project_Charter_v2.1.md)/[Assumption Log](01_Initiating/02_Assumption_Log_v2.1.md) v2.1; [Stakeholder Register](01_Initiating/03_Stakeholder_Register_v1.0.md) v1.0 là nguồn đối chiếu; bản docx/xlsx trong official-docs sinh từ các file markdown này (DEC-014). Pre-project và Initiating đã có; chưa suy ra đã ký chỉ từ tên thư mục. Phần nợ kiểm tra nguồn cấp cao được giữ riêng trong [no-tai-lieu.md](<../notes/plans/no-tai-lieu.md>).
 
 Lịch hồ sơ: DOC-01 ngày 26/09 đầu vào; DOC-02 ngày 29/09 Planning; DOC-03 ngày 02/10 bằng chứng; DOC-04 ngày 05/10 bàn giao dự thảo; DOC-05 ngày 07/10 review. 10h/người/tuần là giả định. Lịch Charter M0–M7 được giữ để đối chiếu; không dùng lịch hồ sơ để hứa hoàn thiện sản phẩm trong 14 ngày.
 

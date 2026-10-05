@@ -71,4 +71,5 @@ Dòng 🔵 không bắt buộc trích slide; nếu dựa vào slide hình thì g
 ## 6. Việc để lại cho P2/P3
 
 - P2 (xong 05/10/2026): dời cây thư mục bằng `git mv`, sửa link và đường dẫn; research cũ vào `archive/research-2026-09/`, PDF vào `knowledge/pdf/`, script Python một lần vào `archive/scripts-2026-09-24/`.
-- P3: `.gitignore` chặn mọi `*.docx`/`*.xlsx`, ngoại lệ trỏ tới `output-docs/` không tồn tại; `md-docs/00_Pre-project`, `01_Initiating` trống; README ghi Pre-project v2.1 nhưng `official-docs` có v2.2; script normalize làm mất dấu cách ("Cập nhật24/09/2026", "phụ tráchA").
+- P3 (xong 05/10/2026): `.gitignore` track docx/xlsx/pptx trong `official-docs/` (DEC-014); README ghi đúng Pre-project v2.2; `md-docs/00_Pre-project` và `01_Initiating` đã có đủ 5 file markdown chuyển từ docx/xlsx, mỗi file có Phụ lục A đối chiếu luật; lỗi mất dấu cách do script một lần ngày 24/09 (nội dung dính chữ viết cứng trong `archive/scripts-2026-09-24/package-documentation.py`, không chạy lại) đã sửa trong `md-docs/00_Muc_luc_va_chi_dan_ho_so.md` và `notes/plans/ke-hoach-tai-lieu-va-phan-cong-theo-module.md`.
+- P4: `TRACKER.md` (tài liệu · chủ · trạng thái · review gần nhất · số mục 🔴 còn thiếu), rồi review từng tài liệu bằng skill `pm-ndq`.

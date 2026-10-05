@@ -80,7 +80,7 @@ PromptVideo/
 | [P06](<../../md-docs/02_Planning/06_Quality_Plan_and_Test_Cases_v1.0.md>) | QA/QC, mục tiêu chất lượng, các mức kiểm thử, ngưỡng và điều kiện chuyển nghiệm thu. | Quang Anh |
 | [P07](<../../md-docs/02_Planning/07_Resource_and_Communication_Plan_v1.0.md>) | Vai trò, nguồn lực, công suất, lịch trao đổi, stakeholder và vòng review. | Quang Anh |
 | [P08](<../../md-docs/02_Planning/08_Risk_Management_Plan_v1.0.md>) | Nhận diện, đánh giá, ứng phó và theo dõi rủi ro; phân biệt exposure/reserve/base. | Việt Quang |
-| [P09](<../../official-docs/02_Planning/09_Requirements_Traceability_Matrix_v1.0.xlsx>) | RTM65REQ/NF nối Charter, thiết kế, code, TC, trạng thái và nguồn. | Chiến |
+| [P09](<../../official-docs/02_Planning/09_Requirements_Traceability_Matrix_v1.0.xlsx>) | RTM 65 REQ/NF nối Charter, thiết kế, code, TC, trạng thái và nguồn. | Chiến |
 | [P10](<../../official-docs/02_Planning/10_Schedule_and_CPM_v1.0.xlsx>) | Ước lượng, 35 activities, CPM logic và lịch san bằng WP; PP/cổng ngoài và giả định được tách rõ. | Việt Quang |
 | [P11](<../../official-docs/02_Planning/11_Cost_Budget_Procurement_v1.0.xlsx>) | Giờ/chi phí cơ hội, tiền mặt, mua/thuê, dự phòng và so sánh Charter; công thức giữ độ chính xác. | Việt Quang |
 | [P12](<../../official-docs/02_Planning/12_RACI_and_Communication_Matrix_v1.0.xlsx>) | RACI, nhu cầu/lịch nguồn lực, truyền thông và stakeholder engagement. | Quang Anh |
@@ -95,7 +95,7 @@ PromptVideo/
 | [M03](<../../official-docs/04_Monitoring_and_Controlling/03_Issue_and_Change_Log_v1.0.xlsx>) | Sổ 5 issue và CR-G-001, owner, tác động, quyết định và điều kiện đóng. | Việt Quang |
 | [M04](<../../official-docs/04_Monitoring_and_Controlling/04_Performance_and_EVM_v1.0.xlsx>) | Theo dõi hiệu suất/EVM có điều kiện; không tính khi thiếu baseline hoặc actual. | Việt Quang |
 | [M05](<../../official-docs/04_Monitoring_and_Controlling/05_Test_Results_and_Defects_v1.0.xlsx>) | Kết quả test/lỗi và yêu cầu kiểm lại; phân biệt Pass, Fail môi trường, Blocked, Not Run. | Quang Anh |
-| [M06](<../../md-docs/04_Monitoring_and_Controlling/06_Scope_Validation_Record_v1.0.md>) | Hồ sơ chuẩn bị ValidateScope; chưa ký nghiệm thu khi chưa đủ QC. | Chiến |
+| [M06](<../../md-docs/04_Monitoring_and_Controlling/06_Scope_Validation_Record_v1.0.md>) | Hồ sơ chuẩn bị Validate Scope; chưa ký nghiệm thu khi chưa đủ QC. | Chiến |
 | [C01](<../../md-docs/05_Closing/01_Final_Project_Report_v1.0.md>) | Tổng kết đợt chuẩn hóa hồ sơ, so sánh mục tiêu/kết quả, giới hạn và lợi ích cần theo dõi. | Chiến |
 | [C02](<../../md-docs/05_Closing/02_Handover_and_Outstanding_Items_v1.0.md>) | Danh mục bàn giao và tồn đọng có owner, bằng chứng đóng và người tiếp nhận. | Quang Anh |
 | [C03](<../../md-docs/05_Closing/03_Lessons_Learned_Report_v1.0.md>) | Bài học có nguyên nhân, hành động áp dụng và người duy trì. | Quang Anh |

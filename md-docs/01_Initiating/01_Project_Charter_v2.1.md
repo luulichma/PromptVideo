@@ -440,7 +440,7 @@ Bằng việc ký dưới đây, Nhà tài trợ uỷ quyền khởi động d�
 | Giám đốc dự án | Lê Hoàng Nam |  |  |
 | Giảng viên hướng dẫn (xác nhận học thuật) | Thầy Bùi Trọng Nghĩa |  |  |
 
-Tài liệu liên quan: [Business Case](../00_Pre-project/01_Business_Case_v2.2.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md) · [Assumption Log](02_Assumption_Log_v2.1.md) · Stakeholder Register (`official-docs/01_Initiating/03_Stakeholder_Register_v1.0.xlsx`).
+Tài liệu liên quan: [Business Case](../00_Pre-project/01_Business_Case_v2.2.md) · [Benefit Management Plan](../00_Pre-project/02_Benefit_Management_Plan_v2.2.md) · [Assumption Log](02_Assumption_Log_v2.1.md) · [Stakeholder Register](03_Stakeholder_Register_v1.0.md).
 
 ## Phụ lục A. Đối chiếu luật môn học (thêm khi chuyển sang markdown)
 
