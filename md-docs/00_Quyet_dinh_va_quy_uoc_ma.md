@@ -49,7 +49,7 @@
 | B RQ-1…RQ-8 | QT-B-1…QT-B-8 | Quy tắc, không phải yêu cầu Charter. |
 | C QC-1…QC-4 | QT-C-1…QT-C-4 | Tránh nhầm QC là quy trình kiểm soát chất lượng. |
 | A 3.1 | 3.2, phần dữ liệu cảnh | Gộp cùng đặc tả giao tiếp; không cộng giờ lần nữa ngoài 3.2. |
-| A 3.2/3.3/3.4/3.5/3.6 | 4.2.1/4.2.2/4.2.3/4.2.4/4.2.5 | Editor/mẫu/render/export/lưu mở. Riêng gói xuất cũ 3.5 có 32h: tách 10h nguyên mẫu sang3.1, chỉ 22h còn ở 4.2.4; không cộng đôi. |
+| A 3.2/3.3/3.4/3.5/3.6 | 4.2.1/4.2.2/4.2.3/4.2.4/4.2.5 | Editor/mẫu/render/export/lưu mở. Riêng gói xuất cũ 3.5 có 32h: tách 10h nguyên mẫu sang 3.1, chỉ 22h còn ở 4.2.4; không cộng đôi. |
 | A 3.7 và 3.8 | 4.2.6 | Gộp client quyền xuất và danh mục mẫu; các activity giữ phân biệt bằng mã mới. |
 | A 3.9/3.10/3.11/3.12 | 5.1/5.2/5.3/4.2.7 | Tích hợp/hiệu năng/độ tin cậy–tiếng Việt–dễ dùng/tạm dừng–cảnh báo. |
 | B 7.1 | 4.3.1 | Tài khoản và xác thực. |

@@ -59,7 +59,7 @@ Khi vượt công suất: Việt Quang tính chênh lệch từ remaining estima
 | Nhu cầu | Chủ cung cấp/kiểm | Cách đáp ứng và tiêu chí sẵn sàng |
 | --- | --- | --- |
 | Hiểu mô hình yêu cầu, WBS, ước lượng/CPM | Mỗi chủ phần; Việt Quang rà số, Chiến rà phạm vi | Dùng bài PM-NDQ và quy ước chung; người thiếu kỹ năng ghép cặp review 30 phút trong giờ đã phân bổ, không cộng năng lực ảo |
-| Đọc/chạy frontend A | Chiến chuẩn bị, Việt Quang kiểm | Node/npm theo README; browser có probe; ghi phiên bản; dùng fixture5 cảnh / 60 giây |
+| Đọc/chạy frontend A | Chiến chuẩn bị, Việt Quang kiểm | Node/npm theo README; browser có probe; ghi phiên bản; dùng fixture 5 cảnh / 60 giây |
 | Backend B/C và PostgreSQL | Việt Quang/Quang Anh chuẩn bị | .NET theo src/README; Docker daemon và Testcontainers; nếu thiếu ghi Blocked, chủ môi trường là người nhận lượt chạy |
 | Ma trận số liệu/bản xuất | Việt Quang workbook số, Quang Anh hình thức, mỗi chủ nội dung tự rà | Công cụ đọc XLSX/DOCX/PDF và thư mục dùng chung; bảo toàn dữ liệu nguồn/phiên bản |
 | Người kiểm độc lập và môi trường nhiều máy | Reviewer theo vòng; Chiến điều phối | Đặt trước lượt kiểm; nếu chưa có 3 máy/100 lượt/10 người thì ghi chưa đủ tiêu chí tương ứng, không giả số |
@@ -94,7 +94,7 @@ Các dòng hai vai trò bên ngoài mô tả **thẩm quyền cần có**, khôn
 | Thông tin | Người gửi → người nhận | Kênh/lưu | Tần suất/hạn phản hồi | Mục đích và escalation |
 | --- | --- | --- | --- | --- |
 | Cập nhật module: đầu ra, giờ thực, việc tiếp, vướng | Mỗi chủ → cả nhóm; Quang Anh tổng hợp | Link file trong chat; bản lưu ở nhật ký/E02 | Hằng ngày trước 20:00; xác nhận vướng trong 24 giờ | Cho biết dữ liệu nào dùng ghép được; ảnh hưởng gate báo Chiến ngay |
-| Giao đầu vào/review | Chủ → reviewer theo vòng; người xác nhận nhận link | File nguồn + nhận xét có mã; E02 ghi kết luận | Theo5gate; reviewer phản hồi trong 24 giờ từ lúc đủ đầu vào | Review nội dung/nguồn; thiếu điều kiện trả Blocked cụ thể |
+| Giao đầu vào/review | Chủ → reviewer theo vòng; người xác nhận nhận link | File nguồn + nhận xét có mã; E02 ghi kết luận | Theo 5 gate; reviewer phản hồi trong 24 giờ từ lúc đủ đầu vào | Review nội dung/nguồn; thiếu điều kiện trả Blocked cụ thể |
 | Thay đổi giao tiếp A–B/C | Chủ phát hiện → các chủ liên quan + Chiến | P03 và Change Log, kèm diff | Ngay khi phát hiện, trước sửa contract đang dùng | Ngăn hai bên dùng schema khác; Chiến điều phối nếu bất đồng |
 | Lệch lịch/ngân sách/công suất | Việt Quang → Chiến, Quang Anh | P10/P11/M04 và số nguồn | Tại mỗi gate hoặc ngay khi dự báo trễ | Cân lịch/nguồn lực; vượt Charter trình CR đúng thẩm quyền |
 | Test Fail/Blocked/lỗi nghiêm trọng | Người chạy → chủ sửa + Quang Anh; Chiến khi liên module | M05, evidence và issue | Ngay với Critical/Blocker; trước 20:00 với phần còn lại | Giữ lỗi và retry có chủ; không chờ cuộc họp mới báo lộ dữ liệu/sai quota |

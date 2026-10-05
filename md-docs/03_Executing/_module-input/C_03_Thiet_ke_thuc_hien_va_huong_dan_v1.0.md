@@ -17,7 +17,7 @@ Máy chủ giữ định danh/thuê bao/reservation/metadata; frontend giữ d�
 | `src/backend/PromptVideo.Api/Modules/Admin/AdminModule.cs` | Admin list mọi mẫu, đổi status, đọc metrics; group kiểm Roles.AdminPolicy; POST có CSRF | Chưa có CRUD/upload ảnh/ticket/adjustment; parse status chưa chứng minh toàn bộ validation manifest/phiên bản |
 | `src/frontend/src/core/templates/catalog.ts` | Online lọc key Active có trong bundle; offline dùng bundle; dự án Retired vẫn mở | Đích DEC-012 yêu cầu snapshot/version và catalog có thời điểm; hiện chỉ templateId, còn ISS-G-002 |
 | `src/frontend/src/core/templates/templates.ts` | Bundle giữ màu, vị trí, chữ và slot trình bày | Không phải máy chủ cấp toàn bộ kịch bản/nội dung dự án |
-| `src/backend/PromptVideo.Api/Modules/Foundation/FoundationModule.cs` | Status/readiness; không trả mô tả/exception từ healthcheck; Unhealthy trả 503 | Không phải phép đo uptime30 ngày |
+| `src/backend/PromptVideo.Api/Modules/Foundation/FoundationModule.cs` | Status/readiness; không trả mô tả/exception từ healthcheck; Unhealthy trả 503 | Không phải phép đo uptime 30 ngày |
 | `src/frontend/src/features/foundation/FoundationStatus.tsx` | Client hỏi readiness và báo khả dụng | Không chứng minh đã có dashboard admin hoàn chỉnh |
 | `src/backend/PromptVideo.Api/Infrastructure/Audit/AuditService.cs` | Ghi sự kiện hệ thống theo đối tượng/actor | Cần kiểm đủ reason và transaction khi thêm adjustment; không suy từ export audit sang quota support |
 
@@ -41,7 +41,7 @@ Không hướng dẫn sử dụng route support giả định như thể có th�
 | Bằng chứng | Nội dung có thể kết luận | Không được kết luận |
 | --- | --- | --- |
 | EV-005 kiểm mã nguồn | Có các file/endpoint/test nguồn nêu ở §1 | API đã chạy đạt, CRUD/adminUI đã hoàn tất |
-| EV-001, [frontend-vitest.json](../../../evidence/2026-09-24/frontend-vitest.json) | Ngày 24/09 frontend 79/79 tests trong12 files đạt; kiểm tên test thực trong JSON để đối chiếu catalog/templates | TC-C/TC-I end-to-end hoặc backend đều đạt |
+| EV-001, [frontend-vitest.json](../../../evidence/2026-09-24/frontend-vitest.json) | Ngày 24/09 frontend 79/79 tests trong 12 files đạt; kiểm tên test thực trong JSON để đối chiếu catalog/templates | TC-C/TC-I end-to-end hoặc backend đều đạt |
 | EV-002, [backend-tests.trx](../../../evidence/2026-09-24/backend-tests.trx), [log](../../../evidence/2026-09-24/backend-tests.log) | Attempt backend 18 passed / 42 failed / 60 total; Docker/Testcontainers unavailable làm integration không chạy đúng điều kiện | Có 42 lỗi nghiệp vụ, hoặc C được kiểm chứng runtime |
 
 Các EV được quản lý trong [INDEX](../../../evidence/INDEX.md). Khi có run mới, lưu runId/build/môi trường riêng và nối vào C_04/M05; không ghi đè bằng chứng thất bại cũ. Giờ thực do Quang Anh thực hiện và chi tiền mặt chưa được nguồn xác nhận: để **chưa ghi nhận**, không lấy 72 giờ forecast làm actual.

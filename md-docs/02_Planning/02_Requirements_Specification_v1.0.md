@@ -793,7 +793,7 @@ Tiền điều kiện chung: DB thử riêng, tài khoản Admin/User/Anonymous,
 | TC-C-22 | REQ-C-07 | Manual/Integration | Đối chiếu báo cáo lợi ích với 1 benchmark A, B giả lập và sổ chi phí chưa đủ | LI-01 có nguồn đo hoặc Chưa đo; LI-04 không gọi giả lập là doanh thu thực; LI-05 không tính khi thiếu mẫu số | Chưa có báo cáo tự động; Manual Not Run |
 | TC-C-23 | REQ-C-06, NF-C-01 | Performance | Seed 10.000 reservation/30 ngày; chạy 100 requests sau warmup, lưu raw durations | p95≤2 giây; số lượng và kỳ đúng; không bỏ requests lỗi khỏi mẫu | API theo kỳ còn thiếu; Blocked phép đo đầy đủ |
 | TC-C-24 | REQ-C-08 | Integration | PostgreSQL thử hoạt động; GET foundation/health và /health/live | 200, readiness Healthy, chỉ name/status từng check | FoundationHealthReportsReadinessWithoutLeakingCheckDetail; Not Run |
-| TC-C-25 | REQ-C-08 | Integration | Cô lập/ngắt DB thử; gọi readiness; kiểm body/log và phục hồi DB | 503 khi Unhealthy, không lộ secret; phục hồi trả khỏe; không kết luận uptime30 ngày từ ca này | Cần thêm failure fixture; Not Run |
+| TC-C-25 | REQ-C-08 | Integration | Cô lập/ngắt DB thử; gọi readiness; kiểm body/log và phục hồi DB | 503 khi Unhealthy, không lộ secret; phục hồi trả khỏe; không kết luận uptime 30 ngày từ ca này | Cần thêm failure fixture; Not Run |
 
 Không định nghĩa lại TC-A/TC-B tại đây. Người chạy C: Chiến; người sửa: Quang Anh; người xác nhận nội bộ: Việt Quang. Mã test code có sẵn chỉ là ứng viên bằng chứng cho ca tài liệu; cần đối chiếu độ bao phủ từng bước.
 
@@ -802,7 +802,7 @@ Không định nghĩa lại TC-A/TC-B tại đây. Người chạy C: Chiến; n
 | Lợi ích | Dữ liệu cần / công thức | Nguồn và người chuẩn bị | C còn phải làm |
 | --- | --- | --- | --- |
 | LI-01 giảm thời gian tạo video | Thời gian từ bắt đầu đến lưu MP4; chuẩn 5 cảnh/60 giây | A đo đầu-cuối; C tổng hợp; thời gian encode riêng không thay phép đo này | Giữ timestamp, môi trường và mẫu benchmark; chưa có baseline đã xác nhận thì ghi thiếu |
-| LI-02 giảm chi phí sử dụng | Chi phí phần mềm một năm, so sánh cùng nhu cầu | BMP2.2 và dữ liệu giá/chi phí thực; chủ đo theo BMP | Không tính tự động từ reservation; lưu bằng chứng chi phí |
+| LI-02 giảm chi phí sử dụng | Chi phí phần mềm một năm, so sánh cùng nhu cầu | BMP v2.2 và dữ liệu giá/chi phí thực; chủ đo theo BMP | Không tính tự động từ reservation; lưu bằng chứng chi phí |
 | LI-03 giảm rủi ro lộ nội dung | 0 byte nội dung rời máy trong luồng tạo/xuất | A/B kiểm network, C kiểm metrics/audit | Lưu log đã làm sạch và ca kiểm luồng thực |
 | LI-04 doanh thu định kỳ | Doanh thu thực thu và thuê bao trả phí còn hiệu lực; thêm chuyển đổi/gia hạn | B cung cấp ledger thật khi có; C cung cấp số thuê bao; BMP giao chủ kinh doanh | API hiện chỉ counts và active subscriptions, chưa chứng minh doanh thu hoặc renewal; không dùng payment giả lập |
 | LI-05 chi phí phục vụ thấp | Tiền mặt vận hành/năm / số thuê bao trả phí trung bình | Sổ chi phí + snapshots theo kỳ đủ mẫu | Chưa có số trung bình và chi phí thực; không điền 0 thay dữ liệu thiếu |

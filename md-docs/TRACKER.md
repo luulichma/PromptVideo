@@ -9,16 +9,16 @@ Cách đếm cột 🔴: số dòng checklist 🔴 có kết quả **Thiếu**, 
 | BC | [Business Case v2.2](<00_Pre-project/01_Business_Case_v2.2.md>) | Chiến | Draft — chờ phê duyệt | 2026-10-05 | 0 | [review](<_review/01_Business_Case_v2.2_review_2026-10-05.md>) |
 | BMP | [Benefits Management Plan v2.2](<00_Pre-project/02_Benefit_Management_Plan_v2.2.md>) | Chiến | Draft — chờ phê duyệt | 2026-10-05 | 0 | [review](<_review/02_Benefit_Management_Plan_v2.2_review_2026-10-05.md>) |
 | CH | [Project Charter v2.1](<01_Initiating/01_Project_Charter_v2.1.md>) | Quang Anh | Draft — chờ phê duyệt (chờ ký) | 2026-10-05 | 0 | [review](<_review/03_Project_Charter_v2.1_review_2026-10-05.md>) |
-| AL | [Assumption Log v2.1](<01_Initiating/02_Assumption_Log_v2.1.md>) | Việt Quang | Tài liệu sống | 2026-10-05 | 3 | [review](<_review/04_Assumption_Log_v2.1_review_2026-10-05.md>) |
-| SR | [Stakeholder Register v1.0](<01_Initiating/03_Stakeholder_Register_v1.0.md>) | Chiến (ghi ở đầu sổ) | Không ghi trạng thái | 2026-10-05 | 5 | [review](<_review/05_Stakeholder_Register_v1.0_review_2026-10-05.md>) |
-| P01 | [01_Project_Management_Plan_v1.0.md](<02_Planning/01_Project_Management_Plan_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | — | chưa review | — |
-| P02 | [02_Requirements_Specification_v1.0.md](<02_Planning/02_Requirements_Specification_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | — | chưa review | — |
-| P03 | [03_Interface_Specification_v1.0.md](<02_Planning/03_Interface_Specification_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | — | chưa review | — |
-| P04 | [04_Project_Scope_Statement_v1.0.md](<02_Planning/04_Project_Scope_Statement_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | — | chưa review | — |
-| P05 | [05_WBS_and_WBS_Dictionary_v1.0.md](<02_Planning/05_WBS_and_WBS_Dictionary_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | — | chưa review | — |
-| P06 | [06_Quality_Plan_and_Test_Cases_v1.0.md](<02_Planning/06_Quality_Plan_and_Test_Cases_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | — | chưa review | — |
-| P07 | [07_Resource_and_Communication_Plan_v1.0.md](<02_Planning/07_Resource_and_Communication_Plan_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | — | chưa review | — |
-| P08 | [08_Risk_Management_Plan_v1.0.md](<02_Planning/08_Risk_Management_Plan_v1.0.md>) | Việt Quang | Draft, chưa nghiệm thu | — | chưa review | — |
+| AL | [Assumption Log v2.1](<01_Initiating/02_Assumption_Log_v2.1.md>) | Việt Quang | Tài liệu sống | 2026-10-05 | 2 thiếu · 1 một phần | [review](<_review/04_Assumption_Log_v2.1_review_2026-10-05.md>) |
+| SR | [Stakeholder Register v1.0](<01_Initiating/03_Stakeholder_Register_v1.0.md>) | Chiến (ghi ở đầu sổ) | Không ghi trạng thái | 2026-10-05 | 2 thiếu · 3 một phần | [review](<_review/05_Stakeholder_Register_v1.0_review_2026-10-05.md>) |
+| P01 | [01_Project_Management_Plan_v1.0.md](<02_Planning/01_Project_Management_Plan_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 4 thiếu · 2 một phần | [review](<_review/P01_Project_Management_Plan_v1.0_review_2026-10-05.md>) |
+| P02 | [02_Requirements_Specification_v1.0.md](<02_Planning/02_Requirements_Specification_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 2 một phần | [review](<_review/P02_Requirements_Specification_v1.0_review_2026-10-05.md>) |
+| P03 | [03_Interface_Specification_v1.0.md](<02_Planning/03_Interface_Specification_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 0 | [review](<_review/P03_Interface_Specification_v1.0_review_2026-10-05.md>) |
+| P04 | [04_Project_Scope_Statement_v1.0.md](<02_Planning/04_Project_Scope_Statement_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 1 thiếu · 1 một phần | [review](<_review/P04_Project_Scope_Statement_v1.0_review_2026-10-05.md>) |
+| P05 | [05_WBS_and_WBS_Dictionary_v1.0.md](<02_Planning/05_WBS_and_WBS_Dictionary_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 0 (chờ duyệt) | [review](<_review/P05_WBS_and_WBS_Dictionary_v1.0_review_2026-10-05.md>) |
+| P06 | [06_Quality_Plan_and_Test_Cases_v1.0.md](<02_Planning/06_Quality_Plan_and_Test_Cases_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 | [review](<_review/P06_Quality_Plan_and_Test_Cases_v1.0_review_2026-10-05.md>) |
+| P07 | [07_Resource_and_Communication_Plan_v1.0.md](<02_Planning/07_Resource_and_Communication_Plan_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 2 thiếu · 5 một phần | [review](<_review/P07_Resource_and_Communication_Plan_v1.0_review_2026-10-05.md>) |
+| P08 | [08_Risk_Management_Plan_v1.0.md](<02_Planning/08_Risk_Management_Plan_v1.0.md>) | Việt Quang | Draft, chưa nghiệm thu | 2026-10-05 | 3 thiếu · 2 một phần | [review](<_review/P08_Risk_Management_Plan_v1.0_review_2026-10-05.md>) |
 | P09 | [09_Requirements_Traceability_Matrix_v1.0.xlsx](<../official-docs/02_Planning/09_Requirements_Traceability_Matrix_v1.0.xlsx>) | Chiến | Draft, chưa nghiệm thu | — | chưa review | — |
 | P10 | [10_Schedule_and_CPM_v1.0.xlsx](<../official-docs/02_Planning/10_Schedule_and_CPM_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | — | chưa review | — |
 | P11 | [11_Cost_Budget_Procurement_v1.0.xlsx](<../official-docs/02_Planning/11_Cost_Budget_Procurement_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | — | chưa review | — |

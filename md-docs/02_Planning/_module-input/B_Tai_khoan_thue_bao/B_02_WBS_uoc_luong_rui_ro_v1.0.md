@@ -59,7 +59,7 @@ Tất cả gói do **Nguyễn Việt Quang** chịu trách nhiệm nội dung; m
 | --- | --- | --- |
 | REQ-B-01..04,20, phần 21; NF-B-05 | 4.3.1 | Nền tảng 4.1; yêu cầu 2.1; RTM2.2 |
 | REQ-B-05..12,16; NF-B-01/02/03/06 | 4.3.2 | Giao tiếp 3.2; tích hợp/đo 5.1/5.2 |
-| REQ-B-13..15, phần 21; NF-B-07 | 4.3.3 | Triển khai6.1; xác nhận phạm vi6.4 |
+| REQ-B-13..15, phần 21; NF-B-07 | 4.3.3 | Triển khai 6.1; xác nhận phạm vi 6.4 |
 | REQ-B-19 | 4.3.4 | Tích hợp 5.1; hướng dẫn 6.2 |
 | REQ-B-17 | 4.3.5 | UI ở 4.3.4 |
 | REQ-B-18 | 4.3.6 | UI ở 4.3.4 |
@@ -151,7 +151,7 @@ Mua/thuê: dùng hạ tầng dev có sẵn theo nguồn chung; cổng thật ph�
 | Cấp | Môi trường / phạm vi | Đầu ra cần lưu | Người làm / kiểm | Ngưỡng |
 | --- | --- | --- | --- | --- |
 | Unit | xUnit, PlanPolicyTests; policy/tháng UTC | Log/TRX và coverage đúng commit | Việt Quang / Quang Anh | Kỳ vọng từng TC; không test pass = coverage |
-| Integration | PostgreSQL Testcontainers tách DB | TRX, config đã che bí mật, bất biến DB | Việt Quang / Quang Anh | Reserve3/8, idempotency, auth, TTL/expiry theo B_01 |
+| Integration | PostgreSQL Testcontainers tách DB | TRX, config đã che bí mật, bất biến DB | Việt Quang / Quang Anh | Reserve 3/8, idempotency, auth, TTL/expiry theo B_01 |
 | E2E A–B–C | Frontend và API thật trong môi trường ghi rõ | Kết quả TC, HAR che token, video/ảnh minh họa | Quang Anh kiểm B; Việt Quang kiểm A; Chiến xác nhận nội bộ B | Quyền và file thật, không giao trước complete được xác nhận, không gửi nội dung |
 | Hiệu năng / coverage | Cấu hình và phạm vi đo được công bố | p95, lỗi, coverage và mẫu số | Việt Quang cung cấp / Quang Anh kiểm nguồn | NF-B-01/04, chưa có số đo để tuyên bố đạt |
 

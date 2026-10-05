@@ -16,18 +16,18 @@
 | REQ-C-03 | Có code và test nguồn; integration chưa đạt điều kiện chạy | AdminPolicy/CSRF; EV-002 bị Docker/Testcontainers chặn | Quang Anh chuẩn bị; Chiến kiểm |
 | REQ-C-04/05 | Chưa triển khai | Tra cứu/support adjustment chưa có route; IF-CB-01 là đích | Quang Anh + Việt Quang phần B |
 | REQ-C-06 | Có snapshot metrics | Chưa có cửa sổ 30 ngày/performance và nguồn đủ doanh thu | Quang Anh |
-| REQ-C-07 | Chưa đo đủ lợi ích | BMP2.2 LI-01…05; không có DailyMetricsJob được chứng minh | Quang Anh nhận nguồn A/B |
-| REQ-C-08 | Có code/readiness test nguồn | Ca DB healthy/unhealthy cần run hợp lệ; uptime30 ngày chưa có | Quang Anh |
+| REQ-C-07 | Chưa đo đủ lợi ích | BMP v2.2 LI-01…05; không có DailyMetricsJob được chứng minh | Quang Anh nhận nguồn A/B |
+| REQ-C-08 | Có code/readiness test nguồn | Ca DB healthy/unhealthy cần run hợp lệ; uptime 30 ngày chưa có | Quang Anh |
 | REQ-C-09 | Đã đặc tả workflow, chưa có ticket thực xác minh | Sổ demo/schemaC_03; không ghi “đã xử lý người dùng” | Quang Anh |
 
-Không tính phần trăm hoàn thành C từ số endpoint hay số test file. Chưa có weights/actual/EV đồng phạm vi thì không tính EVM/SPI/CPI. Base72 giờ và contingency ứng viên 12,8 giờ là forecast từ C_02; giờ thực/chi thực/remaining estimate cần chủ bổ sung bằng nguồn.
+Không tính phần trăm hoàn thành C từ số endpoint hay số test file. Chưa có weights/actual/EV đồng phạm vi thì không tính EVM/SPI/CPI. Base 72 giờ và contingency ứng viên 12,8 giờ là forecast từ C_02; giờ thực/chi thực/remaining estimate cần chủ bổ sung bằng nguồn.
 
 ## 2. Kết quả kiểm tra đang có
 
 | Hoạt động | Kết quả theo nguồn | Ý nghĩa cho C | Hành động tiếp |
 | --- | --- | --- | --- |
 | Frontend unit ngày 24/09, EV-001 | 79/79 passed, 12 files; [JSON](../../../evidence/2026-09-24/frontend-vitest.json) | Có kết quả cho catalog/templates nếu tên test tương ứng trong JSON; không là E2E admin hay TC-I | Chiến rà mapping assertion với TC-C-03/06 |
-| Backend attempt ngày 24/09, EV-002 | 18 passed, 42 failed, 60 total; Docker/Testcontainers unavailable; [TRX](../../../evidence/2026-09-24/backend-tests.trx) | Ghi thất bại môi trường; các integration C chưa được kết luận Pass; không ghi42 lỗi nghiệp vụ | Chủ môi trường khôi phục Docker; Chiến chạy lại C và Quang Anh kiểm B |
+| Backend attempt ngày 24/09, EV-002 | 18 passed, 42 failed, 60 total; Docker/Testcontainers unavailable; [TRX](../../../evidence/2026-09-24/backend-tests.trx) | Ghi thất bại môi trường; các integration C chưa được kết luận Pass; không ghi 42 lỗi nghiệp vụ | Chủ môi trường khôi phục Docker; Chiến chạy lại C và Quang Anh kiểm B |
 | Review mã nguồn, EV-005 | Có Admin/Templates/Foundation và tests nguồn | Chứng minh hiện trạng cấu trúc, không thay thực thi | Giữ từng gap trong RTM/M05 |
 | TC-C-04/10/11/12/13/14/23 | Blocked theo thiết kế, thiếu chức năng hoặc API theo kỳ | Giữ lý do blocked từng ca | Hoàn thiện WP/PP theo forecast rồi kiểm |
 | Các TC-C còn lại | Not Run ở cấp ca tài liệu, trừ assertion hẹp có mapping bằng chứng rõ | Testcode có sẵn không tự hoàn tất toàn ca | Reviewer chạy theo C_01 và lưu test_run |
@@ -53,7 +53,7 @@ Những hàng chưa có mã issue là danh sách đầu vào cho M03; người q
 | --- | --- | --- | --- |
 | WBS8.x→4.4.x; QC-n→QT-C-n; Active/Draft/Retired | DEC-003/004/012 | C_01/C_02/P03/RTM/WBS | Nội dung nguồn đã chuẩn hóa; nháp cũ giữ lịch sử |
 | Bỏ audio/video nền và caA tự định nghĩa lại | DEC-006/007 | C_01/P06 | Đã sửa tài liệu, không là thay đổi code |
-| Sửa OB-11/12 và bỏ mã MT không có trong BMP2.2 | Charter/BMP hiện hành | C_01/P06 | Đã sửa truy vết; chưa đo lợi ích thực |
+| Sửa OB-11/12 và bỏ mã MT không có trong BMP v2.2 | Charter/BMP hiện hành | C_01/P06 | Đã sửa truy vết; chưa đo lợi ích thực |
 | Thêm REQ-C-08 health và REQ-C-09 ticket | Phạm vi C trong Charter; DEC-013 | C_01/C_02/TC/P03 | Đặc tả đã viết; hiện trạng health có code, ticket chưa có service |
 | Ước lượng C từ 40 giờ lên 72 giờ; tách exposure 12,8 giờ và rủi ro chung 8,4 giờ | Ước lượng từ dưới lên theo DEC-009 | P05/P10/P11/P13 | Forecast chưa là baseline phê duyệt; reserve chỉ xem xét phần dư ngoài base; CR-G-001 xử lý tổng nguồn lực/lịch |
 
