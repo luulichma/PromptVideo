@@ -40,19 +40,21 @@ Tài liệu xác định dự án tạo ra lợi ích gì, đo bằng cách nào
 
 Dự án bàn giao ở tuần 15, nhưng phần lớn lợi ích chỉ xuất hiện sau đó — với sản phẩm thuê bao, doanh thu Năm 1 chỉ là điểm khởi đầu, giá trị thật nằm ở tỷ lệ gia hạn, chỉ kiểm chứng được sau 12 tháng vận hành. Phạm vi theo dõi: 3 năm kể từ ngày bàn giao.
 
+Nhà tài trợ là Trần Minh Đức, nhà sáng lập Enticy Studios — người cấp vốn cho dự án và vận hành sản phẩm trong 3 năm sau bàn giao. Các vai trò khác được giao theo dõi lợi ích trong tài liệu này (Giám đốc dự án, Trưởng nhóm kỹ thuật, Trưởng nhóm sản phẩm) được bổ nhiệm khi lập Project Charter.
+
 ## 2. Danh mục lợi ích
 
 Dự án dự kiến tạo ra năm lợi ích chính. Các tính năng/tiêu chí kỹ thuật chỉ là điều kiện tạo ra lợi ích, không phải lợi ích độc lập.
 
 | Lợi ích | Cách đo | Hiện trạng | Mục tiêu | Theo dõi |
 | --- | --- | --- | --- | --- |
-| LI-01. Giảm thời gian tạo video | Thời gian từ lúc bắt đầu đến khi lưu video MP4, kịch bản chuẩn 5 cảnh, 60 giây | ~45 phút (xác nhận trước M1) | Dưới 5 phút | Vũ Khánh Linh; khi bàn giao |
-| LI-02. Giảm chi phí sử dụng phần mềm | Chi phí thuê phần mềm tạo video trong một năm | ~4,5–7 triệu đồng/năm | 599.000 đồng/năm (gói Cá nhân) | Trần Minh Đức; hằng năm |
-| LI-03. Giảm rủi ro lộ nội dung người dùng | Lượng dữ liệu nội dung phải gửi khỏi máy khi tạo/xuất video | Nội dung phải tải lên máy chủ | 0 byte rời khỏi máy | Đỗ Bảo Long; M4 và khi vận hành |
-| LI-04. Tạo doanh thu thuê bao định kỳ | Doanh thu thực thu và số thuê bao trả phí còn hiệu lực mỗi năm | 0 đồng | 74,6 / 240,7 / 487,4 triệu đồng (Năm 1–3) | Trần Minh Đức; hằng tháng |
-| LI-05. Duy trì chi phí phục vụ thấp | Chi phí tiền mặt vận hành/năm chia số thuê bao trả phí trung bình | Chưa có dữ liệu | Dưới 65.000 / 50.000 / 45.000 đồng (Năm 1–3) | Trần Minh Đức; hằng quý |
+| LI-01. Giảm thời gian tạo video | Thời gian từ lúc bắt đầu đến khi lưu video MP4, kịch bản chuẩn 5 cảnh, 60 giây | ~45 phút (xác nhận trước 13/09/2026) | Dưới 5 phút | Trưởng nhóm sản phẩm; khi bàn giao |
+| LI-02. Giảm chi phí sử dụng phần mềm | Chi phí thuê phần mềm tạo video trong một năm | ~4,5–7 triệu đồng/năm | 599.000 đồng/năm (gói Cá nhân) | Nhà tài trợ; hằng năm |
+| LI-03. Giảm rủi ro lộ nội dung người dùng | Lượng dữ liệu nội dung phải gửi khỏi máy khi tạo/xuất video | Nội dung phải tải lên máy chủ | 0 byte rời khỏi máy | Trưởng nhóm kỹ thuật; tuần 10 (01/11/2026) và khi vận hành |
+| LI-04. Tạo doanh thu thuê bao định kỳ | Doanh thu thực thu và số thuê bao trả phí còn hiệu lực mỗi năm | 0 đồng | 74,6 / 240,7 / 487,4 triệu đồng (Năm 1–3) | Nhà tài trợ; hằng tháng |
+| LI-05. Duy trì chi phí phục vụ thấp | Chi phí tiền mặt vận hành/năm chia số thuê bao trả phí trung bình | Chưa có dữ liệu | Dưới 65.000 / 50.000 / 45.000 đồng (Năm 1–3) | Nhà tài trợ; hằng quý |
 
-Yêu cầu về tiếng Việt, độ dài video và tính ổn định đầu ra được quản lý như tiêu chí nghiệm thu tại M3/M4. Tỷ lệ chuyển đổi từ bậc miễn phí và tỷ lệ gia hạn được theo dõi bổ sung để giải thích LI-04.
+Yêu cầu về tiếng Việt, độ dài video và tính ổn định đầu ra được quản lý như tiêu chí nghiệm thu ở tuần 8 (18/10/2026) và tuần 10 (01/11/2026). Tỷ lệ chuyển đổi từ bậc miễn phí và tỷ lệ gia hạn được theo dõi bổ sung để giải thích LI-04.
 
 ## 3. Liên kết chiến lược
 
@@ -64,13 +66,18 @@ Yêu cầu về tiếng Việt, độ dài video và tính ổn định đầu r
 
 ## 4. Thẩm định tài chính
 
-Chi phí tách hai loại: tiền mặt (xác định nhu cầu huy động vốn) và chi phí cơ hội công sức (450 giờ × 80.000 VND/giờ, đánh giá hiệu quả phân bổ nguồn lực).
+Chi phí tách hai loại:
 
-Năm 0: 3,5 triệu VND tiền mặt (tên miền, 5 mẫu đồ họa, máy chủ, cổng thanh toán, dự phòng; font dùng giấy phép SIL OFL miễn phí) + 450 giờ công (36 triệu VND).
+- Tiền mặt (xác định nhu cầu huy động vốn)
+- Chi phí cơ hội công sức (450 giờ × 80.000 VND/giờ, đánh giá hiệu quả phân bổ nguồn lực)
 
-Năm 1–3: 6,5 / 15 / 28 triệu VND tiền mặt (máy chủ, phí cổng thanh toán ~2,5%, đồ họa bổ sung) + 260 / 480 / 800 giờ công (20,8 / 38,4 / 64 triệu VND).
+Chi phí và doanh thu theo năm:
 
-Doanh thu 74,6 / 240,7 / 487,4 triệu VND từ hai bậc trả phí: Cá nhân (100/320/650 thuê bao; 599.000 VND/năm) và Doanh nghiệp (3/10/20 thuê bao; 4.900.000 VND/năm), chưa tính bậc miễn phí.
+- Năm 0: 3,5 triệu VND tiền mặt (tên miền, 5 mẫu đồ họa, máy chủ, cổng thanh toán, dự phòng; font dùng giấy phép SIL OFL miễn phí) + 450 giờ công (36 triệu VND)
+- Năm 1–3: 6,5 / 15 / 28 triệu VND tiền mặt (máy chủ, phí cổng thanh toán ~2,5%, đồ họa bổ sung) + 260 / 480 / 800 giờ công (20,8 / 38,4 / 64 triệu VND)
+- Doanh thu Năm 1–3: 74,6 / 240,7 / 487,4 triệu VND từ hai bậc trả phí, chưa tính bậc miễn phí:
+  - Cá nhân: 100/320/650 thuê bao; 599.000 VND/năm
+  - Doanh nghiệp: 3/10/20 thuê bao; 4.900.000 VND/năm
 
 **Dòng tiền chiết khấu 12%/năm, đã gồm chi phí cơ hội công sức (đơn vị: VND):**
 
@@ -81,7 +88,15 @@ Doanh thu 74,6 / 240,7 / 487,4 triệu VND từ hai bậc trả phí: Cá nhân 
 | 2 | 240.680.000 | 15.000.000 | 38.400.000 | +187.280.000 | 0,7972 | +149.298.470 | +152.030.613 |
 | 3 | 487.350.000 | 28.000.000 | 64.000.000 | +395.350.000 | 0,7118 | +281.402.321 | +433.432.934 |
 
-Giá trị hiện tại của lợi ích: 605.361.870 VND; của chi phí: 171.928.936 VND. Kết quả: NPV +433.432.934 VND, BCR 3,52, thời gian hoàn vốn chiết khấu ~0,94 năm — cả ba đạt ngưỡng. ROI/IRR chỉ dùng tham khảo.
+Kết quả thẩm định:
+
+- Giá trị hiện tại của lợi ích: 605.361.870 VND
+- Giá trị hiện tại của chi phí: 171.928.936 VND
+- NPV: +433.432.934 VND
+- BCR: 3,52
+- Thời gian hoàn vốn chiết khấu: ~0,94 năm
+
+Cả ba chỉ số NPV, BCR và thời gian hoàn vốn đều đạt ngưỡng. ROI/IRR chỉ dùng tham khảo.
 
 Lợi ích phi tài chính theo dõi bằng chỉ số riêng, không quy đổi vào NPV/BCR — nên kết quả tài chính là một ước lượng thận trọng.
 
@@ -93,16 +108,25 @@ Lợi ích phi tài chính theo dõi bằng chỉ số riêng, không quy đổi
 | Cơ sở | 100% | +433.432.934 | 3,52 | Khả thi |
 | Lạc quan | 150% | +736.113.869 | 5,28 | Rất hiệu quả |
 
-Điểm hoà vốn ở hệ số 28% (28/91/185 thuê bao Cá nhân và 1/3/6 thuê bao Doanh nghiệp qua 3 năm); biên an toàn 72%. Ngay ở kịch bản bi quan, dự án không lỗ tiền mặt, chỉ không đạt giá trị công sức tương xứng. Rủi ro lớn nhất: tỷ lệ gia hạn sụp ở Năm 2 sau khi Năm 1 đạt mục tiêu.
+Kết quả phân tích độ nhạy:
+
+- Điểm hoà vốn ở hệ số 28% (28/91/185 thuê bao Cá nhân và 1/3/6 thuê bao Doanh nghiệp qua 3 năm); biên an toàn 72%
+- Ngay ở kịch bản bi quan, dự án không lỗ tiền mặt, chỉ không đạt giá trị công sức tương xứng
+- Rủi ro lớn nhất: tỷ lệ gia hạn sụp ở Năm 2 sau khi Năm 1 đạt mục tiêu
 
 ## 5. Lộ trình và điểm quyết định
 
-- M3 (tuần 8) và M4 (tuần 10) — nghiệm thu: tiếng Việt, không giới hạn độ dài, đầu ra lặp lại được, nội dung không rời máy
+- Tuần 8 (18/10/2026) và tuần 10 (01/11/2026) — nghiệm thu: tiếng Việt, không giới hạn độ dài, đầu ra lặp lại được, nội dung không rời máy
 - Đóng dự án (tuần 15) — đánh giá LI-01, LI-02, LI-03; bàn giao danh mục lợi ích
 - Quý 1–2 Năm 1 — thuê bao trả phí đầu tiên, thuê bao Doanh nghiệp đầu tiên, bắt đầu đo chi phí phục vụ
 - Quý 4 Năm 1 — chu kỳ gia hạn đầu tiên, đo được tỷ lệ gia hạn lần đầu
 
-Điểm quyết định chính thức: nếu hết Quý 4 Năm 1, số thuê bao Cá nhân hoạt động dưới 28 hoặc tỷ lệ gia hạn dưới 50%, nhà tài trợ phải xem xét lại giá, hạn mức bậc miễn phí hoặc giả định thị trường. Hai điều kiện được kiểm tra độc lập — đạt số thuê bao nhưng không giữ được khách cũng là tín hiệu hỏng.
+Điểm quyết định chính thức vào cuối Quý 4 Năm 1. Nhà tài trợ phải xem xét lại giá, hạn mức bậc miễn phí hoặc giả định thị trường nếu gặp một trong hai điều kiện:
+
+- Số thuê bao Cá nhân đang hoạt động dưới 28
+- Tỷ lệ gia hạn dưới 50%
+
+Hai điều kiện được kiểm tra độc lập — đạt số thuê bao nhưng không giữ được khách cũng là tín hiệu hỏng.
 
 ## 6. Giả định và rủi ro
 
@@ -117,20 +141,25 @@ Lợi ích phi tài chính theo dõi bằng chỉ số riêng, không quy đổi
 
 - Bậc miễn phí thu hút nhưng không ai nâng cấp — theo dõi chuyển đổi từ tháng đầu; siết hạn mức hoặc điều chỉnh giá nếu thấp
 - Tỷ lệ gia hạn dưới 50% ở chu kỳ đầu — phỏng vấn khách rời bỏ ngay từ trường hợp đầu tiên
-- Máy chủ giấy phép ngừng hoạt động kéo dài — giám sát tự động, diễn tập khôi phục tại M6
+- Máy chủ giấy phép ngừng hoạt động kéo dài — giám sát tự động, diễn tập khôi phục trước 29/11/2026 (tuần 14)
 - Không ai theo dõi lợi ích sau khi đóng dự án — biên bản bàn giao có chữ ký, lịch rà soát đặt sẵn
-- Chưa đo hiện trạng thời gian tạo video trước phát triển — bắt buộc đo ở mốc M1
+- Chưa đo hiện trạng thời gian tạo video trước phát triển — bắt buộc đo trước 13/09/2026
 - Công sức vận hành thực tế vượt ước lượng — ghi nhận giờ thực tế, tính lại BCR mỗi quý
 
 ## 7. Theo dõi hiện thực hoá
 
-- M3/M4 — Đỗ Bảo Long chủ trì: kiểm tra tiêu chí kỹ thuật hỗ trợ LI-01, LI-03
-- Đóng dự án, tuần 15 — Lê Hoàng Nam chủ trì: biên bản bàn giao danh mục lợi ích và tài liệu vận hành
-- Hằng tháng, Năm 1 — Trần Minh Đức chủ trì: doanh thu, số thuê bao, tỷ lệ chuyển đổi, thời gian hoạt động máy chủ
-- Hằng quý, Năm 1–3 — Trần Minh Đức chủ trì: báo cáo hiện thực hoá lợi ích kèm NPV/BCR tính lại trên số thực đo
-- Điểm quyết định, hết Quý 4 Năm 1 — Trần Minh Đức chủ trì: quyết định tiếp tục, điều chỉnh giá, siết hạn mức miễn phí, hoặc dừng
+- Tuần 8 và tuần 10 — Trưởng nhóm kỹ thuật chủ trì: kiểm tra tiêu chí kỹ thuật hỗ trợ LI-01, LI-03
+- Đóng dự án, tuần 15 — Giám đốc dự án chủ trì: biên bản bàn giao danh mục lợi ích và tài liệu vận hành
+- Hằng tháng, Năm 1 — Nhà tài trợ chủ trì: doanh thu, số thuê bao, tỷ lệ chuyển đổi, thời gian hoạt động máy chủ
+- Hằng quý, Năm 1–3 — Nhà tài trợ chủ trì: báo cáo hiện thực hoá lợi ích kèm NPV/BCR tính lại trên số thực đo
+- Điểm quyết định, hết Quý 4 Năm 1 — Nhà tài trợ chủ trì: quyết định tiếp tục, điều chỉnh giá, siết hạn mức miễn phí, hoặc dừng
 
-Mỗi kỳ rà soát ghi: mục tiêu, thực đạt, chênh lệch, đánh giá, nguyên nhân, hành động, người phụ trách, thời hạn. Đạt → ghi nhận; chệch <20% → nêu nguyên nhân và theo dõi kỳ tới; chệch ≥20% → báo nhà tài trợ trong 5 ngày làm việc và xem lại giả định gốc; kéo dài hai kỳ liên tiếp → quyết định tương lai sản phẩm.
+Mỗi kỳ rà soát ghi: mục tiêu, thực đạt, chênh lệch, đánh giá, nguyên nhân, hành động, người phụ trách, thời hạn. Cách xử lý theo mức chênh lệch:
+
+- Đạt → ghi nhận
+- Chệch dưới 20% → nêu nguyên nhân và theo dõi kỳ tới
+- Chệch từ 20% trở lên → báo nhà tài trợ trong 5 ngày làm việc và xem lại giả định gốc
+- Chệch kéo dài hai kỳ liên tiếp → quyết định tương lai sản phẩm
 
 Danh mục lợi ích là tài liệu sống đến khi toàn bộ lợi ích được hiện thực hóa hoặc không còn khả thi, kết thúc khi nhà tài trợ ký phê duyệt báo cáo tổng kết cuối Năm 3.
 

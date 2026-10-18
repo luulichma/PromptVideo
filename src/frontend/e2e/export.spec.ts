@@ -75,15 +75,20 @@ async function mockEntitlement(
 
 async function createShortProject(page: Page, name: string): Promise<void> {
   await page.goto('/')
-  await page.getByLabel('Tên project').fill(name)
-  await page.getByRole('button', { name: 'Tạo project' }).click()
+  await page.getByLabel('Tên video').fill(name)
+  await page.getByRole('button', { name: 'Tạo video' }).click()
   await expect(page.getByTestId('preview-canvas')).toBeVisible()
 
-  // One second per scene keeps the encode short without changing the pipeline.
-  const durations = page.getByLabel('Thời lượng (giây)')
-  for (let index = 0; index < 5; index += 1) {
-    await durations.nth(index).fill('1')
+  // One second per scene keeps the encode short without changing the pipeline,
+  // and text-only scenes need no picture before they may be exported.
+  for (let index = 1; index <= 5; index += 1) {
+    await page.getByTestId(`scene-select-${index}`).click()
+    if ((await page.getByTestId('scene-kind').inputValue()) === 'textImage') {
+      await page.getByTestId('scene-kind').selectOption('text')
+    }
+    await page.getByTestId('scene-duration').fill('1')
   }
+  await expect(page.getByTestId('validation-issues')).toHaveCount(0)
 }
 
 test('the worker turns a project into a playable H.264 MP4', async ({
@@ -144,9 +149,9 @@ test('the editor stays responsive while an export runs', async ({ page }) => {
   await expect(page.getByTestId('export-progress')).toBeVisible()
 
   // The main thread must still answer while the worker encodes.
-  const sceneName = page.getByLabel('Tên cảnh').first()
-  await sceneName.fill('Vẫn gõ được')
-  await expect(sceneName).toHaveValue('Vẫn gõ được')
+  const title = page.getByTestId('scene-title')
+  await title.fill('Vẫn gõ được')
+  await expect(title).toHaveValue('Vẫn gõ được')
 
   await expect(page.getByTestId('export-done')).toBeVisible({
     timeout: 120_000,
@@ -220,4 +225,98 @@ test('the server decides the resolution, not the browser', async ({ page }) => {
   await expect(done).toBeVisible({ timeout: 120_000 })
   // Granted 720p with a watermark, so that is what was encoded.
   await expect(done).toContainText('watermark')
+})
+
+test('the export can be paused and resumed', async ({ page }) => {
+  const entitlement = await mockEntitlement(page)
+  await createShortProject(page, 'Tạm dừng')
+
+  await page.getByTestId('export-start').click()
+  await expect(page.getByTestId('export-progress')).toBeVisible()
+  await page.getByTestId('export-pause').click()
+  await expect(page.getByTestId('export-progress')).toContainText('tạm dừng')
+
+  // Paused means paused: a while later it is still not done.
+  await page.waitForTimeout(1500)
+  await expect(page.getByTestId('export-done')).toHaveCount(0)
+
+  await page.getByTestId('export-pause').click()
+  await expect(page.getByTestId('export-done')).toBeVisible({
+    timeout: 120_000,
+  })
+  expect(entitlement.settled).toEqual(['complete'])
+})
+
+test('a free plan is told what it gets before exporting', async ({ page }) => {
+  await mockEntitlement(page)
+  await createShortProject(page, 'Thông báo gói')
+
+  await expect(page.getByTestId('export-notice')).toContainText(
+    'Bản này có watermark, tối đa 720p. Tháng này còn 3/3 lượt.',
+  )
+  await expect(page.getByRole('link', { name: /Nâng cấp/ })).toHaveAttribute(
+    'href',
+    '/account#plans',
+  )
+})
+
+test('the fourth free export is blocked with a reason', async ({ page }) => {
+  await mockEntitlement(page)
+  await page.route(
+    (url) => url.pathname === '/api/me/capabilities',
+    (route) =>
+      route.fulfill({
+        json: {
+          planCode: 'free',
+          planName: 'Miễn phí',
+          maxExportHeight: 720,
+          watermarkRequired: true,
+          exportsPerMonth: 3,
+          exportsRemaining: 0,
+          hasUnlimitedExports: false,
+        },
+      }),
+  )
+  await createShortProject(page, 'Hết lượt')
+
+  await expect(page.getByTestId('export-quota-blocked')).toContainText(
+    'dùng hết 3 lượt',
+  )
+  await expect(page.getByTestId('export-start')).toBeDisabled()
+})
+
+test('signing in is asked for at export, not before', async ({ page }) => {
+  let signedIn = false
+  await mockEntitlement(page)
+  // Until the login call succeeds, the server says "not signed in".
+  await page.route(
+    (url) => url.pathname === '/api/me/capabilities',
+    (route) =>
+      signedIn
+        ? route.fallback()
+        : route.fulfill({ status: 401, json: { title: 'Unauthorized' } }),
+  )
+  await page.route(
+    (url) => url.pathname === '/api/auth/login',
+    (route) => {
+      signedIn = true
+      return route.fulfill({ status: 200, json: {} })
+    },
+  )
+
+  await createShortProject(page, 'Đăng nhập lúc xuất')
+  await page.getByTestId('export-start').click()
+
+  const form = page.getByTestId('export-sign-in')
+  await expect(form).toBeVisible()
+  await form.getByLabel('Email').fill('khach@promptvideo.test')
+  await form.getByLabel('Mật khẩu').fill('mat-khau-thu-nghiem')
+  await form.getByRole('button', { name: 'Đăng nhập' }).click()
+
+  await expect(form).toBeHidden()
+  await expect(page.getByTestId('export-notice')).toContainText('3/3 lượt')
+  await page.getByTestId('export-start').click()
+  await expect(page.getByTestId('export-done')).toBeVisible({
+    timeout: 120_000,
+  })
 })

@@ -10,6 +10,8 @@ import {
   type ProjectSummary,
 } from '../../core/storage/projectStore'
 import { selectableTemplates } from '../../core/templates/catalog'
+import { findTemplate } from '../../core/templates/templates'
+import { TemplatePicker } from '../editor/TemplatePicker'
 import { useTemplateCatalog } from '../editor/useTemplateCatalog'
 
 const dateFormat = new Intl.DateTimeFormat('vi-VN', {
@@ -20,7 +22,7 @@ const dateFormat = new Intl.DateTimeFormat('vi-VN', {
 export function DashboardPage() {
   const navigate = useNavigate()
   const [projects, setProjects] = useState<ProjectSummary[]>([])
-  const [name, setName] = useState('Dự án mới')
+  const [name, setName] = useState('Video mới')
   const templates = selectableTemplates(useTemplateCatalog())
   const [chosenTemplateId, setTemplateId] = useState<string | null>(null)
   // A choice the catalog has since withdrawn falls back to the first offered.
@@ -56,7 +58,7 @@ export function DashboardPage() {
   async function handleCreate(event: React.FormEvent) {
     event.preventDefault()
     if (!templateId) return
-    const project = createProject(name.trim() || 'Dự án mới', { templateId })
+    const project = createProject(name.trim() || 'Video mới', { templateId })
     await saveProject(project)
     navigate(`/editor/${project.id}`)
   }
@@ -75,8 +77,8 @@ export function DashboardPage() {
     }
 
     await saveProject(result.document)
-    setMessage(`Đã nhập "${result.document.name}".`)
-    await refresh()
+    // Opening a project file means wanting to work on it.
+    navigate(`/editor/${result.document.id}`)
   }
 
   async function handleDelete(project: ProjectSummary) {
@@ -89,57 +91,55 @@ export function DashboardPage() {
     <div className="space-y-8">
       <section aria-labelledby="new-project" className="space-y-3">
         <h1 id="new-project" className="text-xl font-semibold">
-          Dự án của bạn
+          Tạo video mới
         </h1>
         <form
           onSubmit={handleCreate}
-          className="flex flex-wrap items-end gap-3 rounded-lg border border-slate-200 bg-white p-4"
+          className="space-y-4 rounded-lg border border-slate-200 bg-white p-4"
         >
-          <label className="flex flex-col gap-1 text-sm">
-            <span className="font-medium">Tên project</span>
-            <input
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              className="w-64 rounded-md border border-slate-300 px-3 py-2"
-            />
-          </label>
-          <label className="flex flex-col gap-1 text-sm">
-            <span className="font-medium">Template</span>
-            <select
-              value={templateId ?? ''}
-              onChange={(event) => setTemplateId(event.target.value)}
-              className="rounded-md border border-slate-300 px-3 py-2"
-            >
-              {templates.map((template) => (
-                <option key={template.id} value={template.id}>
-                  {template.name}
-                </option>
-              ))}
-            </select>
-          </label>
-          <button
-            type="submit"
-            disabled={!templateId}
-            title={templateId ? undefined : 'Chưa có mẫu nào đang mở'}
-            className="rounded-md bg-sky-700 px-4 py-2 text-sm font-medium text-white hover:bg-sky-800"
-          >
-            Tạo project
-          </button>
-          <button
-            type="button"
-            onClick={() => fileInput.current?.click()}
-            className="rounded-md border border-slate-300 px-4 py-2 text-sm font-medium hover:bg-slate-100"
-          >
-            Nhập gói project
-          </button>
-          <input
-            ref={fileInput}
-            type="file"
-            accept="application/json,.json"
-            onChange={handleImport}
-            className="sr-only"
-            aria-label="Chọn tệp gói project"
+          <p className="text-sm text-slate-700">
+            Chọn một mẫu, điền chữ và ảnh vào từng cảnh, rồi bấm xuất. Chưa cần
+            đăng nhập cho tới lúc xuất video.
+          </p>
+          <TemplatePicker
+            label="Mẫu video"
+            templates={templates}
+            selectedId={templateId}
+            onSelect={setTemplateId}
           />
+          <div className="flex flex-wrap items-end gap-3">
+            <label className="flex flex-col gap-1 text-sm">
+              <span className="font-medium">Tên video</span>
+              <input
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                className="w-64 rounded-md border border-slate-300 px-3 py-2"
+              />
+            </label>
+            <button
+              type="submit"
+              disabled={!templateId}
+              title={templateId ? undefined : 'Chưa có mẫu nào đang mở'}
+              className="rounded-md bg-sky-700 px-4 py-2 text-sm font-medium text-white hover:bg-sky-800 disabled:opacity-40"
+            >
+              Tạo video
+            </button>
+            <button
+              type="button"
+              onClick={() => fileInput.current?.click()}
+              className="rounded-md border border-slate-300 px-4 py-2 text-sm font-medium hover:bg-slate-100"
+            >
+              Mở file dự án
+            </button>
+            <input
+              ref={fileInput}
+              type="file"
+              accept="application/json,.json"
+              onChange={handleImport}
+              className="sr-only"
+              aria-label="Chọn file dự án"
+            />
+          </div>
         </form>
 
         {message && (
@@ -160,7 +160,7 @@ export function DashboardPage() {
         </h2>
         {projects.length === 0 ? (
           <p className="text-sm text-slate-600">
-            Chưa có project nào. Tạo project đầu tiên ở trên.
+            Chưa có video nào. Chọn mẫu ở trên để bắt đầu.
           </p>
         ) : (
           <ul className="divide-y divide-slate-200 rounded-lg border border-slate-200 bg-white">
@@ -172,8 +172,8 @@ export function DashboardPage() {
                 <div className="min-w-0 flex-1">
                   <p className="truncate font-medium">{project.name}</p>
                   <p className="text-xs text-slate-600">
-                    Sửa lần cuối {dateFormat.format(project.updatedAtMs)} ·
-                    Template {project.templateId}
+                    Sửa lần cuối {dateFormat.format(project.updatedAtMs)} · Mẫu{' '}
+                    {findTemplate(project.templateId).name}
                   </p>
                 </div>
                 <button

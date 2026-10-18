@@ -1,6 +1,7 @@
 /// <reference lib="webworker" />
 
 import type { CapabilityReport } from '../capabilities/probe'
+import { loadBundledFontsInto } from '../rendering/fonts'
 import type { ProjectDocumentV1 } from '../project/schema'
 import { exportProjectMp4, type ExportBenchmarkResult } from './exportMp4'
 import type { ExportResolution } from './encoderSupport'
@@ -28,7 +29,11 @@ export type ExportStartMessage = {
 
 export type ExportCancelMessage = { type: 'cancel' }
 
-export type ExportRequest = ExportStartMessage | ExportCancelMessage
+/** Holds the encoder between frames; nothing is lost while paused. */
+export type ExportPauseMessage = { type: 'pause' } | { type: 'resume' }
+
+export type ExportRequest =
+  ExportStartMessage | ExportCancelMessage | ExportPauseMessage
 
 export type ExportResponse =
   | { type: 'progress'; completedFrames: number; totalFrames: number }
@@ -60,6 +65,35 @@ function describeEnvironment(): CapabilityReport['browser'] {
 
 let controller: AbortController | null = null
 
+/** Resolves the wait of a paused export; null while running. */
+let paused: { promise: Promise<void>; resume: () => void } | null = null
+
+function pause(): void {
+  if (paused) return
+  let resume = () => {}
+  const promise = new Promise<void>((resolve) => {
+    resume = resolve
+  })
+  paused = { promise, resume }
+}
+
+function resume(): void {
+  paused?.resume()
+  paused = null
+}
+
+/** Called between frames; returns at once unless the user paused. */
+async function waitWhilePaused(): Promise<void> {
+  while (paused) await paused.promise
+}
+
+/**
+ * The worker has no stylesheet, so the bundled font is registered here once.
+ * Without it the export would draw in a system fallback and wrap differently
+ * from the preview.
+ */
+let fontsLoaded: Promise<void> | null = null
+
 function post(message: ExportResponse): void {
   scope.postMessage(message)
 }
@@ -75,6 +109,9 @@ async function run(message: ExportStartMessage): Promise<void> {
   )
 
   try {
+    fontsLoaded ??= loadBundledFontsInto(scope.fonts)
+    await fontsLoaded
+
     const { blob, result } = await exportProjectMp4(
       canvas,
       message.project,
@@ -87,6 +124,7 @@ async function run(message: ExportStartMessage): Promise<void> {
         filename: message.filename,
         fileHandle: message.fileHandle,
         signal: controller.signal,
+        waitWhilePaused,
         onProgress: (completedFrames, totalFrames) =>
           post({ type: 'progress', completedFrames, totalFrames }),
       },
@@ -107,12 +145,23 @@ async function run(message: ExportStartMessage): Promise<void> {
     // here is what keeps three start-cancel cycles from growing memory.
     for (const [, bitmap] of assets) bitmap.close()
     controller = null
+    resume()
   }
 }
 
 scope.onmessage = (event: MessageEvent<ExportRequest>) => {
   if (event.data.type === 'cancel') {
     controller?.abort()
+    // A paused export must wake up to notice it was cancelled.
+    resume()
+    return
+  }
+  if (event.data.type === 'pause') {
+    pause()
+    return
+  }
+  if (event.data.type === 'resume') {
+    resume()
     return
   }
 

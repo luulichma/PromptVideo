@@ -64,6 +64,81 @@ export function layerFont(layer: TextLayerV1): string {
   return `${layer.fontWeight} ${layer.fontSize}px "${resolveFontFamily(layer.fontFamily)}"`
 }
 
+export type FittedText = {
+  fontSize: number
+  lines: string[]
+  /** Total height of the wrapped block at fontSize. */
+  blockHeight: number
+  /** True when even the smallest allowed size does not fit the box. */
+  overflow: boolean
+}
+
+function layoutAt(
+  context: RenderContext,
+  layer: TextLayerV1,
+  fontSize: number,
+): FittedText {
+  context.font = layerFont({ ...layer, fontSize })
+  const lines = wrapText(context, layer.text, layer.width)
+  const blockHeight = lines.length * fontSize * layer.lineHeight
+  // A single word wider than the box cannot be wrapped away.
+  const tooWide = lines.some(
+    (line) => context.measureText(line).width > layer.width + 0.5,
+  )
+  return {
+    fontSize,
+    lines,
+    blockHeight,
+    overflow: tooWide || blockHeight > layer.height + 0.5,
+  }
+}
+
+/**
+ * Finds the largest size, between the layer's minimum and its template size,
+ * at which the text fits its box.
+ *
+ * Long text shrinks instead of spilling over the rest of the composition, but
+ * never below the minimum the template set: past that point it is the text, not
+ * the type, that has to give, and the editor tells the user so. Leaves the
+ * context's font set to the returned size.
+ */
+export function fitText(
+  context: RenderContext,
+  layer: TextLayerV1,
+): FittedText {
+  const largest = layoutAt(context, layer, layer.fontSize)
+  const min = Math.min(layer.minFontSize ?? layer.fontSize, layer.fontSize)
+  if (!largest.overflow || min >= layer.fontSize) return largest
+
+  const smallest = layoutAt(context, layer, min)
+  if (smallest.overflow) return smallest
+
+  // Fits at the minimum, not at the maximum: binary search the whole pixels.
+  let low = Math.ceil(min)
+  let high = Math.floor(layer.fontSize) - 1
+  let best = smallest
+  while (low <= high) {
+    const size = Math.floor((low + high) / 2)
+    const attempt = layoutAt(context, layer, size)
+    if (attempt.overflow) {
+      high = size - 1
+    } else {
+      best = attempt
+      low = size + 1
+    }
+  }
+  context.font = layerFont({ ...layer, fontSize: best.fontSize })
+  return best
+}
+
+/** Vertical draw position of the first line, given the fitted block. */
+export function alignedY(layer: TextLayerV1, blockHeight: number): number {
+  const spare = Math.max(0, layer.height - blockHeight)
+  if (layer.verticalAlign === 'bottom') return layer.y + spare
+  if (layer.verticalAlign === 'middle') return layer.y + spare / 2
+  return layer.y
+}
+
 /** Horizontal draw position for an alignment within the layer box. */
 export function alignedX(layer: TextLayerV1): number {
   if (layer.align === 'center') return layer.x + layer.width / 2

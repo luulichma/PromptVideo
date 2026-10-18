@@ -30,7 +30,10 @@ const { runExport } = await import('./exportClient')
 const { reserveExport, completeExport, cancelExport } =
   await import('./reservation')
 
-const project = createProject('Dự án', { id: 'export-1' })
+const project = createProject('Dự án', {
+  id: 'export-1',
+  kinds: ['intro', 'text', 'text', 'text', 'outro'],
+})
 
 /** Measurements the worker reports back; none of them steer this module. */
 const benchmark = {
@@ -144,7 +147,12 @@ describe('exportProject', () => {
   })
 
   it('never reserves when the project still has blocking errors', async () => {
-    const broken = { ...project, scenes: project.scenes.slice(0, 2) }
+    const broken = {
+      ...project,
+      scenes: project.scenes.map((scene, index) =>
+        index === 0 ? { ...scene, durationSeconds: -1 } : scene,
+      ),
+    }
 
     const result = await run({ project: broken })
 

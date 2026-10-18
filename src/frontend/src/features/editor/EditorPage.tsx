@@ -4,7 +4,7 @@ import {
   exportProjectPackage,
   packageFileName,
 } from '../../core/package/projectPackage'
-import { switchTemplate } from '../../core/project/commands'
+import { renameProject, switchTemplate } from '../../core/project/commands'
 import type { ProjectDocumentV1 } from '../../core/project/schema'
 import type { ValidationIssue } from '../../core/project/validation'
 import {
@@ -13,13 +13,16 @@ import {
   loadProject,
 } from '../../core/storage/projectStore'
 import { isWithdrawn, selectableTemplates } from '../../core/templates/catalog'
+import { ENTRANCE_SECONDS } from '../../core/rendering/renderer'
 import { findTemplate } from '../../core/templates/templates'
 import { useCapabilities } from '../account/useCapabilities'
 import { ExportPanel } from './ExportPanel'
 import { PreviewCanvas } from './PreviewCanvas'
 import { SceneInspector } from './SceneInspector'
 import { SceneList } from './SceneList'
+import { TemplatePicker } from './TemplatePicker'
 import {
+  getOverflowCheck,
   useCurrentProject,
   useEditorStore,
   useHistoryFlags,
@@ -60,6 +63,7 @@ export function EditorPage() {
   const catalog = useTemplateCatalog()
 
   const [timestamp, setTimestamp] = useState(0)
+  const [showTemplates, setShowTemplates] = useState(false)
   const [notFound, setNotFound] = useState(false)
   const [recovery, setRecovery] = useState<ProjectDocumentV1 | null>(null)
 
@@ -90,6 +94,21 @@ export function EditorPage() {
   }, [projectId, open, close])
 
   const handleSave = useCallback(() => void saveNow(), [saveNow])
+
+  // Choosing a scene shows it: the preview jumps to just after its text
+  // arrives. Adjusted while rendering, not in an effect, so it happens on the
+  // selection change itself and not on every later edit to durations.
+  const [shownSceneId, setShownSceneId] = useState<string | null>(null)
+  if (project && selectedSceneId && selectedSceneId !== shownSceneId) {
+    const index = project.scenes.findIndex(
+      (item) => item.id === selectedSceneId,
+    )
+    const start = project.scenes
+      .slice(0, Math.max(0, index))
+      .reduce((total, item) => total + item.durationSeconds, 0)
+    setShownSceneId(selectedSceneId)
+    setTimestamp(start + ENTRANCE_SECONDS)
+  }
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -126,7 +145,7 @@ export function EditorPage() {
   if (notFound) {
     return (
       <p className="text-sm">
-        Không tìm thấy project này.{' '}
+        Không tìm thấy dự án này.{' '}
         <Link to="/" className="text-sky-700 underline">
           Quay lại danh sách
         </Link>
@@ -135,12 +154,13 @@ export function EditorPage() {
   }
 
   if (!project || !scene) {
-    return <p className="text-sm">Đang mở project…</p>
+    return <p className="text-sm">Đang mở dự án…</p>
   }
 
   // Split so a blocking problem never sits in the same list as a suggestion.
   const errors = issues.filter((issue) => issue.severity === 'error')
   const warnings = issues.filter((issue) => issue.severity === 'warning')
+  const sceneIndex = project.scenes.findIndex((item) => item.id === scene.id)
 
   const watermark =
     capabilities.status === 'ready'
@@ -148,6 +168,8 @@ export function EditorPage() {
       : true
 
   const withdrawn = isWithdrawn(project.templateId, catalog)
+  const current = findTemplate(project.templateId, project.templateVersion)
+  const offered = selectableTemplates(catalog)
 
   return (
     <div className="space-y-4">
@@ -156,7 +178,7 @@ export function EditorPage() {
           role="alert"
           className="flex flex-wrap items-center gap-3 rounded-lg border border-amber-300 bg-amber-50 px-4 py-2 text-sm"
         >
-          <span>Tìm thấy bản autosave mới hơn từ phiên làm việc trước.</span>
+          <span>Tìm thấy bản tự lưu mới hơn từ lần làm việc trước.</span>
           <button
             type="button"
             onClick={() => {
@@ -181,7 +203,12 @@ export function EditorPage() {
       )}
 
       <div className="flex flex-wrap items-center gap-2">
-        <h1 className="text-xl font-semibold">{project.name}</h1>
+        <input
+          value={project.name}
+          onChange={(event) => run(renameProject(event.target.value))}
+          aria-label="Tên dự án"
+          className="min-w-0 rounded-md border border-transparent px-2 py-1 text-xl font-semibold hover:border-slate-300 focus:border-slate-400"
+        />
         <span
           data-testid="save-state"
           data-state={saveState}
@@ -209,42 +236,41 @@ export function EditorPage() {
           </button>
           <button
             type="button"
-            onClick={handleSave}
+            onClick={handleExportPackage}
+            title="Một file duy nhất, có kèm ảnh; mở được trên máy khác"
             className="rounded-md border border-slate-300 px-3 py-1.5 text-sm"
           >
-            Lưu (Ctrl+S)
-          </button>
-          <button
-            type="button"
-            onClick={handleExportPackage}
-            className="rounded-md bg-sky-700 px-3 py-1.5 text-sm font-medium text-white"
-          >
-            Xuất gói project
+            Lưu file dự án
           </button>
         </div>
       </div>
 
-      <label className="flex items-center gap-3 text-sm">
-        <span className="font-medium">Template</span>
-        <select
-          value={project.templateId}
-          onChange={(event) => run(switchTemplate(event.target.value))}
-          className="rounded-md border border-slate-300 px-3 py-2"
-        >
-          {withdrawn && (
-            // Listed only as the current value, so the project still shows
-            // what it uses; once left, it cannot be picked again.
-            <option value={project.templateId}>
-              {findTemplate(project.templateId).name} (không còn trong danh mục)
-            </option>
-          )}
-          {selectableTemplates(catalog).map((template) => (
-            <option key={template.id} value={template.id}>
-              {template.name} — {template.description}
-            </option>
-          ))}
-        </select>
-      </label>
+      <section className="space-y-2">
+        <div className="flex flex-wrap items-center gap-3 text-sm">
+          <span>
+            Mẫu: <strong>{current.name}</strong>
+          </span>
+          <button
+            type="button"
+            onClick={() => setShowTemplates((value) => !value)}
+            aria-expanded={showTemplates}
+            className="rounded-md border border-slate-300 px-3 py-1.5"
+          >
+            {showTemplates ? 'Đóng' : 'Đổi mẫu'}
+          </button>
+          <span className="text-xs text-slate-500">
+            Đổi mẫu chỉ đổi phong cách; chữ và ảnh giữ nguyên.
+          </span>
+        </div>
+        {showTemplates && (
+          <TemplatePicker
+            label="Chọn mẫu"
+            templates={offered}
+            selectedId={withdrawn ? null : project.templateId}
+            onSelect={(templateId) => run(switchTemplate(templateId))}
+          />
+        )}
+      </section>
 
       {withdrawn && (
         <p
@@ -258,15 +284,18 @@ export function EditorPage() {
       )}
 
       {errors.length > 0 && (
-        <ul
-          role="alert"
+        <div
+          role="status"
           data-testid="validation-issues"
-          className="space-y-1 rounded-lg border border-red-300 bg-red-50 px-4 py-2 text-sm text-red-900"
+          className="rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-900"
         >
-          {errors.map((issue) => (
-            <li key={issueKey(issue)}>{issue.message}</li>
-          ))}
-        </ul>
+          <p className="font-medium">Trước khi xuất video, còn cần:</p>
+          <ul className="list-disc space-y-0.5 pl-5">
+            {errors.map((issue) => (
+              <li key={issueKey(issue)}>{issue.message}</li>
+            ))}
+          </ul>
+        </div>
       )}
 
       {warnings.length > 0 && (
@@ -281,8 +310,12 @@ export function EditorPage() {
         </ul>
       )}
 
-      <div className="grid gap-6 lg:grid-cols-[18rem_minmax(0,1fr)_20rem]">
-        <SceneList project={project} selectedSceneId={selectedSceneId} />
+      <div className="grid gap-6 lg:grid-cols-[16rem_minmax(0,1fr)_20rem]">
+        <SceneList
+          project={project}
+          selectedSceneId={scene.id}
+          issues={issues}
+        />
         <PreviewCanvas
           project={project}
           assets={assets}
@@ -291,13 +324,20 @@ export function EditorPage() {
           onTimestampChange={setTimestamp}
         />
         <div className="space-y-4">
+          <SceneInspector
+            key={scene.id}
+            scene={scene}
+            sceneIndex={sceneIndex}
+            issues={issues.filter((issue) => issue.sceneId === scene.id)}
+            onAssetsChanged={reload}
+          />
           <ExportPanel
             project={project}
             assets={assets}
             capabilities={capabilities}
             blocked={errors.length > 0}
+            isOverflowing={getOverflowCheck()}
           />
-          <SceneInspector scene={scene} onAssetsChanged={reload} />
         </div>
       </div>
     </div>

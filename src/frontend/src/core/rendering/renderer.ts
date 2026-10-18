@@ -1,11 +1,13 @@
 import type {
+  Entrance,
   ImageLayerV1,
   ProjectDocumentV1,
   SceneV1,
+  ShapeLayerV1,
   TextLayerV1,
 } from '../project/schema'
 import { getTimelineFrame, getTimelineFrameAt } from '../project/timeline'
-import { BUNDLED_FONT_FAMILY, alignedX, layerFont, wrapText } from './text'
+import { BUNDLED_FONT_FAMILY, alignedX, alignedY, fitText } from './text'
 
 export type RenderImageSource =
   HTMLImageElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas
@@ -24,24 +26,69 @@ export type RenderOptions = {
   watermark?: boolean
 }
 
-function renderTextLayer(context: RenderContext, layer: TextLayerV1): void {
-  context.globalAlpha = layer.opacity
+/** How long text takes to arrive at the start of a scene. */
+export const ENTRANCE_SECONDS = 0.6
+
+/** Ease-out so the motion settles rather than stops. */
+function easeOut(progress: number): number {
+  return 1 - (1 - progress) ** 3
+}
+
+type Motion = { alpha: number; offsetY: number }
+
+function entranceMotion(
+  entrance: Entrance,
+  sceneTimeSeconds: number,
+  frameHeight: number,
+): Motion {
+  if (entrance === 'none' || sceneTimeSeconds >= ENTRANCE_SECONDS) {
+    return { alpha: 1, offsetY: 0 }
+  }
+  const eased = easeOut(Math.max(0, sceneTimeSeconds) / ENTRANCE_SECONDS)
+  return {
+    alpha: eased,
+    offsetY: entrance === 'rise' ? (1 - eased) * frameHeight * 0.04 : 0,
+  }
+}
+
+function renderTextLayer(
+  context: RenderContext,
+  layer: TextLayerV1,
+  motion: Motion,
+): void {
+  if (!layer.text.trim()) return
+  context.globalAlpha *= layer.opacity * motion.alpha
   context.fillStyle = layer.color
-  context.font = layerFont(layer)
   context.textAlign = layer.align
   context.textBaseline = 'top'
 
-  const lineHeight = layer.fontSize * layer.lineHeight
+  // Sets the font to the fitted size as a side effect.
+  const fitted = fitText(context, layer)
+  const lineHeight = fitted.fontSize * layer.lineHeight
   const x = alignedX(layer)
-  const lines = wrapText(context, layer.text, layer.width)
+  const top = alignedY(layer, fitted.blockHeight) + motion.offsetY
 
-  lines.forEach((line, index) => {
-    const y = layer.y + index * lineHeight
-    // Stop at the bottom of the layer box rather than spilling over whatever is
-    // underneath; the editor surfaces overflow separately.
-    if (y + lineHeight > layer.y + layer.height + lineHeight) return
-    context.fillText(line, x, y)
+  // Text that will not fit even at its smallest size is clipped to its box
+  // rather than spilling over the rest of the composition; the editor refuses
+  // to export it and asks the user to shorten it.
+  context.beginPath()
+  context.rect(layer.x, layer.y, layer.width, layer.height + lineHeight * 0.25)
+  context.clip()
+  fitted.lines.forEach((line, index) => {
+    context.fillText(line, x, top + index * lineHeight)
   })
+}
+
+function renderShapeLayer(context: RenderContext, layer: ShapeLayerV1): void {
+  context.globalAlpha *= layer.opacity
+  context.fillStyle = layer.color
+  context.beginPath()
+  if (layer.radius > 0 && 'roundRect' in context) {
+    context.roundRect(layer.x, layer.y, layer.width, layer.height, layer.radius)
+  } else {
+    context.rect(layer.x, layer.y, layer.width, layer.height)
+  }
+  context.fill()
 }
 
 function sourceSize(image: RenderImageSource): {
@@ -117,16 +164,24 @@ function renderScene(
   scene: SceneV1,
   assets: RenderAssets,
   alpha: number,
+  sceneTimeSeconds: number,
 ): void {
   context.save()
   context.globalAlpha = alpha
   context.fillStyle = scene.background
   context.fillRect(0, 0, context.canvas.width, context.canvas.height)
 
+  const motion = entranceMotion(
+    scene.entrance,
+    sceneTimeSeconds,
+    context.canvas.height,
+  )
+
   for (const layer of scene.layers) {
     context.save()
     context.globalAlpha = alpha
-    if (layer.type === 'text') renderTextLayer(context, layer)
+    if (layer.type === 'text') renderTextLayer(context, layer, motion)
+    else if (layer.type === 'shape') renderShapeLayer(context, layer)
     else renderImageLayer(context, layer, assets)
     context.restore()
   }
@@ -154,9 +209,10 @@ function paint(
 ): void {
   const assets = options.assets ?? new Map()
   context.clearRect(0, 0, context.canvas.width, context.canvas.height)
-  renderScene(context, frame.scene, assets, 1)
+  renderScene(context, frame.scene, assets, 1, frame.sceneTimeSeconds)
   if (frame.nextScene && frame.transitionProgress > 0) {
-    renderScene(context, frame.nextScene, assets, frame.transitionProgress)
+    // The incoming scene's text waits for the cut, then makes its entrance.
+    renderScene(context, frame.nextScene, assets, frame.transitionProgress, 0)
   }
   if (options.watermark) renderWatermark(context)
   context.globalAlpha = 1

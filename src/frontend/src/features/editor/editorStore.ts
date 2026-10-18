@@ -12,8 +12,11 @@ import {
 import type { ProjectDocumentV1 } from '../../core/project/schema'
 import {
   validateProject,
+  type OverflowCheck,
   type ValidationIssue,
 } from '../../core/project/validation'
+import { ensurePageFontsReady } from '../../core/rendering/fonts'
+import { createOverflowCheck } from '../../core/rendering/measure'
 import { saveDraft, saveProject } from '../../core/storage/projectStore'
 
 export const AUTOSAVE_DELAY_MS = 800
@@ -38,6 +41,22 @@ type EditorState = {
 
 let autosaveTimer: ReturnType<typeof setTimeout> | null = null
 
+let overflowCheck: OverflowCheck | undefined | null = null
+
+/**
+ * Measures text the way the renderer will draw it, so a field turns red exactly
+ * when its text would be clipped in the video. Created on first use: it needs a
+ * canvas, which only exists once the page does.
+ */
+export function getOverflowCheck(): OverflowCheck | undefined {
+  if (overflowCheck === null) overflowCheck = createOverflowCheck()
+  return overflowCheck
+}
+
+function validate(document: ProjectDocumentV1): ValidationIssue[] {
+  return validateProject(document, { isOverflowing: getOverflowCheck() })
+}
+
 export const useEditorStore = create<EditorState>((set, get) => {
   /**
    * Autosave writes a draft immediately and the durable record after a pause.
@@ -60,7 +79,7 @@ export const useEditorStore = create<EditorState>((set, get) => {
   }
 
   function applyHistory(next: ProjectHistory): void {
-    set({ history: next, issues: validateProject(next.present) })
+    set({ history: next, issues: validate(next.present) })
     scheduleAutosave()
   }
 
@@ -71,14 +90,21 @@ export const useEditorStore = create<EditorState>((set, get) => {
     lastSavedAtMs: null,
     issues: [],
 
-    open: (document) =>
+    open: (document) => {
       set({
         history: createHistory(document),
         selectedSceneId: document.scenes[0]?.id ?? null,
         saveState: 'idle',
         lastSavedAtMs: null,
-        issues: validateProject(document),
-      }),
+        issues: validate(document),
+      })
+      // Text measured before the font arrived was measured in a fallback; once
+      // it is here, measure again so 'too long' is judged in the real font.
+      void ensurePageFontsReady().then(() => {
+        const present = get().history?.present
+        if (present) set({ issues: validate(present) })
+      })
+    },
 
     close: () => {
       if (autosaveTimer) clearTimeout(autosaveTimer)

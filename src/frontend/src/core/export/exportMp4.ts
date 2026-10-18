@@ -27,6 +27,8 @@ export type ExportOptions = {
   filename: string
   signal?: AbortSignal
   onProgress?: (completedFrames: number, totalFrames: number) => void
+  /** Awaited between frames so the user can pause a long export. */
+  waitWhilePaused?: () => Promise<void>
   /** Obtained on the main thread; the worker cannot open a file picker. */
   fileHandle?: FileSystemFileHandle
 }
@@ -83,6 +85,7 @@ export async function exportProjectMp4(
   try {
     await output.start()
     for (let frameIndex = 0; frameIndex < totalFrames; frameIndex += 1) {
+      await options.waitWhilePaused?.()
       if (options.signal?.aborted)
         throw new DOMException('Export đã hủy', 'AbortError')
       renderProjectFrame(

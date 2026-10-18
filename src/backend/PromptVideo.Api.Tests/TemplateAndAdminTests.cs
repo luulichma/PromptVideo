@@ -72,7 +72,11 @@ public sealed class TemplateAndAdminTests(PostgresContainerFixture postgres) : I
         foreach (var template in templates.EnumerateArray())
         {
             var manifest = JsonDocument.Parse(template.GetProperty("manifestJson").GetString()!).RootElement;
-            Assert.True(manifest.TryGetProperty("sceneCount", out _));
+            // Every template lays out the same four scene kinds, which is what lets a
+            // project switch template without losing anything.
+            var kinds = manifest.GetProperty("sceneKinds").EnumerateArray().Select(kind => kind.GetString());
+            Assert.Equal(["intro", "text", "textImage", "outro"], kinds);
+            Assert.Equal(template.GetProperty("version").GetInt32(), manifest.GetProperty("version").GetInt32());
             // A manifest must not point anywhere or carry content.
             Assert.False(manifest.TryGetProperty("assetUrl", out _));
             Assert.DoesNotContain("http", manifest.GetRawText(), StringComparison.OrdinalIgnoreCase);

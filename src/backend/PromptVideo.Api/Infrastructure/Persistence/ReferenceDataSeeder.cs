@@ -88,10 +88,20 @@ public sealed class ReferenceDataSeeder(ApplicationDbContext database, TimeProvi
         var existing = await database.TemplateCatalogEntries
             .ToDictionaryAsync(entry => entry.TemplateKey, StringComparer.Ordinal, cancellationToken);
 
-        foreach (var (key, name, sceneCount) in DefaultTemplates)
+        foreach (var (key, name, version) in DefaultTemplates)
         {
-            if (existing.ContainsKey(key))
+            if (existing.TryGetValue(key, out var entry))
             {
+                // A newer edition shipped in the frontend bundle: record its name
+                // and version. Status is the administrator's and is left alone.
+                if (entry.Version < version)
+                {
+                    entry.Name = name;
+                    entry.Version = version;
+                    entry.ManifestJson = BuildManifest(key, version);
+                    entry.UpdatedAtUtc = now;
+                }
+
                 continue;
             }
 
@@ -100,32 +110,36 @@ public sealed class ReferenceDataSeeder(ApplicationDbContext database, TimeProvi
                 Id = Guid.NewGuid(),
                 TemplateKey = key,
                 Name = name,
-                Version = 1,
+                Version = version,
                 Status = TemplateStatus.Active,
-                ManifestJson = BuildManifest(key, sceneCount),
+                ManifestJson = BuildManifest(key, version),
                 CreatedAtUtc = now,
                 UpdatedAtUtc = now,
             });
         }
     }
 
-    /// <summary>The five MVP templates. Rendering assets ship in the frontend bundle.</summary>
-    private static readonly (string Key, string Name, int SceneCount)[] DefaultTemplates =
+    /// <summary>
+    /// The five templates and the edition the frontend bundle currently ships.
+    /// Rendering lives in the bundle, which also keeps earlier editions so old
+    /// projects still render as they were made.
+    /// </summary>
+    private static readonly (string Key, string Name, int Version)[] DefaultTemplates =
     [
-        ("classic", "Cổ điển", 5),
-        ("bold", "Nổi bật", 5),
-        ("minimal", "Tối giản", 5),
-        ("story", "Kể chuyện", 5),
-        ("promo", "Khuyến mãi", 5),
+        ("classic", "Cổ điển", 2),
+        ("bold", "Nổi bật", 2),
+        ("minimal", "Tối giản", 2),
+        ("story", "Kể chuyện", 2),
+        ("promo", "Tươi sáng", 2),
     ];
 
     /// <summary>
     /// Layout and timing parameters only — no user content and no external URLs.
     /// </summary>
-    private static string BuildManifest(string key, int sceneCount) =>
+    private static string BuildManifest(string key, int version) =>
         string.Create(
             CultureInfo.InvariantCulture,
             $$"""
-            {"templateKey":"{{key}}","sceneCount":{{sceneCount}},"sceneSeconds":12,"safeArea":{"top":0.08,"bottom":0.12},"titleMaxChars":80}
+            {"templateKey":"{{key}}","version":{{version}},"sceneKinds":["intro","text","textImage","outro"],"defaultSceneCount":5,"safeArea":{"top":0.08,"bottom":0.12},"sceneSeconds":12}
             """);
 }

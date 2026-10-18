@@ -26,7 +26,7 @@ dotnet run --project backend/PromptVideo.Api
 npm run dev --prefix frontend
 ```
 
-Open `http://localhost:5173`. Vite proxies API, health, and OpenAPI requests to `http://localhost:5080`, preserving same-origin cookie behavior in development. The production frontend is emitted into the API's `wwwroot`, so production is same-origin as well.
+Open `http://localhost:5173`. For the step-by-step demo script (in Vietnamese), see [docs/huong-dan-demo.md](docs/huong-dan-demo.md). Vite proxies API, health, and OpenAPI requests to `http://localhost:5080`, preserving same-origin cookie behavior in development. The production frontend is emitted into the API's `wwwroot`, so production is same-origin as well.
 
 The development database publishes port **55432**, not 5432, so it does not collide with a PostgreSQL service already installed on the machine. Change `POSTGRES_PORT` in `.env` to move it, and set `ConnectionStrings__Postgres` in the API process environment to match — that environment variable overrides `appsettings.json` and is how CI and production supply their own connection string.
 

@@ -2,25 +2,65 @@ import { describe, expect, it } from 'vitest'
 import { createProject } from './createProject'
 import { getProjectDuration } from './timeline'
 import {
+  DEFAULT_SCENE_KINDS,
   DEFAULT_TOTAL_SECONDS,
-  REQUIRED_SCENE_COUNT,
+  MAX_SCENE_COUNT,
   isProjectExportable,
   validateProject,
 } from './validation'
 import type { AssetRefV1, ImageLayerV1, TextLayerV1 } from './schema'
 
+/** Five scenes that need no picture, so nothing but the rule under test fails. */
+const TEXT_ONLY = ['intro', 'text', 'text', 'text', 'outro'] as const
+
 describe('project validation', () => {
-  it('accepts a freshly created project of exactly five scenes and sixty seconds', () => {
+  it('starts a new project as the standard five scenes and sixty seconds', () => {
     const project = createProject('Dự án', { id: 'p1' })
 
-    expect(project.scenes).toHaveLength(REQUIRED_SCENE_COUNT)
+    expect(project.scenes.map((scene) => scene.kind)).toEqual(
+      DEFAULT_SCENE_KINDS,
+    )
     expect(getProjectDuration(project)).toBe(DEFAULT_TOTAL_SECONDS)
+  })
+
+  it('asks for a picture in every text-with-image scene before export', () => {
+    const project = createProject('Dự án', { id: 'p1b' })
+    const missing = validateProject(project).filter(
+      (issue) => issue.code === 'missing-image',
+    )
+
+    expect(missing.map((issue) => issue.sceneId)).toEqual([
+      'scene-2',
+      'scene-3',
+      'scene-4',
+    ])
+    expect(missing[0].message).toContain('Cảnh 2')
+    expect(isProjectExportable(project)).toBe(false)
+  })
+
+  it('accepts a complete project with no pictures needed', () => {
+    const project = createProject('Dự án', { id: 'p1c', kinds: TEXT_ONLY })
+
     expect(validateProject(project)).toEqual([])
     expect(isProjectExportable(project)).toBe(true)
   })
 
+  it('refuses text the template cannot fit even at its smallest size', () => {
+    const project = createProject('Dự án', { id: 'p1d', kinds: TEXT_ONLY })
+    const issues = validateProject(project, {
+      isOverflowing: (layer) => layer.id === 'scene-3-subtitle',
+    })
+
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({
+      code: 'text-overflow',
+      severity: 'error',
+      sceneId: 'scene-3',
+    })
+  })
+
   it('warns, without blocking export, when text leaves the safe area', () => {
-    const project = createProject('Dự án', { id: 'p9' })
+    const project = createProject('Dự án', { id: 'p9', kinds: TEXT_ONLY })
     const spilling = {
       ...project,
       scenes: project.scenes.map((scene, index) =>
@@ -52,7 +92,7 @@ describe('project validation', () => {
 
   it('marks every blocking problem as an error', () => {
     const project = createProject('Dự án', { id: 'p10' })
-    const broken = { ...project, scenes: project.scenes.slice(0, 2) }
+    const broken = { ...project, scenes: [] }
 
     expect(
       validateProject(broken).some((issue) => issue.severity === 'error'),
@@ -74,11 +114,18 @@ describe('project validation', () => {
     expect(isProjectExportable(broken)).toBe(false)
   })
 
-  it('rejects a project that is missing scenes', () => {
+  it('rejects a project with more scenes than a video may have', () => {
     const project = createProject('Dự án', { id: 'p3' })
-    const short = { ...project, scenes: project.scenes.slice(0, 3) }
+    const crowded = {
+      ...project,
+      scenes: Array.from({ length: MAX_SCENE_COUNT + 1 }, (_, index) => ({
+        ...project.scenes[0],
+        id: `many-${index}`,
+        durationSeconds: 1,
+      })),
+    }
 
-    const issues = validateProject(short)
+    const issues = validateProject(crowded)
     expect(issues.some((issue) => issue.code === 'scene-count')).toBe(true)
   })
 
@@ -142,7 +189,7 @@ describe('project validation', () => {
   })
 
   it('accepts an image layer once its asset is present', () => {
-    const project = createProject('Dự án', { id: 'p7' })
+    const project = createProject('Dự án', { id: 'p7', kinds: TEXT_ONLY })
     const asset: AssetRefV1 = {
       id: 'asset-1',
       fileName: 'a.png',

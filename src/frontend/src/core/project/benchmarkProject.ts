@@ -28,6 +28,7 @@ function createTextLayers(index: number): TextLayerV1[] {
       fontWeight: 800,
       lineHeight: 1.25,
       align: 'left',
+      verticalAlign: 'top',
     },
     {
       id: `subtitle-${index + 1}`,
@@ -45,6 +46,7 @@ function createTextLayers(index: number): TextLayerV1[] {
       fontWeight: 500,
       lineHeight: 1.25,
       align: 'left',
+      verticalAlign: 'top',
     },
   ]
 }
@@ -57,10 +59,13 @@ export const benchmarkProject: ProjectDocumentV1 = {
   height: 720,
   fps: 30,
   templateId: 'technical-benchmark',
+  templateVersion: 1,
   safeArea: { top: 0.08, bottom: 0.12, left: 0.06, right: 0.06 },
   assets: [],
   scenes: SCENE_COLORS.map((background, index) => ({
     id: `scene-${index + 1}`,
+    kind: 'textImage' as const,
+    entrance: 'none' as const,
     name: `Cảnh ${index + 1}`,
     durationSeconds: 12,
     background,

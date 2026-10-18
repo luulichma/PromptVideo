@@ -97,10 +97,10 @@ Kinh tế dự án: chi phí tiền mặt 3,5 / 6,5 / 15 / 28 triệu VND (Năm 
 
 **Khả thi trên cả năm khía cạnh:**
 
-- Kỹ thuật — có điều kiện: mã hoá video trong trình duyệt đã đủ hỗ trợ trên các trình duyệt phổ biến; ràng buộc khó nhất là độ dài không giới hạn, cần xử lý theo luồng — chứng minh bằng nguyên mẫu tại mốc M2.
+- Kỹ thuật — có điều kiện: mã hoá video trong trình duyệt đã đủ hỗ trợ trên các trình duyệt phổ biến; ràng buộc khó nhất là độ dài không giới hạn, cần xử lý theo luồng — chứng minh bằng nguyên mẫu trước 27/09/2026 (cuối tuần 5 của dự án).
 - Pháp lý — khả thi: chỉ thu thập email, tên và lịch sử thanh toán (NĐ 13/2023/NĐ-CP); nội dung video không rời máy nên không thuộc diện này; hệ thống không lưu thông tin thẻ.
 - Vận hành — khả thi, kèm nghĩa vụ mới: cần vận hành liên tục sau bàn giao; một máy chủ ảo nhỏ đủ cho 1.000 thuê bao, mục tiêu hoạt động từ 99%/tháng; chi phí phục vụ giảm dần 65.000 → 45.000 VND/thuê bao/năm.
-- Tiến độ — điểm căng nhất: 450 giờ cho toàn bộ hệ thống là ước lượng eo hẹp; nếu hết M2 nguyên mẫu chưa chạy, giảm còn 3 mẫu, bỏ lưu/mở dự án, không lùi ngày bàn giao.
+- Tiến độ — điểm căng nhất: 450 giờ cho toàn bộ hệ thống là ước lượng eo hẹp; nếu đến 27/09/2026 nguyên mẫu chưa chạy, giảm còn 3 mẫu, bỏ lưu/mở dự án, không lùi ngày bàn giao.
 - Nguồn lực — phụ thuộc cam kết: 3 người × 10 giờ/tuần × 15 tuần; mất một người là mất một phần ba năng lực, không có dự phòng.
 
 **Rủi ro ở cấp quyết định đầu tư:**
@@ -108,19 +108,19 @@ Kinh tế dự án: chi phí tiền mặt 3,5 / 6,5 / 15 / 28 triệu VND (Năm 
 | Rủi ro | Mức | Ứng phó |
 | --- | --- | --- |
 | Nguyên mẫu xử lý theo luồng không đạt | Cao | Làm nguyên mẫu ngay tuần 4; chuẩn bị định dạng dự phòng và phương án giảm phạm vi |
-| Một thành viên rút lui hoặc không đủ 10 giờ/tuần | Cao | Cam kết bằng văn bản tại M0; rà lại mỗi 2 tuần; không tập trung kiến thức vào một người |
-| Máy chủ giấy phép ngừng hoạt động | Cao | Giám sát tự động; mục tiêu hoạt động ≥99%/tháng; diễn tập khôi phục tại M6 |
+| Một thành viên rút lui hoặc không đủ 10 giờ/tuần | Cao | Cam kết bằng văn bản khi phê duyệt Project Charter; rà lại mỗi 2 tuần; không tập trung kiến thức vào một người |
+| Máy chủ giấy phép ngừng hoạt động | Cao | Giám sát tự động; mục tiêu hoạt động ≥99%/tháng; diễn tập khôi phục trước 29/11/2026 (tuần 14) |
 | Tỷ lệ gia hạn thấp làm doanh thu Năm 2–3 sụp | Cao | Theo dõi từ chu kỳ gia hạn đầu tiên; điểm quyết định cuối Quý 4 Năm 1 |
-| Cổng thanh toán không duyệt kịp M6 | Trung bình | Nộp hồ sơ tại M2; dự phòng chuyển khoản và kích hoạt thủ công 3 tháng đầu |
+| Cổng thanh toán không duyệt kịp 29/11/2026 | Trung bình | Nộp hồ sơ trước 27/09/2026; dự phòng chuyển khoản và kích hoạt thủ công 3 tháng đầu |
 
 Ràng buộc: 15 tuần, xong trước 06/12/2026; vốn tiền mặt 3.500.000 VND, không huy động thêm; hạ tầng tối đa 150.000 VND/tháng Năm 0 và 800.000 VND/tháng đến hết Năm 3; 3 thành viên bán thời gian, 450 giờ; chỉ dùng thư viện/tài sản có phép thương mại hoá; chạy được chỉ cần trình duyệt nhưng cần Internet khi xuất video; mã nguồn độc quyền.
 
 **Điều kiện kèm theo khi phê duyệt:**
 
-- Nguyên mẫu chứng minh bộ nhớ không tăng theo độ dài video, hoàn thành trước M2; nếu thất bại thì kích hoạt phương án giảm phạm vi
-- Nộp hồ sơ cổng thanh toán tại M2, hoàn tất trước M6
+- Nguyên mẫu chứng minh bộ nhớ không tăng theo độ dài video, hoàn thành trước 27/09/2026 (cuối tuần 5); nếu thất bại thì kích hoạt phương án giảm phạm vi
+- Nộp hồ sơ cổng thanh toán trước 27/09/2026, hoàn tất trước 29/11/2026
 - Ban hành Chính sách quyền riêng tư và Điều khoản sử dụng, xác minh bản quyền định dạng mã hoá, trước khi mở đăng ký công khai
-- Cam kết thời gian của 3 thành viên bằng văn bản tại M0; nhà tài trợ xác nhận bằng văn bản việc tiếp nhận nghĩa vụ vận hành máy chủ 3 năm sau bàn giao
+- Cam kết thời gian của 3 thành viên bằng văn bản khi phê duyệt Project Charter; nhà tài trợ xác nhận bằng văn bản việc tiếp nhận nghĩa vụ vận hành máy chủ 3 năm sau bàn giao
 
 Bước tiếp theo: ký Hợp đồng thực hiện dự án, phê duyệt Project Charter và bổ nhiệm Giám đốc dự án.
 

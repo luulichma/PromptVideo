@@ -1,25 +1,35 @@
+import { kindUsesImage } from '../templates/templates'
 import {
   describeSafeAreaSides,
   findSafeAreaOverflow,
   getSafeAreaBox,
 } from './safeArea'
-import type { ProjectDocumentV1 } from './schema'
+import type { ProjectDocumentV1, SceneKind, TextLayerV1 } from './schema'
 import { getProjectDuration } from './timeline'
 
-/** The MVP ships a fixed five-scene story, so the editor holds that shape. */
-export const REQUIRED_SCENE_COUNT = 5
+/** The standard video: an opening, three scenes with a picture, a closing. */
+export const DEFAULT_SCENE_KINDS: readonly SceneKind[] = [
+  'intro',
+  'textImage',
+  'textImage',
+  'textImage',
+  'outro',
+]
 
 /** 5 scenes × 12 seconds. */
 export const DEFAULT_TOTAL_SECONDS = 60
+
+/** A video needs at least one scene; past twenty the editor stops helping. */
+export const MIN_SCENE_COUNT = 1
+export const MAX_SCENE_COUNT = 20
 
 export const MIN_SCENE_SECONDS = 1
 export const MAX_SCENE_SECONDS = 60
 
 /**
- * The MVP targets a 60 second video; three minutes is the outer bound the
+ * The standard video is 60 seconds; three minutes is the outer bound the
  * browser export path is sized for. This is an independent limit, not implied
- * by the per-scene cap: five scenes at the per-scene maximum would be far
- * longer than anything the editor promises to export.
+ * by the per-scene cap.
  */
 export const MAX_TOTAL_SECONDS = 180
 
@@ -40,7 +50,9 @@ export type ValidationIssue = {
     | 'scene-duration'
     | 'total-duration'
     | 'missing-asset'
+    | 'missing-image'
     | 'empty-title'
+    | 'text-overflow'
     | 'outside-safe-area'
   severity: IssueSeverity
   message: string
@@ -49,28 +61,47 @@ export type ValidationIssue = {
 }
 
 /**
+ * Says whether a text layer is too long for its box even at its smallest
+ * allowed size. Measuring needs a canvas, so the caller supplies it; without
+ * one, overflow is simply not checked.
+ */
+export type OverflowCheck = (layer: TextLayerV1) => boolean
+
+export type ValidateOptions = { isOverflowing?: OverflowCheck }
+
+/**
  * Business validation, deliberately separate from the Zod schema.
  *
  * The schema answers "is this document structurally readable", which must stay
  * permissive enough to open an older or partially edited file. This answers "is
  * this project fit to render and export", which is a stricter question and one
  * the user should be able to see and fix rather than be blocked by a parse error.
+ *
+ * Scenes are named by position ("Cảnh 3"), which is how the user sees them.
  */
-export function validateProject(project: ProjectDocumentV1): ValidationIssue[] {
+export function validateProject(
+  project: ProjectDocumentV1,
+  options: ValidateOptions = {},
+): ValidationIssue[] {
   const issues: ValidationIssue[] = []
 
-  if (project.scenes.length !== REQUIRED_SCENE_COUNT) {
+  if (
+    project.scenes.length < MIN_SCENE_COUNT ||
+    project.scenes.length > MAX_SCENE_COUNT
+  ) {
     issues.push({
       code: 'scene-count',
       severity: 'error',
-      message: `Project cần đúng ${REQUIRED_SCENE_COUNT} cảnh, hiện có ${project.scenes.length}.`,
+      message: `Video cần từ ${MIN_SCENE_COUNT} đến ${MAX_SCENE_COUNT} cảnh, hiện có ${project.scenes.length}.`,
     })
   }
 
   const assetIds = new Set(project.assets.map((asset) => asset.id))
   const safeArea = getSafeAreaBox(project)
 
-  for (const scene of project.scenes) {
+  project.scenes.forEach((scene, index) => {
+    const label = `Cảnh ${index + 1}`
+
     if (
       !Number.isFinite(scene.durationSeconds) ||
       scene.durationSeconds < MIN_SCENE_SECONDS ||
@@ -80,7 +111,7 @@ export function validateProject(project: ProjectDocumentV1): ValidationIssue[] {
         code: 'scene-duration',
         severity: 'error',
         sceneId: scene.id,
-        message: `Cảnh "${scene.name}" phải dài từ ${MIN_SCENE_SECONDS} đến ${MAX_SCENE_SECONDS} giây.`,
+        message: `${label} phải dài từ ${MIN_SCENE_SECONDS} đến ${MAX_SCENE_SECONDS} giây.`,
       })
     }
 
@@ -90,7 +121,17 @@ export function validateProject(project: ProjectDocumentV1): ValidationIssue[] {
         code: 'scene-duration',
         severity: 'error',
         sceneId: scene.id,
-        message: `Chuyển cảnh của "${scene.name}" dài hơn chính cảnh đó.`,
+        message: `Chuyển cảnh của ${label.toLowerCase()} dài hơn chính cảnh đó.`,
+      })
+    }
+
+    const hasImage = scene.layers.some((layer) => layer.type === 'image')
+    if (kindUsesImage(scene.kind) && !hasImage) {
+      issues.push({
+        code: 'missing-image',
+        severity: 'error',
+        sceneId: scene.id,
+        message: `${label} là kiểu "Chữ kèm ảnh" nhưng chưa có ảnh. Hãy chọn ảnh, hoặc đổi sang kiểu "Chỉ có chữ".`,
       })
     }
 
@@ -101,7 +142,7 @@ export function validateProject(project: ProjectDocumentV1): ValidationIssue[] {
           severity: 'error',
           sceneId: scene.id,
           layerId: layer.id,
-          message: `Cảnh "${scene.name}" tham chiếu ảnh không còn trong project.`,
+          message: `${label} dùng một ảnh không còn trong dự án.`,
         })
       }
 
@@ -113,7 +154,17 @@ export function validateProject(project: ProjectDocumentV1): ValidationIssue[] {
           severity: 'error',
           sceneId: scene.id,
           layerId: layer.id,
-          message: `Cảnh "${scene.name}" chưa có tiêu đề.`,
+          message: `${label} chưa có tiêu đề.`,
+        })
+      }
+
+      if (layer.text.trim() && options.isOverflowing?.(layer)) {
+        issues.push({
+          code: 'text-overflow',
+          severity: 'error',
+          sceneId: scene.id,
+          layerId: layer.id,
+          message: `Chữ ở ${label.toLowerCase()} quá dài so với khung của mẫu. Hãy rút gọn.`,
         })
       }
 
@@ -124,11 +175,11 @@ export function validateProject(project: ProjectDocumentV1): ValidationIssue[] {
           severity: 'warning',
           sceneId: scene.id,
           layerId: layer.id,
-          message: `Chữ trong cảnh "${scene.name}" vượt vùng an toàn ở cạnh ${describeSafeAreaSides(sides)}; một số thiết bị có thể cắt mất.`,
+          message: `Chữ ở ${label.toLowerCase()} vượt vùng an toàn ở cạnh ${describeSafeAreaSides(sides)}; một số thiết bị có thể cắt mất.`,
         })
       }
     }
-  }
+  })
 
   const total = getProjectDuration(project)
   if (total <= 0 || total > MAX_TOTAL_SECONDS) {
@@ -147,6 +198,11 @@ export function validateProject(project: ProjectDocumentV1): ValidationIssue[] {
  *
  * Warnings do not block: the user has been told, and the decision is theirs.
  */
-export function isProjectExportable(project: ProjectDocumentV1): boolean {
-  return validateProject(project).every((issue) => issue.severity === 'warning')
+export function isProjectExportable(
+  project: ProjectDocumentV1,
+  options: ValidateOptions = {},
+): boolean {
+  return validateProject(project, options).every(
+    (issue) => issue.severity === 'warning',
+  )
 }

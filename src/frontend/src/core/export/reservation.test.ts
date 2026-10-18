@@ -6,7 +6,8 @@ vi.mock('../../generated/api/client', () => ({
 }))
 
 const { api } = await import('../../generated/api/client')
-const { describeStatus, reserveExport } = await import('./reservation')
+const { cancelExport, describeStatus, reserveExport, retryPendingSettlements } =
+  await import('./reservation')
 
 /** What ExportsModule.cs sends when the Free plan has no exports left. */
 const quotaProblem = {
@@ -94,5 +95,44 @@ describe('reserveExport', () => {
       idempotencyKey: 'attempt-3',
       requestedHeight: 720,
     })
+  })
+})
+
+describe('settling while the network is down', () => {
+  const store = new Map<string, string>()
+
+  beforeEach(() => {
+    store.clear()
+    vi.stubGlobal('localStorage', {
+      getItem: (key: string) => store.get(key) ?? null,
+      setItem: (key: string, value: string) => store.set(key, value),
+      removeItem: (key: string) => store.delete(key),
+    })
+    vi.mocked(api.POST).mockReset()
+  })
+
+  it('remembers a cancel that did not get through and sends it later', async () => {
+    vi.mocked(api.POST).mockRejectedValueOnce(new TypeError('offline'))
+    expect(await cancelExport('r-1')).toBe(false)
+    expect(store.size).toBe(1)
+
+    // Back online: the slot is handed back and nothing is left queued.
+    vi.mocked(api.POST).mockResolvedValue({
+      response: new Response(null, { status: 204 }),
+    } as never)
+    await retryPendingSettlements()
+    expect(api.POST).toHaveBeenLastCalledWith(
+      '/api/exports/reservations/{reservationId}/cancel',
+      expect.objectContaining({ params: { path: { reservationId: 'r-1' } } }),
+    )
+    expect(store.size).toBe(0)
+  })
+
+  it('does not keep retrying what the server already answered', async () => {
+    vi.mocked(api.POST).mockResolvedValue({
+      response: new Response(null, { status: 409 }),
+    } as never)
+    expect(await cancelExport('r-2')).toBe(false)
+    expect(store.size).toBe(0)
   })
 })

@@ -1,13 +1,30 @@
 import { describe, expect, it } from 'vitest'
 import {
+  addScene,
   attachImage,
+  removeScene,
+  setSceneKind,
+  setSceneText,
   updateImageLayer,
   updateTextLayer,
 } from '../project/commands'
 import { createProject } from '../project/createProject'
 import type { AssetRefV1, ImageLayerV1, TextLayerV1 } from '../project/schema'
 import { findSafeAreaOverflow, getSafeAreaBox } from '../project/safeArea'
-import { EDITOR_TEMPLATES, applyTemplate } from './templates'
+import {
+  EDITOR_TEMPLATES,
+  applyTemplate,
+  findTemplate,
+  relayout,
+} from './templates'
+
+const ALL_KINDS = ['intro', 'text', 'textImage', 'outro'] as const
+
+function titleOf(scene: { layers: readonly { type: string; role: string }[] }) {
+  return scene.layers.find(
+    (layer) => layer.type === 'text' && layer.role === 'title',
+  ) as TextLayerV1
+}
 
 const asset: AssetRefV1 = {
   id: 'asset-1',
@@ -74,7 +91,7 @@ describe('editor templates', () => {
   })
 
   it('keeps every text slot of every template inside the safe area', () => {
-    const base = createProject('Dự án', { id: 'safe' })
+    const base = createProject('Dự án', { id: 'safe', kinds: ALL_KINDS })
     const box = getSafeAreaBox(base)
 
     for (const template of EDITOR_TEMPLATES) {
@@ -95,8 +112,8 @@ describe('editor templates', () => {
     const bold = applyTemplate(classic, 'bold')
 
     expect(bold.scenes[0].background).not.toBe(classic.scenes[0].background)
-    const classicTitle = classic.scenes[0].layers[0] as TextLayerV1
-    const boldTitle = bold.scenes[0].layers[0] as TextLayerV1
+    const classicTitle = titleOf(classic.scenes[0])
+    const boldTitle = titleOf(bold.scenes[0])
     expect(boldTitle.align).toBe('center')
     expect(boldTitle.align).not.toBe(classicTitle.align)
   })
@@ -137,6 +154,104 @@ describe('editor templates', () => {
     )
 
     expect(title?.width).toBe(Math.round(0.84 * 1920))
-    expect(title?.fontSize).toBe(Math.round(0.058 * 1080))
+    expect(title?.fontSize).toBe(Math.round(0.085 * 1080))
+  })
+
+  it('gives every current template a layout for each of the four scene kinds', () => {
+    for (const template of EDITOR_TEMPLATES) {
+      expect(Object.keys(template.layouts).sort()).toEqual(
+        [...ALL_KINDS].sort(),
+      )
+      // Only the kind that carries a picture has a place for one.
+      expect(template.layouts.textImage.image).toBeDefined()
+      expect(template.layouts.intro.image).toBeUndefined()
+      expect(template.layouts.text.image).toBeUndefined()
+      expect(template.layouts.outro.image).toBeUndefined()
+    }
+  })
+
+  it('offers the bright and minimal styles by name', () => {
+    const names = EDITOR_TEMPLATES.map((template) => template.name)
+    expect(names).toContain('Tươi sáng')
+    expect(names).toContain('Tối giản')
+  })
+
+  it('keeps an old project on the template edition it was made with', () => {
+    // A project saved before versioning: first edition, no scene kinds.
+    const legacy = applyTemplate(
+      createProject('Cũ', { id: 'legacy', kinds: ['text', 'text'] }),
+      'classic',
+      1,
+    )
+    expect(legacy.templateVersion).toBe(1)
+    const before = titleOf(legacy.scenes[0])
+
+    // Editing it lays it out again with the same edition, not the newest one.
+    const edited = relayout(
+      setSceneText('scene-1', 'title', 'Sửa giá').apply(legacy),
+    )
+    const after = titleOf(edited.scenes[0])
+    expect(edited.templateVersion).toBe(1)
+    expect({ ...after, text: before.text }).toEqual(before)
+
+    // Choosing the template again moves it to the current edition.
+    const upgraded = applyTemplate(edited, 'classic')
+    expect(upgraded.templateVersion).toBe(findTemplate('classic').version)
+  })
+
+  it('keeps kinds, text and pictures through a template switch', () => {
+    let project = createProject('Dự án', { id: 'switch' })
+    project = attachImage('scene-3', asset).apply(project)
+    project = setSceneText('scene-1', 'title', 'Kem chống nắng').apply(project)
+
+    const switched = applyTemplate(project, 'minimal')
+    expect(switched.scenes.map((scene) => scene.kind)).toEqual(
+      project.scenes.map((scene) => scene.kind),
+    )
+    expect(titleOf(switched.scenes[0]).text).toBe('Kem chống nắng')
+    expect(
+      switched.scenes[2].layers.some(
+        (layer) => layer.type === 'image' && layer.assetId === 'asset-1',
+      ),
+    ).toBe(true)
+  })
+
+  it('adds, removes and retypes scenes and keeps the layout consistent', () => {
+    let project = createProject('Dự án', { id: 'edit' })
+    project = addScene('text', 'scene-1').apply(project)
+    expect(project.scenes.map((scene) => scene.kind)).toEqual([
+      'intro',
+      'text',
+      'textImage',
+      'textImage',
+      'textImage',
+      'outro',
+    ])
+
+    project = attachImage('scene-2', asset).apply(project)
+    project = setSceneKind('scene-2', 'text').apply(project)
+    // The picture goes with the kind that had room for it, and so does the
+    // asset once nothing uses it.
+    expect(project.assets).toHaveLength(0)
+
+    project = removeScene('scene-6').apply(project)
+    expect(project.scenes).toHaveLength(5)
+    expect(project.scenes.some((scene) => scene.id === 'scene-6')).toBe(false)
+  })
+
+  it('shows an empty picture slot until a picture is chosen', () => {
+    const project = createProject('Dự án', { id: 'slot' })
+    expect(
+      project.scenes[1].layers.some(
+        (layer) => layer.id === 'scene-2-placeholder',
+      ),
+    ).toBe(true)
+
+    const filled = attachImage('scene-2', asset).apply(project)
+    expect(
+      filled.scenes[1].layers.some(
+        (layer) => layer.id === 'scene-2-placeholder',
+      ),
+    ).toBe(false)
   })
 })

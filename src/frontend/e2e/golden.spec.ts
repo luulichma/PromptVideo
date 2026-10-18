@@ -58,9 +58,10 @@ async function drawContactSheet(
       let sceneStart = 0
       for (const [sceneIndex, scene] of project.scenes.entries()) {
         const last = scene.durationSeconds - 1 / project.fps
-        // Start, middle, and the final frame — the last one lands inside the
-        // transition, which is the only place a transition can be seen.
-        const offsets = [0, scene.durationSeconds / 2, last]
+        // Just after the text has arrived, the middle, and the final frame —
+        // the last one lands inside the transition, which is the only place a
+        // transition can be seen.
+        const offsets = [1, scene.durationSeconds / 2, last]
 
         for (const [row, offset] of offsets.entries()) {
           renderFrame(project, sceneStart + offset, frameContext, {

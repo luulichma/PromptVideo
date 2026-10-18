@@ -103,23 +103,23 @@ Dự án phục vụ mục tiêu của Enticy Studios về việc xây dựng d�
 
 Mọi mục tiêu phải kiểm chứng bằng phép đo, không bằng đánh giá cảm tính. Cấu hình máy tham chiếu cho các phép đo hiệu năng: Intel Core i5 thế hệ 10, 8 GB RAM, Chrome bản ổn định mới nhất, Windows 11.
 
-| ID | Mục tiêu | Tiêu chí thành công | Mốc |
+| ID | Mục tiêu | Tiêu chí thành công | Hạn đạt |
 | --- | --- | --- | --- |
-| OB-01 | Xuất được video MP4 | Thời gian xuất tối đa 1,5 lần thời lượng video, ở 1920×1080 và 30 fps | M4 |
-| OB-02 | Không giới hạn độ dài video | Bộ nhớ đỉnh tăng dưới 15% khi độ dài tăng 10 lần | M4 |
-| OB-03 | Đầu ra xác định | Checksum luồng video giống nhau trên 3 máy khác cấu hình | M4 |
-| OB-04 | Thư viện mẫu | Từ 5 mẫu trình chiếu dùng được | M3 |
-| OB-06 | Độ tin cậy khi xuất | Từ 95% thành công trên 100 lần thử ở các trình duyệt mục tiêu | M6 |
-| OB-07 | Hiển thị tiếng Việt | 100% ký tự đúng trên bộ 134 tổ hợp dấu, cả khung ngang và dọc | M3 |
-| OB-08 | Dễ dùng | Người dùng mới tạo xong video đầu tiên trong 10 phút, đạt với ít nhất 8/10 người | M6 |
-| OB-09 | Không gửi nội dung đi | 0 byte nội dung người dùng rời khỏi trình duyệt | M4 |
-| OB-10 | Đúng tiến độ | Bàn giao không muộn hơn 2026-12-06 | M7 |
-| OB-11 | Đúng ngân sách và công sức | Tiền mặt tối đa 3.500.000 VND; công sức tối đa 495 giờ | M7 |
-| OB-12 | Chất lượng mã nguồn | Độ phủ kiểm thử của mô-đun bộ dựng, mã hoá và giấy phép từ 70% | M6 |
-| OB-13 | Thực thi thuê bao | 100% lần xuất được máy chủ xác thực trước; không có giấy phép hợp lệ thì không xuất được | M5 |
-| OB-14 | Hạn mức bậc miễn phí | Video thứ 4 trong tháng bị từ chối kèm thông báo rõ; 3 video đầu có watermark và tối đa 720p | M5 |
-| OB-15 | Chu trình thanh toán | Giấy phép có hiệu lực trong 5 phút sau khi thanh toán thành công, tự động | M6 |
-| OB-16 | Thời gian hoạt động của máy chủ giấy phép | Từ 99%, đo trong 30 ngày sau phát hành | M7 |
+| OB-01 | Xuất được video MP4 | Thời gian xuất tối đa 1,5 lần thời lượng video, ở 1920×1080 và 30 fps | 2026-11-01 |
+| OB-02 | Không giới hạn độ dài video | Bộ nhớ đỉnh tăng dưới 15% khi độ dài tăng 10 lần | 2026-11-01 |
+| OB-03 | Đầu ra xác định | Checksum luồng video giống nhau trên 3 máy khác cấu hình | 2026-11-01 |
+| OB-04 | Thư viện mẫu | Từ 5 mẫu trình chiếu dùng được | 2026-10-18 |
+| OB-06 | Độ tin cậy khi xuất | Từ 95% thành công trên 100 lần thử ở Chrome và Edge | 2026-11-29 |
+| OB-07 | Hiển thị tiếng Việt | 100% ký tự đúng trên bộ 134 tổ hợp dấu | 2026-10-18 |
+| OB-08 | Dễ dùng | Người dùng mới tạo xong video đầu tiên trong 10 phút, đạt với ít nhất 8/10 người | 2026-11-29 |
+| OB-09 | Không gửi nội dung đi | 0 byte nội dung người dùng rời khỏi trình duyệt | 2026-11-01 |
+| OB-10 | Đúng tiến độ | Bàn giao không muộn hơn 2026-12-06 | 2026-12-06 |
+| OB-11 | Đúng ngân sách và công sức | Tiền mặt tối đa 3.500.000 VND; công sức tối đa 495 giờ | 2026-12-06 |
+| OB-12 | Chất lượng mã nguồn | Độ phủ kiểm thử của mô-đun bộ dựng, mã hoá và giấy phép từ 70% | 2026-11-29 |
+| OB-13 | Thực thi thuê bao | 100% lần xuất được máy chủ xác thực trước; không có giấy phép hợp lệ thì không xuất được | 2026-11-15 |
+| OB-14 | Hạn mức bậc miễn phí | Video thứ 4 trong tháng bị từ chối kèm thông báo rõ; 3 video đầu có watermark và tối đa 720p | 2026-11-15 |
+| OB-15 | Chu trình thanh toán | Giấy phép có hiệu lực trong 5 phút sau khi thanh toán thành công, tự động | 2026-11-29 |
+| OB-16 | Thời gian hoạt động của máy chủ giấy phép | Từ 99%, đo trong 30 ngày sau phát hành | 2027-01-05 |
 
 **OB-02 là mục tiêu quan trọng nhất về kỹ thuật.** Nó không được chứng minh bằng cách xuất thử một video dài rồi tuyên bố thành công, mà phải chứng minh bộ nhớ không tăng theo độ dài.
 
@@ -137,44 +137,49 @@ Dự án **thất bại một phần** nếu OB-10 hoặc OB-11 không đạt nh
 
 ### 4.1. Yêu cầu chức năng
 
-| ID | Yêu cầu | Ưu tiên |
-| --- | --- | --- |
-| RQ-01 | Định nghĩa và xác thực cấu trúc dữ liệu mô tả cảnh | Bắt buộc |
-| RQ-02 | Bộ dựng nhận số thứ tự khung hình và trả về trạng thái giao diện tại đúng khung đó | Bắt buộc |
-| RQ-03 | Xuất MP4 theo luồng: mã hoá, ghép và ghi ra file theo từng phần, giải phóng bộ nhớ sau mỗi khung | Bắt buộc |
-| RQ-04 | Thanh tiến trình theo khung hình, ước lượng thời gian còn lại, cho phép tạm dừng và huỷ | Bắt buộc |
-| RQ-05 | Xem trước video trong trình duyệt trước khi xuất | Bắt buộc |
-| RQ-06 | Thư viện ít nhất 5 mẫu trình chiếu | Bắt buộc |
-| RQ-07 | Nhập nội dung bằng biểu mẫu, không bắt người dùng viết dữ liệu thô | Bắt buộc |
-| RQ-08 | Lưu và mở lại dự án dưới dạng file trên máy người dùng | Bắt buộc |
-| RQ-09 | Chèn ảnh từ máy người dùng vào cảnh | Bắt buộc |
-| RQ-10 | Phát hiện trình duyệt không hỗ trợ và phát hiện mất kết nối, thông báo rõ kèm gợi ý | Bắt buộc |
-| RQ-12 | Hiệu ứng chuyển cảnh vào và ra | Nên có |
-| RQ-13 | Đăng ký, đăng nhập và quản lý tài khoản người dùng | Bắt buộc |
-| RQ-14 | Máy chủ cấp và kiểm giấy phép; ứng dụng phải xác thực thành công trước mỗi lần xuất | Bắt buộc |
-| RQ-15 | Đếm hạn mức bậc miễn phí; áp watermark và trần 720p cho bậc miễn phí | Bắt buộc |
-| RQ-16 | Mua và gia hạn thuê bao qua cổng thanh toán nội địa; xuất hoá đơn VAT cho bậc Doanh nghiệp | Bắt buộc |
-| RQ-17 | Trang quản lý thuê bao: bậc, hạn dùng, lịch sử hoá đơn, 5 chỗ cho bậc Doanh nghiệp | Bắt buộc |
+| ID | Yêu cầu | Ưu tiên | Phục vụ mục tiêu |
+| --- | --- | --- | --- |
+| RQ-01 | Định nghĩa và xác thực cấu trúc dữ liệu mô tả cảnh | Bắt buộc | OB-01, OB-03 |
+| RQ-02 | Dựng được hình của bất kỳ khung nào trong video từ dữ liệu cảnh; cùng dữ liệu luôn cho cùng một hình | Bắt buộc | OB-03 |
+| RQ-03 | Xuất video thành file MP4 ngay trên máy người dùng, không giới hạn độ dài; bộ nhớ dùng không tăng theo độ dài video | Bắt buộc | OB-01, OB-02 |
+| RQ-04 | Thanh tiến trình theo khung hình, ước lượng thời gian còn lại, cho phép tạm dừng và huỷ | Bắt buộc | OB-08 |
+| RQ-05 | Xem trước video trong trình duyệt trước khi xuất | Bắt buộc | OB-08 |
+| RQ-06 | Thư viện ít nhất 5 mẫu trình chiếu | Bắt buộc | OB-04 |
+| RQ-07 | Nhập nội dung bằng biểu mẫu, không bắt người dùng viết dữ liệu thô | Bắt buộc | OB-08 |
+| RQ-08 | Lưu và mở lại dự án dưới dạng file trên máy người dùng | Bắt buộc | OB-09 |
+| RQ-09 | Chèn ảnh từ máy người dùng vào cảnh | Bắt buộc | OB-09 |
+| RQ-10 | Phát hiện trình duyệt không hỗ trợ và phát hiện mất kết nối, thông báo rõ kèm gợi ý | Bắt buộc | OB-06 |
+| RQ-12 | Hiệu ứng chuyển cảnh vào và ra | Nên có | OB-04 |
+| RQ-13 | Đăng ký, đăng nhập và quản lý tài khoản người dùng | Bắt buộc | OB-13 |
+| RQ-14 | Máy chủ cấp và kiểm giấy phép; ứng dụng phải xác thực thành công trước mỗi lần xuất | Bắt buộc | OB-13 |
+| RQ-15 | Đếm hạn mức bậc miễn phí; áp watermark và trần 720p cho bậc miễn phí | Bắt buộc | OB-14 |
+| RQ-16 | Mua và gia hạn thuê bao qua cổng thanh toán nội địa; xuất hoá đơn VAT cho bậc Doanh nghiệp | Bắt buộc | OB-15 |
+| RQ-17 | Trang quản lý thuê bao: bậc, hạn dùng, lịch sử hoá đơn, 5 chỗ cho bậc Doanh nghiệp | Bắt buộc | OB-15 |
+| RQ-18 | Quản trị viên thêm, phát hành và gỡ mẫu trình chiếu; mẫu lỗi không được phát hành | Bắt buộc | OB-04 |
+| RQ-19 | Quản trị viên hỗ trợ người dùng: tra cứu tài khoản, ghi nhận yêu cầu hỗ trợ, điều chỉnh hạn mức; mọi điều chỉnh đều ghi lại ai sửa, lúc nào, vì sao | Bắt buộc | OB-14 |
+| RQ-20 | Theo dõi máy chủ còn hoạt động hay không; lấy được số liệu để đo lợi ích theo Benefit Management Plan | Bắt buộc | OB-16 |
 
 **RQ-14 là điều kiện sống còn của mô hình doanh thu.** Không có xác thực ở tầng máy chủ thì mọi quyền lợi trả phí bị vô hiệu hoá trong vài phút bằng công cụ nhà phát triển. Đánh đổi đã chấp nhận: mất kết nối Internet thì không xuất được video. Việc xác thực phải diễn ra trước khi bắt đầu mã hoá để không làm hỏng một lần xuất đang chạy dở.
 
-Mã RQ-11 không còn sử dụng và không được cấp lại.
+RQ-01 → RQ-12 thuộc nghiệp vụ A, RQ-13 → RQ-17 thuộc nghiệp vụ B, RQ-18 → RQ-20 thuộc nghiệp vụ C (§5.1). Mã RQ-11 không còn sử dụng và không được cấp lại.
 
 ### 4.2. Yêu cầu phi chức năng
 
-| ID | Yêu cầu | Ngưỡng |
-| --- | --- | --- |
-| NF-01 | Hiệu năng xuất video | Tối đa 1,5 lần thời lượng video trên máy tham chiếu |
-| NF-02 | Bộ nhớ đỉnh không phụ thuộc độ dài video | Tăng dưới 15% khi độ dài tăng 10 lần |
-| NF-03 | Không truyền nội dung người dùng ra ngoài | 0 byte |
-| NF-04 | Tính xác định của đầu ra | 100% giống nhau giữa các máy |
-| NF-05 | Hỗ trợ tiếng Việt đầy đủ | 100% ký tự đúng |
-| NF-06 | Chạy được mà không cần cài đặt thêm | Chỉ cần trình duyệt; cần Internet khi xuất video |
-| NF-07 | Giấy phép thư viện phụ thuộc | MIT, Apache-2.0, BSD hoặc SIL OFL; cấm GPL và AGPL |
-| NF-08 | Giấy phép tài sản đồ hoạ trong mẫu đi kèm | Cho phép phân phối lại trong sản phẩm phái sinh |
-| NF-09 | Thời gian phản hồi của máy chủ giấy phép | Tối đa 1 giây ở phân vị 95 |
-| NF-10 | Thời gian hoạt động của máy chủ giấy phép | Từ 99% mỗi tháng |
-| NF-11 | An toàn dữ liệu tài khoản | Mật khẩu lưu dạng băm; không lưu thông tin thẻ trên hệ thống của dự án |
+| ID | Yêu cầu | Ngưỡng | Phục vụ mục tiêu |
+| --- | --- | --- | --- |
+| NF-01 | Hiệu năng xuất video | Tối đa 1,5 lần thời lượng video trên máy tham chiếu | OB-01 |
+| NF-02 | Bộ nhớ đỉnh không phụ thuộc độ dài video | Tăng dưới 15% khi độ dài tăng 10 lần | OB-02 |
+| NF-03 | Không truyền nội dung người dùng ra ngoài | 0 byte | OB-09 |
+| NF-04 | Tính xác định của đầu ra | 100% giống nhau giữa các máy | OB-03 |
+| NF-05 | Hỗ trợ tiếng Việt đầy đủ | 100% ký tự đúng | OB-07 |
+| NF-06 | Chạy được mà không cần cài đặt thêm | Chỉ cần Chrome hoặc Edge bản ổn định trên máy tính; cần Internet khi xuất video. Không cam kết Firefox, Safari và điện thoại | OB-06 |
+| NF-07 | Giấy phép thư viện phụ thuộc | MIT, Apache-2.0, BSD hoặc SIL OFL; cấm GPL và AGPL | Ràng buộc pháp lý |
+| NF-08 | Giấy phép tài sản đồ hoạ trong mẫu đi kèm | Cho phép phân phối lại trong sản phẩm phái sinh | Ràng buộc pháp lý |
+| NF-09 | Thời gian phản hồi của máy chủ giấy phép | Tối đa 1 giây ở phân vị 95 | OB-13 |
+| NF-10 | Thời gian hoạt động của máy chủ giấy phép | Từ 99% mỗi tháng | OB-16 |
+| NF-11 | An toàn dữ liệu tài khoản | Mật khẩu lưu dạng băm; không lưu thông tin thẻ trên hệ thống của dự án | OB-13 |
+| NF-12 | Độ tin cậy khi xuất video | Từ 95% thành công trên 100 lần thử ở Chrome và Edge | OB-06 |
+| NF-13 | Dễ dùng với người mới | Tạo xong video đầu tiên trong 10 phút, đạt với ít nhất 8/10 người thử | OB-08 |
 
 Đây là yêu cầu mức cao. Việc phân rã chi tiết, xác định tiêu chí chấp nhận và truy vết yêu cầu thực hiện ở nhóm tiến trình Planning.
 
@@ -184,13 +189,36 @@ Mã RQ-11 không còn sử dụng và không được cấp lại.
 
 PromptVideo gồm hai phần, phát hành cùng nhau nhưng chạy ở hai nơi khác nhau.
 
-**Ứng dụng trình duyệt.** Người dùng nhập nội dung qua biểu mẫu; ứng dụng sinh ra cấu trúc dữ liệu mô tả cảnh; bộ dựng chuyển dữ liệu đó thành trạng thái giao diện cho từng khung hình; mỗi khung được vẽ lên canvas, đưa vào bộ mã hoá, ghép và ghi dần ra file trên đĩa, giải phóng bộ nhớ sau mỗi khung.
+**Ứng dụng trình duyệt** làm video ngay trên máy người dùng:
 
-**Máy chủ dịch vụ.** Giữ tài khoản, giấy phép, hạn mức và thanh toán. Trước mỗi lần xuất, ứng dụng gửi một yêu cầu xác thực kèm mã phiên chứ không kèm nội dung, và nhận về quyền xuất cùng cấu hình bậc.
+1. Người dùng nhập nội dung qua biểu mẫu.
+2. Ứng dụng sinh ra cấu trúc dữ liệu mô tả cảnh.
+3. Bộ dựng chuyển dữ liệu đó thành trạng thái giao diện cho từng khung hình.
+4. Mỗi khung được vẽ lên canvas, đưa vào bộ mã hoá, rồi ghép và ghi dần ra file trên đĩa.
+5. Bộ nhớ được giải phóng sau mỗi khung.
 
-Ranh giới giữa hai phần là ranh giới sản phẩm, không phải chi tiết triển khai: máy chủ biết ai xuất và bao nhiêu lần, nhưng không bao giờ biết nội dung gì. Đây là điều làm cho OB-09 vẫn đạt trong khi thuê bao vẫn thực thi được.
+**Máy chủ dịch vụ** giữ tài khoản, giấy phép, hạn mức và thanh toán:
 
-Sản phẩm chia thành ba nghiệp vụ: **A — sản xuất video**, từ bản thảo đến file MP4 trên máy người dùng; **B — đăng ký, cấp phép và thanh toán**, từ lúc tạo tài khoản đến khi giấy phép hết hạn hoặc được gia hạn; **C — quản trị và vận hành dịch vụ**, gồm nạp mẫu, giám sát máy chủ, hỗ trợ và đo lường lợi ích. Hai chỗ giáp ranh cần chốt bằng văn bản trong tuần đầu Planning: lệnh xuất video phải hỏi giấy phép trước khi chạy, và định dạng mẫu do C nạp vào để A tiêu thụ.
+- Trước mỗi lần xuất, ứng dụng gửi một yêu cầu xác thực kèm mã phiên, không kèm nội dung.
+- Máy chủ trả về quyền xuất cùng cấu hình bậc.
+
+**Ranh giới giữa hai phần** là ranh giới sản phẩm, không phải chi tiết triển khai:
+
+- Máy chủ biết ai xuất và xuất bao nhiêu lần.
+- Máy chủ không bao giờ biết nội dung gì.
+
+Nhờ ranh giới này, OB-09 vẫn đạt trong khi thuê bao vẫn thực thi được.
+
+**Sản phẩm chia thành ba nghiệp vụ:**
+
+- **A — Sản xuất video:** từ bản thảo đến file MP4 trên máy người dùng.
+- **B — Đăng ký, cấp phép và thanh toán:** từ lúc tạo tài khoản đến khi giấy phép hết hạn hoặc được gia hạn.
+- **C — Quản trị và vận hành dịch vụ:** nạp mẫu, giám sát máy chủ, hỗ trợ và đo lường lợi ích.
+
+**Hai chỗ giáp ranh cần chốt bằng văn bản trong tuần đầu Planning:**
+
+- Lệnh xuất video (A) phải hỏi giấy phép (B) trước khi chạy.
+- Định dạng mẫu do C nạp vào để A dùng.
 
 Cấu trúc dữ liệu mô tả cảnh là hợp đồng giữa các phần của hệ thống. Mọi thay đổi định dạng này phải qua kiểm soát thay đổi.
 

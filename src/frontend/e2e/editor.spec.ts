@@ -28,8 +28,8 @@ async function blockContentUploads(page: Page): Promise<string[]> {
 
 async function createProject(page: Page, name: string): Promise<void> {
   await page.goto('/')
-  await page.getByLabel('Tên project').fill(name)
-  await page.getByRole('button', { name: 'Tạo project' }).click()
+  await page.getByLabel('Tên video').fill(name)
+  await page.getByRole('button', { name: 'Tạo video' }).click()
   await expect(page.getByTestId('preview-canvas')).toBeVisible()
 }
 
@@ -44,7 +44,7 @@ test('builds a project end to end with the backend unreachable', async ({
   await expect(page.locator('output', { hasText: '/ 60s' })).toBeVisible()
 
   // Editing the title updates the document and autosaves locally.
-  const title = page.getByLabel('Nội dung').first()
+  const title = page.getByTestId('scene-title')
   await title.fill('Tiếng Việt đủ dấu: ăn, ổn, ừ, ỹ')
   await expect(page.getByTestId('save-state')).toHaveAttribute(
     'data-state',
@@ -60,7 +60,7 @@ test('undo and redo restore the document exactly', async ({ page }) => {
   await blockContentUploads(page)
   await createProject(page, 'Hoàn tác')
 
-  const title = page.getByLabel('Nội dung').first()
+  const title = page.getByTestId('scene-title')
   const original = await title.inputValue()
 
   await title.fill('Đã đổi')
@@ -99,7 +99,7 @@ test('keyboard alone reaches navigation, scenes, preview and save', async ({
   const joined = [...reached].join('\n')
   expect(joined).toContain('Bỏ qua điều hướng')
   expect(joined).toContain('Vị trí trên timeline')
-  expect(joined).toMatch(/Lưu \(Ctrl\+S\)/)
+  expect(joined).toContain('Lưu file dự án')
   expect(joined).toMatch(/Đưa .* lên trên|Đưa .* xuống dưới/)
 
   // And the documented shortcut saves without a pointer.
@@ -115,7 +115,7 @@ test('project and its scenes survive a reload', async ({ page }) => {
   await blockContentUploads(page)
   await createProject(page, 'Bền vững')
 
-  await page.getByLabel('Nội dung').first().fill('Nội dung sau khi tải lại')
+  await page.getByTestId('scene-title').fill('Nội dung sau khi tải lại')
   await expect(page.getByTestId('save-state')).toHaveAttribute(
     'data-state',
     'saved',
@@ -125,7 +125,7 @@ test('project and its scenes survive a reload', async ({ page }) => {
   const editorUrl = page.url()
   await page.reload()
   await expect(page).toHaveURL(editorUrl)
-  await expect(page.getByLabel('Nội dung').first()).toHaveValue(
+  await expect(page.getByTestId('scene-title')).toHaveValue(
     'Nội dung sau khi tải lại',
   )
 
@@ -171,12 +171,16 @@ test('switching through all five templates keeps the text', async ({
   await blockContentUploads(page)
   await createProject(page, 'Đổi template')
 
-  await page.getByLabel('Nội dung').first().fill('Giữ nguyên nội dung này')
+  await page.getByTestId('scene-title').fill('Giữ nguyên nội dung này')
 
-  const templateSelect = page.getByLabel('Template')
+  await page.getByRole('button', { name: 'Đổi mẫu' }).click()
   for (const id of ['bold', 'minimal', 'story', 'promo', 'classic']) {
-    await templateSelect.selectOption(id)
-    await expect(page.getByLabel('Nội dung').first()).toHaveValue(
+    await page.getByTestId(`template-${id}`).click()
+    await expect(page.getByTestId(`template-${id}`)).toHaveAttribute(
+      'aria-checked',
+      'true',
+    )
+    await expect(page.getByTestId('scene-title')).toHaveValue(
       'Giữ nguyên nội dung này',
     )
   }
@@ -206,9 +210,9 @@ test('a template the admin retired is no longer offered but old work still opens
 }) => {
   await serveCatalog(page, ['classic', 'bold', 'minimal', 'story', 'promo'])
   await page.goto('/')
-  await page.getByLabel('Tên project').fill('Dùng mẫu sắp bị gỡ')
-  await page.getByLabel('Template').selectOption('promo')
-  await page.getByRole('button', { name: 'Tạo project' }).click()
+  await page.getByLabel('Tên video').fill('Dùng mẫu sắp bị gỡ')
+  await page.getByTestId('template-promo').click()
+  await page.getByRole('button', { name: 'Tạo video' }).click()
   await expect(page.getByTestId('preview-canvas')).toBeVisible()
   await expect(page.getByTestId('template-withdrawn')).toHaveCount(0)
 
@@ -219,17 +223,22 @@ test('a template the admin retired is no longer offered but old work still opens
 
   await expect(page.getByTestId('preview-canvas')).toBeVisible()
   await expect(page.getByTestId('template-withdrawn')).toBeVisible()
-  await expect(page.getByLabel('Template')).toHaveValue('promo')
+  await expect(page.getByText('Mẫu: Tươi sáng')).toBeVisible()
 
   // Leaving it is one way: new work cannot pick it.
   await page.goto('/')
   // The bundled list shows until the catalog answers; wait for the answer.
-  await expect(page.getByLabel('Template').locator('option')).toHaveCount(4)
-  const offered = await page
-    .getByLabel('Template')
-    .locator('option')
-    .evaluateAll((options) =>
-      options.map((option) => (option as HTMLOptionElement).value),
+  const picker = page.getByRole('radiogroup', { name: 'Mẫu video' })
+  await expect(picker.getByRole('radio')).toHaveCount(4)
+  const offered = await picker
+    .getByRole('radio')
+    .evaluateAll((radios) =>
+      radios.map((radio) => radio.getAttribute('data-testid')),
     )
-  expect(offered).toEqual(['classic', 'bold', 'minimal', 'story'])
+  expect(offered).toEqual([
+    'template-classic',
+    'template-bold',
+    'template-minimal',
+    'template-story',
+  ])
 })

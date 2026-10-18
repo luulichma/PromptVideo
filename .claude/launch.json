@@ -1,0 +1,25 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "api",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": [
+        "run",
+        "--project",
+        "src/backend/PromptVideo.Api",
+        "--launch-profile",
+        "http",
+        "--",
+        "--Database:ApplyMigrationsOnStartup=true"
+      ],
+      "port": 5080
+    },
+    {
+      "name": "web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "src/frontend"],
+      "port": 5173
+    }
+  ]
+}

@@ -1,13 +1,17 @@
 import type { ProjectDocumentV1 } from '../project/schema'
 import { getProjectDuration } from '../project/timeline'
-import { isProjectExportable } from '../project/validation'
+import { isProjectExportable, type OverflowCheck } from '../project/validation'
 import type { RenderAssets } from '../rendering/renderer'
 import {
   RESOLUTIONS,
   checkEncoderSupport,
   type ExportResolution,
 } from './encoderSupport'
-import { runExport, type ExportProgress } from './exportClient'
+import {
+  runExport,
+  type ExportControls,
+  type ExportProgress,
+} from './exportClient'
 import type { ExportBenchmarkResult } from './exportMp4'
 import type { ExportPath } from './outputTarget'
 import {
@@ -44,6 +48,11 @@ export type ExportProjectOptions = {
   fileHandle?: FileSystemFileHandle
   signal?: AbortSignal
   onProgress?: (progress: ExportProgress) => void
+  onControls?: (controls: ExportControls) => void
+  /** Text that would be clipped; supplied by the editor, which can measure. */
+  isOverflowing?: OverflowCheck
+  /** Told the moment the server has granted the export, before encoding. */
+  onReserved?: (reservation: ExportReservation) => void
   /**
    * Identifies this attempt to the server. The caller keeps it stable across
    * retries of the same attempt so a lost response cannot cost a second slot.
@@ -68,7 +77,7 @@ export async function exportProject(
 ): Promise<ExportProjectResult> {
   const { project, resolution } = options
 
-  if (!isProjectExportable(project)) {
+  if (!isProjectExportable(project, { isOverflowing: options.isOverflowing })) {
     return {
       status: 'refused',
       code: 'invalid-project',
@@ -102,6 +111,7 @@ export async function exportProject(
   }
 
   const { reservation } = reserved
+  options.onReserved?.(reservation)
   // The server decides the height and the watermark, not the UI. A client that
   // asked for 1080p and was granted 720p must encode what it was granted.
   const granted =
@@ -121,6 +131,7 @@ export async function exportProject(
       fileHandle: options.fileHandle,
       signal: options.signal,
       onProgress: options.onProgress,
+      onControls: options.onControls,
     })
 
     if (outcome.status === 'done') {

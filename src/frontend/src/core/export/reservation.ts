@@ -113,26 +113,74 @@ export async function reserveExport(
   }
 }
 
+type SettleAction = 'complete' | 'cancel'
+type PendingSettlement = { reservationId: string; action: SettleAction }
+
+const PENDING_KEY = 'promptvideo.pendingSettlements'
+
+function readPending(): PendingSettlement[] {
+  try {
+    const raw = globalThis.localStorage?.getItem(PENDING_KEY)
+    const parsed: unknown = raw ? JSON.parse(raw) : []
+    return Array.isArray(parsed) ? (parsed as PendingSettlement[]) : []
+  } catch {
+    return []
+  }
+}
+
+function writePending(items: PendingSettlement[]): void {
+  try {
+    if (items.length === 0) globalThis.localStorage?.removeItem(PENDING_KEY)
+    else globalThis.localStorage?.setItem(PENDING_KEY, JSON.stringify(items))
+  } catch {
+    // Storage is a convenience here; the server's expiry is the real backstop.
+  }
+}
+
 /**
  * Settles a reservation.
  *
- * Both outcomes are best-effort on purpose. The user already has their file, or
- * already knows the export failed; turning a failed bookkeeping call into an
- * error they must deal with would be punishing them for our network. The server
- * expires unsettled reservations on its own, which is the real safety net.
+ * Both outcomes are best-effort on purpose. The quota was taken when the server
+ * granted the export, and the video is finished on the user's machine whether
+ * or not the network is still there; turning a failed bookkeeping call into an
+ * error they must deal with would be punishing them for our network. A call
+ * that does not get through is remembered and sent again when the browser is
+ * back online, so a cancelled export still gets its slot back.
  */
 export async function completeExport(reservationId: string): Promise<boolean> {
-  return settle(reservationId, 'complete')
+  return settleOrQueue(reservationId, 'complete')
 }
 
 export async function cancelExport(reservationId: string): Promise<boolean> {
-  return settle(reservationId, 'cancel')
+  return settleOrQueue(reservationId, 'cancel')
+}
+
+async function settleOrQueue(
+  reservationId: string,
+  action: SettleAction,
+): Promise<boolean> {
+  const outcome = await settle(reservationId, action)
+  if (outcome === 'unreachable')
+    writePending([...readPending(), { reservationId, action }])
+  return outcome === 'settled'
+}
+
+/** Sends settlements that failed earlier; keeps the ones that fail again. */
+export async function retryPendingSettlements(): Promise<void> {
+  const pending = readPending()
+  if (pending.length === 0) return
+  const remaining: PendingSettlement[] = []
+  for (const item of pending) {
+    const outcome = await settle(item.reservationId, item.action)
+    if (outcome === 'unreachable') remaining.push(item)
+  }
+  writePending(remaining)
 }
 
 async function settle(
   reservationId: string,
-  action: 'complete' | 'cancel',
-): Promise<boolean> {
+  action: SettleAction,
+): Promise<'settled' | 'refused' | 'unreachable'> {
   try {
     const headers = await getAntiforgeryHeaders()
     const path =
@@ -140,12 +188,15 @@ async function settle(
         ? '/api/exports/reservations/{reservationId}/complete'
         : '/api/exports/reservations/{reservationId}/cancel'
 
-    const { error } = await api.POST(path, {
+    const { response } = await api.POST(path, {
       headers,
       params: { path: { reservationId } },
     })
-    return !error
+    if (response.ok) return 'settled'
+    // A 4xx means the server has an answer — already settled, expired, not
+    // ours — and asking again would get the same one.
+    return response.status >= 500 ? 'unreachable' : 'refused'
   } catch {
-    return false
+    return 'unreachable'
   }
 }

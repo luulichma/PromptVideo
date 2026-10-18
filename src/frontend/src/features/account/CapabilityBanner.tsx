@@ -23,15 +23,15 @@ export function CapabilityBanner() {
 
       {state.status === 'anonymous' && (
         <span>
-          Chưa đăng nhập. Bạn vẫn dựng và lưu project cục bộ được; đăng nhập khi
-          cần xuất video.
+          Chưa đăng nhập. Cứ soạn và xem trước thoải mái; chỉ cần đăng nhập lúc
+          xuất video.
         </span>
       )}
 
       {state.status === 'offline' && (
         <span>
-          Không kết nối được máy chủ. Trình biên tập vẫn hoạt động; quyền xuất
-          sẽ được kiểm lại khi có mạng.
+          Đang không có mạng. Soạn và xem trước vẫn dùng được; cần mạng lúc bấm
+          xuất.
         </span>
       )}
 

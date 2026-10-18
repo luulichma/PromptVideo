@@ -24,7 +24,11 @@ export type RunExportOptions = {
   fileHandle?: FileSystemFileHandle
   signal?: AbortSignal
   onProgress?: (progress: ExportProgress) => void
+  /** Lets the caller pause and resume the running export. */
+  onControls?: (controls: ExportControls) => void
 }
+
+export type ExportControls = { pause: () => void; resume: () => void }
 
 export type ExportOutcome =
   | {
@@ -147,6 +151,13 @@ export async function runExport(
         return
       }
       options.signal?.addEventListener('abort', onAbort)
+
+      const pause: ExportRequest = { type: 'pause' }
+      const resume: ExportRequest = { type: 'resume' }
+      options.onControls?.({
+        pause: () => worker.postMessage(pause),
+        resume: () => worker.postMessage(resume),
+      })
 
       const start: ExportRequest = {
         type: 'start',
