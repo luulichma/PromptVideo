@@ -11,8 +11,7 @@ export type TemplateStatus = 'Draft' | 'Active' | 'Retired'
 export type AdminFailure = 'anonymous' | 'forbidden' | 'offline'
 
 export type AdminResult<T> =
-  | { ok: true; data: T }
-  | { ok: false; reason: AdminFailure }
+  { ok: true; data: T } | { ok: false; reason: AdminFailure }
 
 function failure(status: number | undefined): AdminResult<never> {
   if (status === 401) return { ok: false, reason: 'anonymous' }

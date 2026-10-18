@@ -17,7 +17,9 @@ npm ci --prefix frontend
 
 ## 2. Chạy
 
-Mở hai cửa sổ PowerShell ở thư mục `src`.
+Cách nhanh: trong thư mục `src`, bấm đúp `chay-may-chu.bat` (bật cơ sở dữ liệu và máy chủ), rồi bấm đúp `chay-giao-dien.bat` (bật giao diện và tự mở trình duyệt). Đóng cửa sổ nào thì phần đó tắt.
+
+Hoặc chạy tay: mở hai cửa sổ PowerShell ở thư mục `src`.
 
 Cửa sổ 1, máy chủ (tự tạo bảng và nạp 3 bậc giá, 5 mẫu):
 
@@ -45,6 +47,18 @@ Chuẩn bị sẵn 5 câu chữ và 3 tấm ảnh sản phẩm trên máy.
 6. **Lưu file dự án.** Bấm "Lưu file dự án" (một file, có kèm ảnh). Ở trang đầu bấm "Mở file dự án" để mở lại, sửa một ô chữ và xuất lại.
 7. **Hết lượt miễn phí.** Xuất thêm 2 lần: lần thứ 4 bị chặn kèm thông báo và đường dẫn "Xem các gói".
 8. **Nâng cấp.** Ở trang "Tài khoản và gói", bấm "Nâng cấp" gói Cá nhân (giả lập). Quay lại xuất: chọn được 1080p, không watermark.
+9. **Phía quản trị.** Cần một tài khoản quản trị tạo sẵn khi chạy máy chủ:
+   - Trong `src/.env`, đặt `Database__SeedDevelopmentUser=true`, điền `Seed__AdminEmail` và một mật khẩu tự chọn vào `Seed__AdminPassword` (từ 10 ký tự, có chữ hoa, chữ thường và chữ số; mật khẩu mẫu có sẵn không dùng được). File này không được đưa lên git; đừng ghi mật khẩu thật vào tài liệu.
+   - Đóng cửa sổ máy chủ rồi bấm đúp lại `chay-may-chu.bat` (file này tự nạp `.env`). Nếu chạy tay, dùng:
+
+     ```powershell
+     Get-Content .env | Where-Object { $_ -match '^(Database__|Seed__)\w+=' } | ForEach-Object { $k, $v = $_ -split '=', 2; Set-Item "env:$k" $v }
+     dotnet run --project backend/PromptVideo.Api -- --Database:ApplyMigrationsOnStartup=true
+     ```
+
+   - Ở trang "Tài khoản và gói", đăng xuất khỏi tài khoản khách rồi đăng nhập bằng email và mật khẩu quản trị. Thanh trên cùng hiện thêm mục "Quản trị".
+   - Trang "Quản trị" có 5 mẫu kèm phiên bản, trạng thái và số liệu sử dụng (chỉ là số đếm, không có nội dung của khách). Chuyển "Tươi sáng" sang "Đã gỡ", về trang đầu: mẫu này không còn để chọn, nhưng video cũ dùng mẫu này vẫn mở được, kèm cảnh báo. Chuyển lại "Đang dùng" sau khi demo.
+   - Tài khoản khách mở `/admin` sẽ thấy "Tài khoản này không có quyền quản trị."
 
 ## 4. Những điều cần nói rõ khi demo
 

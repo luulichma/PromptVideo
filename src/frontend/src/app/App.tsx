@@ -4,6 +4,8 @@ import { checkBrowserSupport } from '../core/capabilities/browserSupport'
 import { retryPendingSettlements } from '../core/export/reservation'
 import { CapabilityBanner } from '../features/account/CapabilityBanner'
 import { AccountPage } from '../features/account/AccountPage'
+import { AdminPage } from '../features/admin/AdminPage'
+import { useIsAdmin } from '../features/admin/adminApi'
 import { DashboardPage } from '../features/dashboard/DashboardPage'
 import { EditorPage } from '../features/editor/EditorPage'
 import SpikePage from '../features/spike/SpikePage'
@@ -33,6 +35,7 @@ export default function App() {
   useSettlementRetry()
   // Checked once on open, before anyone spends time filling scenes in.
   const [support] = useState(() => checkBrowserSupport())
+  const isAdmin = useIsAdmin()
 
   return (
     <div className="min-h-dvh bg-slate-50 text-slate-900">
@@ -59,6 +62,11 @@ export default function App() {
             <NavLink to="/spike" className={navLinkClass}>
               Kiểm tra trình duyệt
             </NavLink>
+            {isAdmin && (
+              <NavLink to="/admin" className={navLinkClass}>
+                Quản trị
+              </NavLink>
+            )}
           </nav>
           <div className="ml-auto min-w-0">
             <CapabilityBanner />
@@ -82,6 +90,7 @@ export default function App() {
           <Route path="/" element={<DashboardPage />} />
           <Route path="/editor/:projectId" element={<EditorPage />} />
           <Route path="/account" element={<AccountPage />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route
             path="/spike"
             element={
