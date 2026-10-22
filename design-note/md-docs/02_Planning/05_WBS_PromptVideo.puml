@@ -23,7 +23,7 @@ wbsDiagram {
 </style>
 title WBS dự án PromptVideo
 
-* PromptVideo\nTrình tạo video trình chiếu
+* PromptVideo\nTạo video trình chiếu từ mẫu
 ** 1 Quản lý dự án
 *** 1.1 Hồ sơ khởi tạo dự án
 *** 1.2 Kế hoạch quản lý dự án
@@ -38,12 +38,13 @@ title WBS dự án PromptVideo
 *** 4.1 Nền tảng mã nguồn
 *** 4.2 Tạo video
 **** 4.2.1 Trình soạn nội dung
-**** 4.2.2 Bộ 5 mẫu trình chiếu
+**** 4.2.2 Bộ 3 mẫu trình chiếu
 **** 4.2.3 Xem trước video
 **** 4.2.4 Xuất video MP4
 **** 4.2.5 Lưu và mở dự án
 **** 4.2.6 Kiểm quyền xuất video
 **** 4.2.7 Tạm dừng xuất và cảnh báo trình duyệt
+**** 4.2.8 Nhạc nền
 *** 4.3 Tài khoản và thanh toán
 **** 4.3.1 Đăng ký, đăng nhập
 **** 4.3.2 Giấy phép và hạn mức

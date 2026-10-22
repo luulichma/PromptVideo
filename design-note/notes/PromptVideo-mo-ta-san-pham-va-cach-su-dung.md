@@ -14,25 +14,20 @@ PromptVideo là công cụ giúp người dùng tạo video dạng trình chiế
 
 - Nhân viên marketing hoặc chủ cửa hàng cần tạo video giới thiệu, quảng cáo sản phẩm.
 - Giáo viên cần tạo video trình chiếu nội dung.
-- Người sáng tạo nội dung cần làm video ngắn từ chữ và hình ảnh có
-  sẵn.
+- Người sáng tạo nội dung cần làm video ngắn từ chữ và hình ảnh có sẵn.
 
 ### 1.4. Giải thích tên gọi
 
-- **Slide** chỉ cảnh kiểu trình chiếu, không có nghĩa là người dùng nhập tệp PowerPoint.
 - **Prompt** trong phiên bản 1.0 là nội dung người dùng gõ vào các ô của cảnh, không phải câu lệnh gửi cho AI.
 - **AI không nằm trong phạm vi phiên bản 1.0.**
 
 ### 1.5. Phạm vi chính của phiên bản 1.0
 
-Phiên bản 1.0 tập trung vào việc tạo video từ mẫu có sẵn, chỉnh sửa nội
-dung trong giới hạn được thiết kế, xem trước, xuất MP4 và lưu/mở lại tệp
-dự án trên máy người dùng.
+Phiên bản 1.0 tập trung vào việc tạo video từ mẫu có sẵn, chỉnh sửa nội dung trong giới hạn được thiết kế, xem trước, xuất MP4 và lưu/mở lại tệp dự án trên máy người dùng.
 
 Các giới hạn đã thống nhất trong bản nháp:
 
-- Chỉ đội Enticy tạo và đưa mẫu vào hệ thống; người dùng cuối không tự
-  tạo mẫu.
+- Chỉ đội Enticy tạo và đưa mẫu vào hệ thống; người dùng cuối không tự tạo mẫu.
 - Không có cộng tác trực tuyến hoặc đồng bộ dự án qua đám mây.
 - Video được dựng trên máy người dùng trong trình duyệt.
 - Máy chủ xác thực quyền xuất và áp dụng giới hạn theo gói dịch vụ.
@@ -122,8 +117,7 @@ kế, thay vì mỗi mẫu có một quy trình dựng video riêng.
 
 ### 3.1. Bối cảnh
 
-Chị Hà là nhân viên marketing của một cửa hàng mỹ phẩm nhỏ. Chị cần tạo
-một video dài khoảng 60 giây để giới thiệu dòng kem chống nắng mới. Chị
+Chị Hà là nhân viên marketing của một cửa hàng mỹ phẩm nhỏ. Chị cần tạo một video dài khoảng 60 giây để giới thiệu dòng kem chống nắng mới. Chị
 đã chuẩn bị nội dung và bốn ảnh sản phẩm.
 
 ### 3.2. Các bước sử dụng
