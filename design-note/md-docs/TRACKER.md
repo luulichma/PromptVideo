@@ -1,69 +1,68 @@
 # TRACKER — trạng thái hồ sơ PromptVideo
 
-Bảng theo dõi P4: mỗi tài liệu · chủ · trạng thái ghi trong file · lần review gần nhất · số mục 🔴 còn thiếu. Review chạy bằng skill `pm-ndq` (`review <file>`); báo cáo chi tiết ở [`_review/`](_review/). Cập nhật bảng này mỗi khi review hoặc sửa tài liệu.
+Cập nhật 25/10/2026, theo **bản trên Google Drive** (nhóm 02), vì Drive là bản chuẩn. Bảng cũ theo bản trên máy (review 05/10) lưu tại [`_review/TRACKER_2026-10-05_ban-cu.md`](_review/TRACKER_2026-10-05_ban-cu.md).
 
-Cách đếm cột 🔴: số dòng checklist 🔴 có kết quả **Thiếu**, **Sai** hoặc **Một phần**. "Chờ ký" không tính, vì nội dung đã đủ và chỉ thiếu chữ ký. "Chủ" lấy theo mục lục hồ sơ §3 (người tổng hợp) hoặc người tạo trong khối Xác nhận.
+Cách đếm cột 🔴: số dòng checklist 🔴 có kết quả **Thiếu**, **Sai** hoặc **Một phần**. "Chờ ký" không tính, vì nội dung đã đủ và chỉ thiếu chữ ký. Báo cáo chi tiết: [`_review/Drive_v2.x_review_2026-10-25.md`](_review/Drive_v2.x_review_2026-10-25.md).
 
-| Mã | Tài liệu | Chủ | Trạng thái trong file | Review gần nhất | 🔴 còn thiếu | Báo cáo |
-| --- | --- | --- | --- | --- | --- | --- |
-| BC | [Business Case v2.2](<00_Pre-project/01_Business_Case_v2.2.md>) | Chiến | Draft — chờ phê duyệt | 2026-10-05 | 0 | [review](<_review/01_Business_Case_v2.2_review_2026-10-05.md>) |
-| BMP | [Benefits Management Plan v2.2](<00_Pre-project/02_Benefit_Management_Plan_v2.2.md>) | Chiến | Draft — chờ phê duyệt | 2026-10-05 | 0 | [review](<_review/02_Benefit_Management_Plan_v2.2_review_2026-10-05.md>) |
-| CH | [Project Charter v2.1](<01_Initiating/01_Project_Charter_v2.1.md>) | Quang Anh | Draft — chờ phê duyệt (chờ ký) | 2026-10-05 | 0 | [review](<_review/03_Project_Charter_v2.1_review_2026-10-05.md>) |
-| AL | [Assumption Log v2.1](<01_Initiating/02_Assumption_Log_v2.1.md>) | Việt Quang | Tài liệu sống | 2026-10-05 | 2 thiếu · 1 một phần | [review](<_review/04_Assumption_Log_v2.1_review_2026-10-05.md>) |
-| SR | [Stakeholder Register v1.0](<01_Initiating/03_Stakeholder_Register_v1.0.md>) | Chiến (ghi ở đầu sổ) | Không ghi trạng thái | 2026-10-05 | 2 thiếu · 3 một phần | [review](<_review/05_Stakeholder_Register_v1.0_review_2026-10-05.md>) |
-| P01 | [01_Project_Management_Plan_v1.0.md](<02_Planning/01_Project_Management_Plan_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 4 thiếu · 2 một phần | [review](<_review/P01_Project_Management_Plan_v1.0_review_2026-10-05.md>) |
-| P02 | [02_Requirements_Specification_v1.0.md](<02_Planning/02_Requirements_Specification_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 2 một phần | [review](<_review/P02_Requirements_Specification_v1.0_review_2026-10-05.md>) |
-| P03 | [03_Interface_Specification_v1.0.md](<02_Planning/03_Interface_Specification_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 0 | [review](<_review/P03_Interface_Specification_v1.0_review_2026-10-05.md>) |
-| P04 | [04_Project_Scope_Statement_v1.0.md](<02_Planning/04_Project_Scope_Statement_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 1 thiếu · 1 một phần | [review](<_review/P04_Project_Scope_Statement_v1.0_review_2026-10-05.md>) |
-| P05 | [05_WBS_and_WBS_Dictionary_v1.0.md](<02_Planning/05_WBS_and_WBS_Dictionary_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 0 (chờ duyệt) | [review](<_review/P05_WBS_and_WBS_Dictionary_v1.0_review_2026-10-05.md>) |
-| P06 | [06_Quality_Plan_and_Test_Cases_v1.0.md](<02_Planning/06_Quality_Plan_and_Test_Cases_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 | [review](<_review/P06_Quality_Plan_and_Test_Cases_v1.0_review_2026-10-05.md>) |
-| P07 | [07_Resource_and_Communication_Plan_v1.0.md](<02_Planning/07_Resource_and_Communication_Plan_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 2 thiếu · 5 một phần | [review](<_review/P07_Resource_and_Communication_Plan_v1.0_review_2026-10-05.md>) |
-| P08 | [08_Risk_Management_Plan_v1.0.md](<02_Planning/08_Risk_Management_Plan_v1.0.md>) | Việt Quang | Draft, chưa nghiệm thu | 2026-10-05 | 3 thiếu · 2 một phần | [review](<_review/P08_Risk_Management_Plan_v1.0_review_2026-10-05.md>) |
-| P09 | [09_Requirements_Traceability_Matrix_v1.0.xlsx](<../official-docs/02_Planning/09_Requirements_Traceability_Matrix_v1.0.xlsx>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 1 một phần | [review](<_review/P09_Requirements_Traceability_Matrix_v1.0_review_2026-10-05.md>) |
-| P10 | [10_Schedule_and_CPM_v1.0.xlsx](<../official-docs/02_Planning/10_Schedule_and_CPM_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 1 một phần | [review](<_review/P10_Schedule_and_CPM_v1.0_review_2026-10-05.md>) |
-| P11 | [11_Cost_Budget_Procurement_v1.0.xlsx](<../official-docs/02_Planning/11_Cost_Budget_Procurement_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | 2026-10-05 | 1 thiếu · 2 một phần | [review](<_review/P11_Cost_Budget_Procurement_v1.0_review_2026-10-05.md>) |
-| P12 | [12_RACI_and_Communication_Matrix_v1.0.xlsx](<../official-docs/02_Planning/12_RACI_and_Communication_Matrix_v1.0.xlsx>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 1 thiếu · 1 một phần | [review](<_review/P12_RACI_and_Communication_Matrix_v1.0_review_2026-10-05.md>) |
-| P13 | [13_Risk_Register_v1.0.xlsx](<../official-docs/02_Planning/13_Risk_Register_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | 2026-10-05 | 3 thiếu · 1 một phần | [review](<_review/P13_Risk_Register_v1.0_review_2026-10-05.md>) |
-| E01 | [01_Implementation_and_Integration_Record_v1.0.md](<03_Executing/01_Implementation_and_Integration_Record_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 1 một phần | [review](<_review/E01_Implementation_and_Integration_Record_v1.0_review_2026-10-05.md>) |
-| E02 | [02_Meeting_and_Decision_Log_v1.0.md](<03_Executing/02_Meeting_and_Decision_Log_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 1 thiếu | [review](<_review/E02_Meeting_and_Decision_Log_v1.0_review_2026-10-05.md>) |
-| E03 | [03_Installation_User_and_Operations_Guide_v1.0.md](<03_Executing/03_Installation_User_and_Operations_Guide_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 | [review](<_review/E03_Installation_User_and_Operations_Guide_v1.0_review_2026-10-05.md>) |
-| E04 | [04_Quality_Assurance_and_Lessons_Learned_v1.0.md](<03_Executing/04_Quality_Assurance_and_Lessons_Learned_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 2 một phần | [review](<_review/E04_Quality_Assurance_and_Lessons_Learned_v1.0_review_2026-10-05.md>) |
-| E05 | [05_Work_Log_and_Actuals_v1.0.xlsx](<../official-docs/03_Executing/05_Work_Log_and_Actuals_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | 2026-10-05 | 1 thiếu | [review](<_review/E05_Work_Log_and_Actuals_v1.0_review_2026-10-05.md>) |
-| M01 | [01_Project_Status_Report_v1.0.md](<04_Monitoring_and_Controlling/01_Project_Status_Report_v1.0.md>) | Việt Quang | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 1 một phần | [review](<_review/M01_Project_Status_Report_v1.0_review_2026-10-05.md>) |
-| M02 | [02_Quality_and_Test_Report_v1.0.md](<04_Monitoring_and_Controlling/02_Quality_and_Test_Report_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 1 một phần | [review](<_review/M02_Quality_and_Test_Report_v1.0_review_2026-10-05.md>) |
-| M03 | [03_Issue_and_Change_Log_v1.0.xlsx](<../official-docs/04_Monitoring_and_Controlling/03_Issue_and_Change_Log_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | 2026-10-05 | 1 thiếu · 1 một phần | [review](<_review/M03_Issue_and_Change_Log_v1.0_review_2026-10-05.md>) |
-| M04 | [04_Performance_and_EVM_v1.0.xlsx](<../official-docs/04_Monitoring_and_Controlling/04_Performance_and_EVM_v1.0.xlsx>) | Việt Quang | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 1 một phần | [review](<_review/M04_Performance_and_EVM_v1.0_review_2026-10-05.md>) |
-| M05 | [05_Test_Results_and_Defects_v1.0.xlsx](<../official-docs/04_Monitoring_and_Controlling/05_Test_Results_and_Defects_v1.0.xlsx>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 1 thiếu · 1 một phần | [review](<_review/M05_Test_Results_and_Defects_v1.0_review_2026-10-05.md>) |
-| M06 | [06_Scope_Validation_Record_v1.0.md](<04_Monitoring_and_Controlling/06_Scope_Validation_Record_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 1 một phần | [review](<_review/M06_Scope_Validation_Record_v1.0_review_2026-10-05.md>) |
-| CR-G-001 | [CR-G-001_Dieu_chinh_lich_va_nguon_luc.md](<04_Monitoring_and_Controlling/change-requests/CR-G-001_Dieu_chinh_lich_va_nguon_luc.md>) | — | Draft, chưa nghiệm thu | 2026-10-05 | 1 thiếu · 1 một phần | [review](<_review/CR-G-001_review_2026-10-05.md>) |
-| C01 | [01_Final_Project_Report_v1.0.md](<05_Closing/01_Final_Project_Report_v1.0.md>) | Chiến | Draft, chưa nghiệm thu | 2026-10-05 | 3 thiếu · 2 một phần | [review](<_review/C01_Final_Project_Report_v1.0_review_2026-10-05.md>) |
-| C02 | [02_Handover_and_Outstanding_Items_v1.0.md](<05_Closing/02_Handover_and_Outstanding_Items_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 | [review](<_review/C02_Handover_and_Outstanding_Items_v1.0_review_2026-10-05.md>) |
-| C03 | [03_Lessons_Learned_Report_v1.0.md](<05_Closing/03_Lessons_Learned_Report_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 thiếu · 2 một phần | [review](<_review/C03_Lessons_Learned_Report_v1.0_review_2026-10-05.md>) |
-| C04 | [04_Presentation_and_Demo_Script_v1.0.md](<05_Closing/04_Presentation_and_Demo_Script_v1.0.md>) | Quang Anh | Draft, chưa nghiệm thu | 2026-10-05 | 0 | [review](<_review/C04_Presentation_and_Demo_Script_v1.0_review_2026-10-05.md>) |
+## 1. Tài liệu chuẩn trên Drive (review 25/10/2026)
 
-## Tổng hợp review 05/10/2026
+| Mã | Tài liệu | Trạng thái trong file | 🔴 còn thiếu | Việc cần làm |
+| --- | --- | --- | --- | --- |
+| BC | [Business Case v2.4](https://docs.google.com/document/d/1bE3HcPbxE_v9LmwsCVFwFYWqn5UJNGChFMJcNRTtJlo/edit) | Draft — chờ phê duyệt | 0 | Ghi 45 phút là giả định kế hoạch; điền người phê duyệt trong lịch sử |
+| BMP | [Benefit Management Plan v2.3](https://docs.google.com/document/d/1ia4__P_GL1z3IDozbnIgl4_uxHyhQaaHSSXDmCbYqqs/edit) | Dự thảo — chờ phê duyệt | 0 | Sửa câu "bắt buộc đo trước 13/09"; điền người phê duyệt |
+| CH | [Project Charter v2.4](https://docs.google.com/document/d/1b4_gk-mirLmNxzYoljfQvsai3Se1OWH_KLVFA0qt6Hw/edit) | Draft — chờ phê duyệt (chờ ký) | 0 | Chọn lại mốc M2 so với OB-04 (3 mẫu M2 hay M3) |
+| AL | [Assumption Log v2.4](https://docs.google.com/document/d/1OSwQsqRWfJCFfkUEMNv2yBvBT9FOg6lQ5O6h7wG2oQg/edit) | Tài liệu sống | 1 một phần | Cập nhật 20 giả định quá hạn kiểm (hạn M0–M3) |
+| SR | [Stakeholder Register v1.1](https://docs.google.com/spreadsheets/d/1f89XmoLrFARdwoq5NQgYEeXktI2lrZzLGpunmBAKIPQ/edit) | Không ghi trạng thái | 4 một phần | Cập nhật ngày; ghi lý do không có giảng viên và 3 thành viên; nêu mô hình phân loại |
+| P01 | [Project Management Plan v2.5](https://docs.google.com/document/d/13whSca0aYnqvLIyd4e-JltSPyki5ZZnUsqsRpgpxHRs/edit) | Draft — chờ kiểm tra | 2 một phần | Họp khởi động và biên bản; ghi lại phần dự phòng trong mốc chuẩn chi phí |
+| P02 | [Phạm vi và yêu cầu v1.1](https://docs.google.com/document/d/12-go1dgvPVqwJs5RjAImhu8rACSj7vaaPYS5KRzviSs/edit) (gồm cả đặc tả giao tiếp và tuyên bố phạm vi) | Draft — chờ kiểm tra | 1 một phần | Xóa hai chỗ "(Cần soát)"; có bảng truy vết đầy đủ |
+| P05 | [WBS và từ điển WBS v2.4](https://docs.google.com/document/d/14Q01kAEqQFOorOOuoLwDVnlRsKS8oktFI-qVT_HZmcY/edit) | Bản nháp, chưa duyệt | 0 | Chia 10 gói còn gộp; thêm bảng lịch sử và ba người xác nhận |
 
-Đã review 34 mục (33 tài liệu + CR-G-001): **27 mục 🔴 thiếu** và **36 mục 🔴 một phần**. Chưa tài liệu nào được ký duyệt; trạng thái Draft là đúng (DEC-009).
+## 2. Còn thiếu trên Drive
 
-**Ưu tiên sửa (nhiều 🔴 nhất hoặc chặn tài liệu khác):**
+PMP v2.5 nói thư mục `02_Planning` gồm 6 file; ba bảng tính dưới đây chưa có:
 
-1. **P01 PMP**: thêm PMB, danh sách tài liệu chịu formal change control, quy tắc PMP chỉ đổi qua ICC, kick-off meeting (PM04:10, PM04:16, PM04:18, PM07:54).
-2. **Kick-off và biên bản họp** (P01 + E02): chưa có cuộc họp nào được ghi.
-3. **P08 + P13 rủi ro**: RBS, risk appetite, opportunity, tên chiến lược theo slide, ngân sách/lịch cho response (PM08:15, PM08:64, PM08:68).
-4. **E05 actual**: chưa có giờ/chi phí thực tế, nên M04 (EVM), C01 (schedule/cost objectives) và CR-G-001 đều không tính được.
-5. **M05**: thêm TC-A-20, TC-A-36, TC-B-96, TC-I-02, TC-I-06; TC-A-20/36 là ca kiểm lỗi Cao ISS-G-001.
-6. **Stakeholder Register + P07/P12**: thêm giảng viên và 3 thành viên; đánh giá mức C trong SEAM; ghi push/pull/interactive.
-7. **Assumption Log**: cập nhật sau WBS/ước lượng/rủi ro (DEC-008, DEC-009, thang P1–P5).
+- **Lịch và chi phí** (thay cho P10, P11): theo nền 656,3 giờ.
+- **Truy vết và kiểm thử** (thay cho P09, P13 phần kiểm thử): nối yêu cầu với mục tiêu và ca kiểm thử.
+- **Sổ rủi ro** (thay cho P13): có cả cơ hội.
 
-**Lỗi chung nhiều tài liệu (🔵):**
+Chưa có: biên bản họp khởi động; nhật ký giờ công thực tế; sổ vấn đề và thay đổi; bảng kết quả kiểm thử. Các bảng tính cũ trong `official-docs/` theo nền 599 giờ, không dùng làm bản chuẩn.
 
-- Tài liệu Planning–Closing còn câu "cập nhật bằng Codex" và chưa có khối Xác nhận/Lịch sử theo `knowledge/rules/00_index.md` §4.
-- Workbook xlsx còn chữ dính ("Encoder1080p", "nằmbase"…), đường dẫn cũ `design-note/…`, `plan-note/…`, và ngày dạng số serial. Script sinh workbook đã lưu trữ ở `archive/scripts-2026-09-24/`, nên sửa trực tiếp trong xlsx hoặc dựng lại công cụ sinh.
-- DEC-014 ghi "mọi docx/xlsx sinh từ Markdown, kể cả 9 workbook", nhưng 9 workbook không có md nguồn (dữ liệu ở `md-docs/_data/*.json`).
-- Các cổng DOC-03/04 (02/10, 05/10) đã qua nhưng M01, M06, C02, M03 vẫn mang trạng thái ngày 24/09.
+## 3. Bản nháp v1.0 tải lên Drive ngày 25/10/2026
 
-## Ghi chú
+16 file từ `md-docs/`, đã bỏ chữ "Codex", mã DEC và link máy. **Lệch nền v2.x** (599 giờ, 10 giờ/tuần, 5 mẫu, cổng DOC đến 07/10). Cột 🔴 giữ kết quả review 05/10 theo nền cũ, chưa review lại.
 
-- Đầu vào module `*/_module-input/` (A, B, C) không review riêng; lỗi tìm thấy trong tài liệu hợp nhất sẽ trỏ ngược về module input.
-- Workbook `.xlsx` được review bằng cách trích nội dung sheet; nguồn sửa vẫn theo DEC-014.
+| Mã | Tài liệu | Thư mục Drive | 🔴 (05/10) | Ghi chú |
+| --- | --- | --- | --- | --- |
+| P03 | [Interface Specification](https://docs.google.com/document/d/14rX0u29OJv6js4iTkpxON_TihThg_0Tj7ps8nbSN2u0/edit) | 02_Planning/Draft | 0 | Trùng mục 6 của Phạm vi và yêu cầu; hạn 30 phút so với 2 giờ; 5 mẫu |
+| P06 | [Quality Plan and Test Cases](https://docs.google.com/document/d/1rpK3e_G9PP5VQq1j33dJjxRaYzHgJFlKGwlKaysjHtQ/edit) | 02_Planning/Draft | 0 | Trùng mục 4.5 của PMP; nhắc 5 mẫu |
+| P07 | [Resource and Communication Plan](https://docs.google.com/document/d/1dEsvw6_n4cW3yOT0xIQoxGgaYKD-jsgyO4a_koHEruk/edit) | 02_Planning/Draft | 2 thiếu · 5 một phần | Trùng mục 4.6–4.7 của PMP; 10 giờ/tuần |
+| P08 | [Risk Management Plan](https://docs.google.com/document/d/1XTEHYdsgJpgauYPOsM_6XbZt3Ws8LqctCC4rYCzth0s/edit) | 02_Planning/Draft | 3 thiếu · 2 một phần | Trùng mục 4.8 của PMP; dự phòng 46,2 giờ |
+| E01 | [Implementation and Integration Record](https://docs.google.com/document/d/1FxphTACCMdhblFxjyPR2UT1I1mQdBWPdbTd5G10aw8g/edit) | 03_Executing | 0 thiếu · 1 một phần | Nhắc 5 mẫu; số liệu ngày 24/09 |
+| E02 | [Meeting and Decision Log](https://docs.google.com/document/d/1MVOC-xC55CBBI0K7jBacN4a0Vh3lWxwJVOM3RajTxvQ/edit) | 03_Executing | 1 thiếu | Chưa có biên bản họp nào |
+| E03 | [Installation, User and Operations Guide](https://docs.google.com/document/d/1dGCY4frqnGKbCkRs72C4VVXj07x3ybzu1m56unY2G-U/edit) | 03_Executing | 0 | Nhắc 5 mẫu seed |
+| E04 | [Quality Assurance and Lessons Learned](https://docs.google.com/document/d/1PyNDUlsRFHGEyXC9M9MR0WRpR3qO90SjZS0sGCk6OOE/edit) | 03_Executing | 0 thiếu · 2 một phần | Giữ phiên bản cũ (BC 2.2, Charter 2.1) |
+| M01 | [Project Status Report](https://docs.google.com/document/d/1hi1mq44pJiVtaXqbyCNJw-KPHVmtInqelxDdEYwmcbo/edit) | 04_Monitoring_and_Controlling | 0 thiếu · 1 một phần | 599 giờ; ngày 24/09 |
+| M02 | [Quality and Test Report](https://docs.google.com/document/d/1hakdQU8FZ0l-rJyPaN2xk5UXhDx0qq13ZoBu94uSRZk/edit) | 04_Monitoring_and_Controlling | 0 thiếu · 1 một phần | Kết quả kiểm thử ngày 24/09 |
+| M06 | [Scope Validation Record](https://docs.google.com/document/d/15wHdmMQntFW2zy3vOnHdw9aY8vgOmCmPrl8KB_D1s4Y/edit) | 04_Monitoring_and_Controlling | 0 thiếu · 1 một phần | Chưa có chữ ký nghiệm thu |
+| CR-G-001 | [Điều chỉnh lịch và nguồn lực](https://docs.google.com/document/d/1OaulAvoHf95pq2PEeN7GAgNJd-U8ePX9sCGfag9t1YM/edit) | 04_Monitoring_and_Controlling | 1 thiếu · 1 một phần | Ghi 599 giờ; Charter 2.3 đã áp kết quả (675 giờ) nhưng CR chưa cập nhật, chưa có người duyệt |
+| C01 | [Final Project Report](https://docs.google.com/document/d/1m3K7StspeFzX5PWFi1hQbCIq7ivX0gdtrY_IinMhlFI/edit) | 05_Closing | 3 thiếu · 2 một phần | Thiếu giờ và chi phí thực tế |
+| C02 | [Handover and Outstanding Items](https://docs.google.com/document/d/14E0Cf-7sO3egDnPeJPg13O_PLSuuDjz0gRa1ZHnJ2oU/edit) | 05_Closing | 0 | Tồn đọng theo nền 599 giờ |
+| C03 | [Lessons Learned Report](https://docs.google.com/document/d/1axkiagZPoeocLQD4-pYvIwUw_RGItyO8FixwQqAW1LM/edit) | 05_Closing | 0 thiếu · 2 một phần | Bài học ngày 24/09 |
+| C04 | [Presentation and Demo Script](https://docs.google.com/document/d/1q003yMC5mY6ncff6MBDdnumhRz8Wx43f5ao5MGVvTws/edit) | 05_Closing | 0 | Nhắc 5 mẫu, 599 giờ |
+
+## 4. Ưu tiên
+
+1. **4 file nháp (P03, P06, P07, P08) đã chuyển sang `02_Planning/Draft` ngày 25/10**; còn cần quyết định gộp nội dung nào vào PMP hoặc Phạm vi và yêu cầu, hoặc bỏ.
+2. **Dựng 3 bảng tính còn thiếu** theo nền 656,3 giờ (mục 2).
+3. **Họp khởi động**, lưu biên bản lên Drive (PMP mục 8).
+4. **Assumption Log**: cập nhật 20 giả định quá hạn; đồng thời xóa dòng "bắt buộc đo 45 phút" ở BMP.
+5. **Stakeholder Register**: sửa ngày, ghi lý do loại giảng viên và 3 thành viên, nêu mô hình phân loại.
+6. **Viết lại hoặc cập nhật 12 file nháp Executing, Monitoring, Closing** theo nền 656,3 giờ, 15 giờ/tuần, 3 mẫu; đặt CR-G-001 theo Charter 2.3.
+7. **Sửa nhỏ** ở Charter (mốc M2) và PMP (phần dự phòng trong mốc chuẩn chi phí).
+
+## 5. Ghi chú
+
+- Đầu vào module `*/_module-input/` (A, B, C) vẫn chỉ có trên máy, không review riêng và không tải lên Drive.
 - Thứ tự review: Pre-project → Initiating → Planning → Executing → Monitoring and Controlling → Closing.
+- 9 workbook xlsx trong `official-docs/` theo nền cũ; chưa đưa lên Drive.
+- Tài liệu trong thân văn không trích mã slide hay mã quyết định (theo yêu cầu của Chiến); mã slide chỉ dùng trong báo cáo review.
